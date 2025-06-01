@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cf5ythyw4ttko"
+path="res://.godot/imported/Slick.dialogue-9e0f33a95b5db7db2f2ec4dbf17482a3.tres"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/npc/Characters/Slick/Slick.dialogue"
+dest_files=["res://.godot/imported/Slick.dialogue-9e0f33a95b5db7db2f2ec4dbf17482a3.tres"]
+
+[params]
+
+defaults=true

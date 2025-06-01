@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb2ddj5khwruw"]
+
+[ext_resource type="Script" uid="uid://37dc5cve0v0b" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.gd" id="1_j3tkh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ictlj"]
+resource_local_to_scene = true
+size = Vector2(32, 64)
+
+[node name="LevelTransition" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_j3tkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, 0)
+shape = SubResource("RectangleShape2D_ictlj")
+debug_color = Color(0.698039, 0.00392157, 0.882353, 0.419608)

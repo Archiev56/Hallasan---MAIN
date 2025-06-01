@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtp7db7yc1k4"
+path="res://.godot/imported/Tester Song.mp3-538116ac49b1aa4ccc960afa25772f2c.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Songs/Tester Song.mp3"
+dest_files=["res://.godot/imported/Tester Song.mp3-538116ac49b1aa4ccc960afa25772f2c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=120.0
+beat_count=160
+bar_beats=4

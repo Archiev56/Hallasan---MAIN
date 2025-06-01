@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://brwadfbnpe7jc"]
+
+[ext_resource type="Script" uid="uid://jvpvv58adty2" path="res://Hallasan-Sunset/Technical/Throwable/Throwable.gd" id="1_fxtyw"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="2_j3abk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yunl4"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tr26f"]
+radius = 16.0
+
+[node name="Throwable" type="Area2D"]
+collision_layer = 5
+collision_mask = 5
+monitorable = false
+script = ExtResource("1_fxtyw")
+
+[node name="HurtBox" parent="." instance=ExtResource("2_j3abk")]
+unique_name_in_owner = true
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_yunl4")
+
+[node name="MagnetArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagnetArea"]
+shape = SubResource("CircleShape2D_tr26f")

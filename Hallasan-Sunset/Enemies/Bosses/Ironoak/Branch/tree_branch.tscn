@@ -1,0 +1,179 @@
+[gd_scene load_steps=20 format=3 uid="uid://b5me57cghtrro"]
+
+[ext_resource type="Script" uid="uid://c1a1hoa2p3amt" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/tree_branch.gd" id="1_myb8u"]
+[ext_resource type="Texture2D" uid="uid://bl81qf7k2qimv" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/small_worm.png" id="2_8806v"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="3_pmk8y"]
+[ext_resource type="Texture2D" uid="uid://clsjs6k8q3wsy" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Animation/Spike-1 20.png" id="3_wj8ad"]
+[ext_resource type="Texture2D" uid="uid://n3r0ag2dkbay" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/Branch Sprites/Untitled_Artwork-7 8.png" id="4_orpt2"]
+[ext_resource type="Texture2D" uid="uid://b831n42gx418x" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/Branch Sprites/Untitled_Artwork-6 9.png" id="5_k1kmw"]
+[ext_resource type="Texture2D" uid="uid://q3usl21pi42d" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/Branch Sprites/Untitled_Artwork-5 11.png" id="6_2pj3w"]
+[ext_resource type="Texture2D" uid="uid://dfwg4h4y5ass8" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/Branch Sprites/Untitled_Artwork-4 16.png" id="7_tl1yq"]
+[ext_resource type="Texture2D" uid="uid://cfb6v0hqhquba" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/Branch Sprites/Untitled_Artwork-3 20.png" id="8_ahd8x"]
+[ext_resource type="Texture2D" uid="uid://bm3vthf3brhda" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/Branch Sprites/Untitled_Artwork-2 22.png" id="9_gts4n"]
+[ext_resource type="Texture2D" uid="uid://brq6xpb0taesa" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/Branch Sprites/Untitled_Artwork-1 33.png" id="10_p2y7q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sndil"]
+atlas = ExtResource("2_8806v")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jir31"]
+atlas = ExtResource("2_8806v")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnmth"]
+atlas = ExtResource("2_8806v")
+region = Rect2(576, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_850cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sndil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jir31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnmth")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_hm6rm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_wj8ad")]
+}
+
+[sub_resource type="Animation" id="Animation_xgjs5"]
+resource_name = "attack"
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"attack", &"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_orpt2"), ExtResource("5_k1kmw"), ExtResource("4_orpt2"), ExtResource("5_k1kmw"), ExtResource("4_orpt2"), ExtResource("5_k1kmw"), ExtResource("6_2pj3w"), ExtResource("7_tl1yq"), ExtResource("8_ahd8x"), ExtResource("9_gts4n"), ExtResource("10_p2y7q"), ExtResource("9_gts4n"), ExtResource("8_ahd8x"), ExtResource("6_2pj3w"), ExtResource("4_orpt2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_igohu"]
+_data = {
+&"RESET": SubResource("Animation_hm6rm"),
+&"attack": SubResource("Animation_xgjs5")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6epx0"]
+height = 38.0
+
+[node name="TreeBranch" type="CharacterBody2D"]
+z_index = 10
+position = Vector2(0, 26)
+scale = Vector2(2, 2)
+script = ExtResource("1_myb8u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, -11)
+sprite_frames = SubResource("SpriteFrames_850cw")
+animation = &"attack"
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_igohu")
+}
+autoplay = "attack"
+
+[node name="HurtBox" parent="." instance=ExtResource("3_pmk8y")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_6epx0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -21)
+texture = ExtResource("3_wj8ad")
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_body_entered"]
+[connection signal="did_damage" from="HurtBox" to="." method="_on_hurt_box_did_damage"]

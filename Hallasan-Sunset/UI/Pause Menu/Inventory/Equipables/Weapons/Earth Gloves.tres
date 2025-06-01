@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EquipableItemData" load_steps=7 format=3 uid="uid://cgmwv8prargbr"]
+
+[ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_ow778"]
+[ext_resource type="Script" uid="uid://dntj3tef2mfd2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_item_modifier.gd" id="2_ckkwg"]
+[ext_resource type="Script" uid="uid://f4v2hev5plf6" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_items.gd" id="3_u48mm"]
+[ext_resource type="Texture2D" uid="uid://cty0lev2uobxm" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork.png" id="4_alhh7"]
+[ext_resource type="Texture2D" uid="uid://exdx5gh7ehjr" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 130.png" id="5_kjpdx"]
+
+[sub_resource type="Resource" id="Resource_q4wgp"]
+script = ExtResource("2_ckkwg")
+type = 1
+value = 1
+
+[resource]
+script = ExtResource("3_u48mm")
+type = 0
+modifiers = Array[ExtResource("2_ckkwg")]([SubResource("Resource_q4wgp")])
+sprite_texture = ExtResource("4_alhh7")
+name = "Earth Gloves"
+description = "Big Bang gloves
+"
+texture = ExtResource("5_kjpdx")
+cost = 10
+effects = Array[ExtResource("1_ow778")]([])

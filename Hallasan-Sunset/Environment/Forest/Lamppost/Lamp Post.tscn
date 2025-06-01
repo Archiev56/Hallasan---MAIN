@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://cr4mn2ndohjxo"]
+
+[ext_resource type="Texture2D" uid="uid://r1mnrbw2hf7" path="res://Hallasan-Sunset/Environment/Forest/Lamppost/lamppost.png" id="1_tro8k"]
+[ext_resource type="Script" uid="uid://0mnmwsenhjp1" path="res://Hallasan-Sunset/Environment/Forest/Lamppost/TorchFlicker.gd" id="2_hcnu5"]
+[ext_resource type="Texture2D" uid="uid://cvn86kqmt24nn" path="res://Hallasan-Sunset/Tilemaps/Sprites/TX Props.png" id="3_su6xa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw2in"]
+atlas = ExtResource("3_su6xa")
+region = Rect2(264, 85, 24, 85)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5r2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw2in")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_eol0w"]
+offsets = PackedFloat32Array(0, 0.179266, 0.568035, 0.924406, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.983333, 0, 1, 1, 0.505882, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v48q5"]
+gradient = SubResource("Gradient_eol0w")
+width = 72
+height = 72
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Lamp post" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-12, 41, -13, -5, -39, -7, -41, -37, -40, -51, 33, -51, 40, -47, 40, -32, 33, -13, 32, -3, 12, -3, 11, 45)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_tro8k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+texture_filter = 1
+position = Vector2(2, -6)
+scale = Vector2(1.08333, 1)
+sprite_frames = SubResource("SpriteFrames_p5r2m")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-22, -20)
+scale = Vector2(5, 5)
+energy = 0.0
+texture = SubResource("GradientTexture2D_v48q5")
+script = ExtResource("2_hcnu5")
+
+[node name="PointLight2D5" type="PointLight2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(21, -19)
+scale = Vector2(5, 5)
+energy = 0.0
+texture = SubResource("GradientTexture2D_v48q5")
+script = ExtResource("2_hcnu5")

@@ -1,0 +1,123 @@
+[gd_scene load_steps=18 format=3 uid="uid://bc0ofrtosagbj"]
+
+[ext_resource type="Texture2D" uid="uid://clwueu10en1l4" path="res://Hallasan-Sunset/Environment/Forest/Campfire/Sprites/campfire-sheet.png" id="1_7ev4g"]
+[ext_resource type="Script" uid="uid://b6u6xq7r5ts6e" path="res://Hallasan-Sunset/Environment/Forest/Campfire/campfire.gd" id="1_lg873"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jy2l"]
+atlas = ExtResource("1_7ev4g")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afahr"]
+atlas = ExtResource("1_7ev4g")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1xuh"]
+atlas = ExtResource("1_7ev4g")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ndis"]
+atlas = ExtResource("1_7ev4g")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnk8d"]
+atlas = ExtResource("1_7ev4g")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0yt8"]
+atlas = ExtResource("1_7ev4g")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4auw"]
+atlas = ExtResource("1_7ev4g")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu8qn"]
+atlas = ExtResource("1_7ev4g")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5haj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jy2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afahr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1xuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ndis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnk8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0yt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4auw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu8qn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsuw4"]
+size = Vector2(26, 39)
+
+[sub_resource type="Gradient" id="Gradient_xq1oi"]
+offsets = PackedFloat32Array(0, 0.578947, 1)
+colors = PackedColorArray(0.996078, 0.87451, 0.568627, 1, 1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e8hao"]
+gradient = SubResource("Gradient_xq1oi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q2tc5"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(15, 10, 1)
+gravity = Vector3(2.08165e-12, -200, 2.08165e-12)
+color_ramp = SubResource("GradientTexture1D_e8hao")
+turbulence_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_jfy3p"]
+offsets = PackedFloat32Array(0.189066, 1)
+colors = PackedColorArray(1, 1, 1, 0.733333, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h42g0"]
+gradient = SubResource("Gradient_jfy3p")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Campfire" type="StaticBody2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+script = ExtResource("1_lg873")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t5haj")
+autoplay = "default"
+frame_progress = 0.55653
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4.5)
+shape = SubResource("RectangleShape2D_lsuw4")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 1)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_q2tc5")
+lifetime = 2.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+enabled = false
+texture = SubResource("GradientTexture2D_h42g0")

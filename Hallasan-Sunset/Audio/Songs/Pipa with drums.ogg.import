@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bganfa48k5f0w"
+path="res://.godot/imported/Pipa with drums.ogg-475b2b6a81ea7717c02254b60bf75403.oggvorbisstr"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Songs/Pipa with drums.ogg"
+dest_files=["res://.godot/imported/Pipa with drums.ogg-475b2b6a81ea7717c02254b60bf75403.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

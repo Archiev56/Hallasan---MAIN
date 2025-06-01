@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=6 format=3 uid="uid://cw3bf5p68wy7b"]
+
+[ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_3ru12"]
+[ext_resource type="Script" uid="uid://by265x207jy1a" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_data.gd" id="1_dyl3e"]
+[ext_resource type="Script" uid="uid://dpjsfj8id6xxy" path="res://Hallasan-Sunset/Items/Technical/Item Effects/item_effect_heal.gd" id="1_x04wg"]
+[ext_resource type="Texture2D" uid="uid://dsilespmxkmts" path="res://Hallasan-Sunset/Items/Consumables/Kimbap/Sprites/Kimbap.png" id="3_aa0v2"]
+
+[sub_resource type="Resource" id="Resource_bacri"]
+script = ExtResource("1_x04wg")
+heal_amount = 1
+use_description = ""
+
+[resource]
+script = ExtResource("1_dyl3e")
+name = "Kimbap"
+description = "Yum!"
+texture = ExtResource("3_aa0v2")
+cost = 1
+effects = Array[ExtResource("1_3ru12")]([SubResource("Resource_bacri")])

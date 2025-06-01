@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://x3kqulp18mfq"]
+
+[ext_resource type="Script" uid="uid://mmxbd8axovm" path="res://Hallasan-Sunset/Player/Technical/Camera/Camera2D.gd" id="1_n2r10"]
+
+[node name="Camera2D" type="Camera2D"]
+editor_draw_screen = false
+editor_draw_limits = true
+script = ExtResource("1_n2r10")

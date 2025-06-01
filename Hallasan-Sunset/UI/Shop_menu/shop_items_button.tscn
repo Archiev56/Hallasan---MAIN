@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cylc23k80gd6v"]
+
+[ext_resource type="Texture2D" uid="uid://vk5m0x43biym" path="res://Hallasan-Sunset/Items/Consumables/Corndog/Sprites/Corndog.png" id="1_ketv8"]
+[ext_resource type="Script" uid="uid://bu5jy1fhkhoxc" path="res://Hallasan-Sunset/UI/Shop_menu/shop_items_button.gd" id="1_nckol"]
+
+[node name="ShopItemsButton" type="Button"]
+custom_minimum_size = Vector2(275, 36)
+script = ExtResource("1_nckol")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 11.0
+offset_right = 245.0
+offset_bottom = 24.0
+text = "Label for item description"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.5
+offset_top = -16.0
+offset_right = -100.5
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ketv8")
+stretch_mode = 3
+
+[node name="PriceLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 11.0
+offset_right = 290.0
+offset_bottom = 24.0
+text = "999"

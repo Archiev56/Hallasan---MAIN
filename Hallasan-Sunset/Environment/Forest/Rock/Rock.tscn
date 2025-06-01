@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cghyxc7hn1cfd"]
+
+[ext_resource type="Texture2D" uid="uid://dq0t5jaopmu3p" path="res://Hallasan-Sunset/Environment/Forest/Rock/Sprites/rock.png" id="2_82a36"]
+
+[sub_resource type="Resource" id="Resource_myptp"]
+metadata/__load_path__ = "res://Player/Shadow.png"
+
+[node name="Rock" type="StaticBody2D"]
+collision_layer = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_82a36")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0.133333, 0.133333, 0.133333, 0.156863)
+z_index = 2
+texture_filter = 1
+position = Vector2(0.999999, 19)
+rotation = -0.0907571
+scale = Vector2(2.15184, 1.52)
+texture = SubResource("Resource_myptp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-26, 21, -26, 7, -24, 6, -24, -6, -21, -8, -21, -15, -14, -22, -4, -25, 2, -18, 9, -16, 14, -11, 16, -8, 22, -3, 26, 5, 26, 16, 19, 21, 6, 22, -2, 23, -22, 23)

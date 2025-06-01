@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyky3cc31wbpy"
+path="res://.godot/imported/ES_Cinematic, Riser, Fast, Big Hit, Bomb - Epidemic Sound - 0570-4369.wav-2da25d3bccff6bc0e9b6bc582aa6dd45.sample"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Sound effects/ES_Cinematic, Riser, Fast, Big Hit, Bomb - Epidemic Sound - 0570-4369.wav"
+dest_files=["res://.godot/imported/ES_Cinematic, Riser, Fast, Big Hit, Bomb - Epidemic Sound - 0570-4369.wav-2da25d3bccff6bc0e9b6bc582aa6dd45.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

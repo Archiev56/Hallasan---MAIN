@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qeg0erpj3xkj"]
+
+[ext_resource type="Script" uid="uid://cgxkyk1n6xvvc" path="res://Hallasan-Sunset/Technical/PersistentDataHelper copy/persistent-data-handler.gd" id="1_uxixd"]
+
+[node name="Persistent-data-handler" type="Node2D"]
+script = ExtResource("1_uxixd")

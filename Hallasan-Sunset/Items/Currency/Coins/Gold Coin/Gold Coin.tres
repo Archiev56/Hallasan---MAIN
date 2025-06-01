@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b7mhtict54464"]
+
+[ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_iprtd"]
+[ext_resource type="Texture2D" uid="uid://blc15bltxd7j0" path="res://Hallasan-Sunset/Items/Currency/Coins/Gold Coin/Untitled_Artwork 57.png" id="3_3dp4s"]
+[ext_resource type="Script" uid="uid://by265x207jy1a" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_data.gd" id="3_q7yed"]
+
+[resource]
+script = ExtResource("3_q7yed")
+name = "Gold Coin "
+description = "Chewy delicious gold!!"
+texture = ExtResource("3_3dp4s")
+effects = Array[ExtResource("1_iprtd")]([])

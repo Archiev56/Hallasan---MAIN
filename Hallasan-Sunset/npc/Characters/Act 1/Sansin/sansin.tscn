@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2ish47sk03v5"]
+
+[ext_resource type="Script" uid="uid://dss7csdyxpmtt" path="res://Hallasan-Sunset/npc/scripts/npc.gd" id="1_3i40q"]
+[ext_resource type="Resource" uid="uid://xqyqgwhh0qqu" path="res://Hallasan-Sunset/npc/Characters/Act 1/Sansin/Sansin.tres" id="2_dy25v"]
+
+[node name="Sansin" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="NPC" type="CharacterBody2D" parent="."]
+script = ExtResource("1_3i40q")
+npc_resource = ExtResource("2_dy25v")
+metadata/_custom_type_script = "uid://dss7csdyxpmtt"

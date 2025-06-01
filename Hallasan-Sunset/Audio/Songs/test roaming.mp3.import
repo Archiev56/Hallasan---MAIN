@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5hhf3yyp0vsm"
+path="res://.godot/imported/test roaming.mp3-0764b26a59fc9b38eb3a9821b72dd793.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Songs/test roaming.mp3"
+dest_files=["res://.godot/imported/test roaming.mp3-0764b26a59fc9b38eb3a9821b72dd793.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

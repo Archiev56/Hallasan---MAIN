@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1irimlt3ed4m"]
+
+[ext_resource type="Script" uid="uid://b7yu272rw3ml0" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/DamageNumbers.gd" id="1_nrqpo"]
+
+[node name="DamageNumbersOrigin" type="Node2D"]
+position = Vector2(0, -6)
+script = ExtResource("1_nrqpo")

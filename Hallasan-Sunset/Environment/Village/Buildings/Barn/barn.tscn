@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb3pke660xd84"]
+
+[ext_resource type="Texture2D" uid="uid://dlgy4jyh2j50x" path="res://Hallasan-Sunset/Environment/Village/Buildings/Barn/Sprites/Barn.png" id="1_ei2lg"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 16
+collision_mask = 0
+
+[node name="Barn" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+texture = ExtResource("1_ei2lg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-2, -2)
+polygon = PackedVector2Array(-141, 157, -144, 67, -167, 75, -169, -60, -82, -86, -2, -102, 83, -90, 168, -58, 169, 66, 155, 73, 143, 66, 142, 157, 43, 156, 25, 151, 25, 115, -21, 114, -36, 156)

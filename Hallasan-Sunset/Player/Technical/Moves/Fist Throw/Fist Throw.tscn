@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://dudeukutbdhya"]
+
+[ext_resource type="Script" uid="uid://bg2ft0btyypis" path="res://Hallasan-Sunset/Player/Scripts/boomerang.gd" id="1_205nx"]
+[ext_resource type="Texture2D" uid="uid://dh3pja0jvdoxa" path="res://Hallasan-Sunset/Player/Sprites/boomerang (2).png" id="2_jehtq"]
+[ext_resource type="AudioStream" uid="uid://dpv0lmar317h0" path="res://Hallasan-Sunset/Player/Audio/ES_Punch, Block, Swoosh - Epidemic Sound - 1509-1983.wav" id="3_5gyqg"]
+[ext_resource type="PackedScene" uid="uid://b4eaotgg15phx" path="res://Hallasan-Sunset/Items/Technical/Magnet/item_magnet.tscn" id="4_6h03d"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="5_3a3wy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pbrmp"]
+radius = 13.0
+
+[sub_resource type="Animation" id="Animation_6l3ty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qh5yh"]
+resource_name = "boomerang"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0375, 0.075, 0.1125, 0.15, 0.1875, 0.225, 0.2625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r88w0"]
+_data = {
+&"RESET": SubResource("Animation_6l3ty"),
+&"boomerang": SubResource("Animation_qh5yh")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtptd"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nnjap"]
+radius = 13.0384
+
+[node name="Boomerang" type="Node2D"]
+script = ExtResource("1_205nx")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pbrmp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_jehtq")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r88w0")
+}
+autoplay = "boomerang"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5gyqg")
+autoplay = true
+max_polyphony = 2
+
+[node name="Area2D2" parent="." instance=ExtResource("4_6h03d")]
+magnet_strength = 5.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_vtptd")
+
+[node name="HurtBox" parent="." instance=ExtResource("5_3a3wy")]
+unique_name_in_owner = true
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_nnjap")
+debug_color = Color(1, 0, 0.133333, 0.419608)

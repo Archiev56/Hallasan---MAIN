@@ -1,0 +1,198 @@
+[gd_scene load_steps=15 format=3 uid="uid://c0eb0hdhnljcb"]
+
+[ext_resource type="Script" uid="uid://b8b8370k74kv0" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dino/dino.gd" id="1_xppt2"]
+[ext_resource type="Texture2D" uid="uid://kvp4pbuwfnuf" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dino/Sprites/DinoSprites - mort.png" id="2_dgfdw"]
+
+[sub_resource type="Animation" id="Animation_tnwt7"]
+resource_name = "Attack"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_ad2a7"]
+resource_name = "Hurt"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [14, 15, 16]
+}
+
+[sub_resource type="Animation" id="Animation_ynttt"]
+resource_name = "Idle"
+length = 0.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_lk2tq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_r3nk5"]
+resource_name = "Run"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [17, 18, 19, 20, 21, 22]
+}
+
+[sub_resource type="Animation" id="Animation_fhro0"]
+resource_name = "Walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3tt6f"]
+_data = {
+&"Attack": SubResource("Animation_tnwt7"),
+&"Hurt": SubResource("Animation_ad2a7"),
+&"Idle": SubResource("Animation_ynttt"),
+&"RESET": SubResource("Animation_lk2tq"),
+&"Run": SubResource("Animation_r3nk5"),
+&"Walk": SubResource("Animation_fhro0")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qbbq"]
+radius = 8.05888
+
+[sub_resource type="Resource" id="Resource_raojh"]
+metadata/__load_path__ = "res://Technical/GeneralNodes/Hurtbox/hurt_box.gd"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mrtny"]
+radius = 8.0
+
+[sub_resource type="Resource" id="Resource_1qgm4"]
+metadata/__load_path__ = "res://Technical/GeneralNodes/Hitbox/hit_box.gd"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vqud"]
+radius = 8.0
+
+[node name="Dino" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(3, 3)
+collision_layer = 256
+script = ExtResource("1_xppt2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_dgfdw")
+hframes = 24
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3tt6f")
+}
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1.11678, 1.09867)
+shape = SubResource("CircleShape2D_7qbbq")
+
+[node name="HurtBox" type="Area2D" parent="."]
+position = Vector2(1, 0)
+monitorable = false
+script = SubResource("Resource_raojh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_mrtny")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 256
+monitoring = false
+script = SubResource("Resource_1qgm4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(12, 0)
+shape = SubResource("CircleShape2D_5vqud")
+debug_color = Color(0.807843, 0.380392, 0.443137, 0.419608)
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

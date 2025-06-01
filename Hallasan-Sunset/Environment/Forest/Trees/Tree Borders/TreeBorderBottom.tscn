@@ -1,0 +1,133 @@
+[gd_scene load_steps=6 format=3 uid="uid://3c8o5hxduleo"]
+
+[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="1_wf80h"]
+[ext_resource type="Texture2D" uid="uid://c6ppo5l18x0fu" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Sprites/Pine_tree.png" id="2_7fewr"]
+[ext_resource type="PackedScene" uid="uid://j7xr0tnkfbq3" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tall Tree/Tall Tree.tscn" id="3_gejlw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6lsk"]
+shader = ExtResource("1_wf80h")
+shader_parameter/WindStrength = 10.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6ecid"]
+a = Vector2(-88, -182)
+b = Vector2(299, -182)
+
+[node name="DownBorder" type="StaticBody2D"]
+z_index = 5
+texture_filter = 1
+position = Vector2(-57, 182)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-40, -194)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(40, -194)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(230, -194)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(127, -188)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(35, -158)
+texture = ExtResource("2_7fewr")
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_gejlw")]
+z_index = 2
+position = Vector2(166, -230)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_gejlw")]
+z_index = 2
+position = Vector2(-22, -230)
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(235, -148)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-53, -133)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(138, -133)
+texture = ExtResource("2_7fewr")
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_gejlw")]
+z_index = 2
+position = Vector2(94, -197)
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(28, -123)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(214, -108)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(242, -73)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(51, -73)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D15" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(152, -61)
+texture = ExtResource("2_7fewr")
+
+[node name="Sprite2D16" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-54, -61)
+texture = ExtResource("2_7fewr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_6ecid")

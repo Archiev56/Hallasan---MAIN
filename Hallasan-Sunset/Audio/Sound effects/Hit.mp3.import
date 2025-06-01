@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsfqslen0aw5e"
+path="res://.godot/imported/Hit.mp3-da5f204cfdc25b823033c5ff7c55151e.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Sound effects/Hit.mp3"
+dest_files=["res://.godot/imported/Hit.mp3-da5f204cfdc25b823033c5ff7c55151e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

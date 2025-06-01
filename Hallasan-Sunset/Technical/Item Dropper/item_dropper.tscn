@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqv8ikbi4p00s"]
+
+[ext_resource type="Script" uid="uid://v6s65tftc0kp" path="res://Hallasan-Sunset/Technical/Item Dropper/item_dropper.gd" id="1_mm6ic"]
+[ext_resource type="PackedScene" uid="uid://qeg0erpj3xkj" path="res://Hallasan-Sunset/Technical/PersistentDataHelper copy/persistent-data-handler.tscn" id="2_n0rvb"]
+[ext_resource type="AudioStream" uid="uid://cbn8cp0e6thph" path="res://Hallasan-Sunset/Technical/Item Dropper/Item_drop.wav" id="2_x8nwr"]
+
+[node name="ItemDropper" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_mm6ic")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+
+[node name="Label" type="Label" parent="Sprite2D"]
+texture_filter = 1
+offset_left = -40.0
+offset_top = -35.0
+offset_right = 47.0
+offset_bottom = -12.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "ITEM DROP"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_x8nwr")
+
+[node name="Persistent-data-handler" parent="." instance=ExtResource("2_n0rvb")]

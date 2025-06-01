@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://muyixecsja26"]
+
+[ext_resource type="Script" uid="uid://djnb47j786w0b" path="res://Hallasan-Sunset/Enemies/Bosses/wizard/Scripts/energy_orb.gd" id="1_a3nl4"]
+[ext_resource type="AudioStream" uid="uid://tl8w86gkpuc4" path="res://Hallasan-Sunset/Enemies/Bosses/wizard/Audio/boss_fireball.wav" id="2_n8pkn"]
+[ext_resource type="Material" uid="uid://8g8oxepcywc7" path="res://Hallasan-Sunset/Shaders/light_material.tres" id="2_sytbr"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="2_wwe35"]
+[ext_resource type="AudioStream" uid="uid://dy6s5idfobpgs" path="res://Hallasan-Sunset/Enemies/Bosses/wizard/Audio/boss_fireball_hit.wav" id="3_v1eru"]
+
+[sub_resource type="Gradient" id="Gradient_d3xfu"]
+offsets = PackedFloat32Array(0.0814917, 0.51105, 0.820442, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.929412, 0, 0.809514, 1, 0.478448, 0, 0.776471, 1, 0.556863, 0, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_skyqs"]
+gradient = SubResource("Gradient_d3xfu")
+width = 48
+height = 48
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_are5y"]
+
+[node name="EnergyOrb" type="Node2D"]
+script = ExtResource("1_a3nl4")
+speed = 250.0
+shoot_audio = ExtResource("2_n8pkn")
+hit_audio = ExtResource("3_v1eru")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = ExtResource("2_sytbr")
+texture = SubResource("GradientTexture2D_skyqs")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="HurtBox" parent="." instance=ExtResource("2_wwe35")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_are5y")
+debug_color = Color(0, 0.6, 0.701961, 0)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1ewosdf6qahj"
+path="res://.godot/imported/open_shop.wav-c6213625c025b19b6e89a8beb49e1838.sample"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/npc/Characters/Act 1/Shopkeeper/Audio/open_shop.wav"
+dest_files=["res://.godot/imported/open_shop.wav-c6213625c025b19b6e89a8beb49e1838.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

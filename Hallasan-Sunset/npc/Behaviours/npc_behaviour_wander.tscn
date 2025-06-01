@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://diged8o8uy23q"]
+
+[ext_resource type="Script" uid="uid://tytp1e4ai3i0" path="res://Hallasan-Sunset/npc/scripts/npc_behaviour_wander.gd" id="1_ye05p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3lmxm"]
+radius = 76.0066
+
+[node name="NpcWanderBehavior" type="Node2D"]
+script = ExtResource("1_ye05p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3lmxm")
+debug_color = Color(0.713726, 0.482353, 0.129412, 0)

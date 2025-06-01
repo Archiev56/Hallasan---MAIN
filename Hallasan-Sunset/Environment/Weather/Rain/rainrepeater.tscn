@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://clfnhwrj6sd3w"]
+
+[ext_resource type="Script" uid="uid://cssqtbq88xd05" path="res://Hallasan-Sunset/Environment/Weather/Rain/rainrepeater.gd" id="1_6x1da"]
+[ext_resource type="PackedScene" uid="uid://x5rpeutrrn32" path="res://Hallasan-Sunset/Environment/Weather/Rain/Rain.tscn" id="2_fyg3n"]
+
+[node name="Rainrepeater" type="Node2D"]
+script = ExtResource("1_6x1da")
+rain_scene = ExtResource("2_fyg3n")
+spacing = Vector2(20, 20)

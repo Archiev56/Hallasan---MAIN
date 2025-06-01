@@ -1,0 +1,783 @@
+[gd_scene load_steps=44 format=3 uid="uid://bv18n10sdmxlc"]
+
+[ext_resource type="Script" uid="uid://b8v33jg6hgubp" path="res://Hallasan-Sunset/UI/Pause Menu/Pause/Pause.gd" id="1_84gkr"]
+[ext_resource type="AudioStream" uid="uid://q4tcvwp83ov5" path="res://Hallasan-Sunset/Audio/Sound effects/UI_Select.wav" id="2_bre2m"]
+[ext_resource type="AudioStream" uid="uid://bk452ky0gmeub" path="res://Hallasan-Sunset/UI/Main Menu/menu_focus.wav" id="3_lllqf"]
+[ext_resource type="Theme" uid="uid://ep8fk2oqixb5" path="res://Hallasan-Sunset/UI/Menu_Theme.tres" id="4_urj3f"]
+[ext_resource type="AudioStream" uid="uid://bk0fi6exsuljt" path="res://Hallasan-Sunset/Audio/Sound effects/open_menu.wav" id="5_nyf0l"]
+[ext_resource type="AudioStream" uid="uid://bqg1i2t10brjs" path="res://Hallasan-Sunset/Audio/Sound effects/close_menu.wav" id="6_ehgx6"]
+[ext_resource type="AudioStream" uid="uid://de66vvdg0y6a6" path="res://Hallasan-Sunset/Audio/Sound effects/menu_tab.ogg" id="7_if6qi"]
+[ext_resource type="Texture2D" uid="uid://60rp0cpivw0u" path="res://Hallasan-Sunset/UI/Pause Menu/Bag/Sprites/bag.png" id="8_nyrqf"]
+[ext_resource type="Texture2D" uid="uid://phs0w1v7r5no" path="res://Hallasan-Sunset/UI/Pause Menu/Bag/Sprites/bag open.png" id="9_orhm4"]
+[ext_resource type="FontFile" uid="uid://bfu1go1hde7bc" path="res://Hallasan-Sunset/UI/Fonts/CursedScript.ttf" id="10_8j6ej"]
+[ext_resource type="Texture2D" uid="uid://c3cvxren7ib1b" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/Paper kit/SwitchContainer.png" id="11_ggrrc"]
+[ext_resource type="Script" uid="uid://c86760xtrdfq5" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/inventory_ui.gd" id="12_73jqh"]
+[ext_resource type="Resource" uid="uid://dcqu1flenu416" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/player_inventory.tres" id="13_ei6mr"]
+[ext_resource type="PackedScene" uid="uid://nbdb7nut6dh2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/inventory_slot.tscn" id="14_iq855"]
+[ext_resource type="Texture2D" uid="uid://ckmxf36raq6f2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Sprites/gear.png" id="15_1o8lt"]
+[ext_resource type="Texture2D" uid="uid://cuninxjfp0jos" path="res://Hallasan-Sunset/npc/Characters/Act 1/Red Mask/Sprites/blank.png" id="16_wmr2q"]
+[ext_resource type="Texture2D" uid="uid://beltfslnbxkg4" path="res://Hallasan-Sunset/Tilemaps/Sprites/hat.png" id="17_n3aso"]
+[ext_resource type="StyleBox" uid="uid://cp8t4vq10rdhr" path="res://Hallasan-Sunset/UI/Pause Menu/Pause/Inv_hover.tres" id="18_bubkb"]
+[ext_resource type="Texture2D" uid="uid://c4rkfbfwt3pv2" path="res://Hallasan-Sunset/UI/Pause Menu/Pause/UI box.png" id="19_32hqn"]
+[ext_resource type="PackedScene" uid="uid://c8gsebf6rbb7u" path="res://Hallasan-Sunset/UI/Pause Menu/Stats/stats.tscn" id="20_0dac1"]
+[ext_resource type="FontFile" uid="uid://cfbroi8iib1y5" path="res://Hallasan-Sunset/UI/Fonts/KiwiSoda.ttf" id="21_g32vo"]
+[ext_resource type="Script" uid="uid://cfoiv0kq1u53r" path="res://Hallasan-Sunset/UI/Pause Menu/Quests/quests_ui.gd" id="22_m0h83"]
+[ext_resource type="Texture2D" uid="uid://dyt1rmnfhkx4m" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/ui white border.png" id="23_78js8"]
+[ext_resource type="PackedScene" uid="uid://v0k1yqv8sn7u" path="res://Hallasan-Sunset/UI/Pause Menu/Quests/quest_item.tscn" id="24_bbvk8"]
+[ext_resource type="PackedScene" uid="uid://1uaklgsuboha" path="res://Hallasan-Sunset/UI/Pause Menu/Quests/quest_step_item.tscn" id="25_51hpj"]
+[ext_resource type="Texture2D" uid="uid://ncjyo38fsdja" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Sprites/Banner.png" id="26_gon2f"]
+
+[sub_resource type="Animation" id="Animation_pjomn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(322, 160)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_nyrqf")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TabContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_423ki"]
+resource_name = "open"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(322, 180), Vector2(322, 112), Vector2(322, 131)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 1,
+"values": [ExtResource("8_nyrqf"), ExtResource("9_orhm4")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TabContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1i6kh"]
+_data = {
+&"RESET": SubResource("Animation_pjomn"),
+&"open": SubResource("Animation_423ki")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3nkjk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pjomn"]
+texture = ExtResource("11_ggrrc")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsofw"]
+atlas = ExtResource("15_1o8lt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpqld"]
+atlas = ExtResource("15_1o8lt")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kl4d"]
+atlas = ExtResource("15_1o8lt")
+region = Rect2(17, 0, 14, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srp54"]
+atlas = ExtResource("15_1o8lt")
+region = Rect2(17, 16, 14, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ge22"]
+texture = ExtResource("19_32hqn")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1i6kh"]
+texture = ExtResource("23_78js8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_423ki"]
+texture = ExtResource("19_32hqn")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_digwp"]
+texture = ExtResource("19_32hqn")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tywy1"]
+texture = ExtResource("19_32hqn")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d1ffx"]
+texture = ExtResource("19_32hqn")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ci0e7"]
+texture = ExtResource("19_32hqn")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jcer"]
+texture = ExtResource("19_32hqn")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_84gkr")
+button_press_audio = ExtResource("2_bre2m")
+button_focus_audio = ExtResource("3_lllqf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.14902)
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_urj3f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("5_nyf0l")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("6_ehgx6")
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("7_if6qi")
+
+[node name="Bag" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Bag"]
+position = Vector2(322, 160)
+texture = ExtResource("8_nyrqf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bag"]
+libraries = {
+&"": SubResource("AnimationLibrary_1i6kh")
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 132.0
+offset_top = 16.0
+offset_right = -140.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_8j6ej")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3nkjk")
+tab_alignment = 1
+current_tab = 0
+tabs_position = 1
+clip_tabs = false
+
+[node name="Inventory" type="Control" parent="TabContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("4_urj3f")
+metadata/_tab_index = 0
+
+[node name="Panel3" type="Panel" parent="TabContainer/Inventory"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = 33.0
+offset_right = 139.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pjomn")
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Inventory"]
+layout_mode = 2
+offset_left = -86.0
+offset_top = 77.0
+offset_right = 170.0
+offset_bottom = 281.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+script = ExtResource("12_73jqh")
+data = ExtResource("13_ei6mr")
+
+[node name="InventorySlot" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot2" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot3" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot4" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot5" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot6" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot7" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot8" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot9" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot10" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot11" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot12" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot13" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot14" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot15" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot16" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot17" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot18" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot19" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="InventorySlot20" parent="TabContainer/Inventory/GridContainer" instance=ExtResource("14_iq855")]
+process_mode = 0
+layout_mode = 2
+
+[node name="GridContainer2" type="GridContainer" parent="TabContainer/Inventory"]
+layout_mode = 2
+offset_left = 192.0
+offset_top = 77.0
+offset_right = 428.0
+offset_bottom = 177.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 6
+
+[node name="TextureRect3" type="TextureRect" parent="TabContainer/Inventory/GridContainer2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = SubResource("AtlasTexture_xsofw")
+stretch_mode = 3
+
+[node name="InventorySlot_Weapon" parent="TabContainer/Inventory/GridContainer2" instance=ExtResource("14_iq855")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Inventory/GridContainer2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = SubResource("AtlasTexture_jpqld")
+stretch_mode = 3
+
+[node name="InventorySlot_Armor" parent="TabContainer/Inventory/GridContainer2" instance=ExtResource("14_iq855")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="TabContainer/Inventory/GridContainer2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = SubResource("AtlasTexture_1kl4d")
+stretch_mode = 3
+
+[node name="InventorySlot_Amulet" parent="TabContainer/Inventory/GridContainer2" instance=ExtResource("14_iq855")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="TabContainer/Inventory/GridContainer2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("16_wmr2q")
+stretch_mode = 3
+
+[node name="InventorySlot_Mask" parent="TabContainer/Inventory/GridContainer2" instance=ExtResource("14_iq855")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="TabContainer/Inventory/GridContainer2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("17_n3aso")
+stretch_mode = 3
+
+[node name="InventorySlot_Hat" parent="TabContainer/Inventory/GridContainer2" instance=ExtResource("14_iq855")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect6" type="TextureRect" parent="TabContainer/Inventory/GridContainer2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = SubResource("AtlasTexture_srp54")
+stretch_mode = 3
+
+[node name="InventorySlot_Ring" parent="TabContainer/Inventory/GridContainer2" instance=ExtResource("14_iq855")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Inventory"]
+z_index = 99
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 189.0
+offset_top = 162.0
+offset_right = 352.0
+offset_bottom = 326.0
+
+[node name="Panel" type="Panel" parent="TabContainer/Inventory/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("18_bubkb")
+
+[node name="Panel2" type="Panel" parent="TabContainer/Inventory"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 174.0
+offset_top = 182.0
+offset_right = 466.0
+offset_bottom = 246.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1ge22")
+
+[node name="Description" type="Label" parent="TabContainer/Inventory/Panel2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 3.0
+offset_right = 96.0
+offset_bottom = 27.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.858824, 0.552941, 1)
+theme_override_fonts/font = ExtResource("10_8j6ej")
+theme_override_font_sizes/font_size = 16
+text = "Description: "
+horizontal_alignment = 1
+
+[node name="ItemDescription" type="Label" parent="TabContainer/Inventory/Panel2"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 9.0
+offset_top = 16.0
+offset_right = 307.0
+offset_bottom = 70.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_8j6ej")
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 2
+
+[node name="Stats" parent="TabContainer/Inventory" instance=ExtResource("20_0dac1")]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 246.0
+offset_right = 466.0
+offset_bottom = 281.0
+
+[node name="Label" type="Label" parent="TabContainer/Inventory"]
+z_index = 4096
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -106.0
+offset_right = 145.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.929412, 0.694118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("21_g32vo")
+theme_override_font_sizes/font_size = 16
+text = "INVENTORY"
+horizontal_alignment = 1
+
+[node name="Banner" type="Sprite2D" parent="TabContainer/Inventory"]
+texture_filter = 1
+position = Vector2(189, 54)
+scale = Vector2(3.5625, 1.90909)
+texture = ExtResource("26_gon2f")
+region_enabled = true
+region_rect = Rect2(138, 7.22652, 64, 22.7735)
+
+[node name="Quests" type="TabBar" parent="TabContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("4_urj3f")
+script = ExtResource("22_m0h83")
+metadata/_tab_index = 1
+
+[node name="Panel3" type="Panel" parent="TabContainer/Quests"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = 33.0
+offset_right = 139.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pjomn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Quests"]
+layout_mode = 0
+offset_left = -89.0
+offset_top = 75.0
+offset_right = 225.0
+offset_bottom = 279.0
+follow_focus = true
+scroll_vertical_custom_step = 100.0
+horizontal_scroll_mode = 0
+
+[node name="Panel2" type="Panel" parent="TabContainer/Quests/ScrollContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1i6kh")
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Quests/ScrollContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Quests/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="QuestItem7" parent="TabContainer/Quests/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("24_bbvk8")]
+layout_mode = 2
+
+[node name="QuestItem" parent="TabContainer/Quests/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("24_bbvk8")]
+layout_mode = 2
+
+[node name="QuestItem2" parent="TabContainer/Quests/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("24_bbvk8")]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="TabContainer/Quests"]
+texture_filter = 1
+custom_minimum_size = Vector2(163, 150)
+layout_mode = 2
+offset_left = 184.0
+offset_top = 80.0
+offset_right = 465.0
+offset_bottom = 278.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_423ki")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Quests/Panel2"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = -90.0
+offset_bottom = -68.0
+
+[node name="TitleLabel" type="Label" parent="TabContainer/Quests/Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.858824, 0.552941, 1)
+theme_override_font_sizes/font_size = 16
+text = "Quest Title: "
+autowrap_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="TabContainer/Quests/Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Quest Description
+"
+autowrap_mode = 2
+
+[node name="SpacerControl" type="Control" parent="TabContainer/Quests/Panel2/VBoxContainer"]
+layout_mode = 2
+
+[node name="QuestStepItem" parent="TabContainer/Quests/Panel2/VBoxContainer" instance=ExtResource("25_51hpj")]
+layout_mode = 2
+
+[node name="QuestStepItem2" parent="TabContainer/Quests/Panel2/VBoxContainer" instance=ExtResource("25_51hpj")]
+layout_mode = 2
+
+[node name="QuestStepItem3" parent="TabContainer/Quests/Panel2/VBoxContainer" instance=ExtResource("25_51hpj")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Quests"]
+z_index = 4096
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -114.0
+offset_right = 145.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_g32vo")
+theme_override_font_sizes/font_size = 32
+text = "QUESTS"
+horizontal_alignment = 1
+
+[node name="System" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Panel2" type="Panel" parent="TabContainer/System"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = 33.0
+offset_right = 139.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pjomn")
+
+[node name="Panel3" type="Panel" parent="TabContainer/System/Panel2"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 47.0
+offset_right = 632.0
+offset_bottom = 279.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1ge22")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabContainer/System/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -23.0
+offset_right = 261.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_urj3f")
+
+[node name="Button_save" type="Button" parent="TabContainer/System/Panel2/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_8j6ej")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("18_bubkb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_digwp")
+text = "Save"
+
+[node name="Button_load" type="Button" parent="TabContainer/System/Panel2/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_8j6ej")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("18_bubkb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tywy1")
+text = "Load
+"
+
+[node name="Button_settings" type="Button" parent="TabContainer/System/Panel2/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_8j6ej")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("18_bubkb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_d1ffx")
+text = "Settings"
+
+[node name="Button_menu" type="Button" parent="TabContainer/System/Panel2/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_8j6ej")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("18_bubkb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ci0e7")
+text = "Main Menu"
+
+[node name="Button_quit" type="Button" parent="TabContainer/System/Panel2/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_8j6ej")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("18_bubkb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6jcer")
+text = "Quit"
+
+[node name="Label" type="Label" parent="TabContainer/System"]
+z_index = 4096
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -114.0
+offset_right = 145.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_g32vo")
+theme_override_font_sizes/font_size = 32
+text = "HALLASAN"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="TabContainer/System/Panel2/VBoxContainer/Button_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="TabContainer/System/Panel2/VBoxContainer/Button_quit" to="." method="_on_quit_pressed"]
+
+[editable path="TabContainer/Inventory/Stats"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbslj7g1fdpk1"]
+
+[ext_resource type="Script" uid="uid://0tta4vx604h1" path="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Branch/branch_spawner.gd" id="1_dgb8k"]
+
+[node name="BranchSpawner" type="Node2D" groups=["branch_spawner"]]
+script = ExtResource("1_dgb8k")

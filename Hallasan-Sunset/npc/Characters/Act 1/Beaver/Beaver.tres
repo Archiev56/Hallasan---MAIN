@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://dpfvog01xawxl"]
+
+[ext_resource type="Texture2D" uid="uid://b8duqo8lpd16j" path="res://Hallasan-Sunset/npc/Characters/Act 1/Beaver/Sprites/Beaver_portrait.png" id="1_11wfs"]
+[ext_resource type="Script" uid="uid://b36i5c8j16vj4" path="res://Hallasan-Sunset/npc/scripts/npc_resource.gd" id="2_k0n1n"]
+[ext_resource type="Texture2D" uid="uid://c448f6g5snhl1" path="res://Hallasan-Sunset/npc/Characters/Act 1/Beaver/Sprites/beaver_spritesheet.png" id="3_11wfs"]
+
+[resource]
+script = ExtResource("2_k0n1n")
+npc_name = "Beaver"
+hero = false
+sprite = ExtResource("3_11wfs")
+portrait = ExtResource("1_11wfs")
+dialog_audio_pitch = 0.7

@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=15 format=3 uid="uid://ccbtyau6rcrdp"]
+
+[ext_resource type="Script" uid="uid://cb8qnn5dlrb3p" path="res://Hallasan-Sunset/UI/Inventory/Inv_slot.gd" id="2_85yne"]
+[ext_resource type="Script" uid="uid://f3t1ae3etlkd" path="res://Hallasan-Sunset/UI/Inventory/inventory.gd" id="2_m5ysj"]
+
+[sub_resource type="Resource" id="Resource_ow878"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_oqua0"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_tcqcg"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_3d3sn"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_31erv"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_sn0ij"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_fohl4"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_txo47"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_v2ed3"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_7m85f"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_to166"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_f0xop"]
+script = ExtResource("2_85yne")
+amount = 0
+
+[resource]
+script = ExtResource("2_m5ysj")
+slots = Array[ExtResource("2_85yne")]([SubResource("Resource_ow878"), SubResource("Resource_oqua0"), SubResource("Resource_tcqcg"), SubResource("Resource_3d3sn"), SubResource("Resource_31erv"), SubResource("Resource_sn0ij"), SubResource("Resource_fohl4"), SubResource("Resource_txo47"), SubResource("Resource_v2ed3"), SubResource("Resource_7m85f"), SubResource("Resource_to166"), SubResource("Resource_f0xop")])

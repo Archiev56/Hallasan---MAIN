@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpuje4cn5x0ht"]
+
+[ext_resource type="Script" uid="uid://cawg1p543a7qb" path="res://Hallasan-Sunset/Audio/Sound effects/Foot steps/footstep_audio.gd" id="1_dqx8a"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c6vee"]
+random_pitch = 2.0
+random_volume_offset_db = 4.0
+streams_count = 1
+
+[node name="FootstepAudio" type="AudioStreamPlayer2D"]
+stream = SubResource("AudioStreamRandomizer_c6vee")
+volume_db = -16.0
+script = ExtResource("1_dqx8a")
+footstep_varient = Array[AudioStream]([null, null, null])

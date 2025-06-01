@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc0bncjege2kf"]
+
+[ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_0ulna"]
+[ext_resource type="Texture2D" uid="uid://dcsx2177uo0w7" path="res://Hallasan-Sunset/UI/Intro Splash/Untitled design (3).png" id="2_j5rga"]
+[ext_resource type="PackedScene" uid="uid://cb2ddj5khwruw" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.tscn" id="3_35deq"]
+[ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="4_eqwk6"]
+
+[sub_resource type="Animation" id="Animation_wncj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aq2ng"]
+resource_name = "intro"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ulic1"]
+_data = {
+&"RESET": SubResource("Animation_wncj1"),
+&"intro": SubResource("Animation_aq2ng")
+}
+
+[node name="Intro Splash" type="Node2D"]
+script = ExtResource("1_0ulna")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 202.0
+offset_top = 254.0
+offset_right = 455.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Crafty Cow Games"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(320, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_j5rga")
+
+[node name="Overlay" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+&"": SubResource("AnimationLibrary_ulic1")
+}
+autoplay = "intro"
+
+[node name="LevelTransition" parent="." instance=ExtResource("3_35deq")]
+position = Vector2(66, 25)
+level = "uid://h7so4wrv2px3"
+side = 1
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("4_eqwk6")]
+position = Vector2(25, 27)
+
+[connection signal="animation_finished" from="Control/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

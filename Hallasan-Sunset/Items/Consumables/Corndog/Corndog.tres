@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=6 format=3 uid="uid://cjn2xlrxf22gp"]
+
+[ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_7yrrn"]
+[ext_resource type="Script" uid="uid://dpjsfj8id6xxy" path="res://Hallasan-Sunset/Items/Technical/Item Effects/item_effect_heal.gd" id="1_abx5u"]
+[ext_resource type="Script" uid="uid://by265x207jy1a" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_data.gd" id="2_32fpw"]
+[ext_resource type="Texture2D" uid="uid://vk5m0x43biym" path="res://Hallasan-Sunset/Items/Consumables/Corndog/Sprites/Corndog.png" id="3_uldq4"]
+
+[sub_resource type="Resource" id="Resource_bacri"]
+script = ExtResource("1_abx5u")
+heal_amount = 1
+use_description = ""
+
+[resource]
+script = ExtResource("2_32fpw")
+name = "Corndog"
+description = "Yum!"
+texture = ExtResource("3_uldq4")
+cost = 1
+effects = Array[ExtResource("1_7yrrn")]([SubResource("Resource_bacri")])

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d126506e2pkf2"
+path="res://.godot/imported/Bubble pop.wav-6d970dc8ec5c02aa4eeb2537c33a1c1e.sample"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Sound effects/Bubble pop.wav"
+dest_files=["res://.godot/imported/Bubble pop.wav-6d970dc8ec5c02aa4eeb2537c33a1c1e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bpoatvtr71w35"]
+
+[ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_jfbqo"]
+[ext_resource type="Script" uid="uid://by265x207jy1a" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_data.gd" id="2_j6pat"]
+[ext_resource type="Texture2D" uid="uid://sg2fxyvov2pg" path="res://Hallasan-Sunset/Items/Currency/Coins/Coin Stack/Untitled_Artwork 59.png" id="3_f3blt"]
+
+[resource]
+script = ExtResource("2_j6pat")
+name = "Coin Stack"
+description = "SHIT that's shiny! "
+texture = ExtResource("3_f3blt")
+effects = Array[ExtResource("1_jfbqo")]([])

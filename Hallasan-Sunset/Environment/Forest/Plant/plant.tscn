@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://d3yqw06xn5rae"]
+
+[ext_resource type="Script" uid="uid://dkub05ifxhjpa" path="res://Hallasan-Sunset/Environment/Forest/Plant/plant.gd" id="1_ijbhi"]
+[ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="2_0fwjp"]
+[ext_resource type="Texture2D" uid="uid://ckuy60kqljivj" path="res://Hallasan-Sunset/Environment/Forest/Plant/Sprites/bush 1.png" id="3_7ka5c"]
+[ext_resource type="PackedScene" uid="uid://bu0yfb7p2b8pi" path="res://Hallasan-Sunset/Player/Boxes/HitBox/hit_box.tscn" id="3_7x2if"]
+[ext_resource type="Texture2D" uid="uid://dd7exupyol87e" path="res://Hallasan-Sunset/Environment/Forest/Plant/animations/Destroyed/Untitled_Artwork-3.png" id="3_opnj6"]
+[ext_resource type="Texture2D" uid="uid://cu5suodsm6h7b" path="res://Hallasan-Sunset/Environment/Forest/Plant/Sprites/Plant 1.png" id="3_x7wck"]
+[ext_resource type="Texture2D" uid="uid://dvxi8cmqba0qq" path="res://Hallasan-Sunset/Environment/Forest/Plant/Sprites/Plant 2.png" id="4_vajva"]
+[ext_resource type="AudioStream" uid="uid://0xjgcbog3cl8" path="res://Hallasan-Sunset/Environment/Forest/Plant/Plant.mp3" id="5_7i11s"]
+[ext_resource type="Texture2D" uid="uid://da861n6wv28mj" path="res://Hallasan-Sunset/Environment/Forest/Plant/animations/Destroyed/Untitled_Artwork-1 2.png" id="6_d5fmf"]
+[ext_resource type="Texture2D" uid="uid://41f1ivedt6ml" path="res://Hallasan-Sunset/Environment/Forest/Plant/animations/Destroyed/Untitled_Artwork-2.png" id="7_7f7pn"]
+
+[sub_resource type="Animation" id="Animation_yllw8"]
+resource_name = "Destroyed"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_d5fmf"), ExtResource("7_7f7pn"), ExtResource("3_opnj6")]
+}
+
+[sub_resource type="Animation" id="Animation_ja51m"]
+resource_name = "Rustle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_vajva"), ExtResource("3_x7wck")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3l4h"]
+_data = {
+&"Destroyed": SubResource("Animation_yllw8"),
+&"Rustle": SubResource("Animation_ja51m")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qamg5"]
+size = Vector2(24, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oo1lu"]
+radius = 16.0
+
+[node name="Plant" type="Node2D"]
+texture_filter = 1
+position = Vector2(0, -8)
+script = ExtResource("1_ijbhi")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.333333)
+texture_filter = 1
+position = Vector2(0, 4)
+scale = Vector2(1, 2.4)
+texture = ExtResource("2_0fwjp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 1)
+texture = ExtResource("3_7ka5c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_p3l4h")
+}
+
+[node name="HitBox" parent="." instance=ExtResource("3_7x2if")]
+position = Vector2(0, 7)
+monitoring = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_qamg5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 257
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_qamg5")
+
+[node name="Plant" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7i11s")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_oo1lu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

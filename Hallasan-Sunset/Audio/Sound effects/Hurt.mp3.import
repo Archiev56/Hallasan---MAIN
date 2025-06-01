@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg5mcbj3ke22l"
+path="res://.godot/imported/Hurt.mp3-be0eabb41048eb0f783875584bd2cb0c.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Sound effects/Hurt.mp3"
+dest_files=["res://.godot/imported/Hurt.mp3-be0eabb41048eb0f783875584bd2cb0c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

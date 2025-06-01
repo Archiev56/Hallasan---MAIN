@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://b44kyfk0deywt"]
+
+[ext_resource type="Script" uid="uid://0mnmwsenhjp1" path="res://Hallasan-Sunset/Environment/Forest/Lamppost/TorchFlicker.gd" id="2_vd0on"]
+[ext_resource type="Texture2D" uid="uid://c4dl0gxilmua4" path="res://Hallasan-Sunset/Environment/Dungeon/Torch/Torch Animated.png" id="3_u6ml7"]
+
+[sub_resource type="Gradient" id="Gradient_v8w6g"]
+offsets = PackedFloat32Array(0, 0.179266, 0.568035, 0.924406, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.983333, 0, 1, 1, 0.505882, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cuxre"]
+gradient = SubResource("Gradient_v8w6g")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Animation" id="Animation_u7p44"]
+resource_name = "flicker"
+length = 0.6
+loop_mode = 2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_u6ml7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3uis"]
+_data = {
+&"RESET": SubResource("Animation_u6ml7"),
+&"flicker": SubResource("Animation_u7p44")
+}
+
+[node name="WallTorch" type="Node2D"]
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(-9.09495e-13, -4)
+scale = Vector2(5, 5)
+texture = SubResource("GradientTexture2D_cuxre")
+script = ExtResource("2_vd0on")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_u6ml7")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g3uis")
+}

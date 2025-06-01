@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://cldqlsq1l6yv0"]
+
+[ext_resource type="Texture2D" uid="uid://v0s3sjdljbrr" path="res://Hallasan-Sunset/npc/Characters/Act 1/Gwenggidari_monster/Sprites/Monster_gwenggidari_Portrait.png" id="1_dp6fv"]
+[ext_resource type="Script" uid="uid://b36i5c8j16vj4" path="res://Hallasan-Sunset/npc/scripts/npc_resource.gd" id="2_ps0pk"]
+[ext_resource type="Texture2D" uid="uid://y0mq72ubtd2b" path="res://Hallasan-Sunset/npc/Characters/Act 1/Gwenggidari/Sprites/Gwenggidari_spritesheet.png" id="3_47qsf"]
+
+[resource]
+script = ExtResource("2_ps0pk")
+npc_name = "Gwenggidari"
+hero = false
+sprite = ExtResource("3_47qsf")
+portrait = ExtResource("1_dp6fv")
+dialog_audio_pitch = 0.6

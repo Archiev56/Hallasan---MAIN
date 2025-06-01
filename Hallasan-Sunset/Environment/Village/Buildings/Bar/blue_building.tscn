@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bryc2ysh2jpvg"]
+
+[ext_resource type="Texture2D" uid="uid://cv2nobkmlmvl" path="res://Hallasan-Sunset/Environment/Village/Buildings/Bar/Sprites/bar.png" id="1_mvl22"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+z_index = 5
+collision_layer = 16
+collision_mask = 0
+
+[node name="Bar" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_mvl22")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(886, 1909)
+scale = Vector2(0.75, 0.75)
+polygon = PackedVector2Array(-1337.33, -2370.67, -1198.67, -2370.67, -1198.67, -2428, -1169.33, -2428, -1164, -2372, -1021.33, -2373.33, -1022.67, -2472, -1014.67, -2480, -1014.67, -2581.33, -1346.67, -2581.33, -1346.67, -2485.33, -1337.33, -2476)

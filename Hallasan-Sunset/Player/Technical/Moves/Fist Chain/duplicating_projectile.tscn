@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bukwp1ntpuuyj"]
+
+[ext_resource type="Texture2D" uid="uid://bsuuia3fqy6wg" path="res://Hallasan-Sunset/Player/Sprites/Hands.png" id="1_pk7tv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbnku"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jk574"]
+radius = 150.0
+
+[sub_resource type="Gradient" id="Gradient_s2vyc"]
+offsets = PackedFloat32Array(0.0294118, 1)
+colors = PackedColorArray(0.401352, 0.450316, 1, 1, 0.537026, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6k8ng"]
+gradient = SubResource("Gradient_s2vyc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xcpnp"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 5, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_6k8ng")
+
+[node name="DuplicatingProjectile" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_pk7tv")
+hframes = 16
+frame = 8
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_gbnku")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Check" type="Area2D" parent="."]
+
+[node name="Check" type="CollisionShape2D" parent="Check"]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_jk574")
+disabled = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_xcpnp")

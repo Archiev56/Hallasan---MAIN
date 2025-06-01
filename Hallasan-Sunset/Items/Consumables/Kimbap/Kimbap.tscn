@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpfw0mspp00am"]
+
+[ext_resource type="Script" uid="uid://cr38okajnl81k" path="res://Hallasan-Sunset/Items/Consumables/Kimbap/Kimbap.gd" id="1_6okfv"]
+[ext_resource type="Texture2D" uid="uid://dsilespmxkmts" path="res://Hallasan-Sunset/Items/Consumables/Kimbap/Sprites/Kimbap.png" id="2_ubdur"]
+[ext_resource type="Resource" uid="uid://cw3bf5p68wy7b" path="res://Hallasan-Sunset/Items/Consumables/Kimbap/Kimbap.tres" id="2_vt87d"]
+[ext_resource type="AudioStream" uid="uid://dahijkeowm3re" path="res://Hallasan-Sunset/Items/Audio/item_pickup.wav" id="3_mp8a2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_srppl"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5rwgv"]
+radius = 9.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(0, -10)
+script = ExtResource("1_6okfv")
+item = ExtResource("2_vt87d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ubdur")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+scale = Vector2(4, 3.44)
+shape = SubResource("CircleShape2D_srppl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5rwgv")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mp8a2")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

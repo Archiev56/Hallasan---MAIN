@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8v6slyrbuc12"]
+
+[ext_resource type="Script" uid="uid://bsqis3go1i5qx" path="res://Hallasan-Sunset/npc/scripts/npc_behavior_patrol.gd" id="1_il52h"]
+
+[node name="npc_behavior_patrol" type="Node2D"]
+script = ExtResource("1_il52h")
+
+[node name="Timer" type="Timer" parent="."]

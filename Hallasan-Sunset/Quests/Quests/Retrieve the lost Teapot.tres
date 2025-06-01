@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=5 format=3 uid="uid://76axsy86cngo"]
+
+[ext_resource type="Script" uid="uid://bm0ws2ek6wpjf" path="res://Hallasan-Sunset/Quests/Scripts/quest_reward_item.gd" id="1_h2vdr"]
+[ext_resource type="Resource" uid="uid://c3cx0nodai8jq" path="res://Hallasan-Sunset/Items/Currency/Gem/Gem.tres" id="2_dq5cb"]
+[ext_resource type="Script" uid="uid://b4nvommw2oy6" path="res://Hallasan-Sunset/Quests/Scripts/quest_resource.gd" id="4_6v8ph"]
+
+[sub_resource type="Resource" id="Resource_qvchm"]
+script = ExtResource("1_h2vdr")
+item = ExtResource("2_dq5cb")
+quantity = 200
+
+[resource]
+script = ExtResource("4_6v8ph")
+title = "Retrieve the lost teapot"
+description = "Recover Bolo's teapot from those tricky, crafty, swiney Dokkeabi!"
+steps = Array[String](["Recover the teapot"])
+reward_xp = 250
+reward_items = Array[ExtResource("1_h2vdr")]([SubResource("Resource_qvchm")])

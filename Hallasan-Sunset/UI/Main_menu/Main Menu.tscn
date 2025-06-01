@@ -1,0 +1,237 @@
+[gd_scene load_steps=26 format=3 uid="uid://b17ihecntx07g"]
+
+[ext_resource type="Script" path="res://Hallasan-Sunset/UI/Main Menu/Main Menu.gd" id="1_msx88"]
+[ext_resource type="AudioStream" uid="uid://bk452ky0gmeub" path="res://Hallasan-Sunset/UI/Main Menu/menu_focus.wav" id="3_8st75"]
+[ext_resource type="AudioStream" uid="uid://q4tcvwp83ov5" path="res://Hallasan-Sunset/Audio/Sound effects/UI_Select.wav" id="4_2ejl7"]
+[ext_resource type="PackedScene" uid="uid://s87tt1bkx3ku" path="res://Hallasan-Sunset/Environment/Weather/Floating Lights/Floating lights.tscn" id="5_3oyqx"]
+[ext_resource type="FontFile" uid="uid://dcy4isma7hqmi" path="res://Hallasan-Sunset/UI/Fonts/Squeid Gameis.ttf" id="5_ggayx"]
+[ext_resource type="Shader" uid="uid://n35prymah3hw" path="res://Hallasan-Sunset/Shaders/Scrolling.gdshader" id="7_fpg8d"]
+[ext_resource type="Texture2D" uid="uid://bjhu2h1vr8mvh" path="res://Hallasan-Sunset/UI/Untitled_Artwork 115.png" id="8_fi43r"]
+[ext_resource type="Texture2D" uid="uid://c5ri8rmil4dvy" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/uiotherborder.png" id="9_6bkua"]
+[ext_resource type="Texture2D" uid="uid://c03n7i5l4o6gf" path="res://Hallasan-Sunset/UI/Logo/Untitled_Artwork 90.png" id="10_jnukg"]
+[ext_resource type="FontFile" uid="uid://bfu1go1hde7bc" path="res://Hallasan-Sunset/UI/Fonts/CursedScript.ttf" id="10_lcjvj"]
+[ext_resource type="StyleBox" uid="uid://cp8t4vq10rdhr" path="res://Hallasan-Sunset/UI/Pause Menu/Pause/Inv_hover.tres" id="12_ou1qm"]
+[ext_resource type="Texture2D" uid="uid://dyt1rmnfhkx4m" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/ui white border.png" id="12_vb3ix"]
+[ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="14_4beu7"]
+[ext_resource type="Texture2D" uid="uid://dbpey2aaxf1ha" path="res://Hallasan-Sunset/UI/Main_menu/ChatGPT Image Apr 24, 2025, 09_55_42 PM.png" id="14_6bkua"]
+
+[sub_resource type="Resource" id="Resource_hx4cw"]
+metadata/__load_path__ = "res://Hallasan-Sunset/UI/Main Menu/Main Menu .ogg"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghkvn"]
+shader = ExtResource("7_fpg8d")
+shader_parameter/pattern_sampler = ExtResource("8_fi43r")
+shader_parameter/Top_Color = Color(0.0745098, 0.0509804, 0.0901961, 1)
+shader_parameter/Mid_Color = Color(0.247708, 0.1885, 0.29, 1)
+shader_parameter/Bot_Color = Color(0.0745098, 0.0509804, 0.0901961, 1)
+shader_parameter/pattern_color = Color(0.611765, 0.321569, 1, 1)
+shader_parameter/scale = 5.12
+shader_parameter/ratio = 0.65
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c0gwj"]
+
+[sub_resource type="Animation" id="Animation_n5mro"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(312, 120)]
+}
+
+[sub_resource type="Animation" id="Animation_n0lyp"]
+resource_name = "Title"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(312, 190), Vector2(312, 200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_njiow"]
+_data = {
+&"RESET": SubResource("Animation_n5mro"),
+&"Title": SubResource("Animation_n0lyp")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ba2i5"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+texture = ExtResource("9_6bkua")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lihjf"]
+texture = ExtResource("12_vb3ix")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dlp02"]
+texture = ExtResource("12_vb3ix")
+
+[sub_resource type="Gradient" id="Gradient_73ho2"]
+offsets = PackedFloat32Array(0.00706714, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s6yw8"]
+gradient = SubResource("Gradient_73ho2")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[node name="Main Menu" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_msx88")
+music = SubResource("Resource_hx4cw")
+button_focus_audio = ExtResource("3_8st75")
+button_press_audio = ExtResource("4_2ejl7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FloatingLights" parent="CanvasLayer/Control" instance=ExtResource("5_3oyqx")]
+unique_name_in_owner = true
+position = Vector2(328, 208)
+amount = 4000
+visibility_rect = Rect2(-500, -800, 1000, 1000)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -140.0
+offset_right = 215.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 40
+theme_override_fonts/font = ExtResource("5_ggayx")
+theme_override_font_sizes/font_size = 128
+text = "hallasan"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
+material = SubResource("ShaderMaterial_ghkvn")
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Hallasan(1)" type="Sprite2D" parent="CanvasLayer/Control"]
+visible = false
+texture_filter = 1
+position = Vector2(320, 232)
+texture = SubResource("CompressedTexture2D_c0gwj")
+
+[node name="UntitledArtwork87" type="Sprite2D" parent="CanvasLayer/Control"]
+visible = false
+z_index = 100
+texture_filter = 1
+position = Vector2(312, 120)
+texture = ExtResource("10_jnukg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/UntitledArtwork87"]
+libraries = {
+&"": SubResource("AnimationLibrary_njiow")
+}
+autoplay = "Title"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control"]
+y_sort_enabled = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = -168.0
+offset_right = -192.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ba2i5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer"]
+y_sort_enabled = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ButtonNew" type="Button" parent="CanvasLayer/Control/PanelContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_lcjvj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("12_ou1qm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lihjf")
+text = "New Game"
+
+[node name="ButtonContinue" type="Button" parent="CanvasLayer/Control/PanelContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_lcjvj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_dlp02")
+action_mode = 0
+text = "Continue Game"
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("14_4beu7")]
+position = Vector2(312, 207)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.443137)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_s6yw8")
+
+[node name="ChatGptImageApr24,2025,095542Pm" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-320, 240)
+texture = ExtResource("14_6bkua")
+
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonNew" to="." method="start_game"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonContinue" to="." method="load_game"]

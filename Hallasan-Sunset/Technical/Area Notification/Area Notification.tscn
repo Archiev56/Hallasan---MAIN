@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvj3243h6rbvl"]
+
+[ext_resource type="Script" uid="uid://csl4c3tg2j5dj" path="res://Hallasan-Sunset/Technical/Area Notification/Area_Notification.gd" id="1_a17vx"]
+
+[node name="Area Notification" type="Area2D"]
+script = ExtResource("1_a17vx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

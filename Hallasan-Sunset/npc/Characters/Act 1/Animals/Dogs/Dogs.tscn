@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://w7sbuvqm2t61"]
+
+[ext_resource type="Texture2D" uid="uid://dbyclo3xnlnb3" path="res://Hallasan-Sunset/npc/Characters/Act 1/Animals/Dogs/48DogSpriteSheet.png" id="1_amq2p"]
+
+[node name="Dogs" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_amq2p")
+hframes = 16
+vframes = 3
+frame = 3

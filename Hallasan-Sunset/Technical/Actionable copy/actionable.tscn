@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3gxjr065vnmf"]
+
+[ext_resource type="Script" uid="uid://dbas75mr3erfr" path="res://Hallasan-Sunset/Technical/Actionable copy/actionable.gd" id="1_sl1fu"]
+
+[node name="Actionable" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_sl1fu")

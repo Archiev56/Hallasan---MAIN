@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvrh3bwva8ot3"
+path="res://.godot/imported/SE1_P_KOOPA_WATER_STEP1L.wav-8d121ebaa42656c696887460fde7eed3.sample"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Sound effects/SE1_P_KOOPA_WATER_STEP1L.wav"
+dest_files=["res://.godot/imported/SE1_P_KOOPA_WATER_STEP1L.wav-8d121ebaa42656c696887460fde7eed3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

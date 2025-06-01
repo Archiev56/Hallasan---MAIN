@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2r1pmaaqf0r3"]
+
+[ext_resource type="Texture2D" uid="uid://bor3nru6enmg3" path="res://water/textures/water_diffuse.png" id="1"]
+[ext_resource type="Material" uid="uid://brrpfmr6pj0u6" path="res://water/04.sine_and_texture/water_sine_and_texture.material" id="1_x7mhu"]
+
+[node name="Water" type="Sprite2D"]
+material = ExtResource("1_x7mhu")
+scale = Vector2(5.5, 3)
+texture = ExtResource("1")
+centered = false

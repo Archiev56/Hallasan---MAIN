@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EquipableItemData" load_steps=7 format=3 uid="uid://cskkv0038ses7"]
+
+[ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_t7gf7"]
+[ext_resource type="Script" uid="uid://dntj3tef2mfd2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_item_modifier.gd" id="2_00o3l"]
+[ext_resource type="Script" uid="uid://f4v2hev5plf6" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_items.gd" id="3_nsw62"]
+[ext_resource type="Texture2D" uid="uid://ca3xi6xmo4pcs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 129.png" id="4_00o3l"]
+[ext_resource type="Texture2D" uid="uid://coqt2m4j05rkx" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 127.png" id="4_t7gf7"]
+
+[sub_resource type="Resource" id="Resource_q4wgp"]
+script = ExtResource("2_00o3l")
+type = 1
+value = 1
+
+[resource]
+script = ExtResource("3_nsw62")
+type = 0
+modifiers = Array[ExtResource("2_00o3l")]([SubResource("Resource_q4wgp")])
+sprite_texture = ExtResource("4_00o3l")
+name = "Fists"
+description = "Furious fists of fury!"
+texture = ExtResource("4_t7gf7")
+cost = 1
+effects = Array[ExtResource("1_t7gf7")]([])

@@ -1,0 +1,148 @@
+[gd_scene load_steps=17 format=3 uid="uid://oy5p0ikicfmf"]
+
+[ext_resource type="Script" uid="uid://jcgu5p1roevt" path="res://Hallasan-Sunset/npc/Characters/Act 1/Shopkeeper/shopkeeper.gd" id="1_m1nla"]
+[ext_resource type="PackedScene" uid="uid://dc6lo3whucr6e" path="res://Hallasan-Sunset/npc/npc.tscn" id="1_ntwkt"]
+[ext_resource type="Resource" uid="uid://62isdb5r66mw" path="res://Hallasan-Sunset/npc/Characters/Act 1/Shopkeeper/Shopkeeper.tres" id="2_g1jcm"]
+[ext_resource type="Script" uid="uid://brnsxqi6efs7t" path="res://Hallasan-Sunset/npc/Dialog/Scripts/DialogInteraction.gd" id="3_0s0sg"]
+[ext_resource type="Texture2D" uid="uid://cteqajjg7vj0h" path="res://Hallasan-Sunset/Tilemaps/Sprites/Dusk_Icons_x24.png" id="4_m1nla"]
+[ext_resource type="Script" uid="uid://cwdm0l0hkothu" path="res://Hallasan-Sunset/npc/Dialog/Scripts/dialog_text.gd" id="4_qg8gq"]
+[ext_resource type="Script" uid="uid://cmbmdbarq3bal" path="res://Hallasan-Sunset/npc/Dialog/Scripts/dialog_choice.gd" id="5_0k4mw"]
+[ext_resource type="Resource" uid="uid://bjdhjtq6plto6" path="res://Hallasan-Sunset/npc/Characters/Sanwoo/Sanwoo.tres" id="6_0s0sg"]
+[ext_resource type="Script" uid="uid://dwvdc0d4nkxc1" path="res://Hallasan-Sunset/npc/Dialog/Scripts/dialog_branch.gd" id="7_m1nla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iutvt"]
+size = Vector2(44, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wq5l"]
+atlas = ExtResource("4_m1nla")
+region = Rect2(173, 145, 14, 22)
+
+[sub_resource type="Animation" id="Animation_pwacs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i885l"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ic8l2"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yugqm"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hipio"]
+_data = {
+&"RESET": SubResource("Animation_pwacs"),
+&"default": SubResource("Animation_i885l"),
+&"hide": SubResource("Animation_ic8l2"),
+&"show": SubResource("Animation_yugqm")
+}
+
+[node name="Shopkeeper" type="Node2D"]
+script = ExtResource("1_m1nla")
+
+[node name="NPC" parent="." instance=ExtResource("1_ntwkt")]
+npc_resource = ExtResource("2_g1jcm")
+
+[node name="DialogueInteraction" type="Area2D" parent="NPC"]
+process_mode = 3
+position = Vector2(2, 31)
+collision_layer = 0
+collision_mask = 5
+monitorable = false
+script = ExtResource("3_0s0sg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/DialogueInteraction"]
+shape = SubResource("RectangleShape2D_iutvt")
+debug_color = Color(0, 0.6, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC/DialogueInteraction"]
+texture_filter = 1
+position = Vector2(0, -59)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_6wq5l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC/DialogueInteraction"]
+process_mode = 3
+libraries = {
+&"": SubResource("AnimationLibrary_hipio")
+}
+autoplay = "default"
+
+[node name="DialogText" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_qg8gq")
+npc_info = ExtResource("2_g1jcm")
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"
+
+[node name="DialogText2" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_qg8gq")
+npc_info = ExtResource("2_g1jcm")
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"
+
+[node name="DialogChoice" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("5_0k4mw")
+npc_info = ExtResource("6_0s0sg")
+metadata/_custom_type_script = "uid://cmbmdbarq3bal"
+
+[node name="DialogBranch" type="Node" parent="NPC/DialogueInteraction/DialogChoice"]
+script = ExtResource("7_m1nla")
+text = "Yes"
+npc_info = ExtResource("6_0s0sg")
+metadata/_custom_type_script = "uid://dwvdc0d4nkxc1"
+
+[node name="DialogBranch2" type="Node" parent="NPC/DialogueInteraction/DialogChoice"]
+script = ExtResource("7_m1nla")
+text = "No"
+metadata/_custom_type_script = "uid://dwvdc0d4nkxc1"
+
+[node name="DialogText" type="Node" parent="NPC/DialogueInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("4_qg8gq")
+text = "You look a little too broke anyway. "
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"

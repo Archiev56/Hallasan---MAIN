@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ltcopvrko7h"]
+
+[sub_resource type="Resource" id="Resource_1mgyc"]
+metadata/__load_path__ = "res://Hallasan-Sunset/Environment/Bridge/Untitled_Artwork 69.png"
+
+[node name="Bridge" type="StaticBody2D"]
+collision_layer = 16
+
+[node name="Bridge" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("Resource_1mgyc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-93, 60, -93, 54, -79.5, 55, -79.5, 50, -73.5, 49, -73.5, 43, -68, 43, -68, 36, 68.5, 37, 68.5, 43, 74, 43, 74, 49, 80.5, 49, 81, 55, 92.5, 55, 92.5, 60, 49, 60, 43, 51, 24.5, 41, -24, 39, -37.5, 46, -47, 55, -49, 61)

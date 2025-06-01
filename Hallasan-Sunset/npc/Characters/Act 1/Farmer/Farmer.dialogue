@@ -1,0 +1,6 @@
+~ start
+Farmer: [[Hi|Hello|Howdy]], welcome to my farm, glorious isn't it? 
+Farmer: Well... it used to be. It's shit now. This tractor used to make the ladies sweat, now it won't even start without a new wheel. 
+Farmer: I heard that slippery Lynx has one, get one for me and i'll make it worth your while. 
+- End the conversation => END
+=> END

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://clbvlp2jbi5a3"]
+
+[ext_resource type="Script" uid="uid://s4h8y8m8b0ft" path="res://Hallasan-Sunset/Quests/Utility_nodes/quest_advance_trigger.gd" id="1_cuaig"]
+[ext_resource type="Texture2D" uid="uid://cibsaamn3w66i" path="res://Hallasan-Sunset/Quests/Utility_nodes/Icons/quest_advance.png" id="2_075l5"]
+
+[node name="QuestAdvanceTrigger" type="Node2D"]
+script = ExtResource("1_cuaig")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(13, -24)
+texture = ExtResource("2_075l5")

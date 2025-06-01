@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7k0efkjggvib"
+path="res://.godot/imported/Main Menu .ogg-8c7fc8cc667231b204b82c289490ed4b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/UI/Main Menu/Main Menu .ogg"
+dest_files=["res://.godot/imported/Main Menu .ogg-8c7fc8cc667231b204b82c289490ed4b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

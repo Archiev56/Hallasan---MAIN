@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://dxnb65gey8g0i"]
+
+[ext_resource type="Texture2D" uid="uid://df254i08icikk" path="res://Hallasan-Sunset/npc/Characters/Act 1/Slick/Sprites/Slick_Portrait.png" id="1_ljgg5"]
+[ext_resource type="Texture2D" uid="uid://c76tna6xedfie" path="res://Hallasan-Sunset/npc/Characters/Act 1/Slick/Sprites/Untitled_Artwork 88.png" id="2_3cn5o"]
+[ext_resource type="Script" uid="uid://b36i5c8j16vj4" path="res://Hallasan-Sunset/npc/scripts/npc_resource.gd" id="2_ugwk8"]
+
+[resource]
+script = ExtResource("2_ugwk8")
+npc_name = "Slick"
+sprite = ExtResource("2_3cn5o")
+portrait = ExtResource("1_ljgg5")
+dialog_audio_pitch = 1.6

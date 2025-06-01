@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dusvtvxflbc0s"
+path="res://.godot/imported/Red_Mask.dialogue-c837e6035a1fe9cd98e06852be9eed6f.tres"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/npc/Characters/Red Mask/Red_Mask.dialogue"
+dest_files=["res://.godot/imported/Red_Mask.dialogue-c837e6035a1fe9cd98e06852be9eed6f.tres"]
+
+[params]
+
+defaults=true

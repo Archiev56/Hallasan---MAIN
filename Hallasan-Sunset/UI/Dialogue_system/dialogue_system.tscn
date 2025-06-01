@@ -1,0 +1,386 @@
+[gd_scene load_steps=24 format=3 uid="uid://dtr04wu7jvf8i"]
+
+[ext_resource type="Script" uid="uid://bwkqo3d5ns2t6" path="res://Hallasan-Sunset/UI/Dialogue_system/Scripts/dialogue_system.gd" id="1_khtq7"]
+[ext_resource type="Texture2D" uid="uid://chou03idiro3c" path="res://Hallasan-Sunset/npc/Characters/Act 1/Shopkeeper/Sprite/Portrait_reference.png" id="2_c4ibv"]
+[ext_resource type="FontFile" uid="uid://bfu1go1hde7bc" path="res://Hallasan-Sunset/UI/Fonts/CursedScript.ttf" id="3_g1fy4"]
+[ext_resource type="FontFile" uid="uid://dsp7y4sy3pvy0" path="res://Hallasan-Sunset/UI/Fonts/CursedScript-Bold.ttf" id="4_sclys"]
+[ext_resource type="Texture2D" uid="uid://c4rkfbfwt3pv2" path="res://Hallasan-Sunset/UI/Pause Menu/Pause/UI box.png" id="6_c4ibv"]
+[ext_resource type="Script" uid="uid://cum8vbledkxv8" path="res://Hallasan-Sunset/UI/Dialogue_system/Scripts/dialog_portrait.gd" id="6_nafna"]
+[ext_resource type="AudioStream" uid="uid://caiafaakisdwo" path="res://Hallasan-Sunset/UI/Dialogue_system/audio/bubble-pop-4-323580.mp3" id="8_c4ibv"]
+[ext_resource type="Texture2D" uid="uid://cp67i2o8xs2ab" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/Arrow/Arrow1.png" id="8_k6ms0"]
+
+[sub_resource type="Gradient" id="Gradient_k6ms0"]
+offsets = PackedFloat32Array(0.00706714, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m0xvr"]
+gradient = SubResource("Gradient_k6ms0")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k6ms0"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 70.17
+gravity = Vector3(0, -100, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_syagu"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+texture = ExtResource("6_c4ibv")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bv8xe"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+texture = ExtResource("6_c4ibv")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wjo6s"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+texture = ExtResource("6_c4ibv")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkggu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqmip"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Animation" id="Animation_ilas7"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_pj0oh"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.2, 1.4, 1.5, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8hnyg"]
+_data = {
+&"RESET": SubResource("Animation_ilas7"),
+&"default": SubResource("Animation_pj0oh")
+}
+
+[sub_resource type="Animation" id="Animation_c4vx6"]
+resource_name = "Hide_bars"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 336), Vector2(0, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_k6ms0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_c4ibv"]
+resource_name = "Show_bars"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, -24), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 360), Vector2(0, 336)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4vx6"]
+_data = {
+&"Hide_bars": SubResource("Animation_c4vx6"),
+&"RESET": SubResource("Animation_k6ms0"),
+&"Show_bars": SubResource("Animation_c4ibv")
+}
+
+[node name="DialogueSystem" type="CanvasLayer"]
+process_mode = 3
+layer = 3
+script = ExtResource("1_khtq7")
+
+[node name="DialogUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="DialogUI"]
+modulate = Color(0, 0, 0, 0.443137)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -395.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_m0xvr")
+
+[node name="PortraitSprite" type="Sprite2D" parent="DialogUI"]
+z_index = 1
+texture_filter = 1
+position = Vector2(178, 199)
+texture = ExtResource("2_c4ibv")
+hframes = 4
+script = ExtResource("6_nafna")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="DialogUI/PortraitSprite"]
+visible = false
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(0, -2)
+process_material = SubResource("ParticleProcessMaterial_k6ms0")
+
+[node name="NameLabel" type="Label" parent="DialogUI"]
+modulate = Color(1, 0.858824, 0.552941, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = 33.0
+offset_right = 28.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("4_sclys")
+theme_override_font_sizes/font_size = 32
+text = "NAME"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogUI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -110.0
+offset_right = 150.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Button" type="Button" parent="DialogUI/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.858824, 0.552941, 1)
+theme_override_styles/hover = SubResource("StyleBoxTexture_syagu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_syagu")
+text = "Choice 1..."
+
+[node name="Button2" type="Button" parent="DialogUI/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.858824, 0.552941, 1)
+theme_override_fonts/font = ExtResource("3_g1fy4")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxTexture_syagu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bv8xe")
+text = "Choice 2..."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogUI"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.217187
+anchor_top = 0.658333
+anchor_right = 0.782812
+anchor_bottom = 0.866667
+offset_left = 2.00032
+offset_top = 8.00012
+offset_right = 2.00031
+offset_bottom = 8.00012
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_g1fy4")
+theme_override_fonts/bold_font = ExtResource("4_sclys")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[wave] hello [/wave]
+
+"
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogUI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 130.0
+offset_top = -122.0
+offset_right = -126.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wjo6s")
+
+[node name="DialogProgressIndicator" type="PanelContainer" parent="DialogUI"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 471.0
+offset_top = 314.0
+offset_right = 539.0
+offset_bottom = 340.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pkggu")
+
+[node name="Label" type="Label" parent="DialogUI/DialogProgressIndicator"]
+visible = false
+modulate = Color(1, 0.858824, 0.552941, 1)
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.858824, 0.552941, 1)
+theme_override_fonts/font = ExtResource("3_g1fy4")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqmip")
+text = "NEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogUI/DialogProgressIndicator"]
+libraries = {
+&"": SubResource("AnimationLibrary_8hnyg")
+}
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogUI/DialogProgressIndicator"]
+position = Vector2(-4, 31)
+rotation = 1.5708
+texture = ExtResource("8_k6ms0")
+
+[node name="Timer" type="Timer" parent="DialogUI"]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DialogUI"]
+stream = ExtResource("8_c4ibv")
+max_polyphony = 6
+
+[node name="BarsAnimationPlayer" type="AnimationPlayer" parent="DialogUI"]
+libraries = {
+&"": SubResource("AnimationLibrary_c4vx6")
+}
+
+[node name="ColorRect" type="ColorRect" parent="DialogUI"]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="DialogUI"]
+layout_mode = 0
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 384.0
+color = Color(0, 0, 0, 1)

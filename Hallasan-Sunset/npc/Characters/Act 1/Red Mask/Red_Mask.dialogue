@@ -1,0 +1,11 @@
+~ start
+Bango: [[Hi|Hello|Howdy]], I'm one of the five members of the ministry of mountain masks, catchy right? 
+
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END

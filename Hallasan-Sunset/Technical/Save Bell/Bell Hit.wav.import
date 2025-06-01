@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cku1jg2g72pqm"
+path="res://.godot/imported/Bell Hit.wav-5a7bf6c8c2570a56c8ac09848cc72dad.sample"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Technical/Save Bell/Bell Hit.wav"
+dest_files=["res://.godot/imported/Bell Hit.wav-5a7bf6c8c2570a56c8ac09848cc72dad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

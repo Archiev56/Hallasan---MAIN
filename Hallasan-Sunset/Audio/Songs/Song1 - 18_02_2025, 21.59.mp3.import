@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpshptmowyicq"
+path="res://.godot/imported/Song1 - 18_02_2025, 21.59.mp3-7ecab984435c5a08089158bd30dfeace.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Songs/Song1 - 18_02_2025, 21.59.mp3"
+dest_files=["res://.godot/imported/Song1 - 18_02_2025, 21.59.mp3-7ecab984435c5a08089158bd30dfeace.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://wwugboi7jgu"]
+
+[ext_resource type="Texture2D" uid="uid://cff22owg10dyv" path="res://Hallasan-Sunset/Tilemaps/Sprites/Grass/Grassland Tileset.png" id="1_1j2rq"]
+
+[node name="LogPile" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_1j2rq")
+region_enabled = true
+region_rect = Rect2(71, 361, 27, 48)

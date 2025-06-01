@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbejca547y4ce"]
+
+[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="1_fis6m"]
+[ext_resource type="Texture2D" uid="uid://dxd341eantqg7" path="res://Hallasan-Sunset/Environment/Forest/Trees/Magic Tree/Sprites/magic tree.png" id="1_wrcv5"]
+[ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="3_0h071"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vha62"]
+shader = ExtResource("1_fis6m")
+shader_parameter/WindStrength = 2.944
+
+[node name="Magic Tree" type="StaticBody2D"]
+z_as_relative = false
+y_sort_enabled = true
+collision_layer = 16
+collision_mask = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vha62")
+scale = Vector2(2, 2)
+texture = ExtResource("1_wrcv5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 0.407843)
+show_behind_parent = true
+position = Vector2(-5, 51)
+scale = Vector2(2.5625, 2)
+texture = ExtResource("3_0h071")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+y_sort_enabled = true
+polygon = PackedVector2Array(-74, 100, -35, 78, 20, 78, 24, 84, 50, 91, 52, 101, 9, 123, -60, 116, -70, 100)

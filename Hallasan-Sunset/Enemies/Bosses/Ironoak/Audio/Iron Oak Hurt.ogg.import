@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqwopvtymumrl"
+path="res://.godot/imported/Iron Oak Hurt.ogg-3f913186026b1e14776ca8f534610bba.oggvorbisstr"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Enemies/Bosses/Ironoak/Audio/Iron Oak Hurt.ogg"
+dest_files=["res://.godot/imported/Iron Oak Hurt.ogg-3f913186026b1e14776ca8f534610bba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

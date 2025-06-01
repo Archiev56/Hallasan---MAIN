@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://bjdhjtq6plto6"]
+
+[ext_resource type="Texture2D" uid="uid://c2bij1evdtip" path="res://Hallasan-Sunset/npc/Characters/Sanwoo/Sprites/Sanwoo_portrait.png" id="1_ha07d"]
+[ext_resource type="Script" uid="uid://b36i5c8j16vj4" path="res://Hallasan-Sunset/npc/scripts/npc_resource.gd" id="2_wol2i"]
+[ext_resource type="Texture2D" uid="uid://ctcrfy803geml" path="res://Hallasan-Sunset/npc/Characters/Sprites/npc_sprite.png" id="3_q7nl4"]
+
+[resource]
+script = ExtResource("2_wol2i")
+npc_name = "Sanwoo"
+hero = true
+sprite = ExtResource("3_q7nl4")
+portrait = ExtResource("1_ha07d")
+dialog_audio_pitch = 1.8

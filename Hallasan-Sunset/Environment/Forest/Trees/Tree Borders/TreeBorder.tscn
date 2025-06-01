@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba2vdtt3qp7p3"]
+
+[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="1_1k2ju"]
+[ext_resource type="Texture2D" uid="uid://bmwt1fexoqph" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Sprites/pine tree-export.png" id="2_wuyhu"]
+[ext_resource type="PackedScene" uid="uid://j7xr0tnkfbq3" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tall Tree/Tall Tree.tscn" id="3_k2cos"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6lsk"]
+shader = ExtResource("1_1k2ju")
+shader_parameter/WindStrength = 10.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_inlc4"]
+a = Vector2(-2.00001, -143)
+b = Vector2(-0.999993, 154)
+
+[node name="Tree Border Down" type="StaticBody2D"]
+texture_filter = 1
+position = Vector2(-77, -104)
+collision_layer = 16
+collision_mask = 16
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_k2cos")]
+z_index = 0
+position = Vector2(63, -122)
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-1, -38)
+texture = ExtResource("2_wuyhu")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(102, -38)
+texture = ExtResource("2_wuyhu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-65, 11)
+texture = ExtResource("2_wuyhu")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_k2cos")]
+z_index = 0
+position = Vector2(-3, -78)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_k2cos")]
+z_index = 0
+position = Vector2(130, -78)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(69, 15)
+texture = ExtResource("2_wuyhu")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(171, -13)
+texture = ExtResource("2_wuyhu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(2, 32)
+texture = ExtResource("2_wuyhu")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(149, 32)
+texture = ExtResource("2_wuyhu")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(149, 32)
+texture = ExtResource("2_wuyhu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(68, 105)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_inlc4")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.286275)
+texture_filter = 1
+position = Vector2(-3, 72)
+scale = Vector2(4, 4)
+
+[node name="Shadow2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.286275)
+texture_filter = 1
+position = Vector2(156, 48)
+scale = Vector2(4, 4)

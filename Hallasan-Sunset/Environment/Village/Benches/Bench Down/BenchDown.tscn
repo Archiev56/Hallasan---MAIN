@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://lw4o4atv18kh"]
+
+[ext_resource type="Texture2D" uid="uid://cvn86kqmt24nn" path="res://Hallasan-Sunset/Tilemaps/Sprites/TX Props.png" id="1_twg3g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37ain"]
+atlas = ExtResource("1_twg3g")
+region = Rect2(284, 0, 71, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ja3hn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37ain")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BenchDown" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ja3hn")

@@ -1,0 +1,257 @@
+[gd_scene load_steps=11 format=4 uid="uid://bir3duftyohnp"]
+
+[ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_0q6ws"]
+[ext_resource type="AudioStream" uid="uid://ck5s35f0psf2s" path="res://Hallasan-Sunset/Audio/Songs/Act 1/Forest/Forest Song.mp3" id="2_rf2mi"]
+[ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="3_nxr0r"]
+[ext_resource type="PackedScene" uid="uid://cr8c8wtlgk4rc" path="res://Hallasan-Sunset/Tilemaps/Tileset.tscn" id="4_kjap4"]
+[ext_resource type="TileSet" uid="uid://ch55l646cr805" path="res://Hallasan-Sunset/Tilemaps/Tileset.tres" id="5_3yyjw"]
+[ext_resource type="Script" uid="uid://bkfrr01tlskb5" path="res://Hallasan-Sunset/Tilemaps/Scripts/LevelTileMapLayer.gd" id="6_m0y5x"]
+[ext_resource type="PackedScene" uid="uid://4cp3bb2wjdid" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Interactive_grass.tscn" id="7_kmpl6"]
+[ext_resource type="PackedScene" uid="uid://mquiukhsvnvp" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tree Borders/TreeBorderSide.tscn" id="8_ew5ku"]
+[ext_resource type="PackedScene" uid="uid://cb2ddj5khwruw" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.tscn" id="9_di71q"]
+[ext_resource type="PackedScene" uid="uid://cuk0fpk8etnkr" path="res://Hallasan-Sunset/Technical/Heart Awarding statue/Heart_statue.tscn" id="10_i2ttt"]
+
+[node name="Map" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_0q6ws")
+music = ExtResource("2_rf2mi")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_nxr0r")]
+position = Vector2(320, 183)
+
+[node name="Tileset" parent="." instance=ExtResource("4_kjap4")]
+tile_map_data = PackedByteArray("AAAZAA4ACAAAAAEAAAAZAA0ACAAAAAMAAAAZAAwACAALAAAAAAAZAAsACAACAAMAAAAZAAoACAAHAAEAAAAZAAkACAABAAAAAAAZAAgACAAGAAIAAAAZAAcACAAIAAMAAAAZAAYACAAMAAAAAAAZAAUACAALAAEAAAAZAAQACAAEAAEAAAAZAAMACAAIAAMAAAAZAAIACAAIAAAAAAAZAAEACAABAAAAAAAZAAAACAAEAAAAAAAYAA4ACAAFAAAAAAAYAA0ACAAIAAAAAAAYAAwACAADAAAAAAAYAAsACAAJAAAAAAAYAAoACAAHAAAAAAAYAAkACAAIAAMAAAAYAAgACAAHAAEAAAAYAAcACAABAAIAAAAYAAYACAAGAAAAAAAYAAUACAAMAAAAAAAYAAQACAAEAAAAAAAYAAMACAABAAIAAAAYAAIACAAHAAMAAAAYAAEACAAEAAIAAAAYAAAACAADAAMAAAAXAA4ACAAAAAAAAAAXAA0ACAAFAAAAAAAXAAwACAACAAMAAAAXAAsACAALAAIAAAAXAAoACAADAAEAAAAXAAkACAAAAAAAAAAXAAgACAABAAIAAAAXAAcACAANAAIAAAAXAAYACAACAAIAAAAXAAUACAACAAIAAAAXAAQACAANAAIAAAAXAAMACAACAAMAAAAXAAIACAAGAAIAAAAXAAEACAAHAAMAAAAXAAAACAADAAIAAAAWAA4ACAAJAAAAAAAWAA0ACAAFAAAAAAAWAAwACAALAAEAAAAWAAsACAAEAAEAAAAWAAoACAACAAEAAAAWAAkACAACAAIAAAAWAAgACAAEAAIAAAAWAAcACAAEAAAAAAAWAAYACAALAAIAAAAWAAUACAALAAAAAAAWAAQACAAMAAAAAAAWAAMACAAEAAEAAAAWAAIACAAEAAIAAAAWAAEACAAHAAEAAAAWAAAACAAHAAAAAAAVAA4ACAAKAAEAAAAVAA0ACAADAAAAAAAVAAwACAAMAAEAAAAVAAsACAADAAIAAAAVAAoACAAIAAMAAAAVAAkACAAFAAAAAAAVAAgACAANAAAAAAAVAAcACAADAAIAAAAVAAYACAAAAAAAAAAVAAUACAAJAAAAAAAVAAQACAADAAAAAAAVAAMACAAMAAIAAAAVAAIACAANAAIAAAAVAAEACAAKAAIAAAAVAAAACAAFAAIAAAAUAA4ACAADAAAAAAAUAA0ACAAFAAAAAAAUAAwACAAFAAAAAAAUAAsACAALAAIAAAAUAAoACAAIAAMAAAAUAAkACAAFAAMAAAAUAAgACAAJAAAAAAAUAAcACAAMAAIAAAAUAAYACAAJAAIAAAAUAAUACAAGAAIAAAAUAAQACAAKAAEAAAAUAAMACAANAAAAAAAUAAIACAAFAAMAAAAUAAEACAAEAAMAAAAUAAAACAADAAIAAAATAA4ACAACAAAAAAATAA0ACAAAAAEAAAATAAwACAACAAIAAAATAAsACAACAAEAAAATAAoACAAIAAEAAAATAAkACAAIAAAAAAATAAgACAAKAAIAAAATAAcACAABAAAAAAATAAYACAADAAEAAAATAAUACAAEAAAAAAATAAQACAACAAAAAAATAAMACAAAAAIAAAATAAIACAAHAAIAAAATAAEACAAEAAIAAAATAAAACAANAAAAAAASAA4ACAAHAAMAAAASAA0ACAADAAMAAAASAAwACAACAAMAAAASAAsACAANAAIAAAASAAoACAAHAAAAAAASAAkACAANAAIAAAASAAgACAADAAAAAAASAAcACAAIAAAAAAASAAYACAAAAAMAAAASAAUACAAJAAIAAAASAAQACAAFAAIAAAASAAMACAABAAEAAAASAAIACAACAAMAAAASAAEACAAJAAAAAAASAAAACAAMAAEAAAARAA4ACAAHAAEAAAARAA0ACAAGAAIAAAARAAwACAAMAAIAAAARAAsACAACAAAAAAARAAoACAALAAEAAAARAAkACAAEAAMAAAARAAgACAABAAIAAAARAAcACAAJAAAAAAARAAYACAADAAEAAAARAAUACAAAAAMAAAARAAQACAADAAEAAAARAAMACAAEAAIAAAARAAIACAAMAAEAAAARAAEACAABAAIAAAARAAAACAAKAAIAAAAQAA4ACAAEAAAAAAAQAA0ACAABAAEAAAAQAAwACAADAAIAAAAQAAsACAAAAAEAAAAQAAoACAAHAAMAAAAQAAkACAAAAAMAAAAQAAgACAAEAAAAAAAQAAcACAALAAEAAAAQAAYACAAJAAAAAAAQAAUACAAAAAEAAAAQAAQACAANAAAAAAAQAAMACAAIAAEAAAAQAAIACAACAAMAAAAQAAEACAAGAAMAAAAQAAAACAADAAAAAAAPAA4ACAAAAAIAAAAPAA0ACAACAAAAAAAPAAwACAAFAAMAAAAPAAsACAAKAAIAAAAPAAoACAAJAAIAAAAPAAkACAACAAIAAAAPAAgACAAMAAAAAAAPAAcACAAIAAMAAAAPAAYACAAAAAIAAAAPAAUACAAKAAAAAAAPAAQACAAMAAEAAAAPAAMACAAKAAIAAAAPAAIACAABAAIAAAAPAAEACAABAAMAAAAPAAAACAAFAAMAAAAOAA4ACAADAAAAAAAOAA0ACAACAAIAAAAOAAwACAAFAAMAAAAOAAsACAAEAAMAAAAOAAoACAANAAIAAAAOAAkACAABAAEAAAAOAAgACAAIAAEAAAAOAAcACAALAAAAAAAOAAYACAALAAEAAAAOAAUACAAMAAEAAAAOAAQACAADAAIAAAAOAAMACAAAAAIAAAAOAAIACAAFAAIAAAAOAAEACAACAAIAAAAOAAAACAALAAAAAAANAA4ACAAAAAIAAAANAA0ACAANAAIAAAANAAwACAABAAAAAAANAAsACAANAAAAAAANAAoACAAHAAIAAAANAAkACAAGAAMAAAANAAgACAAIAAIAAAANAAcACAANAAEAAAANAAYACAAMAAEAAAANAAUACAAEAAAAAAANAAQACAAHAAMAAAANAAMACAACAAEAAAANAAIACAAAAAMAAAANAAEACAANAAAAAAANAAAACAAHAAIAAAAMAA4ACAAFAAAAAAAMAA0ACAAKAAEAAAAMAAwACAAGAAIAAAAMAAsACAAHAAMAAAAMAAoACAAFAAAAAAAMAAkACAAGAAEAAAAMAAgACAAIAAEAAAAMAAcACAAGAAEAAAAMAAYACAAHAAAAAAAMAAUACAAJAAEAAAAMAAQACAAGAAAAAAAMAAMACAAIAAEAAAAMAAIACAAGAAMAAAAMAAEACAACAAEAAAAMAAAACAABAAAAAAALAA4ACAAFAAMAAAALAA0ACAAMAAIAAAALAAwACAAEAAAAAAALAAsACAACAAAAAAALAAoACAABAAIAAAALAAkACAAMAAAAAAALAAgACAAHAAIAAAALAAcACAALAAEAAAALAAYACAABAAIAAAALAAUACAALAAEAAAALAAQACAAFAAAAAAALAAMACAALAAAAAAALAAIACAAJAAEAAAALAAEACAAGAAAAAAALAAAACAAEAAEAAAAKAA4ACAABAAEAAAAKAA0ACAAIAAEAAAAKAAwACAAJAAIAAAAKAAsACAAFAAAAAAAKAAoACAAAAAAAAAAKAAkACAAKAAEAAAAKAAgACAALAAAAAAAKAAcACAAKAAAAAAAKAAYACAALAAAAAAAKAAUACAADAAMAAAAKAAQACAADAAIAAAAKAAMACAAEAAAAAAAKAAIACAABAAIAAAAKAAEACAAGAAMAAAAKAAAACAAKAAEAAAAJAA4ACAAMAAIAAAAJAA0ACAAKAAIAAAAJAAwACAAHAAMAAAAJAAsACAAKAAIAAAAJAAoACAAHAAEAAAAJAAkACAAEAAAAAAAJAAgACAAJAAEAAAAJAAcACAAGAAMAAAAJAAYACAAKAAEAAAAJAAUACAABAAEAAAAJAAQACAACAAIAAAAJAAMACAAJAAIAAAAJAAIACAAHAAMAAAAJAAEACAAHAAEAAAAJAAAACAADAAEAAAAIAA4ACAABAAMAAAAIAA0ACAAGAAIAAAAIAAwACAAHAAEAAAAIAAsACAALAAAAAAAIAAoACAACAAEAAAAIAAkACAACAAEAAAAIAAgACAAJAAAAAAAIAAcACAANAAEAAAAIAAYACAANAAEAAAAIAAUACAAFAAAAAAAIAAQACAAGAAEAAAAIAAMACAAMAAEAAAAIAAIACAAEAAEAAAAIAAEACAAHAAEAAAAIAAAACAAKAAAAAAAHAA4ACAAAAAMAAAAHAA0ACAANAAAAAAAHAAwACAAFAAIAAAAHAAsACAAEAAIAAAAHAAoACAADAAEAAAAHAAkACAACAAAAAAAHAAgACAAJAAAAAAAHAAcACAAEAAIAAAAHAAYACAADAAMAAAAHAAUACAAEAAAAAAAHAAQACAAKAAEAAAAHAAMACAANAAAAAAAHAAIACAAGAAMAAAAHAAEACAALAAEAAAAHAAAACAAEAAAAAAAGAA4ACAAKAAIAAAAGAA0ACAAEAAEAAAAGAAwACAAIAAMAAAAGAAsACAAEAAEAAAAGAAoACAAEAAIAAAAGAAkACAALAAIAAAAGAAgACAADAAEAAAAGAAcACAANAAAAAAAGAAYACAAGAAAAAAAGAAUACAABAAEAAAAGAAQACAANAAAAAAAGAAMACAAEAAIAAAAGAAIACAALAAIAAAAGAAEACAAGAAMAAAAGAAAACAAHAAAAAAAFAA4ACAABAAAAAAAFAA0ACAAKAAIAAAAFAAwACAAAAAEAAAAFAAsACAALAAEAAAAFAAoACAAEAAMAAAAFAAkACAAJAAAAAAAFAAgACAANAAAAAAAFAAcACAALAAAAAAAFAAYACAAHAAMAAAAFAAUACAACAAEAAAAFAAQACAABAAEAAAAFAAMACAAFAAAAAAAFAAIACAABAAEAAAAFAAEACAAJAAAAAAAFAAAACAAIAAMAAAAEAA4ACAABAAAAAAAEAA0ACAAIAAIAAAAEAAwACAACAAEAAAAEAAsACAAEAAIAAAAEAAoACAANAAEAAAAEAAkACAAEAAAAAAAEAAgACAABAAAAAAAEAAcACAAEAAEAAAAEAAYACAAFAAIAAAAEAAUACAAHAAAAAAAEAAQACAAJAAEAAAAEAAMACAAIAAIAAAAEAAIACAAAAAEAAAAEAAEACAAHAAMAAAAEAAAACAABAAAAAAADAA4ACAALAAAAAAADAA0ACAADAAAAAAADAAwACAAGAAEAAAADAAsACAALAAEAAAADAAoACAABAAIAAAADAAkACAAFAAAAAAADAAgACAALAAEAAAADAAcACAACAAIAAAADAAYACAAEAAAAAAADAAUACAABAAAAAAADAAQACAAFAAIAAAADAAMACAALAAEAAAADAAIACAALAAEAAAADAAEACAAHAAEAAAADAAAACAAKAAIAAAACAA4ACAAHAAIAAAACAA0ACAACAAAAAAACAAwACAACAAIAAAACAAsACAACAAIAAAACAAoACAACAAAAAAACAAkACAAHAAEAAAACAAgACAAHAAEAAAACAAcACAAJAAIAAAACAAYACAAEAAIAAAACAAUACAAIAAIAAAACAAQACAADAAMAAAACAAMACAANAAEAAAACAAIACAAEAAMAAAACAAEACAACAAIAAAACAAAACAAGAAMAAAABAA4ACAAHAAIAAAABAA0ACAACAAIAAAABAAwACAACAAMAAAABAAsACAADAAMAAAABAAoACAAGAAAAAAABAAkACAAAAAEAAAABAAgACAAEAAIAAAABAAcACAAHAAIAAAABAAYACAAGAAAAAAABAAUACAAIAAEAAAABAAQACAAJAAIAAAABAAMACAACAAIAAAABAAIACAADAAAAAAABAAEACAAIAAMAAAABAAAACAAMAAIAAAAAAA4ACAAFAAMAAAAAAA0ACAAIAAEAAAAAAAwACAAHAAMAAAAAAAsACAAEAAMAAAAAAAoACAACAAEAAAAAAAkACAAMAAEAAAAAAAgACAAJAAAAAAAAAAcACAAEAAIAAAAAAAYACAANAAEAAAAAAAUACAAAAAMAAAAAAAQACAABAAEAAAAAAAMACAAEAAEAAAAAAAIACAAGAAEAAAAAAAEACAAKAAEAAAAAAAAACAAHAAEAAAAaAA4ACAAGAAIAAAAaAA0ACAAIAAIAAAAaAAwACAAMAAIAAAAaAAsACAACAAIAAAAaAAoACAABAAEAAAAaAAkACAANAAEAAAAaAAgACAAIAAEAAAAaAAcACAAAAAIAAAAaAAYACAADAAMAAAAaAAUACAAFAAIAAAAaAAQACAAFAAIAAAAaAAMACAABAAIAAAAaAAIACAAEAAMAAAAaAAEACAAJAAIAAAAaAAAACAANAAEAAAAAAPz/CAAEAAMAAAAAAP3/CAAEAAMAAAAAAP7/CAAEAAMAAAAAAP//CAAEAAMAAAABAPz/CAAEAAMAAAABAP3/CAAEAAMAAAABAP7/CAAEAAMAAAABAP//CAAEAAMAAAACAPz/CAAEAAMAAAACAP3/CAAEAAMAAAACAP7/CAAEAAMAAAACAP//CAAEAAMAAAADAPz/CAAEAAMAAAADAP3/CAAEAAMAAAADAP7/CAAEAAMAAAADAP//CAAEAAMAAAAEAPz/CAAEAAMAAAAEAP3/CAAEAAMAAAAEAP7/CAAEAAMAAAAEAP//CAAEAAMAAAAFAPz/CAAEAAMAAAAFAP3/CAAEAAMAAAAFAP7/CAAEAAMAAAAFAP//CAAEAAMAAAAGAPz/CAAEAAMAAAAGAP3/CAAEAAMAAAAGAP7/CAAEAAMAAAAGAP//CAAEAAMAAAAHAPz/CAAEAAMAAAAHAP3/CAAEAAMAAAAHAP7/CAAEAAMAAAAHAP//CAAEAAMAAAAIAPz/CAAEAAMAAAAIAP3/CAAEAAMAAAAIAP7/CAAEAAMAAAAIAP//CAAEAAMAAAAJAPz/CAAEAAMAAAAJAP3/CAAEAAMAAAAJAP7/CAAEAAMAAAAJAP//CAAEAAMAAAAKAPz/CAAEAAMAAAAKAP3/CAAEAAMAAAAKAP7/CAAEAAMAAAAKAP//CAAEAAMAAAALAPz/CAAEAAMAAAALAP3/CAAEAAMAAAALAP7/CAAEAAMAAAALAP//CAAEAAMAAAAMAPz/CAAEAAMAAAAMAP3/CAAEAAMAAAAMAP7/CAAEAAMAAAAMAP//CAAEAAMAAAANAPz/CAAEAAMAAAANAP3/CAAEAAMAAAANAP7/CAAEAAMAAAANAP//CAAEAAMAAAAOAPz/CAAEAAMAAAAOAP3/CAAEAAMAAAAOAP7/CAAEAAMAAAAOAP//CAAEAAMAAAAPAPz/CAAEAAMAAAAPAP3/CAAEAAMAAAAPAP7/CAAEAAMAAAAPAP//CAAEAAMAAAAQAPz/CAAEAAMAAAAQAP3/CAAEAAMAAAAQAP7/CAAEAAMAAAAQAP//CAAEAAMAAAARAPz/CAAEAAMAAAARAP3/CAAEAAMAAAARAP7/CAAEAAMAAAARAP//CAAEAAMAAAASAPz/CAAEAAMAAAASAP3/CAAEAAMAAAASAP7/CAAEAAMAAAASAP//CAAEAAMAAAATAPz/CAAEAAMAAAATAP3/CAAEAAMAAAATAP7/CAAEAAMAAAATAP//CAAEAAMAAAAUAPz/CAAEAAMAAAAUAP3/CAAEAAMAAAAUAP7/CAAEAAMAAAAUAP//CAAEAAMAAAAVAPz/CAAEAAMAAAAVAP3/CAAEAAMAAAAVAP7/CAAEAAMAAAAVAP//CAAEAAMAAAAWAPz/CAAEAAMAAAAWAP3/CAAEAAMAAAAWAP7/CAAEAAMAAAAWAP//CAAEAAMAAAAXAPz/CAAEAAMAAAAXAP3/CAAEAAMAAAAXAP7/CAAEAAMAAAAXAP//CAAEAAMAAAAYAPz/CAAEAAMAAAAYAP3/CAAEAAMAAAAYAP7/CAAEAAMAAAAYAP//CAAEAAMAAAAZAPz/CAAEAAMAAAAZAP3/CAAEAAMAAAAZAP7/CAAEAAMAAAAZAP//CAAEAAMAAAAaAPz/CAAEAAMAAAAaAP3/CAAEAAMAAAAaAP7/CAAEAAMAAAAaAP//CAAEAAMAAAA=")
+
+[node name="LevelTileMapLayer2" type="TileMapLayer" parent="Tileset"]
+y_sort_enabled = true
+tile_set = ExtResource("5_3yyjw")
+script = ExtResource("6_m0y5x")
+
+[node name="Enemies" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="NPC\'s" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Environment" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Objects" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="InteractiveGrass" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(357, 139)
+
+[node name="InteractiveGrass2" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(233, 250)
+
+[node name="InteractiveGrass3" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(308, 207)
+
+[node name="InteractiveGrass4" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(390, 232)
+
+[node name="InteractiveGrass5" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(394, 206)
+
+[node name="InteractiveGrass6" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(368, 258)
+
+[node name="InteractiveGrass7" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(317, 257)
+
+[node name="InteractiveGrass8" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(297, 292)
+
+[node name="InteractiveGrass9" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(261, 290)
+
+[node name="InteractiveGrass10" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(276, 252)
+
+[node name="InteractiveGrass11" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(345, 292)
+
+[node name="InteractiveGrass12" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(378, 329)
+
+[node name="InteractiveGrass13" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(390, 289)
+
+[node name="InteractiveGrass14" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(428, 329)
+
+[node name="InteractiveGrass15" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(323, 226)
+
+[node name="InteractiveGrass16" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(300, 318)
+
+[node name="InteractiveGrass17" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(275, 341)
+
+[node name="InteractiveGrass18" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(333, 331)
+
+[node name="InteractiveGrass19" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(228, 305)
+
+[node name="InteractiveGrass20" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(211, 270)
+
+[node name="InteractiveGrass21" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(250, 139)
+
+[node name="InteractiveGrass22" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(206, 182)
+
+[node name="InteractiveGrass23" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(269, 176)
+
+[node name="InteractiveGrass24" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(267, 208)
+
+[node name="InteractiveGrass25" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(360, 181)
+
+[node name="InteractiveGrass26" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(334, 216)
+
+[node name="InteractiveGrass27" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(349, 242)
+
+[node name="InteractiveGrass28" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(344, 160)
+
+[node name="InteractiveGrass29" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(321, 281)
+
+[node name="InteractiveGrass30" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(285, 142)
+
+[node name="InteractiveGrass31" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(262, 250)
+
+[node name="InteractiveGrass32" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(337, 207)
+
+[node name="InteractiveGrass33" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(419, 232)
+
+[node name="InteractiveGrass34" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(423, 206)
+
+[node name="InteractiveGrass35" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(397, 258)
+
+[node name="InteractiveGrass36" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(346, 257)
+
+[node name="InteractiveGrass37" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(326, 292)
+
+[node name="InteractiveGrass38" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(290, 290)
+
+[node name="InteractiveGrass39" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(305, 252)
+
+[node name="InteractiveGrass40" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(374, 292)
+
+[node name="InteractiveGrass41" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(407, 329)
+
+[node name="InteractiveGrass42" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(419, 289)
+
+[node name="InteractiveGrass43" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(457, 329)
+
+[node name="InteractiveGrass44" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(260, 344)
+
+[node name="InteractiveGrass45" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(329, 318)
+
+[node name="InteractiveGrass46" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(304, 341)
+
+[node name="InteractiveGrass47" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(362, 331)
+
+[node name="InteractiveGrass48" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(257, 305)
+
+[node name="InteractiveGrass49" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(240, 270)
+
+[node name="InteractiveGrass50" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(258, 214)
+
+[node name="InteractiveGrass51" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(235, 182)
+
+[node name="InteractiveGrass52" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(298, 176)
+
+[node name="InteractiveGrass53" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(296, 208)
+
+[node name="InteractiveGrass54" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(389, 181)
+
+[node name="InteractiveGrass55" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(363, 216)
+
+[node name="InteractiveGrass56" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(378, 242)
+
+[node name="InteractiveGrass57" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(427, 252)
+
+[node name="InteractiveGrass58" parent="Environment/Objects" instance=ExtResource("7_kmpl6")]
+position = Vector2(350, 281)
+
+[node name="Interactables" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="Weather" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="Hazards" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="Borders" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="SideBorder" parent="Environment/Borders" instance=ExtResource("8_ew5ku")]
+position = Vector2(80, 262)
+
+[node name="SideBorder2" parent="Environment/Borders" instance=ExtResource("8_ew5ku")]
+position = Vector2(462, 261)
+
+[node name="SideBorder3" parent="Environment/Borders" instance=ExtResource("8_ew5ku")]
+position = Vector2(54, -17)
+
+[node name="SideBorder5" parent="Environment/Borders" instance=ExtResource("8_ew5ku")]
+position = Vector2(271, -67)
+
+[node name="SideBorder4" parent="Environment/Borders" instance=ExtResource("8_ew5ku")]
+position = Vector2(474, -25)
+
+[node name="Transitions" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="LevelTransition" parent="Transitions" instance=ExtResource("9_di71q")]
+position = Vector2(323, 352)
+level = "res://Hallasan-Sunset/Levels/Act1/Forest/Act_1_Scene_11.tscn"
+target_transition_area = "LevelTransition2"
+size = 8
+side = 3
+
+[node name="Items" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="HeartStatue" parent="." instance=ExtResource("10_i2ttt")]
+position = Vector2(317, 82)

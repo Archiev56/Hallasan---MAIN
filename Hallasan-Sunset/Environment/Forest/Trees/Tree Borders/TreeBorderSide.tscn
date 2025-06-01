@@ -1,0 +1,265 @@
+[gd_scene load_steps=15 format=4 uid="uid://mquiukhsvnvp"]
+
+[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="1_ntfeh"]
+[ext_resource type="Texture2D" uid="uid://c6ppo5l18x0fu" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Sprites/Pine_tree.png" id="2_l8cqc"]
+[ext_resource type="Texture2D" uid="uid://bym52dcjw48ra" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tall Tree/Sprites/tall_tree.png" id="3_l8cqc"]
+[ext_resource type="TileSet" uid="uid://ch55l646cr805" path="res://Hallasan-Sunset/Tilemaps/Tileset.tres" id="4_g1dqn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6lsk"]
+shader = ExtResource("1_ntfeh")
+shader_parameter/WindStrength = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c44wc"]
+shader = ExtResource("1_ntfeh")
+shader_parameter/WindStrength = 6.923
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7e08k"]
+shader = ExtResource("1_ntfeh")
+shader_parameter/WindStrength = 6.787
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iu8qu"]
+shader = ExtResource("1_ntfeh")
+shader_parameter/WindStrength = 6.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_neq08"]
+a = Vector2(-91, -202)
+b = Vector2(-90, 138)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_17pgh"]
+a = Vector2(186, 137)
+b = Vector2(-89, 138)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y2agr"]
+a = Vector2(187, -204)
+b = Vector2(187, 141)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ehnri"]
+a = Vector2(185, -205)
+b = Vector2(-91, -202)
+
+[sub_resource type="Animation" id="Animation_bhkv1"]
+resource_name = "restore"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.854902, 0.333333, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vcpwn"]
+_data = {
+&"restore": SubResource("Animation_bhkv1")
+}
+
+[node name="SideBorder" type="StaticBody2D"]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(102, 29)
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite2D18" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(138, -181)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D26" type="Sprite2D" parent="."]
+modulate = Color(0.419608, 0.898039, 0.941176, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-44, -184)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D32" type="Sprite2D" parent="."]
+modulate = Color(0.580392, 1, 0.807843, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(50, -183)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D20" type="Sprite2D" parent="."]
+modulate = Color(0.498039, 0.862745, 0.631373, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(138, -181)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D19" type="Sprite2D" parent="."]
+modulate = Color(0.419608, 0.898039, 0.941176, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(112, -134)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D36" type="Sprite2D" parent="."]
+modulate = Color(0.772549, 0.992157, 1, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-56, -134)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D27" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(17, -133)
+texture = ExtResource("2_l8cqc")
+
+[node name="Tree" type="Sprite2D" parent="Sprite2D27"]
+material = SubResource("ShaderMaterial_c44wc")
+position = Vector2(-15, 18)
+texture = ExtResource("3_l8cqc")
+
+[node name="Sprite2D21" type="Sprite2D" parent="."]
+modulate = Color(0.772549, 0.992157, 1, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(140, -80)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D28" type="Sprite2D" parent="."]
+modulate = Color(0.419608, 0.898039, 0.941176, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-41, -80)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D33" type="Sprite2D" parent="."]
+modulate = Color(0.498039, 0.862745, 0.631373, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(41, -80)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D22" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(89, -27)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D35" type="Sprite2D" parent="."]
+modulate = Color(0.772549, 0.992157, 1, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-77, -27)
+texture = ExtResource("2_l8cqc")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+modulate = Color(0.772549, 0.992157, 1, 1)
+material = SubResource("ShaderMaterial_7e08k")
+position = Vector2(102, -2)
+texture = ExtResource("3_l8cqc")
+
+[node name="Sprite2D29" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(13, -27)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D23" type="Sprite2D" parent="."]
+modulate = Color(0.498039, 0.862745, 0.631373, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(144, 14)
+texture = ExtResource("2_l8cqc")
+
+[node name="Tree4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7e08k")
+position = Vector2(-8, 26)
+texture = ExtResource("3_l8cqc")
+
+[node name="Sprite2D30" type="Sprite2D" parent="."]
+modulate = Color(0.580392, 1, 0.807843, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-51, 14)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D34" type="Sprite2D" parent="."]
+modulate = Color(0.419608, 0.898039, 0.941176, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(39, 14)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D24" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(56, 63)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D31" type="Sprite2D" parent="."]
+modulate = Color(0.498039, 0.862745, 0.631373, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-47, 64)
+texture = ExtResource("2_l8cqc")
+
+[node name="Sprite2D25" type="Sprite2D" parent="."]
+modulate = Color(0.419608, 0.898039, 0.941176, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(147, 63)
+texture = ExtResource("2_l8cqc")
+
+[node name="Tree3" type="Sprite2D" parent="."]
+modulate = Color(0.419608, 0.898039, 0.941176, 1)
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_iu8qu")
+position = Vector2(20, -206)
+texture = ExtResource("3_l8cqc")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
+z_index = -1
+y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAHAP7/AQACAAUAAAAHAP3/AQACAAUAAAAHAPz/AQACAAUAAAAHAPv/AQACAAUAAAAHAPr/AQACAAUAAAAHAP//AQACAAUAAAAHAAAAAQACAAUAAAAHAAEAAQACAAUAAAAHAAIAAQACAAUAAAAHAAMAAQACAAUAAAAHAAQAAQACAAUAAAAHAAUAAQACAAYAAAAGAAUAAQABAAYAAAAFAAUAAQABAAYAAAAEAAUAAQABAAYAAAADAAUAAQABAAYAAAACAAUAAQABAAYAAAABAAUAAQABAAYAAAAAAAUAAQABAAYAAAD//wUAAQABAAYAAAD+/wUAAQABAAYAAAD9/wUAAQABAAYAAAD8/wUAAQAAAAYAAAD8/wQAAQAAAAUAAAD8/wMAAQAAAAUAAAD8/wIAAQAAAAUAAAD8/wEAAQAAAAUAAAD8/wAAAQAAAAUAAAD8////AQAAAAUAAAD8//7/AQAAAAUAAAD8//3/AQAAAAUAAAD8//z/AQAAAAUAAAD8//v/AQAAAAUAAAD9//v/AQABAAUAAAD9//r/AQABAAUAAAD9//n/AQABAAUAAAD9//f/AQABAAQAAAD///f/AQABAAQAAAD+//f/AQABAAQAAAAAAPf/AQABAAQAAAABAPf/AQABAAQAAAACAPf/AQABAAQAAAADAPf/AQABAAQAAAAEAPf/AQABAAQAAAAFAPf/AQABAAQAAAAGAPf/AQABAAQAAAAHAPj/AQACAAUAAAD+//n/AQABAAUAAAD+//r/AQABAAUAAAD+//v/AQABAAUAAAD+//z/AQABAAUAAAD+//3/AQABAAUAAAD+//7/AQABAAUAAAD+////AQABAAUAAAD+/wAAAQABAAUAAAD+/wEAAQABAAUAAAD+/wIAAQABAAUAAAD+/wMAAQABAAUAAAD+/wQAAQABAAUAAAD///n/AQABAAUAAAD///r/AQABAAUAAAD///v/AQABAAUAAAD///z/AQABAAUAAAD///3/AQABAAUAAAD///7/AQABAAUAAAD/////AQABAAUAAAD//wAAAQABAAUAAAD//wEAAQABAAUAAAD//wIAAQABAAUAAAD//wMAAQABAAUAAAD//wQAAQABAAUAAAAAAPn/AQABAAUAAAAAAPr/AQABAAUAAAAAAPv/AQABAAUAAAAAAPz/AQABAAUAAAAAAP3/AQABAAUAAAAAAP7/AQABAAUAAAAAAP//AQABAAUAAAAAAAAAAQABAAUAAAAAAAEAAQABAAUAAAAAAAIAAQABAAUAAAAAAAMAAQABAAUAAAAAAAQAAQABAAUAAAABAPn/AQABAAUAAAABAPr/AQABAAUAAAABAPv/AQABAAUAAAABAPz/AQABAAUAAAABAP3/AQABAAUAAAABAP7/AQABAAUAAAABAP//AQABAAUAAAABAAAAAQABAAUAAAABAAEAAQABAAUAAAABAAIAAQABAAUAAAABAAMAAQABAAUAAAABAAQAAQABAAUAAAACAPn/AQABAAUAAAACAPr/AQABAAUAAAACAPv/AQABAAUAAAACAPz/AQABAAUAAAACAP3/AQABAAUAAAACAP7/AQABAAUAAAACAP//AQABAAUAAAACAAAAAQABAAUAAAACAAEAAQABAAUAAAACAAIAAQABAAUAAAACAAMAAQABAAUAAAACAAQAAQABAAUAAAADAPn/AQABAAUAAAADAPr/AQABAAUAAAADAPv/AQABAAUAAAADAPz/AQABAAUAAAADAP3/AQABAAUAAAADAP7/AQABAAUAAAADAP//AQABAAUAAAADAAAAAQABAAUAAAADAAEAAQABAAUAAAADAAIAAQABAAUAAAADAAMAAQABAAUAAAADAAQAAQABAAUAAAAEAPn/AQABAAUAAAAEAPr/AQABAAUAAAAEAPv/AQABAAUAAAAEAPz/AQABAAUAAAAEAP3/AQABAAUAAAAEAP7/AQABAAUAAAAEAP//AQABAAUAAAAEAAAAAQABAAUAAAAEAAEAAQABAAUAAAAEAAIAAQABAAUAAAAEAAMAAQABAAUAAAAEAAQAAQABAAUAAAAFAPn/AQABAAUAAAAFAPr/AQABAAUAAAAFAPv/AQABAAUAAAAFAPz/AQABAAUAAAAFAP3/AQABAAUAAAAFAP7/AQABAAUAAAAFAP//AQABAAUAAAAFAAAAAQABAAUAAAAFAAEAAQABAAUAAAAFAAIAAQABAAUAAAAFAAMAAQABAAUAAAAFAAQAAQABAAUAAAD9//z/AQABAAUAAAD9//3/AQABAAUAAAD9//7/AQABAAUAAAD9////AQABAAUAAAD9/wAAAQABAAUAAAD9/wEAAQABAAUAAAD9/wIAAQABAAUAAAD9/wMAAQABAAUAAAD9/wQAAQABAAUAAAAGAAQAAQABAAUAAAAGAAMAAQABAAUAAAAGAAIAAQABAAUAAAAGAAEAAQABAAUAAAAGAAAAAQABAAUAAAAGAP//AQABAAUAAAAGAP7/AQABAAUAAAAGAP3/AQABAAUAAAAGAPz/AQABAAUAAAAGAPv/AQABAAUAAAAGAPr/AQABAAUAAAAGAPn/AQABAAUAAAAHAPf/AQACAAQAAAD8//f/AQAAAAQAAAAHAPn/AQACAAUAAAD8//j/AQAAAAUAAAD8//n/AQAAAAUAAAD8//r/AQAAAAUAAAD9//j/AQABAAUAAAD+//j/AQABAAUAAAD///j/AQABAAUAAAAAAPj/AQABAAUAAAABAPj/AQABAAUAAAACAPj/AQABAAUAAAADAPj/AQABAAUAAAAEAPj/AQABAAUAAAAFAPj/AQABAAUAAAAGAPj/AQABAAUAAAA=")
+tile_set = ExtResource("4_g1dqn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+shape = SubResource("SegmentShape2D_neq08")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 3)
+shape = SubResource("SegmentShape2D_17pgh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+shape = SubResource("SegmentShape2D_y2agr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+shape = SubResource("SegmentShape2D_ehnri")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vcpwn")
+}

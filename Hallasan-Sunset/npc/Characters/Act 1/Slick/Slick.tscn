@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://chwksqbnu0jli"]
+
+[ext_resource type="Script" uid="uid://dss7csdyxpmtt" path="res://Hallasan-Sunset/npc/scripts/npc.gd" id="1_d7jkw"]
+[ext_resource type="Resource" uid="uid://jkyqnhdk22c8" path="res://Hallasan-Sunset/npc/Characters/Act 1/Heron/Heron.tres" id="2_3b6sy"]
+[ext_resource type="Texture2D" uid="uid://c76tna6xedfie" path="res://Hallasan-Sunset/npc/Characters/Act 1/Slick/Sprites/Untitled_Artwork 88.png" id="3_7n3t7"]
+[ext_resource type="Texture2D" uid="uid://bf6lcjwugt8yy" path="res://Hallasan-Sunset/npc/Characters/Act 1/Heron/Sprites/Heron_spritesheet.png" id="3_mpryc"]
+[ext_resource type="Texture2D" uid="uid://cuvgsyd825y83" path="res://Hallasan-Sunset/Player/Sprites/Shadow (1).png" id="4_vma3q"]
+
+[sub_resource type="Animation" id="Animation_7du3u"]
+resource_name = "idle_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_7n3t7")]
+}
+
+[sub_resource type="Animation" id="Animation_8m2xn"]
+resource_name = "idle_up"
+
+[sub_resource type="Animation" id="Animation_62wq6"]
+resource_name = "walk_down"
+length = 0.6
+loop_mode = 2
+step = 0.2
+
+[sub_resource type="Animation" id="Animation_l0wml"]
+resource_name = "walk_side"
+length = 0.6
+loop_mode = 2
+step = 0.2
+
+[sub_resource type="Animation" id="Animation_5qrp0"]
+resource_name = "walk_up"
+length = 0.6
+loop_mode = 2
+step = 0.2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivkd1"]
+_data = {
+&"idle_down": SubResource("Animation_7du3u"),
+&"idle_up": SubResource("Animation_8m2xn"),
+&"walk_down": SubResource("Animation_62wq6"),
+&"walk_side": SubResource("Animation_l0wml"),
+&"walk_up": SubResource("Animation_5qrp0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkj7h"]
+size = Vector2(22.4994, 50)
+
+[node name="Slick" type="CharacterBody2D"]
+position = Vector2(0, -22)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_d7jkw")
+npc_resource = ExtResource("2_3b6sy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_mpryc")
+hframes = 4
+vframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_ivkd1")
+}
+autoplay = "idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.00264754, 42.2509)
+rotation = -1.56962
+shape = SubResource("RectangleShape2D_kkj7h")
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.235294)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(-1, 52)
+scale = Vector2(2, 2)
+texture = ExtResource("4_vma3q")

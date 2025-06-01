@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://udy8tcrufx43"]
+
+[ext_resource type="Script" uid="uid://dksatk55lq014" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.gd" id="1_gspw8"]
+[ext_resource type="Texture2D" uid="uid://cvdjy40rk6k51" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Idle/red1.png" id="2_4qejn"]
+
+[node name="PlayerSpawn" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_gspw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+y_sort_enabled = true
+texture_filter = 1
+texture = ExtResource("2_4qejn")

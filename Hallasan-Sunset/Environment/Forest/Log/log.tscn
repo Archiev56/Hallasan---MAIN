@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlqhudwfc155o"]
+
+[ext_resource type="Texture2D" uid="uid://dg7510j0v2754" path="res://Hallasan-Sunset/Environment/Forest/Log/log.png" id="1_1hp11"]
+
+[node name="Log" type="StaticBody2D"]
+z_index = 5
+texture_filter = 1
+position = Vector2(-2, 0)
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.321569)
+texture_filter = 1
+position = Vector2(5, 15)
+rotation = -0.136136
+scale = Vector2(2.29215, 1.23487)
+
+[node name="Log" type="Sprite2D" parent="."]
+position = Vector2(2, -2.5)
+texture = ExtResource("1_1hp11")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-19.5, 19.5, -23, 8, 27, -10, 30.5, 1.5, 4.5, 15.5)

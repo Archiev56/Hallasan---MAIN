@@ -1,0 +1,116 @@
+[gd_scene load_steps=21 format=3 uid="uid://o4omfjuppy1w"]
+
+[ext_resource type="Script" uid="uid://1bbbnf8d4hs1" path="res://Hallasan-Sunset/npc/Characters/Act 1/Red Mask/Bango.gd" id="1_72k1u"]
+[ext_resource type="Texture2D" uid="uid://d3v3wc3xgiofy" path="res://Hallasan-Sunset/npc/Characters/Act 1/Red Mask/Sprites/Untitled_Artwork-2 2.png" id="2_4oj2h"]
+[ext_resource type="Texture2D" uid="uid://cfbmois52xxre" path="res://Hallasan-Sunset/npc/Characters/Act 1/Red Mask/Sprites/Untitled_Artwork-3 2.png" id="3_h5kgi"]
+[ext_resource type="Texture2D" uid="uid://cw868fwh46t8g" path="res://Hallasan-Sunset/npc/Characters/Act 1/Red Mask/Sprites/Untitled_Artwork-4.png" id="4_covl4"]
+[ext_resource type="Texture2D" uid="uid://d0xek1v3r52va" path="res://Hallasan-Sunset/npc/Characters/Act 1/Red Mask/Sprites/Untitled_Artwork-5.png" id="5_4xpy5"]
+[ext_resource type="Texture2D" uid="uid://ig6lg0wc08yd" path="res://Hallasan-Sunset/npc/Characters/Act 1/Red Mask/Sprites/Untitled_Artwork-6.png" id="6_1aatg"]
+[ext_resource type="Texture2D" uid="uid://c82gtmq5eltc3" path="res://Hallasan-Sunset/npc/Characters/Act 1/Red Mask/Sprites/Untitled_Artwork-7.png" id="7_j4yuc"]
+[ext_resource type="Texture2D" uid="uid://legm4ry6qe77" path="res://Hallasan-Sunset/npc/Characters/Act 1/Red Mask/Sprites/Untitled_Artwork-8.png" id="8_3l61u"]
+[ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="9_e01tc"]
+[ext_resource type="PackedScene" uid="uid://c3gxjr065vnmf" path="res://Hallasan-Sunset/Technical/Actionable copy/actionable.tscn" id="10_psht2"]
+[ext_resource type="Texture2D" uid="uid://b4t545bdrwqij" path="res://Hallasan-Sunset/UI/Keys/Space-Key.png" id="13_y3pkr"]
+
+[sub_resource type="Resource" id="Resource_o5nmj"]
+metadata/__load_path__ = "res://UI copy/Dialogue Balloon/Portraits/Bango.png"
+
+[sub_resource type="Animation" id="Animation_qjcvt"]
+resource_name = "Idle"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Resource_o5nmj"), ExtResource("2_4oj2h"), ExtResource("3_h5kgi"), ExtResource("4_covl4"), ExtResource("5_4xpy5"), ExtResource("6_1aatg"), ExtResource("7_j4yuc"), ExtResource("8_3l61u")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i11nk"]
+_data = {
+&"Idle": SubResource("Animation_qjcvt")
+}
+
+[sub_resource type="Resource" id="Resource_gb656"]
+metadata/__load_path__ = "res://npc/Characters/Red Mask/Red_Mask.dialogue"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2eoo0"]
+radius = 46.0109
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7px15"]
+radius = 57.0088
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7osou"]
+atlas = ExtResource("13_y3pkr")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp5jl"]
+atlas = ExtResource("13_y3pkr")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0fw7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7osou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp5jl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_72k1u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_i11nk")
+}
+autoplay = "Idle"
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.317647)
+texture_filter = 1
+position = Vector2(0, 26)
+texture = ExtResource("9_e01tc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("4_covl4")
+
+[node name="Actionable" parent="." instance=ExtResource("10_psht2")]
+dialogue_resource = SubResource("Resource_gb656")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_2eoo0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 48)
+shape = SubResource("CircleShape2D_7px15")
+
+[node name="X" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -62)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_g0fw7")
+autoplay = "default"
+speed_scale = 0.3

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://44v8wsvuqlgt"]
+
+[ext_resource type="Texture2D" uid="uid://rlyhj2bc2xpe" path="res://Hallasan-Sunset/Environment/Village/Buildings/Shop/Sprites/food_shop.png" id="1_3br2o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmojr"]
+size = Vector2(181.333, 130.666)
+
+[node name="MiniMart" type="StaticBody2D"]
+y_sort_enabled = true
+texture_filter = 1
+scale = Vector2(0.75, 0.75)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_3br2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-16, 1.33324)
+shape = SubResource("RectangleShape2D_bmojr")

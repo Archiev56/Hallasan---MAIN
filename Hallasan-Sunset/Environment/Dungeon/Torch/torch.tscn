@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqhetgyfhjtdv"]
+
+[ext_resource type="Texture2D" uid="uid://dxen2237r80j" path="res://Hallasan-Sunset/Tilemaps/Sprites/Cave/Cave Interior.png" id="1_ha08e"]
+[ext_resource type="Script" uid="uid://0mnmwsenhjp1" path="res://Hallasan-Sunset/Environment/Forest/Lamppost/TorchFlicker.gd" id="2_t2scp"]
+
+[sub_resource type="Animation" id="Animation_pj201"]
+resource_name = "Flicker"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_lnkrl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yfksk"]
+_data = {
+&"Flicker": SubResource("Animation_pj201"),
+&"RESET": SubResource("Animation_lnkrl")
+}
+
+[sub_resource type="Gradient" id="Gradient_6iqfe"]
+offsets = PackedFloat32Array(0, 0.179266, 0.568035, 0.924406, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.983333, 0, 1, 1, 0.505882, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pol7p"]
+gradient = SubResource("Gradient_6iqfe")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Torch" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_ha08e")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 480, 120, 48)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yfksk")
+}
+autoplay = "Flicker"
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(-3.8147e-06, -20)
+scale = Vector2(5, 5)
+energy = 0.0
+texture = SubResource("GradientTexture2D_pol7p")
+script = ExtResource("2_t2scp")

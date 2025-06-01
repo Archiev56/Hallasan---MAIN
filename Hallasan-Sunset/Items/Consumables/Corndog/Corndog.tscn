@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://jhbq8ha3kbmc"]
+
+[ext_resource type="Script" uid="uid://rnwo3pjba1ly" path="res://Hallasan-Sunset/Items/Consumables/Corndog/Corndog.gd" id="1_vd0i1"]
+[ext_resource type="Resource" uid="uid://cjn2xlrxf22gp" path="res://Hallasan-Sunset/Items/Consumables/Corndog/Corndog.tres" id="2_ijn1l"]
+[ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="3_mm1g5"]
+[ext_resource type="Texture2D" uid="uid://vk5m0x43biym" path="res://Hallasan-Sunset/Items/Consumables/Corndog/Sprites/Corndog.png" id="4_7007e"]
+[ext_resource type="AudioStream" uid="uid://dahijkeowm3re" path="res://Hallasan-Sunset/Items/Audio/item_pickup.wav" id="4_cw72a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysfpj"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8cjkm"]
+radius = 9.0
+
+[node name="Strawberry" type="StaticBody2D"]
+script = ExtResource("1_vd0i1")
+item = ExtResource("2_ijn1l")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.329412)
+position = Vector2(0, 3)
+rotation = -0.710386
+texture = ExtResource("3_mm1g5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("4_7007e")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+scale = Vector2(4, 3.44)
+shape = SubResource("CircleShape2D_ysfpj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8cjkm")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cw72a")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

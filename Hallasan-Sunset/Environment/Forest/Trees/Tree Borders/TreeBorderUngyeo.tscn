@@ -1,0 +1,241 @@
+[gd_scene load_steps=16 format=3 uid="uid://wjejx1t5mkad"]
+
+[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="1_ryfgm"]
+[ext_resource type="Texture2D" uid="uid://bmwt1fexoqph" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Sprites/pine tree-export.png" id="2_x7d40"]
+[ext_resource type="Texture2D" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tall Tree/tree.png" id="3_ybumv"]
+[ext_resource type="TileSet" uid="uid://ch55l646cr805" path="res://Hallasan-Sunset/Tilemaps/Tileset.tres" id="4_6kmo6"]
+[ext_resource type="PackedScene" path="res://Hallasan-Sunset/npc/Characters/Act 1/Ungyeo Bear/Ungyeo Bear.tscn" id="5_ntfux"]
+[ext_resource type="PackedScene" uid="uid://dc6lo3whucr6e" path="res://Hallasan-Sunset/npc/npc.tscn" id="6_lsugq"]
+[ext_resource type="Script" uid="uid://brnsxqi6efs7t" path="res://Hallasan-Sunset/npc/Dialog/Scripts/DialogInteraction.gd" id="7_xugob"]
+[ext_resource type="Script" uid="uid://cwdm0l0hkothu" path="res://Hallasan-Sunset/npc/Dialog/Scripts/dialog_text.gd" id="8_0mpum"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6lsk"]
+shader = ExtResource("1_ryfgm")
+shader_parameter/WindStrength = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c44wc"]
+shader = ExtResource("1_ryfgm")
+shader_parameter/WindStrength = 6.923
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7e08k"]
+shader = ExtResource("1_ryfgm")
+shader_parameter/WindStrength = 6.787
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_inlc4"]
+a = Vector2(-282, 170)
+b = Vector2(12.0006, 170)
+
+[sub_resource type="Gradient" id="Gradient_l8wsi"]
+offsets = PackedFloat32Array(0, 0.186047, 0.4926, 0.775899, 0.993658)
+colors = PackedColorArray(0.3, 0.3, 0.3, 0, 0.3, 0.3, 0.3, 0.784314, 0.3, 0.3, 0.3, 1, 0.3, 0.3, 0.3, 0.784314, 0.3, 0.3, 0.3, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bu88a"]
+gradient = SubResource("Gradient_l8wsi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iu8qu"]
+shader = ExtResource("1_ryfgm")
+shader_parameter/WindStrength = 6.5
+
+[node name="Ungyeo Tree Border" type="StaticBody2D"]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(102, 29)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Sprite2D18" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(138, -181)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D26" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-44, -184)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D32" type="Sprite2D" parent="."]
+modulate = Color(1, 0.899201, 0.483559, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(50, -183)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D20" type="Sprite2D" parent="."]
+modulate = Color(0.745098, 0.666667, 1, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(138, -181)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D19" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(112, -134)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D36" type="Sprite2D" parent="."]
+modulate = Color(0.948052, 0.648259, 0.452204, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-56, -134)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D27" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(17, -133)
+texture = ExtResource("2_x7d40")
+
+[node name="Tree" type="Sprite2D" parent="Sprite2D27"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_c44wc")
+position = Vector2(-15, 18)
+texture = ExtResource("3_ybumv")
+
+[node name="Sprite2D21" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(140, -80)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D28" type="Sprite2D" parent="."]
+modulate = Color(0.745098, 0.666667, 1, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-41, -80)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D33" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(41, -80)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D22" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(89, -27)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D35" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-77, -27)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D29" type="Sprite2D" parent="."]
+modulate = Color(1, 0.51, 0.51, 1)
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(13, -27)
+texture = ExtResource("2_x7d40")
+
+[node name="Tree2" type="Sprite2D" parent="Sprite2D29"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_7e08k")
+position = Vector2(89, 25)
+texture = ExtResource("3_ybumv")
+
+[node name="Sprite2D23" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(144, 14)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D30" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-51, 14)
+texture = ExtResource("2_x7d40")
+
+[node name="Tree3" type="Sprite2D" parent="Sprite2D30"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_7e08k")
+position = Vector2(43, 12)
+texture = ExtResource("3_ybumv")
+
+[node name="Sprite2D31" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(-32, 64)
+texture = ExtResource("2_x7d40")
+
+[node name="Sprite2D25" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(127, 63)
+texture = ExtResource("2_x7d40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(68, 105)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_inlc4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(366, 105)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_inlc4")
+
+[node name="Shadow(1)" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.317647)
+y_sort_enabled = true
+position = Vector2(46, -33)
+rotation = 1.5708
+scale = Vector2(4.64062, 4.68797)
+texture = SubResource("GradientTexture2D_bu88a")
+
+[node name="Tree3" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_iu8qu")
+position = Vector2(20, -206)
+texture = ExtResource("3_ybumv")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
+y_sort_enabled = true
+tile_set = ExtResource("4_6kmo6")
+
+[node name="Ungyeo Bear" parent="." instance=ExtResource("5_ntfux")]
+y_sort_enabled = true
+position = Vector2(50, 59)
+scale = Vector2(1, 1)
+
+[node name="NPC" parent="." instance=ExtResource("6_lsugq")]
+position = Vector2(50, 85.0724)
+
+[node name="DialogInteraction" type="Area2D" parent="NPC"]
+script = ExtResource("7_xugob")
+metadata/_custom_type_script = "uid://brnsxqi6efs7t"
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("8_0mpum")
+text = "HELLO"
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"
+
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("8_0mpum")
+text = "HELLO"
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"

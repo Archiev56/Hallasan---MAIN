@@ -1,0 +1,2316 @@
+[gd_scene load_steps=263 format=4 uid="uid://c4qt54y8yfq8"]
+
+[ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_pp5ao"]
+[ext_resource type="AudioStream" uid="uid://ck5s35f0psf2s" path="res://Hallasan-Sunset/Audio/Songs/Act 1/Forest/Forest Song.mp3" id="2_3wsw3"]
+[ext_resource type="PackedScene" uid="uid://cr8c8wtlgk4rc" path="res://Hallasan-Sunset/Tilemaps/Tileset.tscn" id="2_kob8o"]
+[ext_resource type="PackedScene" uid="uid://cb2ddj5khwruw" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.tscn" id="3_og72v"]
+[ext_resource type="PackedScene" uid="uid://mquiukhsvnvp" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tree Borders/TreeBorderSide.tscn" id="3_phv1l"]
+[ext_resource type="PackedScene" uid="uid://c8apix32mxq0a" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Newgrass/leaf.tscn" id="4_0gpnf"]
+[ext_resource type="TileSet" uid="uid://ch55l646cr805" path="res://Hallasan-Sunset/Tilemaps/Tileset.tres" id="4_bcoq0"]
+[ext_resource type="PackedScene" uid="uid://4cp3bb2wjdid" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Interactive_grass.tscn" id="4_is4ja"]
+[ext_resource type="PackedScene" uid="uid://wjejx1t5mkad" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tree Borders/TreeBorderUngyeo.tscn" id="4_nga1f"]
+[ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="5_gcolb"]
+[ext_resource type="Script" uid="uid://bkfrr01tlskb5" path="res://Hallasan-Sunset/Tilemaps/Scripts/LevelTileMapLayer.gd" id="5_lr8el"]
+[ext_resource type="Shader" uid="uid://5dcpu3f0b0il" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Newgrass/leaf.gdshader" id="5_tfx7x"]
+[ext_resource type="PackedScene" uid="uid://cbc44elj4cips" path="res://Hallasan-Sunset/Environment/Weather/Wind/Wind.tscn" id="7_pldhg"]
+[ext_resource type="PackedScene" uid="uid://s87tt1bkx3ku" path="res://Hallasan-Sunset/Environment/Weather/Floating Lights/Floating lights.tscn" id="8_vb0rd"]
+[ext_resource type="PackedScene" uid="uid://byh8a7p1yblry" path="res://Hallasan-Sunset/Environment/Weather/Leaves/Magicleaves.tscn" id="9_c0770"]
+[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="14_bqflp"]
+
+[sub_resource type="Gradient" id="Gradient_bfuax"]
+offsets = PackedFloat32Array(0.174263, 0.825737)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3glnw"]
+noise_type = 3
+frequency = 0.0328
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2tuiu"]
+seamless = true
+color_ramp = SubResource("Gradient_bfuax")
+noise = SubResource("FastNoiseLite_3glnw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lymkh"]
+shader = ExtResource("5_tfx7x")
+shader_parameter/noise = SubResource("NoiseTexture2D_2tuiu")
+shader_parameter/frequencyMod = 500.0
+shader_parameter/windSpeed = 0.05
+
+[sub_resource type="Curve" id="Curve_k6wx2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_6nr44"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.110406, 0.141857, 0.106422, 1, 0.300299, 0.451984, 0.213816, 1, 0.298428, 0.450895, 0.212003, 1)
+
+[sub_resource type="Curve" id="Curve_4tehx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_2tac1"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.110406, 0.141857, 0.106422, 1, 0.300299, 0.451984, 0.213816, 1, 0.298428, 0.450895, 0.212003, 1)
+
+[sub_resource type="Curve" id="Curve_3oher"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_01mgu"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.110406, 0.141857, 0.106422, 1, 0.300299, 0.451984, 0.213816, 1, 0.298428, 0.450895, 0.212003, 1)
+
+[sub_resource type="Curve" id="Curve_5as20"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_4oxqf"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.110406, 0.141857, 0.106422, 1, 0.300299, 0.451984, 0.213816, 1, 0.298428, 0.450895, 0.212003, 1)
+
+[sub_resource type="Curve" id="Curve_8t1ek"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_i3abr"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.110406, 0.141857, 0.106422, 1, 0.300299, 0.451984, 0.213816, 1, 0.298428, 0.450895, 0.212003, 1)
+
+[sub_resource type="Curve" id="Curve_b6s4a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_mk0ls"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.110406, 0.141857, 0.106422, 1, 0.300299, 0.451984, 0.213816, 1, 0.298428, 0.450895, 0.212003, 1)
+
+[sub_resource type="Curve" id="Curve_liqfp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_fqv8w"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.110406, 0.141857, 0.106422, 1, 0.300299, 0.451984, 0.213816, 1, 0.298428, 0.450895, 0.212003, 1)
+
+[sub_resource type="Curve" id="Curve_s0gnm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_bsryo"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.110406, 0.141857, 0.106422, 1, 0.300299, 0.451984, 0.213816, 1, 0.298428, 0.450895, 0.212003, 1)
+
+[sub_resource type="Curve" id="Curve_775ty"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_8ga3n"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.110406, 0.141857, 0.106422, 1, 0.300299, 0.451984, 0.213816, 1, 0.298428, 0.450895, 0.212003, 1)
+
+[sub_resource type="Curve" id="Curve_yt0l5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_hxka1"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.109441, 0.139225, 0.0901455, 1, 0.297673, 0.443596, 0.181115, 1, 0.295818, 0.442528, 0.179579, 1)
+
+[sub_resource type="Curve" id="Curve_4yir4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_wiclb"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.109441, 0.139225, 0.0901455, 1, 0.297673, 0.443596, 0.181115, 1, 0.295818, 0.442528, 0.179579, 1)
+
+[sub_resource type="Curve" id="Curve_af4uu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_g8kp6"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.109441, 0.139225, 0.0901455, 1, 0.297673, 0.443596, 0.181115, 1, 0.295818, 0.442528, 0.179579, 1)
+
+[sub_resource type="Curve" id="Curve_5j3mp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_fou8a"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.109441, 0.139225, 0.0901455, 1, 0.297673, 0.443596, 0.181115, 1, 0.295818, 0.442528, 0.179579, 1)
+
+[sub_resource type="Curve" id="Curve_03qq2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_jq8p4"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.109441, 0.139225, 0.0901455, 1, 0.297673, 0.443596, 0.181115, 1, 0.295818, 0.442528, 0.179579, 1)
+
+[sub_resource type="Curve" id="Curve_fpqj1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_1qfrn"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.109441, 0.139225, 0.0901455, 1, 0.297673, 0.443596, 0.181115, 1, 0.295818, 0.442528, 0.179579, 1)
+
+[sub_resource type="Curve" id="Curve_iis1w"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_w6614"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.109441, 0.139225, 0.0901455, 1, 0.297673, 0.443596, 0.181115, 1, 0.295818, 0.442528, 0.179579, 1)
+
+[sub_resource type="Curve" id="Curve_hho76"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_nkirf"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0992709, 0.191118, 0.0786841, 1, 0.270012, 0.608938, 0.158087, 1, 0.268329, 0.607471, 0.156747, 1)
+
+[sub_resource type="Curve" id="Curve_kerq6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_r5clh"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0992709, 0.191118, 0.0786841, 1, 0.270012, 0.608938, 0.158087, 1, 0.268329, 0.607471, 0.156747, 1)
+
+[sub_resource type="Curve" id="Curve_pbw4c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_w8gin"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0992709, 0.191118, 0.0786841, 1, 0.270012, 0.608938, 0.158087, 1, 0.268329, 0.607471, 0.156747, 1)
+
+[sub_resource type="Curve" id="Curve_kjix8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_brg0f"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0992709, 0.191118, 0.0786841, 1, 0.270012, 0.608938, 0.158087, 1, 0.268329, 0.607471, 0.156747, 1)
+
+[sub_resource type="Curve" id="Curve_ahteg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_xhol0"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0992709, 0.191118, 0.0786841, 1, 0.270012, 0.608938, 0.158087, 1, 0.268329, 0.607471, 0.156747, 1)
+
+[sub_resource type="Curve" id="Curve_uge48"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_7bxy3"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0992709, 0.191118, 0.0786841, 1, 0.270012, 0.608938, 0.158087, 1, 0.268329, 0.607471, 0.156747, 1)
+
+[sub_resource type="Curve" id="Curve_3clul"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_pwap1"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0992709, 0.191118, 0.0786841, 1, 0.270012, 0.608938, 0.158087, 1, 0.268329, 0.607471, 0.156747, 1)
+
+[sub_resource type="Curve" id="Curve_phqxg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_vul5r"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.10945, 0.180897, 0.0966006, 1, 0.297698, 0.576373, 0.194084, 1, 0.295844, 0.574985, 0.192439, 1)
+
+[sub_resource type="Curve" id="Curve_8p8fw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_k03v3"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.10945, 0.180897, 0.0966006, 1, 0.297698, 0.576373, 0.194084, 1, 0.295844, 0.574985, 0.192439, 1)
+
+[sub_resource type="Curve" id="Curve_c5psc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_lld87"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.10945, 0.180897, 0.0966006, 1, 0.297698, 0.576373, 0.194084, 1, 0.295844, 0.574985, 0.192439, 1)
+
+[sub_resource type="Curve" id="Curve_dncgg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_xgciw"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.10945, 0.180897, 0.0966006, 1, 0.297698, 0.576373, 0.194084, 1, 0.295844, 0.574985, 0.192439, 1)
+
+[sub_resource type="Curve" id="Curve_34mmk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_tpbjq"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.10945, 0.180897, 0.0966006, 1, 0.297698, 0.576373, 0.194084, 1, 0.295844, 0.574985, 0.192439, 1)
+
+[sub_resource type="Curve" id="Curve_nxnnu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_7rtbs"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.10945, 0.180897, 0.0966006, 1, 0.297698, 0.576373, 0.194084, 1, 0.295844, 0.574985, 0.192439, 1)
+
+[sub_resource type="Curve" id="Curve_nef0i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_t770a"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.10945, 0.180897, 0.0966006, 1, 0.297698, 0.576373, 0.194084, 1, 0.295844, 0.574985, 0.192439, 1)
+
+[sub_resource type="Curve" id="Curve_k6plq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_meh3r"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0978878, 0.166295, 0.101385, 1, 0.26625, 0.529847, 0.203696, 1, 0.264591, 0.528571, 0.201969, 1)
+
+[sub_resource type="Curve" id="Curve_iosu0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_a3noc"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0978878, 0.166295, 0.101385, 1, 0.26625, 0.529847, 0.203696, 1, 0.264591, 0.528571, 0.201969, 1)
+
+[sub_resource type="Curve" id="Curve_s23ny"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_fqvye"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0978878, 0.166295, 0.101385, 1, 0.26625, 0.529847, 0.203696, 1, 0.264591, 0.528571, 0.201969, 1)
+
+[sub_resource type="Curve" id="Curve_am4rq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_ygn5e"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0978878, 0.166295, 0.101385, 1, 0.26625, 0.529847, 0.203696, 1, 0.264591, 0.528571, 0.201969, 1)
+
+[sub_resource type="Curve" id="Curve_fl6yn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_4o7ak"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0978878, 0.166295, 0.101385, 1, 0.26625, 0.529847, 0.203696, 1, 0.264591, 0.528571, 0.201969, 1)
+
+[sub_resource type="Curve" id="Curve_0jr04"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_u6teq"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0978878, 0.166295, 0.101385, 1, 0.26625, 0.529847, 0.203696, 1, 0.264591, 0.528571, 0.201969, 1)
+
+[sub_resource type="Curve" id="Curve_punhx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_8ju0n"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0978878, 0.166295, 0.101385, 1, 0.26625, 0.529847, 0.203696, 1, 0.264591, 0.528571, 0.201969, 1)
+
+[sub_resource type="Curve" id="Curve_h7nqg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_f5ajg"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0978878, 0.166295, 0.101385, 1, 0.26625, 0.529847, 0.203696, 1, 0.264591, 0.528571, 0.201969, 1)
+
+[sub_resource type="Curve" id="Curve_q7kno"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_wguoo"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.076911, 0.160758, 0.104419, 1, 0.209194, 0.512205, 0.209793, 1, 0.207891, 0.510971, 0.208015, 1)
+
+[sub_resource type="Curve" id="Curve_lnaai"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_b1f1g"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.076911, 0.160758, 0.104419, 1, 0.209194, 0.512205, 0.209793, 1, 0.207891, 0.510971, 0.208015, 1)
+
+[sub_resource type="Curve" id="Curve_k4ujw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_22cdd"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.076911, 0.160758, 0.104419, 1, 0.209194, 0.512205, 0.209793, 1, 0.207891, 0.510971, 0.208015, 1)
+
+[sub_resource type="Curve" id="Curve_5wbe7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_w7tr8"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.076911, 0.160758, 0.104419, 1, 0.209194, 0.512205, 0.209793, 1, 0.207891, 0.510971, 0.208015, 1)
+
+[sub_resource type="Curve" id="Curve_42emb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_l1u72"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.076911, 0.160758, 0.104419, 1, 0.209194, 0.512205, 0.209793, 1, 0.207891, 0.510971, 0.208015, 1)
+
+[sub_resource type="Curve" id="Curve_s6x78"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_o5paw"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.076911, 0.160758, 0.104419, 1, 0.209194, 0.512205, 0.209793, 1, 0.207891, 0.510971, 0.208015, 1)
+
+[sub_resource type="Curve" id="Curve_s47i2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_ian12"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.076911, 0.160758, 0.104419, 1, 0.209194, 0.512205, 0.209793, 1, 0.207891, 0.510971, 0.208015, 1)
+
+[sub_resource type="Curve" id="Curve_145cl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_jfwto"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.103375, 0.169883, 0.114575, 1, 0.281174, 0.54128, 0.230196, 1, 0.279423, 0.539976, 0.228245, 1)
+
+[sub_resource type="Curve" id="Curve_wgohq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_es1qe"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.103375, 0.169883, 0.114575, 1, 0.281174, 0.54128, 0.230196, 1, 0.279423, 0.539976, 0.228245, 1)
+
+[sub_resource type="Curve" id="Curve_6dvtv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_yheb1"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.103375, 0.169883, 0.114575, 1, 0.281174, 0.54128, 0.230196, 1, 0.279423, 0.539976, 0.228245, 1)
+
+[sub_resource type="Curve" id="Curve_co1qr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_gtyv1"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.103375, 0.169883, 0.114575, 1, 0.281174, 0.54128, 0.230196, 1, 0.279423, 0.539976, 0.228245, 1)
+
+[sub_resource type="Curve" id="Curve_brea0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_evch3"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.103375, 0.169883, 0.114575, 1, 0.281174, 0.54128, 0.230196, 1, 0.279423, 0.539976, 0.228245, 1)
+
+[sub_resource type="Curve" id="Curve_ru6yy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_x3yex"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.103375, 0.169883, 0.114575, 1, 0.281174, 0.54128, 0.230196, 1, 0.279423, 0.539976, 0.228245, 1)
+
+[sub_resource type="Curve" id="Curve_r2wav"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_nv30i"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.103375, 0.169883, 0.114575, 1, 0.281174, 0.54128, 0.230196, 1, 0.279423, 0.539976, 0.228245, 1)
+
+[sub_resource type="Curve" id="Curve_2qfmj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_huumg"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.103375, 0.169883, 0.114575, 1, 0.281174, 0.54128, 0.230196, 1, 0.279423, 0.539976, 0.228245, 1)
+
+[sub_resource type="Curve" id="Curve_u13iq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_m2lcw"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.108833, 0.1691, 0.11153, 1, 0.296021, 0.538786, 0.22408, 1, 0.294176, 0.537488, 0.22218, 1)
+
+[sub_resource type="Curve" id="Curve_xwmkl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_am8gj"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.108833, 0.1691, 0.11153, 1, 0.296021, 0.538786, 0.22408, 1, 0.294176, 0.537488, 0.22218, 1)
+
+[sub_resource type="Curve" id="Curve_r31pm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_4t466"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.108833, 0.1691, 0.11153, 1, 0.296021, 0.538786, 0.22408, 1, 0.294176, 0.537488, 0.22218, 1)
+
+[sub_resource type="Curve" id="Curve_b53eq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_co8rn"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.108833, 0.1691, 0.11153, 1, 0.296021, 0.538786, 0.22408, 1, 0.294176, 0.537488, 0.22218, 1)
+
+[sub_resource type="Curve" id="Curve_sssfp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_48f5t"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.108833, 0.1691, 0.11153, 1, 0.296021, 0.538786, 0.22408, 1, 0.294176, 0.537488, 0.22218, 1)
+
+[sub_resource type="Curve" id="Curve_ypksc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_8slov"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.108833, 0.1691, 0.11153, 1, 0.296021, 0.538786, 0.22408, 1, 0.294176, 0.537488, 0.22218, 1)
+
+[sub_resource type="Curve" id="Curve_gbr4u"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_3r1gu"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.108833, 0.1691, 0.11153, 1, 0.296021, 0.538786, 0.22408, 1, 0.294176, 0.537488, 0.22218, 1)
+
+[sub_resource type="Curve" id="Curve_7jljg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_qvecr"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.108833, 0.1691, 0.11153, 1, 0.296021, 0.538786, 0.22408, 1, 0.294176, 0.537488, 0.22218, 1)
+
+[sub_resource type="Curve" id="Curve_vcwsu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_kq1no"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.108833, 0.1691, 0.11153, 1, 0.296021, 0.538786, 0.22408, 1, 0.294176, 0.537488, 0.22218, 1)
+
+[sub_resource type="Curve" id="Curve_rq4ig"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_a88fv"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0861894, 0.187284, 0.0927276, 1, 0.234431, 0.596722, 0.186303, 1, 0.23297, 0.595284, 0.184723, 1)
+
+[sub_resource type="Curve" id="Curve_72hb8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_s2wsy"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0861894, 0.187284, 0.0927276, 1, 0.234431, 0.596722, 0.186303, 1, 0.23297, 0.595284, 0.184723, 1)
+
+[sub_resource type="Curve" id="Curve_hb0jl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_s0ye0"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0861894, 0.187284, 0.0927276, 1, 0.234431, 0.596722, 0.186303, 1, 0.23297, 0.595284, 0.184723, 1)
+
+[sub_resource type="Curve" id="Curve_7rk4c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_blkf3"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0861894, 0.187284, 0.0927276, 1, 0.234431, 0.596722, 0.186303, 1, 0.23297, 0.595284, 0.184723, 1)
+
+[sub_resource type="Curve" id="Curve_kpjej"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_51m88"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0861894, 0.187284, 0.0927276, 1, 0.234431, 0.596722, 0.186303, 1, 0.23297, 0.595284, 0.184723, 1)
+
+[sub_resource type="Curve" id="Curve_4qbj2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_xsmll"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0861894, 0.187284, 0.0927276, 1, 0.234431, 0.596722, 0.186303, 1, 0.23297, 0.595284, 0.184723, 1)
+
+[sub_resource type="Curve" id="Curve_4mop1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_xmvws"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.0861894, 0.187284, 0.0927276, 1, 0.234431, 0.596722, 0.186303, 1, 0.23297, 0.595284, 0.184723, 1)
+
+[sub_resource type="Curve" id="Curve_7juts"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_al640"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.11542, 0.164666, 0.103378, 1, 0.313937, 0.524656, 0.2077, 1, 0.311981, 0.523392, 0.205939, 1)
+
+[sub_resource type="Curve" id="Curve_g2khc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_3xvk8"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.11542, 0.164666, 0.103378, 1, 0.313937, 0.524656, 0.2077, 1, 0.311981, 0.523392, 0.205939, 1)
+
+[sub_resource type="Curve" id="Curve_4ewbi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_fim55"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.11542, 0.164666, 0.103378, 1, 0.313937, 0.524656, 0.2077, 1, 0.311981, 0.523392, 0.205939, 1)
+
+[sub_resource type="Curve" id="Curve_7ehal"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_lie16"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.11542, 0.164666, 0.103378, 1, 0.313937, 0.524656, 0.2077, 1, 0.311981, 0.523392, 0.205939, 1)
+
+[sub_resource type="Curve" id="Curve_1dlev"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_i7s17"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.11542, 0.164666, 0.103378, 1, 0.313937, 0.524656, 0.2077, 1, 0.311981, 0.523392, 0.205939, 1)
+
+[sub_resource type="Curve" id="Curve_gxukn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_bhy0a"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.11542, 0.164666, 0.103378, 1, 0.313937, 0.524656, 0.2077, 1, 0.311981, 0.523392, 0.205939, 1)
+
+[sub_resource type="Curve" id="Curve_gfbeo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_n3vth"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.11542, 0.164666, 0.103378, 1, 0.313937, 0.524656, 0.2077, 1, 0.311981, 0.523392, 0.205939, 1)
+
+[sub_resource type="Curve" id="Curve_jbmwj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_u08hc"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.11542, 0.164666, 0.103378, 1, 0.313937, 0.524656, 0.2077, 1, 0.311981, 0.523392, 0.205939, 1)
+
+[sub_resource type="Curve" id="Curve_0wu02"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_m42n6"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_lcrq8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_7xcgy"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_hayce"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_ibi3w"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_mgbim"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_asv8q"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_qrkv3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_vmuo2"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_smr2y"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_3kg5k"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_8chsq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_u1xsb"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_0wgg1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_8wjsu"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_qsxgf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_2lef0"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_l4xt6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_ex7sd"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.106952, 0.20579, 0.0967026, 1, 0.290904, 0.655687, 0.194289, 1, 0.289092, 0.654107, 0.192642, 1)
+
+[sub_resource type="Curve" id="Curve_vnubk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_2stoy"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.111175, 0.211186, 0.0769989, 1, 0.302389, 0.672878, 0.154702, 1, 0.300506, 0.671257, 0.15339, 1)
+
+[sub_resource type="Curve" id="Curve_cvmja"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_vf47s"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.111175, 0.211186, 0.0769989, 1, 0.302389, 0.672878, 0.154702, 1, 0.300506, 0.671257, 0.15339, 1)
+
+[sub_resource type="Curve" id="Curve_alx1u"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_bcn3q"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.111175, 0.211186, 0.0769989, 1, 0.302389, 0.672878, 0.154702, 1, 0.300506, 0.671257, 0.15339, 1)
+
+[sub_resource type="Curve" id="Curve_rtpqc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_jgbry"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.111175, 0.211186, 0.0769989, 1, 0.302389, 0.672878, 0.154702, 1, 0.300506, 0.671257, 0.15339, 1)
+
+[sub_resource type="Curve" id="Curve_oofgv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_i606t"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.111175, 0.211186, 0.0769989, 1, 0.302389, 0.672878, 0.154702, 1, 0.300506, 0.671257, 0.15339, 1)
+
+[sub_resource type="Curve" id="Curve_t62c2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_x7wen"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.111175, 0.211186, 0.0769989, 1, 0.302389, 0.672878, 0.154702, 1, 0.300506, 0.671257, 0.15339, 1)
+
+[sub_resource type="Curve" id="Curve_ivn20"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_06pu7"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.111175, 0.211186, 0.0769989, 1, 0.302389, 0.672878, 0.154702, 1, 0.300506, 0.671257, 0.15339, 1)
+
+[sub_resource type="Curve" id="Curve_p5q7d"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_qwmt0"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.111175, 0.211186, 0.0769989, 1, 0.302389, 0.672878, 0.154702, 1, 0.300506, 0.671257, 0.15339, 1)
+
+[sub_resource type="Curve" id="Curve_5p7di"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_gu4i8"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.101392, 0.216653, 0.0987457, 1, 0.27578, 0.690298, 0.198394, 1, 0.274062, 0.688636, 0.196712, 1)
+
+[sub_resource type="Curve" id="Curve_n3xb3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_d1uhc"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.101392, 0.216653, 0.0987457, 1, 0.27578, 0.690298, 0.198394, 1, 0.274062, 0.688636, 0.196712, 1)
+
+[sub_resource type="Curve" id="Curve_f6k8g"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_paspg"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.101392, 0.216653, 0.0987457, 1, 0.27578, 0.690298, 0.198394, 1, 0.274062, 0.688636, 0.196712, 1)
+
+[sub_resource type="Curve" id="Curve_gckln"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_ol68r"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.101392, 0.216653, 0.0987457, 1, 0.27578, 0.690298, 0.198394, 1, 0.274062, 0.688636, 0.196712, 1)
+
+[sub_resource type="Curve" id="Curve_v4dn8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_u8yga"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.101392, 0.216653, 0.0987457, 1, 0.27578, 0.690298, 0.198394, 1, 0.274062, 0.688636, 0.196712, 1)
+
+[sub_resource type="Curve" id="Curve_nj5os"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_y40j7"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.101392, 0.216653, 0.0987457, 1, 0.27578, 0.690298, 0.198394, 1, 0.274062, 0.688636, 0.196712, 1)
+
+[sub_resource type="Curve" id="Curve_gp236"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_vr2qt"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.101392, 0.216653, 0.0987457, 1, 0.27578, 0.690298, 0.198394, 1, 0.274062, 0.688636, 0.196712, 1)
+
+[sub_resource type="Curve" id="Curve_tk1v8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_cxib7"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_3qscy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_wxc66"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_tegro"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_etdr8"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_mo356"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_rdyd5"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_ou052"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_esxqx"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_5vcb2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_t7pjk"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_jpjfy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_hxc0j"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_npqlg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_nnvrm"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_ct51p"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_5iegb"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_ydylg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_oe1k4"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.104704, 0.189778, 0.0864251, 1, 0.284789, 0.604669, 0.17364, 1, 0.283014, 0.603212, 0.172168, 1)
+
+[sub_resource type="Curve" id="Curve_jbp3a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_trsg6"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.102533, 0.140433, 0.096857, 1, 0.278884, 0.447446, 0.194599, 1, 0.277147, 0.446368, 0.192949, 1)
+
+[sub_resource type="Curve" id="Curve_fd4ev"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_kgkmy"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.102533, 0.140433, 0.096857, 1, 0.278884, 0.447446, 0.194599, 1, 0.277147, 0.446368, 0.192949, 1)
+
+[sub_resource type="Curve" id="Curve_gn8oe"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_481mu"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.102533, 0.140433, 0.096857, 1, 0.278884, 0.447446, 0.194599, 1, 0.277147, 0.446368, 0.192949, 1)
+
+[sub_resource type="Curve" id="Curve_fyht8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_7ybyx"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.102533, 0.140433, 0.096857, 1, 0.278884, 0.447446, 0.194599, 1, 0.277147, 0.446368, 0.192949, 1)
+
+[sub_resource type="Curve" id="Curve_nni1q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_e13cq"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.102533, 0.140433, 0.096857, 1, 0.278884, 0.447446, 0.194599, 1, 0.277147, 0.446368, 0.192949, 1)
+
+[sub_resource type="Curve" id="Curve_k5344"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_l0tyd"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.102533, 0.140433, 0.096857, 1, 0.278884, 0.447446, 0.194599, 1, 0.277147, 0.446368, 0.192949, 1)
+
+[sub_resource type="Curve" id="Curve_0sxs8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_13a02"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.102533, 0.140433, 0.096857, 1, 0.278884, 0.447446, 0.194599, 1, 0.277147, 0.446368, 0.192949, 1)
+
+[sub_resource type="Curve" id="Curve_8uggb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_c55ah"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.102533, 0.140433, 0.096857, 1, 0.278884, 0.447446, 0.194599, 1, 0.277147, 0.446368, 0.192949, 1)
+
+[sub_resource type="Curve" id="Curve_cx180"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496599, 0.784232), 0.0, 0.0, 0, 0, Vector2(0.791383, 0.716424), 0.0, 0.0, 0, 0, Vector2(1, 0.321642), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_1h4oi"]
+offsets = PackedFloat32Array(0, 0.40399, 1)
+colors = PackedColorArray(0.102533, 0.140433, 0.096857, 1, 0.278884, 0.447446, 0.194599, 1, 0.277147, 0.446368, 0.192949, 1)
+
+[node name="Map" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_pp5ao")
+music = ExtResource("2_3wsw3")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("5_gcolb")]
+position = Vector2(485, 25)
+
+[node name="Tileset" parent="." instance=ExtResource("2_kob8o")]
+tile_map_data = PackedByteArray("AAAZAA4ACAAXAAIAAAAZAA0ACAAXAAIAAAAZAAwACAAXAAIAAAAZAAsACAAXAAIAAAAZAAoACAAYAAAAAAAZAAkACAADAAMAAAAZAAgACAAFAAAAAAAZAAcACAAGAAIAAAAZAAYACAACAAMAAAAZAAUACAAJAAAAAAAZAAQACAABAAMAAAAZAAMACAAKAAIAAAAZAAIACAAAAAMAAAAZAAEACAABAAMAAAAZAAAACAAFAAMAAAAYAA4ACAAWAAEAAAAYAA0ACAAWAAEAAAAYAAwACAAWAAEAAAAYAAsACAAWAAEAAAAYAAoACAAWAAAAAAAYAAkACAABAAEAAAAYAAgACAAMAAIAAAAYAAcACAANAAAAAAAYAAYACAAEAAMAAAAYAAUACAABAAMAAAAYAAQACAAKAAIAAAAYAAMACAAMAAAAAAAYAAIACAAHAAAAAAAYAAEACAAGAAEAAAAYAAAACAALAAEAAAAXAA4ACAAJAAAAAAAXAA0ACAAHAAAAAAAXAAwACAAEAAIAAAAXAAsACAAMAAIAAAAXAAoACAALAAEAAAAXAAkACAAHAAAAAAAXAAgACAAFAAMAAAAXAAcACAAAAAMAAAAXAAYACAADAAIAAAAXAAUACAADAAIAAAAXAAQACAANAAEAAAAXAAMACAAKAAEAAAAXAAIACAAMAAAAAAAXAAEACAAKAAIAAAAXAAAACAARAAMAAAAWAA4ACAAHAAIAAAAWAA0ACAAKAAEAAAAWAAwACAAGAAMAAAAWAAsACAAGAAMAAAAWAAoACAANAAEAAAAWAAkACAADAAEAAAAWAAgACAALAAEAAAAWAAcACAAFAAAAAAAWAAYACAALAAEAAAAWAAUACAAEAAEAAAAWAAQACAAFAAMAAAAWAAMACAAGAAIAAAAWAAIACAAEAAAAAAAWAAEACAAZAAMAAAAWAAAACAAUAAAAAAAVAA4ACAAEAAIAAAAVAA0ACAAIAAAAAAAVAAwACAAJAAAAAAAVAAsACAAGAAMAAAAVAAoACAAAAAAAAAAVAAkACAAIAAMAAAAVAAgACAAEAAIAAAAVAAcACAAIAAAAAAAVAAYACAAJAAEAAAAVAAUACAANAAIAAAAVAAQACAAZAAMAAAAVAAMACAAZAAIAAAAVAAIACAAZAAIAAAAVAAEACAAUAAIAAAAVAAAACAAYAAAAAAAUAA4ACAAGAAIAAAAUAA0ACAAGAAIAAAAUAAwACAAKAAIAAAAUAAsACAAJAAIAAAAUAAoACAAEAAEAAAAUAAkACAAKAAEAAAAUAAgACAAJAAEAAAAUAAcACAANAAAAAAAUAAYACAAIAAMAAAAUAAUACAAIAAIAAAAUAAQACAAWAAMAAAAUAAMACAATAAIAAAAUAAIACAAXAAIAAAAUAAEACAAXAAIAAAAUAAAACAAYAAAAAAATAA4ACAACAAEAAAATAA0ACAANAAEAAAATAAwACAAGAAMAAAATAAsACAACAAIAAAATAAoACAAAAAAAAAATAAkACAAGAAAAAAATAAgACAAKAAIAAAATAAcACAACAAAAAAATAAYACAAIAAAAAAATAAUACAACAAEAAAATAAQACAAJAAEAAAATAAMACAAWAAMAAAATAAIACAATAAIAAAATAAEACAAXAAIAAAATAAAACAAYAAAAAAASAA4ACAANAAEAAAASAA0ACAAAAAAAAAASAAwACAAMAAIAAAASAAsACAADAAMAAAASAAoACAALAAAAAAASAAkACAAEAAEAAAASAAgACAANAAEAAAASAAcACAAMAAAAAAASAAYACAAIAAAAAAASAAUACAADAAIAAAASAAQACAAAAAEAAAASAAMACAAEAAAAAAASAAIACAAWAAMAAAASAAEACAAWAAEAAAASAAAACAATAAAAAAARAA4ACAABAAMAAAARAA0ACAADAAEAAAARAAwACAAHAAAAAAARAAsACAANAAAAAAARAAoACAAIAAIAAAARAAkACAAEAAIAAAARAAgACAADAAEAAAARAAcACAAGAAEAAAARAAYACAAIAAAAAAARAAUACAAJAAEAAAARAAQACAAHAAEAAAARAAMACAAAAAIAAAARAAIACAACAAAAAAARAAEACAAGAAAAAAARAAAACAAPAAMAAAAQAA4ACAAIAAEAAAAQAA0ACAALAAIAAAAQAAwACAAMAAEAAAAQAAsACAAHAAEAAAAQAAoACAALAAAAAAAQAAkACAAFAAMAAAAQAAgACAAAAAEAAAAQAAcAAAAZAA4AAAAQAAYAAAAZAA0AAAAQAAUAAAAZAAcAAAAQAAQAAAAZAAcAAAAQAAMAAAAZAAcAAAAQAAIAAAAZAAcAAAAQAAEAAAAZAAcAAAAQAAAAAAAZAAcAAAAPAA4ACAALAAAAAAAPAA0ACAACAAAAAAAPAAwACAAEAAAAAAAPAAsACAAGAAAAAAAPAAoACAALAAIAAAAPAAkACAAEAAIAAAAPAAgACAANAAAAAAAPAAcAAAAYAA4AAAAPAAYAAAAYAA0AAAAPAAUAAAAYAAcAAAAPAAQAAAAYAAcAAAAPAAMAAAAYAAcAAAAPAAIAAAAYAAcAAAAPAAEAAAAYAAcAAAAPAAAAAAAYAAcAAAAOAA4ACAACAAMAAAAOAA0ACAALAAEAAAAOAAwACAAAAAIAAAAOAAsACAAJAAIAAAAOAAoACAAAAAAAAAAOAAkACAAAAAAAAAAOAAgACAANAAIAAAAOAAcAAAAXAA4AAAAOAAYAAAAXAA0AAAAOAAUAAAAXAAsAAAAOAAQAAAAXAAsAAAAOAAMAAAAXAAsAAAAOAAIAAAAXAAsAAAAOAAEAAAAXAAsAAAAOAAAAAAAXAAsAAAANAA4ACAADAAAAAAANAA0ACAAEAAEAAAANAAwACAAHAAEAAAANAAsACAAMAAIAAAANAAoACAAFAAMAAAANAAkACAAAAAMAAAANAAgACAAIAAIAAAANAAcAAAAaAAwAAAANAAYAAAAaAAsAAAANAAUAAAAXAAsAAAANAAQAAAAXAAsAAAANAAMAAAAXAAsAAAANAAIAAAAXAAsAAAANAAEAAAAXAAsAAAANAAAAAAAXAAsAAAAMAA4AAAAZAA0AAAAMAA0AAAAZAA0AAAAMAAwAAAAZAA0AAAAMAAsAAAAZAA0AAAAMAAoAAAAZAA0AAAAMAAkAAAAZAA0AAAAMAAgAAAAZAA0AAAAMAAcAAAAZAAwAAAAMAAYAAAAZAAsAAAAMAAUAAAAXAAsAAAAMAAQAAAAXAAsAAAAMAAMAAAAXAAsAAAAMAAIAAAAXAAsAAAAMAAEAAAAXAAsAAAAMAAAAAAAXAAsAAAALAA4AAAAYAA0AAAALAA0AAAAYAA0AAAALAAwAAAAYAA0AAAALAAsAAAAYAA0AAAALAAoAAAAYAA0AAAALAAkAAAAYAA0AAAALAAgAAAAYAA0AAAALAAcAAAAYAAwAAAALAAYAAAAYAAsAAAALAAUAAAAXAAsAAAALAAQAAAAXAAsAAAALAAMAAAAXAAsAAAALAAIAAAAXAAsAAAALAAEAAAAXAAsAAAALAAAAAAAXAAsAAAAKAA4AAAAXAAsAAAAKAA0AAAAXAAsAAAAKAAwAAAAXAAsAAAAKAAsAAAAXAAsAAAAKAAoAAAAXAAsAAAAKAAkAAAAXAAsAAAAKAAgAAAAXAAsAAAAKAAcAAAAXAAsAAAAKAAYAAAAXAAsAAAAKAAUAAAAXAAsAAAAKAAQAAAAXAAsAAAAKAAMAAAAXAAsAAAAKAAIAAAAXAAsAAAAKAAEAAAAXAAsAAAAKAAAAAAAXAAsAAAAJAA4AAAAXAAsAAAAJAA0AAAAXAAsAAAAJAAwAAAAXAAsAAAAJAAsAAAAXAAsAAAAJAAoAAAAXAAsAAAAJAAkAAAAXAAsAAAAJAAgAAAAXAAsAAAAJAAcAAAAXAAsAAAAJAAYAAAAXAAsAAAAJAAUAAAAXAAsAAAAJAAQAAAAXAAsAAAAJAAMAAAAXAAsAAAAJAAIAAAAXAAsAAAAJAAEAAAAXAAsAAAAJAAAAAAAXAAsAAAAIAA4AAAAXAAsAAAAIAA0AAAAXAAsAAAAIAAwAAAAXAAsAAAAIAAsAAAAXAAsAAAAIAAoAAAAXAAsAAAAIAAkAAAAXAAsAAAAIAAgAAAAXAAsAAAAIAAcAAAAXAAsAAAAIAAYAAAAXAAsAAAAIAAUAAAAXAAsAAAAIAAQAAAAXAAsAAAAIAAMAAAAXAAsAAAAIAAIAAAAXAAsAAAAIAAEAAAAXAAsAAAAIAAAAAAAXAAsAAAAHAA4AAAAXAAsAAAAHAA0AAAAXAAsAAAAHAAwAAAAXAAsAAAAHAAsAAAAXAAsAAAAHAAoAAAAXAAsAAAAHAAkAAAAXAAsAAAAHAAgAAAAXAAsAAAAHAAcAAAAXAAsAAAAHAAYAAAAXAAsAAAAHAAUAAAAXAAsAAAAHAAQAAAAXAAsAAAAHAAMAAAAXAAsAAAAHAAIAAAAXAAsAAAAHAAEAAAAXAAsAAAAHAAAAAAAXAAsAAAAGAA4AAAAXAAsAAAAGAA0AAAAXAAsAAAAGAAwAAAAXAAsAAAAGAAsAAAAXAAsAAAAGAAoAAAAXAAsAAAAGAAkAAAAXAAsAAAAGAAgAAAAXAAsAAAAGAAcAAAAXAAsAAAAGAAYAAAAXAAsAAAAGAAUAAAAXAAsAAAAGAAQAAAAXAAsAAAAGAAMAAAAXAAsAAAAGAAIAAAAXAAsAAAAGAAEAAAAXAAsAAAAGAAAAAAAXAAsAAAAFAA4AAAAXAAsAAAAFAA0AAAAXAAsAAAAFAAwAAAAXAAsAAAAFAAsAAAAXAAsAAAAFAAoAAAAXAAsAAAAFAAkAAAAXAAsAAAAFAAgAAAAXAAsAAAAFAAcAAAAXAAsAAAAFAAYAAAAXAAsAAAAFAAUAAAAXAAsAAAAFAAQAAAAXAAsAAAAFAAMAAAAXAAsAAAAFAAIAAAAXAAsAAAAFAAEAAAAXAAsAAAAFAAAAAAAXAAsAAAAEAA4AAAAXAAsAAAAEAA0AAAAXAAsAAAAEAAwAAAAXAAsAAAAEAAsAAAAXAAsAAAAEAAoAAAAXAAsAAAAEAAkAAAAXAAsAAAAEAAgAAAAXAAsAAAAEAAcAAAAXAAsAAAAEAAYAAAAXAAsAAAAEAAUAAAAXAAsAAAAEAAQAAAAXAAsAAAAEAAMAAAAXAAsAAAAEAAIAAAAXAAsAAAAEAAEAAAAXAAsAAAAEAAAAAAAXAAsAAAADAA4AAAAXAAsAAAADAA0AAAAXAAsAAAADAAwAAAAXAAsAAAADAAsAAAAXAAsAAAADAAoAAAAXAAsAAAADAAkAAAAXAAsAAAADAAgAAAAXAAsAAAADAAcAAAAXAAsAAAADAAYAAAAXAAsAAAADAAUAAAAXAAsAAAADAAQAAAAXAAsAAAADAAMAAAAXAAsAAAADAAIAAAAXAAsAAAADAAEAAAAXAAsAAAADAAAAAAAXAAsAAAACAA4AAAAXAAsAAAACAA0AAAAXAAsAAAACAAwAAAAXAAsAAAACAAsAAAAXAAsAAAACAAoAAAAXAAsAAAACAAkAAAAXAAsAAAACAAgAAAAXAAsAAAACAAcAAAAXAAsAAAACAAYAAAAXAAsAAAACAAUAAAAXAAsAAAACAAQAAAAXAAsAAAACAAMAAAAXAAsAAAACAAIAAAAXAAsAAAACAAEAAAAXAAsAAAACAAAAAAAXAAsAAAABAA4AAAAXAAsAAAABAA0AAAAXAAsAAAABAAwAAAAXAAsAAAABAAsAAAAXAAsAAAABAAoAAAAXAAsAAAABAAkAAAAXAAsAAAABAAgAAAAXAAsAAAABAAcAAAAXAAsAAAABAAYAAAAXAAsAAAABAAUAAAAXAAsAAAABAAQAAAAXAAsAAAABAAMAAAAXAAsAAAABAAIAAAAXAAsAAAABAAEAAAAXAAsAAAABAAAAAAAXAAsAAAAAAA4AAAAXAAsAAAAAAA0AAAAXAAsAAAAAAAwAAAAXAAsAAAAAAAsAAAAXAAsAAAAAAAoAAAAXAAsAAAAAAAkAAAAXAAsAAAAAAAgAAAAXAAsAAAAAAAcAAAAXAAsAAAAAAAYAAAAXAAsAAAAAAAUAAAAXAAsAAAAAAAQAAAAXAAsAAAAAAAMAAAAXAAsAAAAAAAIAAAAXAAsAAAAAAAEAAAAXAAsAAAAAAAAAAAAXAAsAAAAaAAAACAAEAAMAAAAaAAEACAACAAEAAAAaAAIACAALAAAAAAAaAAMACAAJAAEAAAAaAAQACAAGAAIAAAAaAAUACAADAAMAAAAaAAYACAAFAAAAAAAaAAcACAADAAAAAAAaAAgACAAGAAEAAAAaAAkACAAWAAAAAAAaAAoACAAXAAEAAAAaAAsACAAXAAIAAAAaAAwACAAXAAIAAAAaAA0ACAAXAAIAAAAaAA4ACAAXAAIAAAAbAAAACAAGAAAAAAAbAAEACAAFAAMAAAAbAAIACAALAAAAAAAbAAMACAAMAAAAAAAbAAQACAAHAAAAAAAbAAUACAAKAAAAAAAbAAYACAADAAIAAAAbAAcACAALAAAAAAAbAAgACAADAAEAAAAbAAkACAAYAAAAAAAbAAoACAAXAAIAAAAbAAsACAAXAAIAAAAbAAwACAAXAAIAAAAbAA0ACAAXAAIAAAAbAA4ACAAXAAIAAAAcAAAACAADAAIAAAAcAAEACAANAAIAAAAcAAIACAAKAAAAAAAcAAMACAAGAAMAAAAcAAQACAAHAAIAAAAcAAUACAAMAAIAAAAcAAYACAALAAEAAAAcAAcACAAEAAEAAAAcAAgACAAWAAAAAAAcAAkACAAXAAEAAAAcAAoACAAXAAIAAAAcAAsACAAXAAIAAAAcAAwACAAXAAIAAAAcAA0ACAAXAAIAAAAcAA4ACAAXAAIAAAAdAAAACAACAAMAAAAdAAEACAAAAAAAAAAdAAIACAAEAAEAAAAdAAMACAAMAAIAAAAdAAQACAADAAMAAAAdAAUACAADAAAAAAAdAAYACAACAAAAAAAdAAcACAAFAAMAAAAdAAgACAAYAAAAAAAdAAkACAAXAAIAAAAdAAoACAAXAAIAAAAdAAsACAAXAAIAAAAdAAwACAAXAAIAAAAdAA0ACAAXAAIAAAAdAA4ACAAXAAIAAAAeAAAACAABAAEAAAAeAAEACAALAAAAAAAeAAIACAAIAAIAAAAeAAMACAAEAAAAAAAeAAQACAALAAIAAAAeAAUACAAIAAAAAAAeAAYACAAKAAEAAAAeAAcACAAKAAEAAAAeAAgACAAYAAAAAAAeAAkACAAXAAIAAAAeAAoACAAXAAIAAAAeAAsACAAXAAIAAAAeAAwACAAXAAIAAAAeAA0ACAAXAAIAAAAeAA4ACAAXAAIAAAAfAAAACAAEAAIAAAAfAAEACAAIAAMAAAAfAAIACAAGAAEAAAAfAAMACAADAAIAAAAfAAQACAADAAIAAAAfAAUACAADAAIAAAAfAAYACAAJAAAAAAAfAAcACAAIAAIAAAAfAAgACAAZAAAAAAAfAAkACAAUAAEAAAAfAAoACAAXAAIAAAAfAAsACAAXAAIAAAAfAAwACAAXAAIAAAAfAA0ACAAXAAIAAAAfAA4ACAAXAAIAAAAgAAAACAAJAAEAAAAgAAEACAAEAAEAAAAgAAIACAAIAAAAAAAgAAMACAAJAAAAAAAgAAQACAACAAIAAAAgAAUACAAJAAEAAAAgAAYACAAAAAAAAAAgAAcACAAFAAMAAAAgAAgACAAGAAEAAAAgAAkACAAYAAAAAAAgAAoACAAXAAIAAAAgAAsACAAXAAIAAAAgAAwACAAXAAIAAAAgAA0ACAAXAAIAAAAgAA4ACAAXAAIAAAAhAAAACAACAAEAAAAhAAEACAAJAAAAAAAhAAIACAABAAIAAAAhAAMACAAGAAAAAAAhAAQACAAAAAIAAAAhAAUACAAEAAIAAAAhAAYACAAHAAIAAAAhAAcACAANAAEAAAAhAAgACAADAAAAAAAhAAkACAAZAAAAAAAhAAoACAAUAAEAAAAhAAsACAAXAAIAAAAhAAwACAAXAAIAAAAhAA0ACAAXAAIAAAAhAA4ACAAXAAIAAAAiAAAACAADAAMAAAAiAAEACAAHAAAAAAAiAAIACAAJAAAAAAAiAAMACAAJAAAAAAAiAAQACAAIAAEAAAAiAAUACAAJAAAAAAAiAAYACAAGAAMAAAAiAAcACAAKAAAAAAAiAAgACAAEAAAAAAAiAAkACAAKAAIAAAAiAAoACAAYAAAAAAAiAAsACAAXAAIAAAAiAAwACAAXAAIAAAAiAA0ACAAXAAIAAAAiAA4ACAAXAAIAAAAjAAAACAANAAIAAAAjAAEACAAMAAAAAAAjAAIACAAKAAAAAAAjAAMACAACAAAAAAAjAAQACAADAAEAAAAjAAUACAAAAAAAAAAjAAYACAAHAAEAAAAjAAcACAAFAAMAAAAjAAgACAALAAAAAAAjAAkACAAFAAAAAAAjAAoACAAYAAAAAAAjAAsACAAXAAIAAAAjAAwACAAXAAIAAAAjAA0ACAAXAAIAAAAjAA4ACAAXAAIAAAAkAAAACAAEAAAAAAAkAAEACAAMAAAAAAAkAAIACAALAAAAAAAkAAMACAAIAAAAAAAkAAQACAALAAAAAAAkAAUACAAMAAAAAAAkAAYACAAAAAAAAAAkAAcACAAMAAAAAAAkAAgACAAKAAEAAAAkAAkACAADAAEAAAAkAAoACAAYAAAAAAAkAAsACAAXAAIAAAAkAAwACAAXAAIAAAAkAA0ACAAXAAIAAAAkAA4ACAAXAAIAAAAlAAAACAAIAAAAAAAlAAEACAAKAAEAAAAlAAIACAANAAIAAAAlAAMACAACAAAAAAAlAAQACAAIAAIAAAAlAAUACAAHAAMAAAAlAAYACAAAAAAAAAAlAAcACAACAAAAAAAlAAgACAAJAAAAAAAlAAkACAAEAAMAAAAlAAoACAAYAAAAAAAlAAsACAAXAAIAAAAlAAwACAAXAAIAAAAlAA0ACAAXAAIAAAAlAA4ACAAXAAIAAAAmAAAACAAJAAIAAAAmAAEACAAIAAEAAAAmAAIACAAIAAEAAAAmAAMACAAJAAEAAAAmAAQACAAGAAAAAAAmAAUACAABAAAAAAAmAAYACAAFAAMAAAAmAAcACAACAAMAAAAmAAgACAAEAAIAAAAmAAkACAAKAAIAAAAmAAoACAAYAAAAAAAmAAsACAAXAAIAAAAmAAwACAAXAAIAAAAmAA0ACAAXAAIAAAAmAA4ACAAXAAIAAAAnAAAACAAFAAIAAAAnAAEACAACAAMAAAAnAAIACAAHAAMAAAAnAAMACAAJAAEAAAAnAAQACAAIAAMAAAAnAAUACAACAAEAAAAnAAYACAANAAEAAAAnAAcACAANAAAAAAAnAAgACAAFAAIAAAAnAAkACAALAAIAAAAnAAoACAAYAAAAAAAnAAsACAAXAAIAAAAnAAwACAAXAAIAAAAnAA0ACAAXAAIAAAAnAA4ACAAXAAIAAAAoAAAACAAGAAAAAAAoAAEACAAJAAIAAAAoAAIACAAGAAAAAAAoAAMACAAIAAAAAAAoAAQACAADAAEAAAAoAAUACAAIAAIAAAAoAAYACAABAAMAAAAoAAcACAAHAAMAAAAoAAgACAALAAAAAAAoAAkACAAWAAAAAAAoAAoACAATAAEAAAAoAAsACAAXAAIAAAAoAAwACAAXAAIAAAAoAA0ACAAXAAIAAAAoAA4ACAAXAAIAAAApAAAACAAIAAEAAAApAAEACAAAAAMAAAApAAIACAAGAAAAAAApAAMACAAEAAIAAAApAAQACAACAAMAAAApAAUACAACAAAAAAApAAYACAAIAAEAAAApAAcACAALAAIAAAApAAgACAADAAEAAAApAAkACAAYAAAAAAApAAoACAAXAAIAAAApAAsACAAXAAIAAAApAAwACAAXAAIAAAApAA0ACAAXAAIAAAApAA4ACAAXAAIAAAAqAAAACAAKAAAAAAAqAAEACAAHAAIAAAAqAAIACAAMAAEAAAAqAAMACAAIAAIAAAAqAAQACAAJAAIAAAAqAAUACAAFAAAAAAAqAAYACAAGAAIAAAAqAAcACAADAAAAAAAqAAgACAABAAAAAAAqAAkACAAYAAAAAAAqAAoACAAXAAIAAAAqAAsACAAXAAIAAAAqAAwACAAUAAIAAAAqAA0ACAAZAAIAAAAqAA4ACAAUAAEAAAArAAAACAAAAAEAAAArAAEACAAKAAIAAAArAAIACAAHAAEAAAArAAMACAAAAAAAAAArAAQACAAMAAEAAAArAAUACAAJAAIAAAArAAYACAALAAEAAAArAAcACAAEAAEAAAArAAgACAADAAEAAAArAAkACAAZAAAAAAArAAoACAAUAAEAAAArAAsACAAUAAIAAAArAAwACAAZAAMAAAArAA0ACAAHAAAAAAArAA4ACAAZAAAAAAAsAAAACAAIAAEAAAAsAAEACAAGAAMAAAAsAAIACAACAAAAAAAsAAMACAANAAIAAAAsAAQACAALAAAAAAAsAAUACAAIAAIAAAAsAAYACAAKAAIAAAAsAAcACAALAAAAAAAsAAgACAALAAEAAAAsAAkACAAIAAEAAAAsAAoACAAZAAAAAAAsAAsACAAZAAMAAAAsAAwACAADAAEAAAAsAA0ACAAEAAMAAAAsAA4ACAAEAAIAAAAtAAAACAAIAAAAAAAtAAEACAADAAMAAAAtAAIACAAGAAEAAAAtAAMACAAKAAEAAAAtAAQACAANAAEAAAAtAAUACAANAAIAAAAtAAYACAAGAAMAAAAtAAcACAAEAAMAAAAtAAgACAANAAAAAAAtAAkACAAKAAEAAAAtAAoACAAHAAEAAAAtAAsACAAKAAIAAAAtAAwACAADAAEAAAAtAA0ACAAFAAIAAAAtAA4ACAAKAAAAAAAuAAAACAALAAAAAAAuAAEACAADAAIAAAAuAAIACAALAAIAAAAuAAMACAAHAAMAAAAuAAQACAAFAAIAAAAuAAUACAADAAMAAAAuAAYACAAJAAEAAAAuAAcACAABAAEAAAAuAAgACAAEAAIAAAAuAAkACAAEAAAAAAAuAAoACAABAAIAAAAuAAsACAAGAAIAAAAuAAwACAAKAAAAAAAuAA0ACAAFAAAAAAAuAA4ACAAMAAAAAAAvAAAACAAJAAAAAAAvAAEACAAHAAEAAAAvAAIACAAAAAAAAAAvAAMACAAJAAEAAAAvAAQACAAIAAEAAAAvAAUACAANAAAAAAAvAAYACAABAAEAAAAvAAcACAANAAIAAAAvAAgACAAKAAAAAAAvAAkACAABAAMAAAAvAAoACAANAAAAAAAvAAsACAAKAAIAAAAvAAwACAAFAAAAAAAvAA0ACAACAAEAAAAvAA4ACAABAAIAAAAwAAAACAAIAAAAAAAwAAEACAAGAAAAAAAwAAIACAAAAAMAAAAwAAMACAAMAAIAAAAwAAQACAAMAAAAAAAwAAUACAAAAAEAAAAwAAYACAALAAEAAAAwAAcACAAIAAIAAAAwAAgACAAGAAMAAAAwAAkACAADAAEAAAAwAAoACAAFAAAAAAAwAAsACAAHAAIAAAAwAAwACAACAAMAAAAwAA0ACAAGAAMAAAAwAA4ACAAGAAEAAAAxAAAACAAFAAMAAAAxAAEACAAMAAEAAAAxAAIACAABAAMAAAAxAAMACAAGAAAAAAAxAAQACAAGAAAAAAAxAAUACAAGAAAAAAAxAAYACAACAAMAAAAxAAcACAAMAAAAAAAxAAgACAACAAEAAAAxAAkACAABAAMAAAAxAAoACAAHAAIAAAAxAAsACAAAAAIAAAAxAAwACAAGAAAAAAAxAA0ACAAMAAAAAAAxAA4ACAAMAAIAAAAyAAAACAACAAMAAAAyAAEACAAIAAAAAAAyAAIACAACAAMAAAAyAAMACAAIAAMAAAAyAAQACAALAAIAAAAyAAUACAAKAAEAAAAyAAYACAABAAAAAAAyAAcACAABAAIAAAAyAAgACAAAAAIAAAAyAAkACAACAAIAAAAyAAoACAAAAAEAAAAyAAsACAALAAAAAAAyAAwACAACAAIAAAAyAA0ACAAMAAAAAAAyAA4ACAAIAAAAAAAzAAAACAACAAIAAAAzAAEACAAAAAIAAAAzAAIACAAEAAAAAAAzAAMACAAEAAEAAAAzAAQACAAIAAMAAAAzAAUACAABAAMAAAAzAAYACAAJAAAAAAAzAAcACAAAAAMAAAAzAAgACAABAAIAAAAzAAkACAAEAAMAAAAzAAoACAAHAAIAAAAzAAsACAABAAAAAAAzAAwACAAGAAIAAAAzAA0ACAAEAAEAAAAzAA4ACAAMAAIAAAAAAA8AAAAXAAsAAAAAABAAAAAXAAsAAAAAABEAAAAXAAoAAAAAABIAAAAXAAoAAAAAABMAAAAXAAoAAAAAABQAAAAXAAoAAAAAABUAAAAXAAoAAAAAABYAAAAXAAoAAAAAABcAAAAXAAoAAAAAABgAAAAXAAoAAAAAABkAAAAXAAoAAAAAABoAAAAXAAoAAAAAABsAAAAXAAoAAAAAABwAAAAXAAoAAAAAAB0AAAAXAAoAAAABAA8AAAAXAAsAAAABABAAAAAXAAsAAAABABEAAAAXAAoAAAABABIAAAAXAAoAAAABABMAAAAXAAoAAAABABQAAAAXAAoAAAABABUAAAAXAAoAAAABABYAAAAXAAoAAAABABcAAAAXAAoAAAABABgAAAAXAAoAAAABABkAAAAXAAoAAAABABoAAAAXAAoAAAABABsAAAAXAAoAAAABABwAAAAXAAoAAAABAB0AAAAXAAoAAAACAA8AAAAXAAsAAAACABAAAAAXAAsAAAACABEAAAAXAAoAAAACABIAAAAXAAoAAAACABMAAAAXAAoAAAACABQAAAAXAAoAAAACABUAAAAXAAoAAAACABYAAAAXAAoAAAACABcAAAAXAAoAAAACABgAAAAXAAoAAAACABkAAAAXAAoAAAACABoAAAAXAAoAAAACABsAAAAXAAoAAAACABwAAAAXAAoAAAACAB0AAAAXAAoAAAADAA8AAAAXAAsAAAADABAAAAAXAAsAAAADABEAAAAXAAoAAAADABIAAAAXAAoAAAADABMAAAAXAAoAAAADABQAAAAXAAoAAAADABUAAAAXAAoAAAADABYAAAAXAAoAAAADABcAAAAXAAoAAAADABgAAAAXAAoAAAADABkAAAAXAAoAAAADABoAAAAXAAoAAAADABsAAAAXAAoAAAADABwAAAAXAAoAAAADAB0AAAAXAAoAAAAEAA8AAAAXAAsAAAAEABAAAAAXAAsAAAAEABEAAAAXAAoAAAAEABIAAAAXAAoAAAAEABMAAAAXAAoAAAAEABQAAAAXAAoAAAAEABUAAAAXAAoAAAAEABYAAAAXAAoAAAAEABcAAAAXAAoAAAAEABgAAAAXAAoAAAAEABkAAAAXAAoAAAAEABoAAAAXAAoAAAAEABsAAAAXAAoAAAAEABwAAAAXAAoAAAAEAB0AAAAXAAoAAAAFAA8AAAAXAAsAAAAFABAAAAAXAAsAAAAFABEAAAAXAAoAAAAFABIAAAAXAAoAAAAFABMAAAAXAAoAAAAFABQAAAAXAAoAAAAFABUAAAAXAAoAAAAFABYAAAAXAAoAAAAFABcAAAAXAAoAAAAFABgAAAAXAAoAAAAFABkAAAAXAAoAAAAFABoAAAAXAAoAAAAFABsAAAAXAAoAAAAFABwAAAAXAAoAAAAFAB0AAAAXAAoAAAAGAA8AAAAXAAsAAAAGABAAAAAXAAsAAAAGABEAAAAXAAoAAAAGABIAAAAXAAoAAAAGABMAAAAXAAoAAAAGABQAAAAXAAoAAAAGABUAAAAXAAoAAAAGABYAAAAXAAoAAAAGABcAAAAXAAoAAAAGABgAAAAXAAoAAAAGABkAAAAXAAoAAAAGABoAAAAXAAoAAAAGABsAAAAXAAoAAAAGABwAAAAXAAoAAAAGAB0AAAAXAAoAAAAHAA8AAAAXAAsAAAAHABAAAAAXAAsAAAAHABEAAAAXAAoAAAAHABIAAAAXAAoAAAAHABMAAAAXAAoAAAAHABQAAAAXAAoAAAAHABUAAAAXAAoAAAAHABYAAAAXAAoAAAAHABcAAAAXAAoAAAAHABgAAAAXAAoAAAAHABkAAAAXAAoAAAAHABoAAAAXAAoAAAAHABsAAAAXAAoAAAAHABwAAAAXAAoAAAAHAB0AAAAXAAoAAAAIAA8AAAAXAAsAAAAIABAAAAAXAAsAAAAIABEAAAAXAAoAAAAIABIAAAAXAAoAAAAIABMAAAAXAAoAAAAIABQAAAAXAAoAAAAIABUAAAAXAAoAAAAIABYAAAAXAAoAAAAIABcAAAAXAAoAAAAIABgAAAAXAAoAAAAIABkAAAAXAAoAAAAIABoAAAAXAAoAAAAIABsAAAAXAAoAAAAIABwAAAAXAAoAAAAIAB0AAAAXAAoAAAAJAA8AAAAXAAsAAAAJABAAAAAXAAsAAAAJABEAAAAXAAoAAAAJABIAAAAXAAoAAAAJABMAAAAXAAoAAAAJABQAAAAXAAoAAAAJABUAAAAXAAoAAAAJABYAAAAXAAoAAAAJABcAAAAXAAoAAAAJABgAAAAXAAoAAAAJABkAAAAXAAoAAAAJABoAAAAXAAoAAAAJABsAAAAXAAoAAAAJABwAAAAXAAoAAAAJAB0AAAAXAAoAAAAKAA8AAAAXAAsAAAAKABAAAAAXAAsAAAAKABEAAAAXAAoAAAAKABIAAAAXAAoAAAAKABMAAAAXAAoAAAAKABQAAAAXAAoAAAAKABUAAAAXAAoAAAAKABYAAAAXAAoAAAAKABcAAAAXAAoAAAAKABgAAAAXAAoAAAAKABkAAAAXAAoAAAAKABoAAAAXAAoAAAAKABsAAAAXAAoAAAAKABwAAAAXAAoAAAAKAB0AAAAXAAoAAAALAA8AAAAYAA0AAAALABAAAAAYAA0AAAALABEAAAAYAA0AAAALABIAAAAYAA0AAAALABMAAAAYAA0AAAALABQAAAAYAA0AAAALABUAAAAYAA0AAAALABYAAAAYAAcAAAALABcAAAAYAAgAAAALABgAAAAYAAkAAAALABkAAAAYAAoAAAALABoAAAAXAAoAAAALABsAAAAXAAoAAAALABwAAAAXAAoAAAALAB0AAAAXAAoAAAAMAA8AAAAZAA0AAAAMABAAAAAZAA0AAAAMABEAAAAZAA0AAAAMABIAAAAZAA0AAAAMABMAAAAZAA0AAAAMABQAAAAZAA0AAAAMABUAAAAZAA0AAAAMABYAAAAZAAcAAAAMABcAAAAZAAgAAAAMABgAAAAZAAkAAAAMABkAAAAZAAoAAAAMABoAAAAXAAoAAAAMABsAAAAXAAoAAAAMABwAAAAXAAoAAAAMAB0AAAAXAAoAAAANAA8ACAACAAMAAAANABAACAABAAIAAAANABEACAAHAAEAAAANABIACAAHAAAAAAANABMACAACAAEAAAANABQACAAFAAIAAAANABUACAAFAAIAAAANABYAAAAaAAcAAAANABcAAAAaAAgAAAANABgAAAAaAAkAAAANABkAAAAaAAoAAAANABoAAAAXAAoAAAANABsAAAAXAAoAAAANABwAAAAXAAoAAAANAB0AAAAXAAoAAAAOAA8ACAAJAAIAAAAOABAACAAHAAAAAAAOABEACAAAAAMAAAAOABIACAACAAMAAAAOABMACAAAAAIAAAAOABQACAAKAAEAAAAOABUACAAMAAAAAAAOABYAAAAbAAcAAAAOABcAAAAbAAgAAAAOABgAAAAbAAkAAAAOABkAAAAbAAoAAAAOABoAAAAXAAoAAAAOABsAAAAXAAoAAAAOABwAAAAXAAoAAAAOAB0AAAAXAAoAAAAPAA8ACAALAAEAAAAPABAACAADAAIAAAAPABEACAADAAEAAAAPABIACAANAAAAAAAPABMACAAKAAEAAAAPABQACAAFAAAAAAAPABUACAAFAAMAAAAPABYAAAAcAAcAAAAPABcAAAAcAAgAAAAPABgAAAAcAAkAAAAPABkAAAAcAAoAAAAPABoAAAAYAAcAAAAPABsAAAAYAAgAAAAPABwAAAAYAAkAAAAPAB0AAAAYAAoAAAAQAA8ACAAJAAEAAAAQABAACAAAAAIAAAAQABEACAAMAAIAAAAQABIACAABAAMAAAAQABMACAALAAEAAAAQABQACAAMAAEAAAAQABUACAANAAEAAAAQABYAAAAdAAcAAAAQABcAAAAdAAgAAAAQABgAAAAdAAkAAAAQABkAAAAdAAoAAAAQABoAAAAZAAcAAAAQABsAAAAZAAgAAAAQABwAAAAZAAkAAAAQAB0AAAAZAAoAAAARAA8ACAAEAAMAAAARABAACAAEAAIAAAARABEACAAIAAEAAAARABIACAAJAAAAAAARABMACAAIAAEAAAARABQACAALAAAAAAARABUACAAIAAEAAAARABYACAANAAEAAAARABcACAAGAAEAAAARABgACAAEAAMAAAARABkACAABAAEAAAARABoAAAAaAAcAAAARABsAAAAaAAgAAAARABwAAAAaAAkAAAARAB0AAAAaAAoAAAASAA8ACAAAAAEAAAASABAACAAHAAEAAAASABEACAADAAAAAAASABIACAADAAEAAAASABMACAAFAAIAAAASABQACAAJAAIAAAASABUACAAIAAIAAAASABYACAAIAAIAAAASABcACAAFAAIAAAASABgACAAEAAIAAAASABkACAACAAAAAAASABoAAAAbAAcAAAASABsAAAAbAAgAAAASABwAAAAbAAkAAAASAB0AAAAbAAoAAAATAA8ACAACAAMAAAATABAACAAAAAIAAAATABEACAAEAAAAAAATABIACAANAAIAAAATABMACAAHAAIAAAATABQACAAKAAIAAAATABUACAAJAAAAAAATABYACAAEAAEAAAATABcACAACAAAAAAATABgACAAEAAMAAAATABkACAAHAAAAAAATABoAAAAcAAcAAAATABsAAAAcAAgAAAATABwAAAAcAAkAAAATAB0AAAAcAAoAAAAUAA8ACAALAAEAAAAUABAACAAIAAEAAAAUABEACAAEAAEAAAAUABIACAAIAAAAAAAUABMACAAEAAIAAAAUABQACAAFAAIAAAAUABUACAAEAAEAAAAUABYACAABAAMAAAAUABcACAABAAMAAAAUABgACAAFAAAAAAAUABkACAACAAEAAAAUABoAAAAdAAcAAAAUABsAAAAdAAgAAAAUABwAAAAdAAkAAAAUAB0AAAAdAAoAAAAVAA8ACAAAAAEAAAAVABAACAAMAAEAAAAVABEACAADAAAAAAAVABIACAAFAAIAAAAVABMACAAKAAIAAAAVABQACAAAAAEAAAAVABUACAAMAAAAAAAVABYACAADAAIAAAAVABcACAAEAAAAAAAVABgACAACAAEAAAAVABkACAACAAMAAAAVABoACAAFAAAAAAAVABsACAADAAAAAAAVABwACAABAAIAAAAVAB0ACAACAAMAAAAWAA8ACAABAAEAAAAWABAACAAWAAAAAAAWABEACAAWAAEAAAAWABIACAAWAAMAAAAWABMACAAEAAAAAAAWABQACAAAAAMAAAAWABUACAAFAAMAAAAWABYACAANAAEAAAAWABcACAAGAAIAAAAWABgACAAFAAIAAAAWABkACAAIAAEAAAAWABoACAABAAEAAAAWABsACAAAAAIAAAAWABwACAABAAIAAAAWAB0ACAAMAAEAAAAXAA8ACAAWAAAAAAAXABAACAATAAEAAAAXABEACAAXAAIAAAAXABIACAATAAIAAAAXABMACAAWAAMAAAAXABQACAADAAIAAAAXABUACAAEAAIAAAAXABYACAABAAEAAAAXABcACAAEAAIAAAAXABgACAAHAAIAAAAXABkACAALAAAAAAAXABoACAAEAAIAAAAXABsACAAMAAAAAAAXABwACAAFAAIAAAAXAB0ACAADAAEAAAAYAA8ACAATAAEAAAAYABAACAAXAAIAAAAYABEACAAXAAIAAAAYABIACAAXAAIAAAAYABMACAATAAIAAAAYABQACAAWAAMAAAAYABUACAACAAIAAAAYABYACAADAAAAAAAYABcACAACAAEAAAAYABgACAACAAEAAAAYABkACAADAAEAAAAYABoACAAGAAIAAAAYABsACAAEAAEAAAAYABwACAAMAAEAAAAYAB0ACAAIAAAAAAAZAA8ACAAXAAIAAAAZABAACAAXAAIAAAAZABEACAAXAAIAAAAZABIACAAXAAIAAAAZABMACAAXAAIAAAAZABQACAAXAAMAAAAZABUACAAAAAAAAAAZABYACAAIAAEAAAAZABcACAAJAAEAAAAZABgACAABAAEAAAAZABkACAAJAAEAAAAZABoACAAFAAIAAAAZABsACAADAAEAAAAZABwACAAFAAMAAAAZAB0ACAAFAAAAAAAaAA8ACAAXAAIAAAAaABAACAAXAAIAAAAaABEACAAXAAIAAAAaABIACAAXAAIAAAAaABMACAAXAAIAAAAaABQACAAXAAMAAAAaABUACAAHAAMAAAAaABYACAAKAAIAAAAaABcACAAAAAEAAAAaABgACAADAAIAAAAaABkACAADAAAAAAAaABoACAAFAAMAAAAaABsACAALAAEAAAAaABwACAAAAAMAAAAaAB0ACAAMAAIAAAAbAA8ACAAXAAIAAAAbABAACAAXAAIAAAAbABEACAAXAAIAAAAbABIACAAXAAIAAAAbABMACAAXAAIAAAAbABQACAAXAAMAAAAbABUACAAEAAEAAAAbABYACAABAAMAAAAbABcACAANAAIAAAAbABgACAAEAAMAAAAbABkACAAEAAEAAAAbABoACAAEAAAAAAAbABsACAANAAIAAAAbABwACAAGAAMAAAAbAB0ACAALAAIAAAAcAA8ACAAXAAIAAAAcABAACAAXAAIAAAAcABEACAAXAAIAAAAcABIACAAXAAIAAAAcABMACAAXAAIAAAAcABQACAAXAAMAAAAcABUACAAMAAAAAAAcABYACAAHAAEAAAAcABcACAAIAAAAAAAcABgACAAIAAIAAAAcABkACAABAAEAAAAcABoACAADAAEAAAAcABsACAAEAAMAAAAcABwACAAHAAAAAAAcAB0ACAABAAIAAAAdAA8ACAAXAAIAAAAdABAACAAXAAIAAAAdABEACAAXAAIAAAAdABIACAAXAAIAAAAdABMACAAXAAIAAAAdABQACAAXAAMAAAAdABUACAAGAAIAAAAdABYACAAGAAAAAAAdABcACAALAAAAAAAdABgACAAIAAMAAAAdABkACAACAAAAAAAdABoACAACAAIAAAAdABsACAAHAAAAAAAdABwACAAIAAMAAAAdAB0ACAAHAAAAAAAeAA8ACAAXAAIAAAAeABAACAAXAAIAAAAeABEACAAXAAIAAAAeABIACAAXAAIAAAAeABMACAAXAAIAAAAeABQACAAXAAMAAAAeABUACAAHAAAAAAAeABYACAAJAAEAAAAeABcACAANAAIAAAAeABgACAADAAIAAAAeABkACAAMAAIAAAAeABoACAADAAEAAAAeABsACAABAAAAAAAeABwACAAJAAEAAAAeAB0ACAACAAMAAAAfAA8ACAAXAAIAAAAfABAACAAXAAIAAAAfABEACAAXAAIAAAAfABIACAAXAAIAAAAfABMACAAXAAIAAAAfABQACAAXAAMAAAAfABUACAAEAAAAAAAfABYACAANAAIAAAAfABcACAABAAIAAAAfABgACAAEAAIAAAAfABkACAANAAIAAAAfABoACAAHAAAAAAAfABsACAAHAAAAAAAfABwACAAHAAMAAAAfAB0ACAADAAMAAAAgAA8ACAAXAAIAAAAgABAACAAXAAIAAAAgABEACAAXAAIAAAAgABIACAAXAAIAAAAgABMACAAXAAIAAAAgABQACAAXAAMAAAAgABUACAAEAAMAAAAgABYACAAEAAAAAAAgABcACAAKAAEAAAAgABgACAAKAAIAAAAgABkACAAGAAIAAAAgABoACAANAAEAAAAgABsACAAIAAMAAAAgABwACAANAAAAAAAgAB0ACAAKAAEAAAAhAA8ACAAXAAIAAAAhABAACAAXAAIAAAAhABEACAAXAAIAAAAhABIACAAXAAIAAAAhABMACAAXAAIAAAAhABQACAAXAAMAAAAhABUACAAJAAAAAAAhABYACAAMAAAAAAAhABcACAALAAAAAAAhABgACAAMAAEAAAAhABkACAADAAMAAAAhABoACAAGAAAAAAAhABsACAACAAAAAAAhABwACAAEAAEAAAAhAB0ACAAIAAEAAAAiAA8ACAAXAAIAAAAiABAACAAXAAIAAAAiABEACAAXAAIAAAAiABIACAAXAAIAAAAiABMACAAXAAIAAAAiABQACAATAAIAAAAiABUACAAWAAMAAAAiABYACAAHAAIAAAAiABcACAAEAAIAAAAiABgACAADAAEAAAAiABkACAAJAAAAAAAiABoACAABAAEAAAAiABsACAAWAAAAAAAiABwACAAWAAEAAAAiAB0ACAAWAAMAAAAjAA8ACAAXAAIAAAAjABAACAAXAAIAAAAjABEACAAXAAIAAAAjABIACAAXAAIAAAAjABMACAAXAAIAAAAjABQACAAXAAIAAAAjABUACAATAAIAAAAjABYACAAWAAMAAAAjABcACAAIAAEAAAAjABgACAAEAAAAAAAjABkACAAIAAMAAAAjABoACAAWAAAAAAAjABsACAATAAEAAAAjABwACAAXAAIAAAAjAB0ACAAXAAMAAAAkAA8ACAAXAAIAAAAkABAACAAXAAIAAAAkABEACAAXAAIAAAAkABIACAAXAAIAAAAkABMACAAXAAIAAAAkABQACAAXAAIAAAAkABUACAAXAAIAAAAkABYACAAXAAMAAAAkABcACAADAAAAAAAkABgACAAOAAAAAAAkABkACAASAAEAAAAkABoACAATAAEAAAAkABsACAAXAAIAAAAkABwACAAXAAIAAAAkAB0ACAAXAAMAAAAlAA8ACAAXAAIAAAAlABAACAAXAAIAAAAlABEACAAXAAIAAAAlABIACAAXAAIAAAAlABMACAAXAAIAAAAlABQACAAXAAIAAAAlABUACAAXAAIAAAAlABYACAAXAAMAAAAlABcACAABAAEAAAAlABgACAAJAAAAAAAlABkACAAZAAAAAAAlABoACAAZAAIAAAAlABsACAAUAAEAAAAlABwACAAXAAIAAAAlAB0ACAAXAAMAAAAmAA8ACAAXAAIAAAAmABAACAAXAAIAAAAmABEACAAXAAIAAAAmABIACAAXAAIAAAAmABMACAAXAAIAAAAmABQACAAXAAIAAAAmABUACAAUAAIAAAAmABYACAAZAAMAAAAmABcACAACAAAAAAAmABgACAAEAAMAAAAmABkACAACAAIAAAAmABoACAABAAAAAAAmABsACAAZAAAAAAAmABwACAAUAAEAAAAmAB0ACAAXAAMAAAAnAA8ACAAXAAIAAAAnABAACAAXAAIAAAAnABEACAAXAAIAAAAnABIACAAXAAIAAAAnABMACAAXAAIAAAAnABQACAAXAAIAAAAnABUACAAXAAMAAAAnABYACAAKAAIAAAAnABcACAABAAAAAAAnABgACAAIAAMAAAAnABkACAAKAAAAAAAnABoACAAAAAMAAAAnABsACAADAAAAAAAnABwACAAZAAAAAAAnAB0ACAAZAAMAAAAoAA8ACAAXAAIAAAAoABAACAAXAAIAAAAoABEACAAXAAIAAAAoABIACAAXAAIAAAAoABMACAAXAAIAAAAoABQACAAUAAIAAAAoABUACAAZAAMAAAAoABYACAAFAAIAAAAoABcACAACAAAAAAAoABgACAAAAAAAAAAoABkACAAHAAIAAAAoABoACAAIAAEAAAAoABsACAAGAAAAAAAoABwACAADAAEAAAAoAB0ACAAHAAMAAAApAA8ACAAXAAIAAAApABAACAAXAAIAAAApABEACAAXAAIAAAApABIACAAXAAIAAAApABMACAAXAAIAAAApABQACAAXAAMAAAApABUACAAFAAMAAAApABYACAAGAAEAAAApABcACAAFAAIAAAApABgACAADAAMAAAApABkACAAKAAAAAAApABoACAAJAAEAAAApABsACAABAAAAAAApABwACAADAAEAAAApAB0ACAACAAIAAAAqAA8ACAAXAAIAAAAqABAACAAXAAIAAAAqABEACAAXAAIAAAAqABIACAAXAAIAAAAqABMACAAUAAIAAAAqABQACAAZAAMAAAAqABUACAAFAAMAAAAqABYACAABAAIAAAAqABcACAAHAAEAAAAqABgACAAGAAMAAAAqABkACAAIAAIAAAAqABoACAAAAAIAAAAqABsACAAGAAMAAAAqABwACAAAAAMAAAAqAB0ACAAKAAEAAAArAA8ACAAZAAIAAAArABAACAAUAAEAAAArABEACAAXAAIAAAArABIACAAUAAIAAAArABMACAAZAAMAAAArABQACAABAAMAAAArABUACAAIAAIAAAArABYACAACAAIAAAArABcACAAFAAAAAAArABgACAAAAAIAAAArABkACAALAAIAAAArABoACAADAAEAAAArABsACAAMAAAAAAArABwACAACAAMAAAArAB0ACAAAAAIAAAAsAA8ACAAHAAIAAAAsABAACAAZAAAAAAAsABEACAAZAAIAAAAsABIACAAZAAMAAAAsABMACAAMAAEAAAAsABQACAAAAAEAAAAsABUACAAFAAAAAAAsABYACAAIAAIAAAAsABcACAAHAAIAAAAsABgACAAMAAIAAAAsABkACAAJAAAAAAAsABoACAAAAAEAAAAsABsACAAHAAAAAAAsABwACAAAAAEAAAAsAB0ACAAGAAIAAAAtAA8ACAACAAMAAAAtABAACAALAAAAAAAtABEACAACAAEAAAAtABIACAANAAEAAAAtABMACAAEAAMAAAAtABQACAALAAAAAAAtABUACAAMAAIAAAAtABYACAAEAAAAAAAtABcACAADAAAAAAAtABgACAAAAAEAAAAtABkACAAMAAAAAAAtABoACAAHAAEAAAAtABsACAAJAAIAAAAtABwACAAEAAAAAAAtAB0ACAALAAAAAAAuAA8ACAALAAAAAAAuABAACAABAAEAAAAuABEACAALAAAAAAAuABIACAAMAAEAAAAuABMACAAAAAMAAAAuABQACAAFAAMAAAAuABUACAADAAEAAAAuABYACAAAAAIAAAAuABcACAAIAAIAAAAuABgACAACAAIAAAAuABkACAADAAAAAAAuABoACAAEAAEAAAAuABsACAAAAAAAAAAuABwACAAEAAMAAAAuAB0ACAABAAIAAAAvAA8ACAABAAMAAAAvABAACAAMAAIAAAAvABEACAACAAAAAAAvABIACAAJAAIAAAAvABMACAABAAIAAAAvABQACAAIAAEAAAAvABUACAADAAEAAAAvABYACAAGAAEAAAAvABcACAAHAAEAAAAvABgACAAJAAAAAAAvABkACAACAAAAAAAvABoACAAIAAEAAAAvABsACAACAAMAAAAvABwACAAAAAMAAAAvAB0ACAAEAAAAAAAwAA8ACAABAAIAAAAwABAACAAIAAEAAAAwABEACAAIAAMAAAAwABIACAANAAEAAAAwABMACAAJAAIAAAAwABQACAAAAAAAAAAwABUACAAFAAAAAAAwABYACAAJAAAAAAAwABcACAAJAAEAAAAwABgACAANAAIAAAAwABkACAAHAAIAAAAwABoACAALAAEAAAAwABsACAAAAAAAAAAwABwACAAIAAMAAAAwAB0ACAAIAAEAAAAxAA8ACAAIAAMAAAAxABAACAAAAAEAAAAxABEACAAHAAAAAAAxABIACAAIAAEAAAAxABMACAACAAMAAAAxABQACAAFAAIAAAAxABUACAAJAAIAAAAxABYACAAHAAMAAAAxABcACAAFAAIAAAAxABgACAAJAAAAAAAxABkACAAKAAIAAAAxABoACAAEAAMAAAAxABsACAANAAIAAAAxABwACAAIAAMAAAAxAB0ACAAIAAEAAAAyAA8ACAAEAAMAAAAyABAACAABAAIAAAAyABEACAAIAAIAAAAyABIACAAGAAIAAAAyABMACAAFAAIAAAAyABQACAANAAIAAAAyABUACAAGAAIAAAAyABYACAAAAAMAAAAyABcACAAFAAIAAAAyABgACAALAAEAAAAyABkACAANAAAAAAAyABoACAADAAEAAAAyABsACAAEAAIAAAAyABwACAAEAAAAAAAyAB0ACAABAAEAAAAzAA8ACAAJAAIAAAAzABAACAALAAAAAAAzABEACAAIAAEAAAAzABIACAAHAAIAAAAzABMACAAFAAIAAAAzABQACAALAAAAAAAzABUACAAJAAAAAAAzABYACAAHAAAAAAAzABcACAAKAAAAAAAzABgACAACAAEAAAAzABkACAAEAAAAAAAzABoACAAHAAIAAAAzABsACAAAAAEAAAAzABwACAANAAEAAAAzAB0ACAAHAAIAAAA=")
+
+[node name="LevelTileMapLayer2" type="TileMapLayer" parent="Tileset"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAVAB0AAQAJAA4AAAAVABwAAQAJAA4AAAAVABsAAQAJAA4AAAAVABoAAQAJAA4AAAAVABkAAQAJAA0AAAAUABkAAQAIAA0AAAATABkAAQAIAA0AAAASABkAAQAIAA0AAAARABkAAQAHAA8AAAARABgAAQAHAA4AAAARABcAAQAHAA4AAAARABYAAQAHAA4AAAARABUAAQAJAA0AAAAQABUAAQAIAA0AAAAOABUAAQAIAA0AAAAPABUAAQAIAA0AAAANABQAAQAHAA4AAAANABUAAQAHAA8AAAANABMAAQAHAA4AAAANABIAAQAHAA4AAAANABEAAQAHAA4AAAANABAAAQAHAA4AAAANAA8AAQAHAA4AAAANAA4AAQAHAA4AAAANAA0AAQAHAA4AAAANAAwAAQAHAA4AAAANAAsAAQAHAA4AAAANAAoAAQAHAA4AAAANAAkAAQAHAA4AAAANAAgAAQAHAA0AAAAOAAgAAQAIAA8AAAAPAAgAAQAIAA8AAAAQAAgAAQAIAA8AAAARAAcAAQAJAA4AAAARAAgAAQAJAA8AAAARAAYAAQAJAA4AAAARAAUAAQAJAA4AAAARAAQAAQAJAA4AAAARAAMAAQAJAA4AAAARAAIAAQAJAA4AAAARAAEAAQAJAA4AAAARAAAAAQAJAA4AAAA=")
+tile_set = ExtResource("4_bcoq0")
+script = ExtResource("5_lr8el")
+
+[node name="Leafs2" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(849, 106)
+
+[node name="Node2D6" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D6" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(87.6848, 50.4279, 87.6848, 47.2932, 87.6091, 44.1594, 87.4626, 41.0282, 87.2498, 37.9007, 86.9758, 34.778, 86.6452, 31.6608, 86.2629, 28.5495, 85.8336, 25.4444, 85.3621, 22.3454, 84.8532, 19.2523, 84.3116, 16.1647)
+width = 3.32088
+width_curve = SubResource("Curve_k6wx2")
+gradient = SubResource("Gradient_6nr44")
+
+[node name="_Line2D_35763" parent="Leafs2/Node2D6" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(82.82, 47.9693, 82.82, 45.6941, 83.1906, 43.4493, 83.9777, 41.3147, 85.2034, 39.3979, 86.8521, 37.8301, 88.8568, 36.7543, 91.0872, 36.3049, 93.3457, 36.5792, 95.3777, 37.6027, 96.899, 39.2944, 97.6463, 41.4434)
+width = 3.73768
+width_curve = SubResource("Curve_4tehx")
+gradient = SubResource("Gradient_2tac1")
+
+[node name="_Line2D_35764" parent="Leafs2/Node2D6" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(82.0305, 50.2221, 82.0305, 47.0891, 81.997, 43.9563, 82.0201, 40.8234, 82.1898, 37.695, 82.595, 34.5883, 83.3215, 31.5407, 84.4458, 28.6163, 86.0265, 25.9113, 88.0908, 23.5545, 90.6183, 21.7032)
+width = 3.44156
+width_curve = SubResource("Curve_3oher")
+gradient = SubResource("Gradient_01mgu")
+
+[node name="_Line2D_35765" parent="Leafs2/Node2D6" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(86.0313, 52.412, 86.0313, 50.371, 86.1636, 48.3343, 86.4407, 46.3121, 86.8739, 44.3176, 87.473, 42.3665, 88.2459, 40.4776, 89.198, 38.6722, 90.331, 36.9746, 91.6431, 35.4112, 93.1273, 34.0102, 94.7716, 32.801, 96.5576, 31.8132)
+width = 2.97101
+width_curve = SubResource("Curve_5as20")
+gradient = SubResource("Gradient_4oxqf")
+
+[node name="_Line2D_35766" parent="Leafs2/Node2D6" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(83.4747, 51.231, 83.4747, 48.695, 83.3658, 46.1613, 83.0321, 43.6473, 82.3632, 41.2011, 81.265, 38.9152, 79.6807, 36.935, 77.6212, 35.4552, 75.2016, 34.6957, 72.6702, 34.8497, 70.4111, 36.002, 68.8921, 38.0327)
+width = 2.96895
+width_curve = SubResource("Curve_8t1ek")
+gradient = SubResource("Gradient_i3abr")
+
+[node name="_Line2D_35767" parent="Leafs2/Node2D6" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(82.427, 49.6198, 82.427, 46.7308, 82.9725, 43.8938, 83.9604, 41.1789, 85.2868, 38.6124, 86.8557, 36.1865, 88.5814, 33.8696, 90.3875, 31.6147, 92.203, 29.3674, 93.9576, 27.0723, 95.5768, 24.6797, 96.9777, 22.153, 98.0668, 19.4772)
+width = 3.26473
+width_curve = SubResource("Curve_b6s4a")
+gradient = SubResource("Gradient_mk0ls")
+
+[node name="_Line2D_35768" parent="Leafs2/Node2D6" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(87.6438, 50.2182, 87.6438, 47.2032, 88.2033, 44.2405, 89.3884, 41.4682, 91.2176, 39.0714, 93.6352, 37.2699, 96.4864, 36.2893, 99.5013, 36.3151, 102.302, 37.4304, 104.446, 39.5507, 105.506, 42.3732, 105.196, 45.3723)
+width = 2.99548
+width_curve = SubResource("Curve_liqfp")
+gradient = SubResource("Gradient_fqv8w")
+
+[node name="_Line2D_35769" parent="Leafs2/Node2D6" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(83.863, 50.3366, 83.863, 48.0797, 84.1567, 45.842, 84.6475, 43.6391, 85.2411, 41.4616, 85.8459, 39.2872, 86.3706, 37.0921, 86.7218, 34.8627, 86.8031, 32.6072, 86.5195, 30.3682, 85.7888, 28.2329)
+width = 3.203
+width_curve = SubResource("Curve_s0gnm")
+gradient = SubResource("Gradient_bsryo")
+
+[node name="_Line2D_35770" parent="Leafs2/Node2D6" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(87.0593, 52.8894, 87.0593, 50.5759, 87.3475, 48.2804, 87.842, 46.0203, 88.4624, 43.7916, 89.1312, 41.5768, 89.7718, 39.3538, 90.3073, 37.1031, 90.6579, 34.8163, 90.7419, 32.5043, 90.479, 30.2057, 89.7988, 27.9945)
+width = 2.72742
+width_curve = SubResource("Curve_775ty")
+gradient = SubResource("Gradient_8ga3n")
+
+[node name="Node2D14" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D14" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(138.289, 48.7639, 138.289, 46.6327, 138.278, 44.5016, 138.295, 42.3706, 138.379, 40.2411, 138.568, 38.1184, 138.9, 36.0132, 139.411, 33.9442, 140.133, 31.9392, 141.094, 30.0369)
+width = 1.85662
+width_curve = SubResource("Curve_yt0l5")
+gradient = SubResource("Gradient_hxka1")
+
+[node name="_Line2D_35822" parent="Leafs2/Node2D14" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(142.257, 51.4299, 142.257, 49.875, 142.237, 48.3203, 142.268, 46.7658, 142.418, 45.2182, 142.755, 43.7004, 143.34, 42.2598, 144.215, 40.9744, 145.387, 39.9534, 146.811, 39.3269, 148.362, 39.221, 149.836, 39.7152, 150.963, 40.7861)
+width = 1.86274
+width_curve = SubResource("Curve_4yir4")
+gradient = SubResource("Gradient_wiclb")
+
+[node name="_Line2D_35823" parent="Leafs2/Node2D14" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(140.454, 52.8308, 140.454, 51.4676, 140.568, 50.1092, 140.748, 48.7579, 140.945, 47.4089, 141.11, 46.0557, 141.195, 44.6951, 141.15, 43.3326, 140.927, 41.9877)
+width = 2.39894
+width_curve = SubResource("Curve_af4uu")
+gradient = SubResource("Gradient_g8kp6")
+
+[node name="_Line2D_35824" parent="Leafs2/Node2D14" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(141.734, 51.3586, 141.734, 49.3284, 142.106, 47.3327, 142.832, 45.4368, 143.883, 43.6999, 145.221, 42.1731, 146.802, 40.8986, 148.574, 39.9089, 150.486, 39.2267, 152.484, 38.8648, 154.514, 38.827)
+width = 1.63013
+width_curve = SubResource("Curve_5j3mp")
+gradient = SubResource("Gradient_fou8a")
+
+[node name="_Line2D_35825" parent="Leafs2/Node2D14" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(140.235, 47.4641, 140.235, 45.5692, 140.178, 43.6751, 140.066, 41.7834, 139.902, 39.8955, 139.69, 38.0125, 139.432, 36.1351, 139.132, 34.2642, 138.791, 32.4, 138.414, 30.543)
+width = 1.71392
+width_curve = SubResource("Curve_03qq2")
+gradient = SubResource("Gradient_jq8p4")
+
+[node name="_Line2D_35826" parent="Leafs2/Node2D14" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(139.434, 48.863, 139.434, 47.0923, 139.292, 45.3273, 138.979, 43.5847, 138.464, 41.8904, 137.727, 40.2805, 136.753, 38.8018, 135.541, 37.5107, 134.108, 36.4708, 132.491, 35.7489)
+width = 1.73029
+width_curve = SubResource("Curve_fpqj1")
+gradient = SubResource("Gradient_1qfrn")
+
+[node name="_Line2D_35827" parent="Leafs2/Node2D14" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(143.998, 52.001, 143.998, 49.7875, 143.572, 47.6153, 142.837, 45.5275, 141.903, 43.5211, 140.87, 41.5631, 139.835, 39.6066, 138.892, 37.604, 138.143, 35.5213, 137.697, 33.3533)
+width = 2.00986
+width_curve = SubResource("Curve_iis1w")
+gradient = SubResource("Gradient_w6614")
+
+[node name="Node2D3" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D3" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(65.0597, 52.7278, 65.0597, 50.4064, 65.4892, 48.1249, 66.3681, 45.9762, 67.6913, 44.0688, 69.4212, 42.5206, 71.4807, 41.4494, 73.7497, 40.9582, 76.0656, 41.1191, 78.2316, 41.9542, 80.0329, 43.4188, 81.2609, 45.3889)
+width = 2.12709
+width_curve = SubResource("Curve_hho76")
+gradient = SubResource("Gradient_nkirf")
+
+[node name="_Line2D_35742" parent="Leafs2/Node2D3" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(61.0525, 47.2151, 61.0525, 44.7628, 61.4185, 42.3379, 62.2522, 40.0316, 63.6188, 37.9954, 65.513, 36.4378, 67.817, 35.5979, 70.2677, 35.687, 72.4548, 36.7964, 73.8818, 38.7908)
+width = 1.66304
+width_curve = SubResource("Curve_kerq6")
+gradient = SubResource("Gradient_r5clh")
+
+[node name="_Line2D_35743" parent="Leafs2/Node2D3" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(64.7426, 50.1864, 64.7426, 48.8064, 64.8873, 47.434, 65.2377, 46.0993, 65.8444, 44.8597, 66.7336, 43.8044, 67.8887, 43.0494, 69.229, 42.7207, 70.5946, 42.9194)
+width = 2.56758
+width_curve = SubResource("Curve_pbw4c")
+gradient = SubResource("Gradient_w8gin")
+
+[node name="_Line2D_35744" parent="Leafs2/Node2D3" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(64.0387, 48.4044, 64.0387, 46.3059, 64.0617, 44.2075, 64.0113, 42.1096, 63.7914, 40.0226, 63.3093, 37.9802, 62.4832, 36.0511, 61.2582, 34.3473, 59.6301, 33.0232, 57.6753, 32.2601, 55.577, 32.2273, 53.6336, 33.019)
+width = 2.28216
+width_curve = SubResource("Curve_kjix8")
+gradient = SubResource("Gradient_brg0f")
+
+[node name="_Line2D_35745" parent="Leafs2/Node2D3" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(62.8629, 49.3888, 62.8629, 47.9065, 63.1223, 46.4472, 63.6119, 45.0482, 64.2991, 43.7348, 65.1508, 42.5218, 66.1359, 41.4143, 67.2262, 40.4102, 68.3972, 39.5015)
+width = 1.75476
+width_curve = SubResource("Curve_ahteg")
+gradient = SubResource("Gradient_xhol0")
+
+[node name="_Line2D_35746" parent="Leafs2/Node2D3" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(65.9327, 48.5645, 65.9327, 46.5247, 65.8432, 44.4867, 65.6466, 42.4564, 65.3262, 40.4418, 64.8659, 38.4545, 64.251, 36.5095, 63.469, 34.6255, 62.5103, 32.825, 61.3689, 31.1343, 60.0438, 29.5834, 58.5401, 28.2051)
+width = 2.44752
+width_curve = SubResource("Curve_uge48")
+gradient = SubResource("Gradient_7bxy3")
+
+[node name="_Line2D_35747" parent="Leafs2/Node2D3" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(64.585, 48.5569, 64.585, 46.9944, 64.424, 45.4402, 64.049, 43.9234, 63.416, 42.4949, 62.4982, 41.2304, 61.2997, 40.2279, 59.8695, 39.5989, 58.3142, 39.4486, 56.8033, 39.8465, 55.5566, 40.7884, 54.8098, 42.1608)
+width = 1.70905
+width_curve = SubResource("Curve_3clul")
+gradient = SubResource("Gradient_pwap1")
+
+[node name="Node2D13" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D13" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(133.82, 49.3501, 133.82, 47.097, 133.999, 44.8511, 134.31, 42.6195, 134.705, 40.4014, 135.138, 38.1903, 135.563, 35.9777, 135.933, 33.7553, 136.202, 31.5183, 136.323, 29.2685, 136.248, 27.0167, 135.93, 24.7861, 135.329, 22.6147)
+width = 3.5874
+width_curve = SubResource("Curve_phqxg")
+gradient = SubResource("Gradient_vul5r")
+
+[node name="_Line2D_35816" parent="Leafs2/Node2D13" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(135.629, 51.2325, 135.629, 47.6634, 134.982, 44.1534, 133.84, 40.7717, 132.355, 37.5264, 130.663, 34.3836, 128.893, 31.2845, 127.167, 28.1607, 125.609, 24.9492, 124.356, 21.6074, 123.553, 18.1296, 123.355, 14.566, 123.906, 11.0397)
+width = 3.8229
+width_curve = SubResource("Curve_8p8fw")
+gradient = SubResource("Gradient_k03v3")
+
+[node name="_Line2D_35817" parent="Leafs2/Node2D13" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(132.622, 50.6094, 132.622, 47.5713, 132.3, 44.5503, 131.546, 41.6075, 130.266, 38.8522, 128.409, 36.4479, 125.993, 34.6062, 123.139, 33.563, 120.101, 33.5302, 117.267, 34.6228)
+width = 2.47459
+width_curve = SubResource("Curve_c5psc")
+gradient = SubResource("Gradient_lld87")
+
+[node name="_Line2D_35818" parent="Leafs2/Node2D13" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(136.696, 47.4198, 136.696, 44.2361, 136.627, 41.0531, 136.4, 37.8775, 135.928, 34.7288, 135.131, 31.6467, 133.933, 28.6968, 132.281, 25.9753, 130.15, 23.6097, 127.563, 21.7538, 124.606, 20.5743, 121.441, 20.2279)
+width = 3.49839
+width_curve = SubResource("Curve_dncgg")
+gradient = SubResource("Gradient_xgciw")
+
+[node name="_Line2D_35819" parent="Leafs2/Node2D13" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(135.454, 50.6164, 135.454, 46.849, 135.034, 43.1051, 134.067, 39.4641, 132.449, 36.0621, 130.124, 33.097, 127.123, 30.8204, 123.591, 29.5095, 119.825, 29.4132)
+width = 3.28378
+width_curve = SubResource("Curve_34mmk")
+gradient = SubResource("Gradient_tpbjq")
+
+[node name="_Line2D_35820" parent="Leafs2/Node2D13" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(132.778, 49.4354, 132.778, 47.471, 132.923, 45.5119, 133.197, 43.5668, 133.588, 41.6416, 134.08, 39.7399, 134.659, 37.8628, 135.312, 36.01, 136.024, 34.1793, 136.783, 32.3674)
+width = 3.72384
+width_curve = SubResource("Curve_nxnnu")
+gradient = SubResource("Gradient_7rtbs")
+
+[node name="_Line2D_35821" parent="Leafs2/Node2D13" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(131.163, 48.7173, 131.163, 45.4399, 131.454, 42.1754, 132.147, 38.9721, 133.34, 35.92, 135.104, 33.1577, 137.454, 30.8725, 140.322, 29.2868, 143.532, 28.6262, 146.78, 29.0663, 149.643, 30.6602, 151.637, 33.261)
+width = 2.75344
+width_curve = SubResource("Curve_nef0i")
+gradient = SubResource("Gradient_t770a")
+
+[node name="Node2D15" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D15" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(150.552, 47.1997, 150.552, 45.8034, 150.463, 44.4099, 150.339, 43.019, 150.237, 41.6265, 150.21, 40.2305, 150.314, 38.838, 150.602, 37.4716, 151.119, 36.1749, 151.898, 35.016, 152.941, 34.087, 154.206, 33.4957)
+width = 2.01605
+width_curve = SubResource("Curve_k6plq")
+gradient = SubResource("Gradient_meh3r")
+
+[node name="_Line2D_35828" parent="Leafs2/Node2D15" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(146.791, 49.8492, 146.791, 48.2251, 146.951, 46.6089, 147.207, 45.005, 147.494, 43.4065, 147.749, 41.8026, 147.909, 40.1864, 147.909, 38.5624, 147.686, 36.9537, 147.181, 35.41)
+width = 1.86025
+width_curve = SubResource("Curve_iosu0")
+gradient = SubResource("Gradient_a3noc")
+
+[node name="_Line2D_35829" parent="Leafs2/Node2D15" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(145.041, 49.8333, 145.041, 47.8942, 145.215, 45.9629, 145.492, 44.0438, 145.805, 42.1301, 146.082, 40.211, 146.256, 38.2797, 146.256, 36.3406, 146.013, 34.4169, 145.463, 32.5573, 144.559, 30.8419)
+width = 1.86318
+width_curve = SubResource("Curve_s23ny")
+gradient = SubResource("Gradient_fqvye")
+
+[node name="_Line2D_35830" parent="Leafs2/Node2D15" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(145.442, 47.6614, 145.442, 46.3031, 145.431, 44.9449, 145.37, 43.5879, 145.219, 42.238, 144.941, 40.9084, 144.502, 39.6232, 143.872, 38.4198, 143.035, 37.3498, 141.993, 36.4782)
+width = 2.25809
+width_curve = SubResource("Curve_am4rq")
+gradient = SubResource("Gradient_ygn5e")
+
+[node name="_Line2D_35831" parent="Leafs2/Node2D15" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(150.986, 47.7634, 150.986, 45.6704, 151.205, 43.5888, 151.67, 41.5482, 152.404, 39.588, 153.42, 37.758, 154.719, 36.1173, 156.289, 34.7325, 158.094, 33.6733, 160.078, 33.0078, 162.16, 32.7949, 164.235, 33.0752)
+width = 1.67935
+width_curve = SubResource("Curve_fl6yn")
+gradient = SubResource("Gradient_4o7ak")
+
+[node name="_Line2D_35832" parent="Leafs2/Node2D15" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(146.514, 49.4669, 146.514, 47.8409, 146.728, 46.2291, 147.095, 44.6452, 147.557, 43.0862, 148.056, 41.5387, 148.537, 39.9853, 148.942, 38.4106, 149.213, 36.8075, 149.291, 35.1834)
+width = 1.78595
+width_curve = SubResource("Curve_0jr04")
+gradient = SubResource("Gradient_u6teq")
+
+[node name="_Line2D_35833" parent="Leafs2/Node2D15" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(149.693, 47.6909, 149.693, 45.7291, 149.608, 43.7692, 149.458, 41.8131, 149.264, 39.861, 149.045, 37.9115, 148.821, 35.9626, 148.613, 34.0119, 148.439, 32.0578, 148.321, 30.0997)
+width = 1.60055
+width_curve = SubResource("Curve_punhx")
+gradient = SubResource("Gradient_8ju0n")
+
+[node name="_Line2D_35834" parent="Leafs2/Node2D15" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(148.245, 51.9796, 148.245, 50.8796, 148.19, 49.7811, 148.089, 48.6858, 147.951, 47.5946, 147.786, 46.5071, 147.604, 45.4225, 147.412, 44.3394, 147.221, 43.2562, 147.039, 42.1714, 146.876, 41.0836, 146.741, 39.992, 146.643, 38.8965)
+width = 1.44817
+width_curve = SubResource("Curve_h7nqg")
+gradient = SubResource("Gradient_f5ajg")
+
+[node name="Node2D12" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D12" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(124.692, 51.3377, 124.692, 47.7572, 124.678, 44.1767, 124.793, 40.5981, 125.18, 37.0385, 125.977, 33.5477, 127.306, 30.2231, 129.258, 27.2212, 131.857, 24.7592)
+width = 2.74966
+width_curve = SubResource("Curve_q7kno")
+gradient = SubResource("Gradient_wguoo")
+
+[node name="_Line2D_35810" parent="Leafs2/Node2D12" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(125.58, 51.6092, 125.58, 49.6482, 125.613, 47.6874, 125.669, 45.7273, 125.74, 43.7675, 125.815, 41.808, 125.886, 39.8483, 125.944, 37.8882, 125.979, 35.9275, 125.982, 33.9665, 125.943, 32.0059, 125.854, 30.0469, 125.705, 28.0916)
+width = 2.91523
+width_curve = SubResource("Curve_lnaai")
+gradient = SubResource("Gradient_b1f1g")
+
+[node name="_Line2D_35811" parent="Leafs2/Node2D12" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(126.261, 49.4849, 126.261, 46.9009, 126.481, 44.3262, 126.905, 41.7771, 127.512, 39.2653, 128.283, 36.7992, 129.201, 34.3835, 130.246, 32.0201, 131.4, 29.7083, 132.647, 27.4449, 133.97, 25.2252, 135.353, 23.0428)
+width = 2.3682
+width_curve = SubResource("Curve_k4ujw")
+gradient = SubResource("Gradient_22cdd")
+
+[node name="_Line2D_35812" parent="Leafs2/Node2D12" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(125.646, 50.2531, 125.646, 46.7797, 125.539, 43.3079, 125.192, 39.8518, 124.476, 36.4529, 123.272, 33.1947, 121.491, 30.213, 119.093, 27.6995, 116.127, 25.8918, 112.759, 25.0418)
+width = 3.24084
+width_curve = SubResource("Curve_5wbe7")
+gradient = SubResource("Gradient_w7tr8")
+
+[node name="_Line2D_35813" parent="Leafs2/Node2D12" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(127.767, 49.6372, 127.767, 47.5987, 127.44, 45.5868, 126.847, 43.6365, 126.051, 41.76, 125.11, 39.9515, 124.079, 38.193, 123.008, 36.4586, 121.945, 34.7192, 120.939, 32.9462, 120.042, 31.1161)
+width = 3.67218
+width_curve = SubResource("Curve_42emb")
+gradient = SubResource("Gradient_l1u72")
+
+[node name="_Line2D_35814" parent="Leafs2/Node2D12" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(124.994, 52.5685, 124.994, 49.4401, 125.57, 46.3653, 126.68, 43.4404, 128.267, 40.7442, 130.265, 38.3374, 132.607, 36.2635, 135.225, 34.5498, 138.051, 33.2092)
+width = 3.82533
+width_curve = SubResource("Curve_s6x78")
+gradient = SubResource("Gradient_o5paw")
+
+[node name="_Line2D_35815" parent="Leafs2/Node2D12" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(129.735, 49.307, 129.735, 46.6935, 129.508, 44.0899, 129.134, 41.5034, 128.689, 38.928, 128.251, 36.3515, 127.897, 33.7622, 127.703, 31.1559, 127.75, 28.5429, 128.113, 25.9548)
+width = 3.31813
+width_curve = SubResource("Curve_s47i2")
+gradient = SubResource("Gradient_ian12")
+
+[node name="Node2D9" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D9" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(106.556, 48.1834, 106.556, 44.8846, 106.208, 41.6042, 105.577, 38.3663, 104.727, 35.179, 103.72, 32.0377, 102.616, 28.929, 101.475, 25.834, 100.353, 22.7318, 99.3099, 19.6023, 98.4046, 16.4301, 97.6992, 13.2076)
+width = 3.116
+width_curve = SubResource("Curve_145cl")
+gradient = SubResource("Gradient_jfwto")
+
+[node name="_Line2D_35786" parent="Leafs2/Node2D9" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(104.158, 52.1313, 104.158, 49.283, 104.432, 46.4478, 104.941, 43.6452, 105.643, 40.8849, 106.501, 38.1686, 107.474, 35.4917, 108.527, 32.845, 109.623, 30.2158)
+width = 2.97029
+width_curve = SubResource("Curve_wgohq")
+gradient = SubResource("Gradient_es1qe")
+
+[node name="_Line2D_35787" parent="Leafs2/Node2D9" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(107.693, 50.1987, 107.693, 47.7374, 107.597, 45.2779, 107.363, 42.8278, 106.946, 40.402, 106.308, 38.025, 105.411, 35.7328, 104.228, 33.5742, 102.744, 31.6109, 100.959, 29.9165, 98.8961, 28.5732)
+width = 2.25924
+width_curve = SubResource("Curve_6dvtv")
+gradient = SubResource("Gradient_yheb1")
+
+[node name="_Line2D_35788" parent="Leafs2/Node2D9" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(106.197, 49.1158, 106.197, 46.8171, 105.939, 44.5329, 105.335, 42.3152, 104.311, 40.2568, 102.834, 38.4956, 100.93, 37.2076, 98.7182, 36.5828, 96.4279, 36.7793, 94.3975, 37.8569, 93.0263, 39.7018, 92.6738, 41.9733)
+width = 2.80432
+width_curve = SubResource("Curve_co1qr")
+gradient = SubResource("Gradient_gtyv1")
+
+[node name="_Line2D_35789" parent="Leafs2/Node2D9" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(103.687, 47.6583, 103.687, 44.8079, 103.334, 41.9794, 102.699, 39.2007, 101.851, 36.4795, 100.857, 33.8083, 99.7797, 31.1692, 98.6821, 28.5387, 97.625, 25.8916)
+width = 3.00979
+width_curve = SubResource("Curve_brea0")
+gradient = SubResource("Gradient_evch3")
+
+[node name="_Line2D_35790" parent="Leafs2/Node2D9" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(103.63, 49.503, 103.63, 46.9344, 103.806, 44.3718, 104.103, 41.8204, 104.467, 39.2777, 104.843, 36.7368, 105.177, 34.1901, 105.417, 31.6327, 105.506, 29.0656, 105.39, 26.4996)
+width = 3.4525
+width_curve = SubResource("Curve_ru6yy")
+gradient = SubResource("Gradient_x3yex")
+
+[node name="_Line2D_35791" parent="Leafs2/Node2D9" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(103.177, 51.6856, 103.177, 49.3312, 103.5, 46.9991, 104.117, 44.7271, 104.996, 42.5431, 106.105, 40.4661, 107.41, 38.5069, 108.882, 36.6694, 110.492, 34.9513, 112.214, 33.3458, 114.025, 31.8419, 115.906, 30.4256, 117.839, 29.0808)
+width = 2.42973
+width_curve = SubResource("Curve_r2wav")
+gradient = SubResource("Gradient_nv30i")
+
+[node name="_Line2D_35792" parent="Leafs2/Node2D9" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(106.516, 51.0928, 106.516, 47.9422, 106.151, 44.8127, 105.404, 41.752, 104.264, 38.8148, 102.731, 36.0623, 100.816, 33.5607, 98.5428, 31.3793, 95.9513, 29.5875, 93.0978, 28.2519, 90.0557, 27.4319)
+width = 3.06271
+width_curve = SubResource("Curve_2qfmj")
+gradient = SubResource("Gradient_huumg")
+
+[node name="Node2D11" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D11" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(121.1, 50.7921, 121.1, 48.9471, 121.251, 47.1082, 121.493, 45.2791, 121.764, 43.4541, 122.006, 41.625, 122.157, 39.7862, 122.157, 37.9411, 121.945, 36.1083, 121.467, 34.3265, 120.676, 32.6596, 119.549, 31.1981)
+width = 2.84997
+width_curve = SubResource("Curve_u13iq")
+gradient = SubResource("Gradient_m2lcw")
+
+[node name="_Line2D_35802" parent="Leafs2/Node2D11" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(121.422, 51.0102, 121.422, 48.3315, 121.35, 45.6537, 121.089, 42.9878, 120.524, 40.3692, 119.553, 37.8726, 118.1, 35.6221, 116.143, 33.7936, 113.744, 32.6016, 111.087, 32.2619, 108.492, 32.9266)
+width = 2.55711
+width_curve = SubResource("Curve_xwmkl")
+gradient = SubResource("Gradient_am8gj")
+
+[node name="_Line2D_35803" parent="Leafs2/Node2D11" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(120.072, 51.0291, 120.072, 48.731, 120.514, 46.4759, 121.368, 44.3424, 122.591, 42.3964, 124.131, 40.6904, 125.932, 39.2632, 127.937, 38.1404, 130.09, 37.336, 132.336, 36.8534, 134.629, 36.6872)
+width = 2.25067
+width_curve = SubResource("Curve_r31pm")
+gradient = SubResource("Gradient_4t466")
+
+[node name="_Line2D_35804" parent="Leafs2/Node2D11" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(121.996, 52.2342, 121.996, 50.5862, 121.862, 48.9435, 121.556, 47.3242, 121.042, 45.7581, 120.295, 44.2891, 119.3, 42.9755, 118.061, 41.8881, 116.611, 41.1058, 115.012, 40.7068, 113.364, 40.7557)
+width = 2.07172
+width_curve = SubResource("Curve_b53eq")
+gradient = SubResource("Gradient_co8rn")
+
+[node name="_Line2D_35805" parent="Leafs2/Node2D11" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(119.539, 48.2128, 119.539, 45.5289, 119.779, 42.8557, 120.136, 40.1956, 120.49, 37.5351, 120.719, 34.861, 120.702, 32.1771, 120.317, 29.5209, 119.456, 26.9788)
+width = 2.62179
+width_curve = SubResource("Curve_sssfp")
+gradient = SubResource("Gradient_48f5t")
+
+[node name="_Line2D_35806" parent="Leafs2/Node2D11" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(120.185, 47.1152, 120.185, 45.4554, 119.979, 43.8085, 119.55, 42.2052, 118.887, 40.6838, 117.986, 39.2897, 116.857, 38.0739, 115.52, 37.0905, 114.013, 36.3933)
+width = 2.87042
+width_curve = SubResource("Curve_ypksc")
+gradient = SubResource("Gradient_8slov")
+
+[node name="_Line2D_35807" parent="Leafs2/Node2D11" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(118.6, 48.214, 118.6, 46.1672, 118.622, 44.1205, 118.747, 42.0775, 119.054, 40.054, 119.62, 38.0869, 120.508, 36.2429, 121.759, 34.6225, 123.368, 33.3581, 125.27, 32.6016, 127.314, 32.4955, 129.261, 33.1285, 130.799, 34.4783)
+width = 2.64315
+width_curve = SubResource("Curve_gbr4u")
+gradient = SubResource("Gradient_3r1gu")
+
+[node name="_Line2D_35808" parent="Leafs2/Node2D11" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(121.944, 49.3686, 121.944, 47.7952, 122.239, 46.2497, 122.772, 44.7691, 123.483, 43.3656, 124.319, 42.0325, 125.231, 40.7505, 126.176, 39.4923, 127.113, 38.2277, 127.998, 36.927, 128.787, 35.5659)
+width = 2.29435
+width_curve = SubResource("Curve_7jljg")
+gradient = SubResource("Gradient_qvecr")
+
+[node name="_Line2D_35809" parent="Leafs2/Node2D11" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(119.736, 52.2443, 119.736, 50.0501, 119.501, 47.8685, 119.062, 45.7186, 118.45, 43.6114, 117.696, 41.5507, 116.831, 39.5346, 115.881, 37.5566, 114.874, 35.6069, 113.837, 33.6735, 112.794, 31.7431, 111.77, 29.8021)
+width = 2.73807
+width_curve = SubResource("Curve_vcwsu")
+gradient = SubResource("Gradient_kq1no")
+
+[node name="Node2D4" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D4" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(69.6197, 48.7168, 69.6197, 47.5197, 69.7824, 46.3336, 70.1333, 45.1891, 70.6896, 44.129, 71.4552, 43.2087, 72.4143, 42.4923, 73.5254, 42.0467, 74.7169, 41.9312, 75.887, 42.1843)
+width = 2.03004
+width_curve = SubResource("Curve_rq4ig")
+gradient = SubResource("Gradient_a88fv")
+
+[node name="_Line2D_35748" parent="Leafs2/Node2D4" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(72.636, 49.794, 72.636, 48.2504, 72.6846, 46.7076, 72.7231, 45.1644, 72.693, 43.6211, 72.5359, 42.0855, 72.1955, 40.5799, 71.6218, 39.1468, 70.7796, 37.8532, 69.66, 36.7905, 68.2958, 36.0681)
+width = 1.66636
+width_curve = SubResource("Curve_72hb8")
+gradient = SubResource("Gradient_s2wsy")
+
+[node name="_Line2D_35749" parent="Leafs2/Node2D4" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(70.8652, 49.152, 70.8652, 47.4469, 70.5796, 45.7659, 70.0093, 44.1589, 69.1648, 42.6777, 68.0667, 41.3732, 66.7463, 40.2944, 65.2455, 39.4849, 63.6165, 38.9814, 61.92, 38.8103)
+width = 1.81906
+width_curve = SubResource("Curve_hb0jl")
+gradient = SubResource("Gradient_s0ye0")
+
+[node name="_Line2D_35750" parent="Leafs2/Node2D4" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(68.4865, 47.1341, 68.4865, 45.9749, 68.5768, 44.8193, 68.7065, 43.6674, 68.8249, 42.5143, 68.8813, 41.3565, 68.8245, 40.1987, 68.6051, 39.0605, 68.1797, 37.9822, 67.5203, 37.0288, 66.6281, 36.2887, 65.5497, 35.8637, 64.3907, 35.8469)
+width = 2.19008
+width_curve = SubResource("Curve_7rk4c")
+gradient = SubResource("Gradient_blkf3")
+
+[node name="_Line2D_35751" parent="Leafs2/Node2D4" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(72.3011, 50.1227, 72.3011, 48.8525, 72.0653, 47.6044, 71.6198, 46.415, 70.9943, 45.3095, 70.2191, 44.3034, 69.3232, 43.4029, 68.3328, 42.6077, 67.2706, 41.9112, 66.1554, 41.3032, 65.0025, 40.7703)
+width = 1.63679
+width_curve = SubResource("Curve_kpjej")
+gradient = SubResource("Gradient_51m88")
+
+[node name="_Line2D_35752" parent="Leafs2/Node2D4" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(70.3638, 48.5758, 70.3638, 46.4658, 70.2715, 44.3578, 70.0437, 42.2601, 69.6382, 40.1895, 69.016, 38.1733, 68.1443, 36.2518, 66.9999, 34.4791, 65.5751, 32.9228, 63.8835, 31.6616, 61.9667, 30.7797, 59.8991, 30.3585)
+width = 1.88775
+width_curve = SubResource("Curve_4qbj2")
+gradient = SubResource("Gradient_xsmll")
+
+[node name="_Line2D_35753" parent="Leafs2/Node2D4" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(69.7052, 51.5639, 69.7052, 50.0446, 69.986, 48.5514, 70.5923, 47.1583, 71.54, 45.9708, 72.7978, 45.1185, 74.268, 44.7351, 75.7757, 44.9229, 77.0776, 45.7059, 77.9015, 46.9825)
+width = 2.10528
+width_curve = SubResource("Curve_4mop1")
+gradient = SubResource("Gradient_xmvws")
+
+[node name="Node2D8" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D8" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(98.6842, 52.3697, 98.6842, 50.7517, 98.4561, 49.1499, 98.0931, 47.5731, 97.6857, 46.0073, 97.3227, 44.4306, 97.0946, 42.8287, 97.0946, 41.2107, 97.4129, 39.6244, 98.1204, 38.1693, 99.2393, 37.0006, 100.704, 36.3124)
+width = 1.86701
+width_curve = SubResource("Curve_7juts")
+gradient = SubResource("Gradient_al640")
+
+[node name="_Line2D_35779" parent="Leafs2/Node2D8" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(96.8396, 47.1371, 96.8396, 45.7131, 96.9537, 44.2937, 97.1474, 42.8829, 97.3865, 41.4791, 97.6375, 40.0774, 97.8666, 38.6719, 98.04, 37.2585, 98.1236, 35.837, 98.0828, 34.4135)
+width = 1.80338
+width_curve = SubResource("Curve_g2khc")
+gradient = SubResource("Gradient_3xvk8")
+
+[node name="_Line2D_35780" parent="Leafs2/Node2D8" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(101.55, 48.6534, 101.55, 46.5695, 101.446, 44.4882, 101.145, 42.4261, 100.557, 40.427, 99.6077, 38.5717, 98.2568, 36.9849, 96.5224, 35.8298, 94.5106, 35.2863, 92.4382, 35.5057)
+width = 2.56591
+width_curve = SubResource("Curve_4ewbi")
+gradient = SubResource("Gradient_fim55")
+
+[node name="_Line2D_35781" parent="Leafs2/Node2D8" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(97.8054, 52.1617, 97.8054, 50.4738, 97.6431, 48.7938, 97.2472, 47.1531, 96.557, 45.6128, 95.5355, 44.2692, 94.1898, 43.2504, 92.5937, 42.7018, 90.9066, 42.7524, 89.376, 43.4639, 88.3064, 44.7695, 87.9828, 46.426, 88.553, 48.0146)
+width = 2.15363
+width_curve = SubResource("Curve_7ehal")
+gradient = SubResource("Gradient_lie16")
+
+[node name="_Line2D_35782" parent="Leafs2/Node2D8" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(96.0616, 48.7058, 96.0616, 47.3837, 95.8628, 46.0766, 95.4301, 44.8273, 94.7419, 43.6985, 93.7999, 42.7707, 92.6401, 42.1361, 91.3422, 41.8839, 90.0346, 42.0791, 88.8872, 42.736, 88.0896, 43.7904, 87.8105, 45.0827, 88.1422, 46.3626)
+width = 1.60609
+width_curve = SubResource("Curve_1dlev")
+gradient = SubResource("Gradient_i7s17")
+
+[node name="_Line2D_35783" parent="Leafs2/Node2D8" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(97.1478, 52.0124, 97.1478, 50.1532, 97.1947, 48.2945, 97.3583, 46.4424, 97.7066, 44.6161, 98.3029, 42.855, 99.1976, 41.2251, 100.417, 39.8214, 101.946, 38.7641, 103.713, 38.1851, 105.572, 38.2023, 107.304, 38.8792, 108.634, 40.1784)
+width = 2.5232
+width_curve = SubResource("Curve_gxukn")
+gradient = SubResource("Gradient_bhy0a")
+
+[node name="_Line2D_35784" parent="Leafs2/Node2D8" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(98.9592, 47.5614, 98.9592, 46.0235, 98.8917, 44.487, 98.7244, 42.9582, 98.4258, 41.4495, 97.9666, 39.9817, 97.3225, 38.5851, 96.4765, 37.3007, 95.4237, 36.1796)
+width = 2.42586
+width_curve = SubResource("Curve_gfbeo")
+gradient = SubResource("Gradient_n3vth")
+
+[node name="_Line2D_35785" parent="Leafs2/Node2D8" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(99.5385, 51.1471, 99.5385, 48.765, 99.5357, 46.3829, 99.4592, 44.002, 99.2382, 41.6302, 98.8035, 39.2881, 98.0907, 37.0151, 97.0459, 34.8744, 95.6346, 32.9553, 93.8546, 31.3723)
+width = 1.92579
+width_curve = SubResource("Curve_jbmwj")
+gradient = SubResource("Gradient_u08hc")
+
+[node name="Node2D5" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.4132, 51.0502, 80.4132, 48.6571, 80.238, 46.2704, 79.8065, 43.9164, 79.0447, 41.6478, 77.8944, 39.5493, 76.3281, 37.7399, 74.3672, 36.368, 72.1024, 35.595, 69.7094, 35.5646, 67.4519, 36.3587, 65.6589, 37.9437, 64.6688, 40.1224)
+width = 2.73338
+width_curve = SubResource("Curve_0wu02")
+gradient = SubResource("Gradient_m42n6")
+
+[node name="_Line2D_35754" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.7844, 49.8783, 80.7844, 47.4705, 80.6043, 45.0695, 80.2016, 42.6956, 79.5374, 40.3812, 78.5795, 38.1722, 77.3063, 36.1285, 75.7123, 34.3239, 73.8143, 32.8423)
+width = 2.71645
+width_curve = SubResource("Curve_lcrq8")
+gradient = SubResource("Gradient_7xcgy")
+
+[node name="_Line2D_35755" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.493, 52.3769, 80.493, 50.147, 80.8584, 47.9472, 81.5351, 45.8224, 82.4669, 43.7965, 83.6001, 41.876, 84.8849, 40.0534, 86.277, 38.3113, 87.7363, 36.6252, 89.2262, 34.966, 90.7119, 33.3031, 92.1582, 31.6058, 93.5278, 29.846)
+width = 2.33353
+width_curve = SubResource("Curve_hayce")
+gradient = SubResource("Gradient_ibi3w")
+
+[node name="_Line2D_35756" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(78.2722, 49.2224, 78.2722, 47.7349, 78.0459, 46.2648, 77.6096, 44.8427, 76.9826, 43.4938, 76.1864, 42.2374, 75.2432, 41.0872, 74.1749, 40.0521, 73.0025, 39.1366)
+width = 2.99648
+width_curve = SubResource("Curve_mgbim")
+gradient = SubResource("Gradient_asv8q")
+
+[node name="_Line2D_35757" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.1114, 47.7722, 80.1114, 46.2243, 80.3035, 44.6884, 80.6233, 43.1739, 81.0079, 41.6745, 81.3959, 40.176, 81.7261, 38.6638, 81.9356, 37.1301, 81.9604, 35.5824, 81.7373, 34.0507, 81.2126, 32.5944, 80.3542, 31.3063)
+width = 2.55889
+width_curve = SubResource("Curve_qrkv3")
+gradient = SubResource("Gradient_vmuo2")
+
+[node name="_Line2D_35758" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(78.1856, 51.6215, 78.1856, 49.629, 77.8593, 47.6635, 77.1267, 45.8106, 75.9435, 44.2074, 74.3316, 43.0363, 72.4136, 42.4967, 70.4372, 42.7495, 68.7663, 43.8347, 67.8135, 45.5846)
+width = 2.95653
+width_curve = SubResource("Curve_smr2y")
+gradient = SubResource("Gradient_3kg5k")
+
+[node name="_Line2D_35759" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(75.6021, 49.78, 75.6021, 47.8978, 75.6928, 46.0177, 75.813, 44.1392, 75.9014, 42.259, 75.8965, 40.3767, 75.7372, 38.5012, 75.3643, 36.6562, 74.7245, 34.8859, 73.7784, 33.2587, 72.5103, 31.8677, 70.9426, 30.8259, 69.1493, 30.2539)
+width = 2.45435
+width_curve = SubResource("Curve_8chsq")
+gradient = SubResource("Gradient_u1xsb")
+
+[node name="_Line2D_35760" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.5011, 51.3494, 80.5011, 48.7282, 80.06, 46.1444, 79.147, 43.6874, 77.7542, 41.4669, 75.9065, 39.6076, 73.6703, 38.2403, 71.1596, 37.4873, 68.5387, 37.4446, 66.0171, 38.1601)
+width = 2.43243
+width_curve = SubResource("Curve_0wgg1")
+gradient = SubResource("Gradient_8wjsu")
+
+[node name="_Line2D_35761" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.6967, 49.7125, 80.6967, 47.6868, 80.5385, 45.6672, 80.2642, 43.6601, 79.9161, 41.6645, 79.5356, 39.6748, 79.1638, 37.6835, 78.8419, 35.6834, 78.6118, 33.6708, 78.5156, 31.6473)
+width = 2.05303
+width_curve = SubResource("Curve_qsxgf")
+gradient = SubResource("Gradient_2lef0")
+
+[node name="_Line2D_35762" parent="Leafs2/Node2D5" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.6652, 51.9431, 80.6652, 50.4557, 80.8924, 48.9857, 81.3296, 47.564, 81.9566, 46.2152, 82.7513, 44.9579, 83.6909, 43.8048, 84.7534, 42.7639, 85.9179, 41.8385, 87.1651, 41.028, 88.478, 40.329, 89.8419, 39.7355)
+width = 2.88313
+width_curve = SubResource("Curve_l4xt6")
+gradient = SubResource("Gradient_ex7sd")
+
+[node name="Node2D16" type="Node2D" parent="Leafs2"]
+position = Vector2(8, 40)
+
+[node name="Leaf" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.4132, 51.0502, 80.4132, 48.6571, 80.238, 46.2704, 79.8065, 43.9164, 79.0447, 41.6478, 77.8944, 39.5493, 76.3281, 37.7399, 74.3672, 36.368, 72.1024, 35.595, 69.7094, 35.5646, 67.4519, 36.3587, 65.6589, 37.9437, 64.6688, 40.1224)
+width = 2.73338
+width_curve = SubResource("Curve_0wu02")
+gradient = SubResource("Gradient_m42n6")
+
+[node name="_Line2D_35754" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.7844, 49.8783, 80.7844, 47.4705, 80.6043, 45.0695, 80.2016, 42.6956, 79.5374, 40.3812, 78.5795, 38.1722, 77.3063, 36.1285, 75.7123, 34.3239, 73.8143, 32.8423)
+width = 2.71645
+width_curve = SubResource("Curve_lcrq8")
+gradient = SubResource("Gradient_7xcgy")
+
+[node name="_Line2D_35755" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.493, 52.3769, 80.493, 50.147, 80.8584, 47.9472, 81.5351, 45.8224, 82.4669, 43.7965, 83.6001, 41.876, 84.8849, 40.0534, 86.277, 38.3113, 87.7363, 36.6252, 89.2262, 34.966, 90.7119, 33.3031, 92.1582, 31.6058, 93.5278, 29.846)
+width = 2.33353
+width_curve = SubResource("Curve_hayce")
+gradient = SubResource("Gradient_ibi3w")
+
+[node name="_Line2D_35756" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(78.2722, 49.2224, 78.2722, 47.7349, 78.0459, 46.2648, 77.6096, 44.8427, 76.9826, 43.4938, 76.1864, 42.2374, 75.2432, 41.0872, 74.1749, 40.0521, 73.0025, 39.1366)
+width = 2.99648
+width_curve = SubResource("Curve_mgbim")
+gradient = SubResource("Gradient_asv8q")
+
+[node name="_Line2D_35757" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.1114, 47.7722, 80.1114, 46.2243, 80.3035, 44.6884, 80.6233, 43.1739, 81.0079, 41.6745, 81.3959, 40.176, 81.7261, 38.6638, 81.9356, 37.1301, 81.9604, 35.5824, 81.7373, 34.0507, 81.2126, 32.5944, 80.3542, 31.3063)
+width = 2.55889
+width_curve = SubResource("Curve_qrkv3")
+gradient = SubResource("Gradient_vmuo2")
+
+[node name="_Line2D_35758" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(78.1856, 51.6215, 78.1856, 49.629, 77.8593, 47.6635, 77.1267, 45.8106, 75.9435, 44.2074, 74.3316, 43.0363, 72.4136, 42.4967, 70.4372, 42.7495, 68.7663, 43.8347, 67.8135, 45.5846)
+width = 2.95653
+width_curve = SubResource("Curve_smr2y")
+gradient = SubResource("Gradient_3kg5k")
+
+[node name="_Line2D_35759" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(75.6021, 49.78, 75.6021, 47.8978, 75.6928, 46.0177, 75.813, 44.1392, 75.9014, 42.259, 75.8965, 40.3767, 75.7372, 38.5012, 75.3643, 36.6562, 74.7245, 34.8859, 73.7784, 33.2587, 72.5103, 31.8677, 70.9426, 30.8259, 69.1493, 30.2539)
+width = 2.45435
+width_curve = SubResource("Curve_8chsq")
+gradient = SubResource("Gradient_u1xsb")
+
+[node name="_Line2D_35760" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.5011, 51.3494, 80.5011, 48.7282, 80.06, 46.1444, 79.147, 43.6874, 77.7542, 41.4669, 75.9065, 39.6076, 73.6703, 38.2403, 71.1596, 37.4873, 68.5387, 37.4446, 66.0171, 38.1601)
+width = 2.43243
+width_curve = SubResource("Curve_0wgg1")
+gradient = SubResource("Gradient_8wjsu")
+
+[node name="_Line2D_35761" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.6967, 49.7125, 80.6967, 47.6868, 80.5385, 45.6672, 80.2642, 43.6601, 79.9161, 41.6645, 79.5356, 39.6748, 79.1638, 37.6835, 78.8419, 35.6834, 78.6118, 33.6708, 78.5156, 31.6473)
+width = 2.05303
+width_curve = SubResource("Curve_qsxgf")
+gradient = SubResource("Gradient_2lef0")
+
+[node name="_Line2D_35762" parent="Leafs2/Node2D16" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.6652, 51.9431, 80.6652, 50.4557, 80.8924, 48.9857, 81.3296, 47.564, 81.9566, 46.2152, 82.7513, 44.9579, 83.6909, 43.8048, 84.7534, 42.7639, 85.9179, 41.8385, 87.1651, 41.028, 88.478, 40.329, 89.8419, 39.7355)
+width = 2.88313
+width_curve = SubResource("Curve_l4xt6")
+gradient = SubResource("Gradient_ex7sd")
+
+[node name="Node2D17" type="Node2D" parent="Leafs2"]
+position = Vector2(48, 8)
+
+[node name="Leaf" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.4132, 51.0502, 80.4132, 48.6571, 80.238, 46.2704, 79.8065, 43.9164, 79.0447, 41.6478, 77.8944, 39.5493, 76.3281, 37.7399, 74.3672, 36.368, 72.1024, 35.595, 69.7094, 35.5646, 67.4519, 36.3587, 65.6589, 37.9437, 64.6688, 40.1224)
+width = 2.73338
+width_curve = SubResource("Curve_0wu02")
+gradient = SubResource("Gradient_m42n6")
+
+[node name="_Line2D_35754" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.7844, 49.8783, 80.7844, 47.4705, 80.6043, 45.0695, 80.2016, 42.6956, 79.5374, 40.3812, 78.5795, 38.1722, 77.3063, 36.1285, 75.7123, 34.3239, 73.8143, 32.8423)
+width = 2.71645
+width_curve = SubResource("Curve_lcrq8")
+gradient = SubResource("Gradient_7xcgy")
+
+[node name="_Line2D_35755" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.493, 52.3769, 80.493, 50.147, 80.8584, 47.9472, 81.5351, 45.8224, 82.4669, 43.7965, 83.6001, 41.876, 84.8849, 40.0534, 86.277, 38.3113, 87.7363, 36.6252, 89.2262, 34.966, 90.7119, 33.3031, 92.1582, 31.6058, 93.5278, 29.846)
+width = 2.33353
+width_curve = SubResource("Curve_hayce")
+gradient = SubResource("Gradient_ibi3w")
+
+[node name="_Line2D_35756" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(78.2722, 49.2224, 78.2722, 47.7349, 78.0459, 46.2648, 77.6096, 44.8427, 76.9826, 43.4938, 76.1864, 42.2374, 75.2432, 41.0872, 74.1749, 40.0521, 73.0025, 39.1366)
+width = 2.99648
+width_curve = SubResource("Curve_mgbim")
+gradient = SubResource("Gradient_asv8q")
+
+[node name="_Line2D_35757" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.1114, 47.7722, 80.1114, 46.2243, 80.3035, 44.6884, 80.6233, 43.1739, 81.0079, 41.6745, 81.3959, 40.176, 81.7261, 38.6638, 81.9356, 37.1301, 81.9604, 35.5824, 81.7373, 34.0507, 81.2126, 32.5944, 80.3542, 31.3063)
+width = 2.55889
+width_curve = SubResource("Curve_qrkv3")
+gradient = SubResource("Gradient_vmuo2")
+
+[node name="_Line2D_35758" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(78.1856, 51.6215, 78.1856, 49.629, 77.8593, 47.6635, 77.1267, 45.8106, 75.9435, 44.2074, 74.3316, 43.0363, 72.4136, 42.4967, 70.4372, 42.7495, 68.7663, 43.8347, 67.8135, 45.5846)
+width = 2.95653
+width_curve = SubResource("Curve_smr2y")
+gradient = SubResource("Gradient_3kg5k")
+
+[node name="_Line2D_35759" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(75.6021, 49.78, 75.6021, 47.8978, 75.6928, 46.0177, 75.813, 44.1392, 75.9014, 42.259, 75.8965, 40.3767, 75.7372, 38.5012, 75.3643, 36.6562, 74.7245, 34.8859, 73.7784, 33.2587, 72.5103, 31.8677, 70.9426, 30.8259, 69.1493, 30.2539)
+width = 2.45435
+width_curve = SubResource("Curve_8chsq")
+gradient = SubResource("Gradient_u1xsb")
+
+[node name="_Line2D_35760" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.5011, 51.3494, 80.5011, 48.7282, 80.06, 46.1444, 79.147, 43.6874, 77.7542, 41.4669, 75.9065, 39.6076, 73.6703, 38.2403, 71.1596, 37.4873, 68.5387, 37.4446, 66.0171, 38.1601)
+width = 2.43243
+width_curve = SubResource("Curve_0wgg1")
+gradient = SubResource("Gradient_8wjsu")
+
+[node name="_Line2D_35761" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.6967, 49.7125, 80.6967, 47.6868, 80.5385, 45.6672, 80.2642, 43.6601, 79.9161, 41.6645, 79.5356, 39.6748, 79.1638, 37.6835, 78.8419, 35.6834, 78.6118, 33.6708, 78.5156, 31.6473)
+width = 2.05303
+width_curve = SubResource("Curve_qsxgf")
+gradient = SubResource("Gradient_2lef0")
+
+[node name="_Line2D_35762" parent="Leafs2/Node2D17" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.6652, 51.9431, 80.6652, 50.4557, 80.8924, 48.9857, 81.3296, 47.564, 81.9566, 46.2152, 82.7513, 44.9579, 83.6909, 43.8048, 84.7534, 42.7639, 85.9179, 41.8385, 87.1651, 41.028, 88.478, 40.329, 89.8419, 39.7355)
+width = 2.88313
+width_curve = SubResource("Curve_l4xt6")
+gradient = SubResource("Gradient_ex7sd")
+
+[node name="Node2D18" type="Node2D" parent="Leafs2"]
+position = Vector2(-24, 104)
+
+[node name="Leaf" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.4132, 51.0502, 80.4132, 48.6571, 80.238, 46.2704, 79.8065, 43.9164, 79.0447, 41.6478, 77.8944, 39.5493, 76.3281, 37.7399, 74.3672, 36.368, 72.1024, 35.595, 69.7094, 35.5646, 67.4519, 36.3587, 65.6589, 37.9437, 64.6688, 40.1224)
+width = 2.73338
+width_curve = SubResource("Curve_0wu02")
+gradient = SubResource("Gradient_m42n6")
+
+[node name="_Line2D_35754" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.7844, 49.8783, 80.7844, 47.4705, 80.6043, 45.0695, 80.2016, 42.6956, 79.5374, 40.3812, 78.5795, 38.1722, 77.3063, 36.1285, 75.7123, 34.3239, 73.8143, 32.8423)
+width = 2.71645
+width_curve = SubResource("Curve_lcrq8")
+gradient = SubResource("Gradient_7xcgy")
+
+[node name="_Line2D_35755" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.493, 52.3769, 80.493, 50.147, 80.8584, 47.9472, 81.5351, 45.8224, 82.4669, 43.7965, 83.6001, 41.876, 84.8849, 40.0534, 86.277, 38.3113, 87.7363, 36.6252, 89.2262, 34.966, 90.7119, 33.3031, 92.1582, 31.6058, 93.5278, 29.846)
+width = 2.33353
+width_curve = SubResource("Curve_hayce")
+gradient = SubResource("Gradient_ibi3w")
+
+[node name="_Line2D_35756" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(78.2722, 49.2224, 78.2722, 47.7349, 78.0459, 46.2648, 77.6096, 44.8427, 76.9826, 43.4938, 76.1864, 42.2374, 75.2432, 41.0872, 74.1749, 40.0521, 73.0025, 39.1366)
+width = 2.99648
+width_curve = SubResource("Curve_mgbim")
+gradient = SubResource("Gradient_asv8q")
+
+[node name="_Line2D_35757" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.1114, 47.7722, 80.1114, 46.2243, 80.3035, 44.6884, 80.6233, 43.1739, 81.0079, 41.6745, 81.3959, 40.176, 81.7261, 38.6638, 81.9356, 37.1301, 81.9604, 35.5824, 81.7373, 34.0507, 81.2126, 32.5944, 80.3542, 31.3063)
+width = 2.55889
+width_curve = SubResource("Curve_qrkv3")
+gradient = SubResource("Gradient_vmuo2")
+
+[node name="_Line2D_35758" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(78.1856, 51.6215, 78.1856, 49.629, 77.8593, 47.6635, 77.1267, 45.8106, 75.9435, 44.2074, 74.3316, 43.0363, 72.4136, 42.4967, 70.4372, 42.7495, 68.7663, 43.8347, 67.8135, 45.5846)
+width = 2.95653
+width_curve = SubResource("Curve_smr2y")
+gradient = SubResource("Gradient_3kg5k")
+
+[node name="_Line2D_35759" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(75.6021, 49.78, 75.6021, 47.8978, 75.6928, 46.0177, 75.813, 44.1392, 75.9014, 42.259, 75.8965, 40.3767, 75.7372, 38.5012, 75.3643, 36.6562, 74.7245, 34.8859, 73.7784, 33.2587, 72.5103, 31.8677, 70.9426, 30.8259, 69.1493, 30.2539)
+width = 2.45435
+width_curve = SubResource("Curve_8chsq")
+gradient = SubResource("Gradient_u1xsb")
+
+[node name="_Line2D_35760" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.5011, 51.3494, 80.5011, 48.7282, 80.06, 46.1444, 79.147, 43.6874, 77.7542, 41.4669, 75.9065, 39.6076, 73.6703, 38.2403, 71.1596, 37.4873, 68.5387, 37.4446, 66.0171, 38.1601)
+width = 2.43243
+width_curve = SubResource("Curve_0wgg1")
+gradient = SubResource("Gradient_8wjsu")
+
+[node name="_Line2D_35761" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.6967, 49.7125, 80.6967, 47.6868, 80.5385, 45.6672, 80.2642, 43.6601, 79.9161, 41.6645, 79.5356, 39.6748, 79.1638, 37.6835, 78.8419, 35.6834, 78.6118, 33.6708, 78.5156, 31.6473)
+width = 2.05303
+width_curve = SubResource("Curve_qsxgf")
+gradient = SubResource("Gradient_2lef0")
+
+[node name="_Line2D_35762" parent="Leafs2/Node2D18" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(80.6652, 51.9431, 80.6652, 50.4557, 80.8924, 48.9857, 81.3296, 47.564, 81.9566, 46.2152, 82.7513, 44.9579, 83.6909, 43.8048, 84.7534, 42.7639, 85.9179, 41.8385, 87.1651, 41.028, 88.478, 40.329, 89.8419, 39.7355)
+width = 2.88313
+width_curve = SubResource("Curve_l4xt6")
+gradient = SubResource("Gradient_ex7sd")
+
+[node name="Node2D" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(52.9263, 50.6789, 52.9263, 49.1233, 52.9951, 47.5692, 53.0807, 46.016, 53.1311, 44.4613, 53.0944, 42.9061, 52.9187, 41.3605, 52.5548, 39.8481, 51.9598, 38.4108, 51.1042, 37.1117, 49.9822, 36.0342, 48.6234, 35.277, 47.1047, 34.9401)
+width = 2.2418
+width_curve = SubResource("Curve_vnubk")
+gradient = SubResource("Gradient_2stoy")
+
+[node name="_Line2D_35729" parent="Leafs2/Node2D" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(51.4634, 47.1179, 51.4634, 45.0807, 51.1557, 43.0668, 50.6205, 41.1011, 49.9361, 39.1823, 49.1768, 37.2919, 48.4139, 35.4029, 47.7186, 33.488, 47.1647, 31.5275, 46.8301, 29.5179, 46.7952, 27.481, 47.136, 25.4725)
+width = 2.50274
+width_curve = SubResource("Curve_cvmja")
+gradient = SubResource("Gradient_vf47s")
+
+[node name="_Line2D_35730" parent="Leafs2/Node2D" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(50.6386, 49.4329, 50.6386, 46.0503, 50.7609, 42.67, 50.9669, 39.2937, 51.2182, 35.9205, 51.4763, 32.5477, 51.7028, 29.1728, 51.8594, 25.7938, 51.9074, 22.4116, 51.8084, 19.0305, 51.5241, 15.6599, 51.0174, 12.3155)
+width = 2.58401
+width_curve = SubResource("Curve_alx1u")
+gradient = SubResource("Gradient_bcn3q")
+
+[node name="_Line2D_35731" parent="Leafs2/Node2D" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(52.9561, 51.5593, 52.9561, 49.3312, 52.5663, 47.1375, 51.8877, 45.0153, 51.0181, 42.9639, 50.0487, 40.9577, 49.0652, 38.9585, 48.1527, 36.9258, 47.4001, 34.8287, 46.9032, 32.6567)
+width = 1.99168
+width_curve = SubResource("Curve_rtpqc")
+gradient = SubResource("Gradient_jgbry")
+
+[node name="_Line2D_35732" parent="Leafs2/Node2D" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(48.7122, 50.565, 48.7122, 47.9823, 48.3885, 45.4199, 47.8282, 42.8986, 47.1166, 40.4158, 46.3362, 37.9538, 45.5676, 35.488, 44.8917, 32.9953, 44.3918, 30.4613)
+width = 1.77002
+width_curve = SubResource("Curve_oofgv")
+gradient = SubResource("Gradient_i606t")
+
+[node name="_Line2D_35733" parent="Leafs2/Node2D" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(48.053, 50.8524, 48.053, 48.7573, 47.8922, 46.6684, 47.5075, 44.6089, 46.8418, 42.6223, 45.8504, 40.7767, 44.5111, 39.1656, 42.8379, 37.9047, 40.8949, 37.121, 38.8083, 36.9325, 36.7703, 37.4187, 35.0287, 38.5832)
+width = 1.96578
+width_curve = SubResource("Curve_t62c2")
+gradient = SubResource("Gradient_x7wen")
+
+[node name="_Line2D_35734" parent="Leafs2/Node2D" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(47.2382, 49.822, 47.2382, 47.6414, 47.0225, 45.4715, 46.6864, 43.317, 46.3238, 41.1668, 46.0284, 39.0063, 45.8948, 36.8298, 46.0184, 34.6527, 46.4902, 32.5238)
+width = 1.88192
+width_curve = SubResource("Curve_ivn20")
+gradient = SubResource("Gradient_06pu7")
+
+[node name="_Line2D_35735" parent="Leafs2/Node2D" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(48.0576, 49.3758, 48.0576, 47.0446, 47.6736, 44.7452, 46.8257, 42.5736, 45.4705, 40.6767, 43.6305, 39.2453, 41.4254, 38.4889, 39.0961, 38.5855, 37.0018, 39.6094, 35.5695, 41.4488, 35.1849, 43.7481)
+width = 2.56967
+width_curve = SubResource("Curve_p5q7d")
+gradient = SubResource("Gradient_qwmt0")
+
+[node name="Node2D2" type="Node2D" parent="Leafs2"]
+y_sort_enabled = true
+position = Vector2(-8, 24)
+
+[node name="Leaf" parent="Leafs2/Node2D2" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(56.7115, 49.2545, 56.7115, 45.7356, 56.6303, 42.2176, 56.5495, 38.6996, 56.5508, 35.1807, 56.716, 31.6657, 57.126, 28.1707, 57.8588, 24.7289, 58.9859, 21.3954, 60.5656, 18.2509, 62.6337, 15.4039, 65.1925, 12.9882)
+width = 2.90096
+width_curve = SubResource("Curve_5p7di")
+gradient = SubResource("Gradient_gu4i8")
+
+[node name="_Line2D_35736" parent="Leafs2/Node2D2" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(56.7429, 52.0542, 56.7429, 48.3826, 56.2903, 44.7391, 55.5006, 41.1535, 54.4873, 37.6245, 53.3602, 34.1302, 52.226, 30.6383, 51.1913, 27.1155, 50.3652, 23.5381, 49.8608, 19.9014)
+width = 4.23299
+width_curve = SubResource("Curve_n3xb3")
+gradient = SubResource("Gradient_d1uhc")
+
+[node name="_Line2D_35737" parent="Leafs2/Node2D2" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(57.2095, 50.1041, 57.2095, 47.8221, 57.3612, 45.5452, 57.769, 43.2999, 58.5286, 41.1481, 59.7128, 39.1974, 61.3472, 37.6049, 63.3787, 36.5653, 65.6423, 36.2762, 67.8443, 36.8749)
+width = 3.8303
+width_curve = SubResource("Curve_f6k8g")
+gradient = SubResource("Gradient_paspg")
+
+[node name="_Line2D_35738" parent="Leafs2/Node2D2" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(58.768, 49.5753, 58.768, 46.3655, 59.3158, 43.2027, 60.3891, 40.1776, 61.9514, 37.3735, 63.9538, 34.8648, 66.3373, 32.7148, 69.0349, 30.9752, 71.974, 29.6849, 75.0788, 28.8701, 78.2721, 28.5442, 81.4778, 28.7085, 84.6224, 29.3526)
+width = 3.59692
+width_curve = SubResource("Curve_gckln")
+gradient = SubResource("Gradient_ol68r")
+
+[node name="_Line2D_35739" parent="Leafs2/Node2D2" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(59.9624, 47.9608, 59.9624, 45.2066, 59.862, 42.4542, 59.7731, 39.7014, 59.8075, 36.9474, 60.0767, 34.2064, 60.6883, 31.5209, 61.7369, 28.9741, 63.2871, 26.6976, 65.3485, 24.871, 67.8443, 23.7064, 70.5826, 23.411)
+width = 4.22347
+width_curve = SubResource("Curve_v4dn8")
+gradient = SubResource("Gradient_u8yga")
+
+[node name="_Line2D_35740" parent="Leafs2/Node2D2" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(59.0958, 47.2189, 59.0958, 44.6929, 58.9021, 42.1743, 58.5927, 39.6673, 58.2448, 37.1653, 57.9353, 34.6583, 57.7416, 32.1397, 57.7416, 29.6137, 58.0126, 27.1022, 58.6268, 24.652, 59.644, 22.3398, 61.0995, 20.2752)
+width = 4.34361
+width_curve = SubResource("Curve_nj5os")
+gradient = SubResource("Gradient_y40j7")
+
+[node name="_Line2D_35741" parent="Leafs2/Node2D2" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(56.6873, 52.1018, 56.6873, 48.5983, 56.5935, 45.096, 56.2998, 41.6049, 55.7023, 38.1527, 54.703, 34.7947, 53.2189, 31.621, 51.1947, 28.7614, 48.6216, 26.3837, 45.5583, 24.6834)
+width = 4.12434
+width_curve = SubResource("Curve_gp236")
+gradient = SubResource("Gradient_vr2qt")
+
+[node name="Node2D10" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(112.937, 52.9104, 112.937, 51.7451, 112.903, 50.5803, 112.813, 49.4184, 112.646, 48.2651, 112.382, 47.13, 112.003, 46.0281, 111.493, 44.9803, 110.842, 44.0138, 110.047, 43.1621)
+width = 2.00307
+width_curve = SubResource("Curve_tk1v8")
+gradient = SubResource("Gradient_cxib7")
+
+[node name="_Line2D_35793" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(110.632, 47.8645, 110.632, 46.2157, 110.924, 44.593, 111.573, 43.0773, 112.61, 41.7953, 114.001, 40.9101, 115.619, 40.5923, 117.225, 40.9643, 118.489, 42.0236, 119.06, 43.5701, 118.711, 45.1815, 117.495, 46.2944)
+width = 1.98793
+width_curve = SubResource("Curve_3qscy")
+gradient = SubResource("Gradient_wxc66")
+
+[node name="_Line2D_35794" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(114.692, 49.8966, 114.692, 47.903, 114.609, 45.9111, 114.51, 43.9201, 114.459, 41.9271, 114.521, 39.9345, 114.763, 37.9557, 115.246, 36.0214, 116.023, 34.1854, 117.13, 32.5278, 118.575, 31.154, 120.319, 30.1881)
+width = 1.91161
+width_curve = SubResource("Curve_tegro")
+gradient = SubResource("Gradient_etdr8")
+
+[node name="_Line2D_35795" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(114.346, 48.5646, 114.346, 47.0308, 114.153, 45.5092, 113.792, 44.0185, 113.289, 42.5695, 112.67, 41.1665, 111.957, 39.8084, 111.174, 38.4894, 110.342, 37.201, 109.481, 35.932)
+width = 1.42839
+width_curve = SubResource("Curve_mo356")
+gradient = SubResource("Gradient_rdyd5")
+
+[node name="_Line2D_35796" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(112.392, 51.9143, 112.392, 50.3752, 112.458, 48.8376, 112.539, 47.3007, 112.587, 45.7624, 112.552, 44.2238, 112.386, 42.6938, 112.041, 41.1939, 111.476, 39.7623)
+width = 2.16176
+width_curve = SubResource("Curve_ou052")
+gradient = SubResource("Gradient_esxqx")
+
+[node name="_Line2D_35797" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(110.165, 50.1261, 110.165, 48.2141, 110.47, 46.3266, 111.153, 44.541, 112.259, 42.9813, 113.773, 41.8131, 115.591, 41.2206, 117.498, 41.3595, 119.17, 42.2864)
+width = 2.13584
+width_curve = SubResource("Curve_5vcb2")
+gradient = SubResource("Gradient_t7pjk")
+
+[node name="_Line2D_35798" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(111.615, 52.786, 111.615, 51.6029, 111.476, 50.4281, 111.226, 49.2717, 110.893, 48.1363, 110.506, 47.0185, 110.089, 45.9111, 109.67, 44.8049, 109.273, 43.6904, 108.924, 42.5599, 108.651, 41.4087)
+width = 2.05769
+width_curve = SubResource("Curve_jpjfy")
+gradient = SubResource("Gradient_hxc0j")
+
+[node name="_Line2D_35799" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(114.835, 48.1495, 114.835, 46.5398, 114.929, 44.9329, 115.121, 43.3346, 115.411, 41.7513, 115.8, 40.1895, 116.291, 38.6564, 116.882, 37.1593, 117.575, 35.706, 118.366, 34.3045, 119.256, 32.963, 120.241, 31.6899, 121.318, 30.4936)
+width = 2.29844
+width_curve = SubResource("Curve_npqlg")
+gradient = SubResource("Gradient_nnvrm")
+
+[node name="_Line2D_35800" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(110.281, 52.0174, 110.281, 50.1582, 110.415, 48.3039, 110.702, 46.467, 111.161, 44.6653, 111.807, 42.9217, 112.65, 41.2647, 113.696, 39.7281, 114.945, 38.3504, 116.384, 37.1737, 117.993, 36.2419, 119.737, 35.598)
+width = 2.00353
+width_curve = SubResource("Curve_ct51p")
+gradient = SubResource("Gradient_5iegb")
+
+[node name="_Line2D_35801" parent="Leafs2/Node2D10" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(113.971, 49.8974, 113.971, 48.5831, 113.721, 47.2928, 113.201, 46.0855, 112.411, 45.0354, 111.375, 44.2263, 110.153, 43.7425, 108.842, 43.6544, 107.574, 44.0005, 106.507, 44.7683)
+width = 2.0552
+width_curve = SubResource("Curve_ydylg")
+gradient = SubResource("Gradient_oe1k4")
+
+[node name="Node2D7" type="Node2D" parent="Leafs2"]
+
+[node name="Leaf" parent="Leafs2/Node2D7" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(94.9672, 52.6726, 94.9672, 49.4716, 94.7022, 46.2816, 94.0402, 43.1497, 92.864, 40.1726, 91.0918, 37.5069, 88.7087, 35.3698, 85.8064, 34.0194, 82.6206, 33.7081)
+width = 2.20539
+width_curve = SubResource("Curve_jbp3a")
+gradient = SubResource("Gradient_trsg6")
+
+[node name="_Line2D_35771" parent="Leafs2/Node2D7" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(90.8927, 52.122, 90.8927, 49.9799, 90.7851, 47.8404, 90.4751, 45.7209, 89.8729, 43.6651, 88.9039, 41.7547, 87.5261, 40.1144, 85.7559, 38.9081, 83.6969, 38.3173, 81.5623, 38.497)
+width = 2.59019
+width_curve = SubResource("Curve_fd4ev")
+gradient = SubResource("Gradient_kgkmy")
+
+[node name="_Line2D_35772" parent="Leafs2/Node2D7" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(89.7328, 52.5526, 89.7328, 50.4696, 90.0854, 48.4165, 90.7972, 46.4588, 91.8608, 44.6678, 93.2524, 43.1177, 94.9295, 41.8822, 96.8298, 41.0288, 98.871, 40.6135, 100.953, 40.6742, 102.962, 41.2251, 104.775, 42.2504, 106.271, 43.7007)
+width = 2.42697
+width_curve = SubResource("Curve_gn8oe")
+gradient = SubResource("Gradient_481mu")
+
+[node name="_Line2D_35773" parent="Leafs2/Node2D7" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(91.4552, 51.2282, 91.4552, 47.9514, 91.5974, 44.6778, 91.9906, 41.4248, 92.7399, 38.2349, 93.9389, 35.1854, 95.6572, 32.3954, 97.9216, 30.027, 100.692, 28.2769, 103.836, 27.354, 107.111, 27.4389, 110.165, 28.6263, 112.565, 30.858)
+width = 2.13315
+width_curve = SubResource("Curve_fyht8")
+gradient = SubResource("Gradient_7ybyx")
+
+[node name="_Line2D_35774" parent="Leafs2/Node2D7" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(94.9601, 47.2306, 94.9601, 44.3102, 95.3136, 41.4113, 96.1395, 38.6101, 97.5299, 36.0419, 99.5199, 33.9045, 102.049, 32.4445, 104.921, 31.9161, 107.781, 32.507)
+width = 2.57516
+width_curve = SubResource("Curve_nni1q")
+gradient = SubResource("Gradient_e13cq")
+
+[node name="_Line2D_35775" parent="Leafs2/Node2D7" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(90.4032, 49.7709, 90.4032, 47.8506, 90.0593, 45.9615, 89.3229, 44.1881, 88.1755, 42.6484, 86.6469, 41.4862, 84.8343, 40.8524, 82.9142, 40.873, 81.1391, 41.6052, 79.8084, 42.9895)
+width = 2.39535
+width_curve = SubResource("Curve_k5344")
+gradient = SubResource("Gradient_l0tyd")
+
+[node name="_Line2D_35776" parent="Leafs2/Node2D7" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(93.6503, 47.0744, 93.6503, 44.2917, 94.1357, 41.5518, 95.1107, 38.9455, 96.5601, 36.5701, 98.4467, 34.5247, 100.709, 32.9049, 103.262, 31.7968, 105.994, 31.2697, 108.775, 31.3691, 111.457, 32.1093)
+width = 2.26688
+width_curve = SubResource("Curve_0sxs8")
+gradient = SubResource("Gradient_13a02")
+
+[node name="_Line2D_35777" parent="Leafs2/Node2D7" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(94.0296, 49.0014, 94.0296, 45.869, 94.6294, 42.7945, 95.8733, 39.9197, 97.7616, 37.4205, 100.232, 35.495, 103.144, 34.3412, 106.269, 34.1238, 109.295, 34.9332)
+width = 2.937
+width_curve = SubResource("Curve_8uggb")
+gradient = SubResource("Gradient_c55ah")
+
+[node name="_Line2D_35778" parent="Leafs2/Node2D7" instance=ExtResource("4_0gpnf")]
+material = SubResource("ShaderMaterial_lymkh")
+points = PackedVector2Array(91.8269, 48.1351, 91.8269, 46.1396, 92.0262, 44.1541, 92.4048, 42.1949, 92.9418, 40.273, 93.6164, 38.395, 94.4081, 36.5632, 95.2973, 34.7768, 96.2654, 33.0319)
+width = 3.09893
+width_curve = SubResource("Curve_cx180")
+gradient = SubResource("Gradient_1h4oi")
+
+[node name="Enemies" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Goblin" parent="Enemies" instance=ExtResource("14_bqflp")]
+position = Vector2(928, 352)
+
+[node name="Goblin2" parent="Enemies" instance=ExtResource("14_bqflp")]
+position = Vector2(632, 320)
+
+[node name="Goblin3" parent="Enemies" instance=ExtResource("14_bqflp")]
+position = Vector2(856, 536)
+
+[node name="Goblin4" parent="Enemies" instance=ExtResource("14_bqflp")]
+position = Vector2(1040, 472)
+
+[node name="Goblin5" parent="Enemies" instance=ExtResource("14_bqflp")]
+position = Vector2(808, 224)
+
+[node name="Goblin6" parent="Enemies" instance=ExtResource("14_bqflp")]
+position = Vector2(520, 456)
+hp = 3
+
+[node name="Environment" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Objects" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="InteractiveGrass" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1030, 141)
+
+[node name="InteractiveGrass2" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1055, 126)
+
+[node name="InteractiveGrass3" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1074, 156)
+
+[node name="InteractiveGrass4" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1098, 135)
+
+[node name="InteractiveGrass5" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1117, 160)
+
+[node name="InteractiveGrass6" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1075, 116)
+
+[node name="InteractiveGrass7" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1050, 150)
+
+[node name="InteractiveGrass8" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1008, 158)
+
+[node name="InteractiveGrass9" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(861, 159)
+
+[node name="InteractiveGrass10" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1161, 328)
+
+[node name="InteractiveGrass11" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1185, 379)
+
+[node name="InteractiveGrass12" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1132, 384)
+
+[node name="InteractiveGrass13" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(842, 314)
+
+[node name="InteractiveGrass14" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(799, 379)
+
+[node name="InteractiveGrass15" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(1010, 544)
+
+[node name="InteractiveGrass16" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(950, 636)
+
+[node name="InteractiveGrass17" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(798, 582)
+
+[node name="InteractiveGrass18" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(440, 584)
+
+[node name="InteractiveGrass19" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(384, 536)
+
+[node name="InteractiveGrass20" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(352, 360)
+
+[node name="InteractiveGrass21" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(352, 328)
+
+[node name="InteractiveGrass22" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(336, 408)
+
+[node name="InteractiveGrass23" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(336, 440)
+
+[node name="InteractiveGrass24" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(336, 376)
+
+[node name="InteractiveGrass25" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(336, 344)
+
+[node name="InteractiveGrass26" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(352, 424)
+
+[node name="InteractiveGrass27" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(336, 464)
+
+[node name="InteractiveGrass28" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(352, 392)
+
+[node name="InteractiveGrass29" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(336, 312)
+
+[node name="InteractiveGrass30" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(408, 160)
+
+[node name="InteractiveGrass31" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(408, 104)
+
+[node name="InteractiveGrass32" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(496, 312)
+
+[node name="InteractiveGrass33" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(648, 232)
+
+[node name="InteractiveGrass34" parent="Environment/Objects" instance=ExtResource("4_is4ja")]
+position = Vector2(616, 472)
+
+[node name="Interactables" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="Weather" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="Wind" parent="Environment/Weather" instance=ExtResource("7_pldhg")]
+
+[node name="FloatingLights" parent="Environment/Weather" instance=ExtResource("8_vb0rd")]
+position = Vector2(432, 104)
+
+[node name="MagicLeaves" parent="Environment/Weather" instance=ExtResource("9_c0770")]
+position = Vector2(-1544, -368)
+
+[node name="Hazards" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="Borders" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="SideBorder" parent="Environment/Borders" instance=ExtResource("3_phv1l")]
+position = Vector2(710, -1)
+
+[node name="SideBorder3" parent="Environment/Borders" instance=ExtResource("3_phv1l")]
+position = Vector2(1314, 145)
+
+[node name="SideBorder4" parent="Environment/Borders" instance=ExtResource("3_phv1l")]
+position = Vector2(1314, 475)
+
+[node name="SideBorder5" parent="Environment/Borders" instance=ExtResource("3_phv1l")]
+position = Vector2(1314, 817)
+
+[node name="SideBorder6" parent="Environment/Borders" instance=ExtResource("3_phv1l")]
+position = Vector2(1081, 817)
+
+[node name="SideBorder7" parent="Environment/Borders" instance=ExtResource("3_phv1l")]
+position = Vector2(604, 817)
+
+[node name="SideBorder2" parent="Environment/Borders" instance=ExtResource("4_nga1f")]
+position = Vector2(1016, 7)
+
+[node name="NPC\'s" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Transitions" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="LevelTransition" parent="Transitions" instance=ExtResource("3_og72v")]
+position = Vector2(486, 9)
+level = "res://Hallasan-Sunset/Levels/Act1/Forest/Act_1_Scene_5.tscn"
+target_transition_area = "LevelTransition5"
+size = 6
+side = 2
+
+[node name="LevelTransition2" parent="Transitions" instance=ExtResource("3_og72v")]
+position = Vector2(890, 710)
+level = "res://Hallasan-Sunset/Levels/Act1/Forest/Act_1_Scene_9.tscn"
+size = 6
+side = 3
+
+[node name="Items" type="Node2D" parent="."]
+y_sort_enabled = true

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://c3cx0nodai8jq"]
+
+[ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_dors1"]
+[ext_resource type="Script" uid="uid://by265x207jy1a" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_data.gd" id="3_8281n"]
+[ext_resource type="Texture2D" uid="uid://cteqajjg7vj0h" path="res://Hallasan-Sunset/Tilemaps/Sprites/Dusk_Icons_x24.png" id="4_8aurx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gwg7"]
+atlas = ExtResource("4_8aurx")
+region = Rect2(246, 338, 11, 19)
+
+[resource]
+script = ExtResource("3_8281n")
+name = "Gem"
+description = "Shiny"
+texture = SubResource("AtlasTexture_6gwg7")
+cost = 10
+effects = Array[ExtResource("1_dors1")]([])

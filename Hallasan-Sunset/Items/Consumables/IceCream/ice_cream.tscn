@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn8dmtqwny5oo"]
+
+[ext_resource type="Script" uid="uid://dlei3sq7ko1du" path="res://Hallasan-Sunset/Items/Consumables/IceCream/IceCream.gd" id="1_70oqb"]
+[ext_resource type="Resource" uid="uid://dly3brwxr01gs" path="res://Hallasan-Sunset/Items/Consumables/IceCream/Ice Cream.tres" id="2_2yuoi"]
+[ext_resource type="Texture2D" uid="uid://b8siw0jyvqhtb" path="res://Hallasan-Sunset/Items/Consumables/IceCream/Sprites/Ice Cream.png" id="2_4eipu"]
+[ext_resource type="AudioStream" uid="uid://dahijkeowm3re" path="res://Hallasan-Sunset/Items/Audio/item_pickup.wav" id="4_1djg6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wyiv7"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_82goa"]
+radius = 9.0
+
+[node name="IceCream" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_70oqb")
+item = ExtResource("2_2yuoi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_4eipu")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+scale = Vector2(4, 3.44)
+shape = SubResource("CircleShape2D_wyiv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_82goa")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1djg6")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

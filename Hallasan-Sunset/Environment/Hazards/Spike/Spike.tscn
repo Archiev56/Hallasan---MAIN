@@ -1,0 +1,186 @@
+[gd_scene load_steps=19 format=3 uid="uid://cerpqrtpj4udh"]
+
+[ext_resource type="Script" uid="uid://bl4oocfcqkokq" path="res://Hallasan-Sunset/Environment/Hazards/Spike/WoodenSpike.gd" id="1_7foum"]
+[ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="2_ofwq7"]
+[ext_resource type="Texture2D" uid="uid://cvt3frekhnp3b" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Sprites/Untitled_Artwork-1 34.png" id="3_8ilnl"]
+[ext_resource type="Texture2D" uid="uid://2rkk3we81ge4" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Sprites/Spike1.png" id="4_xryqj"]
+[ext_resource type="Texture2D" uid="uid://b0xvjhx1j0ai5" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Sprites/Spike2.png" id="5_vmldl"]
+[ext_resource type="Texture2D" uid="uid://b3eyljtulnlsi" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Sprites/Spike3.png" id="6_6waah"]
+[ext_resource type="Texture2D" uid="uid://84sj7ddnems1" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Sprites/Spike4.png" id="7_dvu7n"]
+[ext_resource type="Texture2D" uid="uid://b170iji231tqk" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Sprites/Spike5.png" id="8_bv4vd"]
+[ext_resource type="Texture2D" uid="uid://c1cwnd1kl5mqo" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Sprites/Spike6.png" id="9_8qhfu"]
+[ext_resource type="AudioStream" uid="uid://yojigcvbfbbi" path="res://Hallasan-Sunset/Audio/Sound effects/Grass_spike.wav" id="10_lxyoo"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="11_1chmo"]
+
+[sub_resource type="Animation" id="Animation_nadug"]
+resource_name = "Nospike"
+length = 0.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_xryqj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hurt_box:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_q86hp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_8ilnl")]
+}
+
+[sub_resource type="Animation" id="Animation_72dd4"]
+resource_name = "Spike"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_xryqj"), ExtResource("5_vmldl"), ExtResource("6_6waah"), ExtResource("7_dvu7n"), ExtResource("8_bv4vd"), ExtResource("9_8qhfu")]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_lxyoo")
+}],
+"times": PackedFloat32Array(0.01)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hurt_box:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_geijt"]
+resource_name = "SpikeDown"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_8qhfu"), ExtResource("8_bv4vd"), ExtResource("7_dvu7n"), ExtResource("6_6waah"), ExtResource("5_vmldl"), ExtResource("4_xryqj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hurt_box:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1eqan"]
+_data = {
+&"Nospike": SubResource("Animation_nadug"),
+&"RESET": SubResource("Animation_q86hp"),
+&"Spike": SubResource("Animation_72dd4"),
+&"SpikeDown": SubResource("Animation_geijt")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed5tt"]
+size = Vector2(34, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pn8do"]
+size = Vector2(9, 17)
+
+[node name="Spike" type="Area2D"]
+z_index = 10
+texture_filter = 1
+position = Vector2(0, -53)
+collision_mask = 5
+script = ExtResource("1_7foum")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0.192157)
+position = Vector2(0, 50)
+texture = ExtResource("2_ofwq7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("3_8ilnl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1eqan")
+}
+autoplay = "Nospike"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 44)
+shape = SubResource("RectangleShape2D_ed5tt")
+
+[node name="hurt_box" parent="." instance=ExtResource("11_1chmo")]
+unique_name_in_owner = true
+collision_mask = 5
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box"]
+position = Vector2(0.5, 44.5)
+shape = SubResource("RectangleShape2D_pn8do")
+debug_color = Color(0.92549, 0.239216, 0.345098, 0.419608)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="hurt_box" to="." method="_on_hurt_box_body_entered"]

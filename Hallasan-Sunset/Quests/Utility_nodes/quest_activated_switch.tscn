@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfx3bf6wl4je3"]
+
+[ext_resource type="Script" uid="uid://cfugdkot0gavp" path="res://Hallasan-Sunset/Quests/Utility_nodes/quest_activated_switch.gd" id="1_ol41t"]
+[ext_resource type="Texture2D" uid="uid://dguwnfb0w8mbf" path="res://Hallasan-Sunset/Quests/Utility_nodes/Icons/quest_switch.png" id="2_7n2gm"]
+
+[node name="QuestActivatedSwitch" type="Node2D"]
+script = ExtResource("1_ol41t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7n2gm")

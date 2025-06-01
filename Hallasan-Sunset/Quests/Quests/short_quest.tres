@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=5 format=3 uid="uid://b3er7dgk0xnm6"]
+
+[ext_resource type="Script" uid="uid://bm0ws2ek6wpjf" path="res://Hallasan-Sunset/Quests/Scripts/quest_reward_item.gd" id="1_w5b40"]
+[ext_resource type="Resource" uid="uid://dixsynm0elypt" path="res://Hallasan-Sunset/Items/Consumables/IceCream/IceCream.tres" id="2_vtkkg"]
+[ext_resource type="Script" uid="uid://b4nvommw2oy6" path="res://Hallasan-Sunset/Quests/Scripts/quest_resource.gd" id="2_yh8ti"]
+
+[sub_resource type="Resource" id="Resource_5vgag"]
+script = ExtResource("1_w5b40")
+item = ExtResource("2_vtkkg")
+quantity = 1
+
+[resource]
+script = ExtResource("2_yh8ti")
+title = "short quest"
+description = "Hello this is an example short quest with 1 step to complete"
+steps = Array[String]([""])
+reward_xp = 10
+reward_items = Array[ExtResource("1_w5b40")]([SubResource("Resource_5vgag")])

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://8j4vty4c5cwd"]
+
+[ext_resource type="Texture2D" uid="uid://d0sihq2653cg8" path="res://Hallasan-Sunset/npc/Characters/Act 1/Ungyeo/Sprites/Ungyeo_Portrait.png" id="1_r1nsq"]
+[ext_resource type="Script" uid="uid://b36i5c8j16vj4" path="res://Hallasan-Sunset/npc/scripts/npc_resource.gd" id="2_bptmq"]
+[ext_resource type="Texture2D" uid="uid://bwg2h3blf53t5" path="res://Hallasan-Sunset/npc/Characters/Act 1/Ungyeo/Sprites/Ungyeo_sprite_sheet.png" id="3_r1nsq"]
+
+[resource]
+script = ExtResource("2_bptmq")
+npc_name = "Ungyeo"
+hero = false
+sprite = ExtResource("3_r1nsq")
+portrait = ExtResource("1_r1nsq")
+dialog_audio_pitch = 1.8

@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqige2lm30fv"]
+
+[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="1_425tt"]
+[ext_resource type="PackedScene" uid="uid://dc6lo3whucr6e" path="res://Hallasan-Sunset/npc/npc.tscn" id="1_tyuoy"]
+[ext_resource type="Texture2D" uid="uid://dp4xeagcs1dxc" path="res://Hallasan-Sunset/Player/Technical/Hot Air Balloon/Sprites/Balloon.png" id="2_rw048"]
+[ext_resource type="Resource" uid="uid://jkyqnhdk22c8" path="res://Hallasan-Sunset/npc/Characters/Act 1/Heron/Heron.tres" id="2_v3asd"]
+[ext_resource type="Texture2D" uid="uid://bnr6y3tva5k3b" path="res://Hallasan-Sunset/Player/Technical/Hot Air Balloon/Sprites/Basket 2.png" id="3_425tt"]
+[ext_resource type="PackedScene" uid="uid://cou4euvvaw0ml" path="res://Hallasan-Sunset/UI/Dialogue_system/dialogue_interaction.tscn" id="3_gfa4t"]
+[ext_resource type="Script" uid="uid://cwdm0l0hkothu" path="res://Hallasan-Sunset/npc/Dialog/Scripts/dialog_text.gd" id="4_rntrs"]
+[ext_resource type="Resource" uid="uid://dxnb65gey8g0i" path="res://Hallasan-Sunset/npc/Characters/Act 1/Slick/Slick.tres" id="5_qilrw"]
+[ext_resource type="Script" uid="uid://cmbmdbarq3bal" path="res://Hallasan-Sunset/npc/Dialog/Scripts/dialog_choice.gd" id="6_dtbdg"]
+[ext_resource type="Script" uid="uid://dwvdc0d4nkxc1" path="res://Hallasan-Sunset/npc/Dialog/Scripts/dialog_branch.gd" id="7_pknwm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3asd"]
+shader = ExtResource("1_425tt")
+shader_parameter/WindStrength = 8.427
+
+[node name="HotAirBalloon" type="Node2D"]
+y_sort_enabled = true
+
+[node name="NPC" parent="." instance=ExtResource("1_tyuoy")]
+position = Vector2(6, 51)
+npc_resource = ExtResource("2_v3asd")
+
+[node name="DialogueInteraction" parent="NPC" instance=ExtResource("3_gfa4t")]
+position = Vector2(0, 24)
+
+[node name="DialogText" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_rntrs")
+text = "Woioi big man! How is it going playboy? "
+npc_info = ExtResource("2_v3asd")
+
+[node name="DialogText2" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_rntrs")
+text = "Saw you checkin' out the lovely lady in my life,  Bertha my balloon. Gorgeous, ain't she? "
+npc_info = ExtResource("2_v3asd")
+
+[node name="DialogText3" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_rntrs")
+text = "Wicker baskets and flames go together like a dream, who would'a thought?"
+npc_info = ExtResource("2_v3asd")
+
+[node name="DialogText4" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_rntrs")
+text = "I know every Tom, Dick and Harry on this mountain Kid. "
+npc_info = ExtResource("2_v3asd")
+
+[node name="DialogText5" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_rntrs")
+text = "And whispers around here say you're looking for some medicine ingredients? "
+npc_info = ExtResource("2_v3asd")
+
+[node name="DialogText6" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_rntrs")
+text = "Remember, Champ—sometimes, the key to healing sometimes lies not beneath your feet, but high above!"
+npc_info = ExtResource("5_qilrw")
+
+[node name="DialogText7" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_rntrs")
+text = "I'll do you a ride for 10 coins, keen?"
+npc_info = ExtResource("5_qilrw")
+
+[node name="DialogChoice" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("6_dtbdg")
+
+[node name="DialogBranch" type="Node" parent="NPC/DialogueInteraction/DialogChoice"]
+script = ExtResource("7_pknwm")
+
+[node name="DialogText" type="Node" parent="NPC/DialogueInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("4_rntrs")
+
+[node name="DialogBranch2" type="Node" parent="NPC/DialogueInteraction/DialogChoice"]
+script = ExtResource("7_pknwm")
+text = "That basket smells abit weird, i'll pass"
+
+[node name="DialogText" type="Node" parent="NPC/DialogueInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("4_rntrs")
+text = "Was woven by the finest Wanchojang's on the mountain...but whatever..."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_v3asd")
+position = Vector2(0, 9)
+texture = ExtResource("2_rw048")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("3_425tt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-20, 99, -21, 87, -14, 66, 23, 67, 32, 81, 31, 98)

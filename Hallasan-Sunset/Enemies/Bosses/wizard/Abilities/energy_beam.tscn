@@ -1,0 +1,242 @@
+[gd_scene load_steps=13 format=3 uid="uid://dv1pf7ueffcyc"]
+
+[ext_resource type="Material" uid="uid://8g8oxepcywc7" path="res://Hallasan-Sunset/Shaders/light_material.tres" id="1_0v1pb"]
+[ext_resource type="Script" uid="uid://ty44qnqfnpv4" path="res://Hallasan-Sunset/Enemies/Bosses/wizard/Scripts/beam_attack.gd" id="1_b7qvt"]
+[ext_resource type="Texture2D" uid="uid://coo8ikr7qo8wg" path="res://Hallasan-Sunset/Enemies/Bosses/wizard/Sprites/energy-beam.png" id="1_dnphu"]
+[ext_resource type="Script" uid="uid://bc56vsqnd6tn3" path="res://Hallasan-Sunset/Enemies/Bosses/wizard/Scripts/energy_beam_sprite.gd" id="3_0v650"]
+[ext_resource type="Texture2D" uid="uid://c2w6458qbuqdr" path="res://Hallasan-Sunset/Enemies/Bosses/wizard/Sprites/energy-beam-large.png" id="4_18ha1"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="5_364j5"]
+[ext_resource type="AudioStream" uid="uid://cm8r1bq10h7wp" path="res://Hallasan-Sunset/Enemies/Bosses/wizard/Audio/beam.mp3" id="6_bfhcr"]
+
+[sub_resource type="Animation" id="Animation_bwluu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HurtBox:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnergyIndicatorSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnergyBeamSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EnergyIndicatorSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.505882)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EnergyBeamSprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bjt4x"]
+resource_name = "attack"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HurtBox:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnergyIndicatorSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnergyBeamSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EnergyIndicatorSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EnergyBeamSprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 3.3, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_bfhcr")
+}],
+"times": PackedFloat32Array(2)
+}
+tracks/5/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ytdyt"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HurtBox:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnergyIndicatorSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnergyBeamSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4f7w"]
+_data = {
+&"RESET": SubResource("Animation_bwluu"),
+&"attack": SubResource("Animation_bjt4x"),
+&"default": SubResource("Animation_ytdyt")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5xcr"]
+size = Vector2(1024, 40)
+
+[node name="EnergyBeam" type="Node2D"]
+z_index = 1
+script = ExtResource("1_b7qvt")
+
+[node name="EnergyIndicatorSprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.505882)
+texture_filter = 1
+texture_repeat = 2
+material = ExtResource("1_0v1pb")
+texture = ExtResource("1_dnphu")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 1024, 16)
+script = ExtResource("3_0v650")
+
+[node name="EnergyBeamSprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture_repeat = 2
+material = ExtResource("1_0v1pb")
+texture = ExtResource("4_18ha1")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 1024, 97)
+script = ExtResource("3_0v650")
+speed = 400.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h4f7w")
+}
+autoplay = "default"
+
+[node name="HurtBox" parent="." instance=ExtResource("5_364j5")]
+monitoring = false
+damage = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_w5xcr")
+debug_color = Color(1, 0, 0.113725, 0)

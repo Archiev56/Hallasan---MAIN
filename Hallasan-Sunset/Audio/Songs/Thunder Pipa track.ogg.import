@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ca6lkdvcyckbh"
+path="res://.godot/imported/Thunder Pipa track.ogg-f23546082f75a87915c5121e7fabfd1a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Songs/Thunder Pipa track.ogg"
+dest_files=["res://.godot/imported/Thunder Pipa track.ogg-f23546082f75a87915c5121e7fabfd1a.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

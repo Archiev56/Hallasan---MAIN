@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://dbxg2swo5t7w8"]
+
+[ext_resource type="Texture2D" uid="uid://d0sihq2653cg8" path="res://Hallasan-Sunset/npc/Characters/Act 1/Ungyeo/Sprites/Ungyeo_Portrait.png" id="1_6sgys"]
+[ext_resource type="Script" uid="uid://b36i5c8j16vj4" path="res://Hallasan-Sunset/npc/scripts/npc_resource.gd" id="2_0idil"]
+[ext_resource type="Texture2D" uid="uid://cje0k2fmhmlvd" path="res://Hallasan-Sunset/npc/Characters/Sprites/Npc_reference.png" id="3_6sgys"]
+
+[resource]
+script = ExtResource("2_0idil")
+npc_name = "Bolo"
+hero = false
+sprite = ExtResource("3_6sgys")
+portrait = ExtResource("1_6sgys")
+dialog_audio_pitch = 0.7

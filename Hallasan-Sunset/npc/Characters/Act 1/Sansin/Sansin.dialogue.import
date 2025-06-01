@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cmi46pvw4y360"
+path="res://.godot/imported/Sansin.dialogue-0b8e28bb712c602f182cf9b4a13acabe.tres"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/npc/Characters/Sansin/Sansin.dialogue"
+dest_files=["res://.godot/imported/Sansin.dialogue-0b8e28bb712c602f182cf9b4a13acabe.tres"]
+
+[params]
+
+defaults=true

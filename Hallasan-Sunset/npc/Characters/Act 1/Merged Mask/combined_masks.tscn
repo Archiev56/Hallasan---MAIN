@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhn7e36w2k7u6"]
+
+[ext_resource type="Texture2D" uid="uid://tguu0ym2x6jf" path="res://Hallasan-Sunset/npc/Characters/Act 1/Merged Mask/Sprites/COMBINED KOREAN MASKS.png" id="1_uvgq7"]
+[ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="1_yirhy"]
+
+[sub_resource type="Animation" id="Animation_q85f6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CombinedKoreanMasks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -6)]
+}
+
+[sub_resource type="Animation" id="Animation_qlttg"]
+resource_name = "hover"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CombinedKoreanMasks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0psf"]
+_data = {
+&"RESET": SubResource("Animation_q85f6"),
+&"hover": SubResource("Animation_qlttg")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.27)
+texture_filter = 1
+position = Vector2(0, 70)
+scale = Vector2(3, 3)
+texture = ExtResource("1_yirhy")
+
+[node name="CombinedKoreanMasks" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -6)
+scale = Vector2(2, 2)
+texture = ExtResource("1_uvgq7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u0psf")
+}
+autoplay = "hover"

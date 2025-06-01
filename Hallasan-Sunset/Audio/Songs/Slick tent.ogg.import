@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bucx1x3sxd1hs"
+path="res://.godot/imported/Slick tent.ogg-15ccbf7052924d712d3d53c2ed634071.oggvorbisstr"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Songs/Slick tent.ogg"
+dest_files=["res://.godot/imported/Slick tent.ogg-15ccbf7052924d712d3d53c2ed634071.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

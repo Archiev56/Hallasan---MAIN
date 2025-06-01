@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://dcqu1flenu416"]
+
+[ext_resource type="Script" uid="uid://csmojcbcb0rd8" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/inventory_data.gd" id="1_vhxcb"]
+[ext_resource type="Script" uid="uid://dffme6j33gsj2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/slot_data.gd" id="2_q2lis"]
+[ext_resource type="Resource" uid="uid://blon6cwe2ixbs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Armor/Armour.tres" id="3_4dhhj"]
+[ext_resource type="Resource" uid="uid://cskkv0038ses7" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Weapons/Fists.tres" id="3_tqkka"]
+
+[sub_resource type="Resource" id="Resource_kiq2l"]
+script = ExtResource("2_q2lis")
+item_data = ExtResource("3_4dhhj")
+quantity = 0
+metadata/_custom_type_script = "uid://dffme6j33gsj2"
+
+[sub_resource type="Resource" id="Resource_pcyur"]
+script = ExtResource("2_q2lis")
+item_data = ExtResource("3_tqkka")
+quantity = 0
+metadata/_custom_type_script = "uid://dffme6j33gsj2"
+
+[resource]
+script = ExtResource("1_vhxcb")
+slots = Array[ExtResource("2_q2lis")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, SubResource("Resource_kiq2l"), SubResource("Resource_pcyur"), null, null, null, null])

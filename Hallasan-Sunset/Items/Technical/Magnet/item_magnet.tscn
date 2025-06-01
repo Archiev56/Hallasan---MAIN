@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4eaotgg15phx"]
+
+[ext_resource type="Script" uid="uid://8rcjcdo5r276" path="res://Hallasan-Sunset/Items/Technical/Magnet/item_magnet.gd" id="1_2ghcm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qt6e6"]
+radius = 44.0114
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_2ghcm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qt6e6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://v0k1yqv8sn7u"]
+
+[ext_resource type="Texture2D" uid="uid://c4rkfbfwt3pv2" path="res://Hallasan-Sunset/UI/Pause Menu/Pause/UI box.png" id="1_lbxeu"]
+[ext_resource type="Script" uid="uid://cgd0e2xfvh7ec" path="res://Hallasan-Sunset/UI/Pause Menu/Quests/quest_item.gd" id="1_y202x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2v52q"]
+texture = ExtResource("1_lbxeu")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="QuestItem" type="Button"]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 50)
+offset_right = 246.0
+offset_bottom = 50.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_2v52q")
+script = ExtResource("1_y202x")
+
+[node name="TitleLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 177.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(1, 0.858824, 0.552941, 1)
+theme_override_font_sizes/font_size = 16
+text = "Quest Title"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="StepLabel" type="Label" parent="."]
+modulate = Color(0.75, 0.75, 0.75, 1)
+custom_minimum_size = Vector2(169, 0)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 17.0
+offset_right = 177.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 16
+text = "Quest step 1/5"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3

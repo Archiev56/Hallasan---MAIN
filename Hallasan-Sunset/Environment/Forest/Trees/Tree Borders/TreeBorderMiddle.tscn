@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyc0c62viecui"]
+
+[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="1_6oeag"]
+[ext_resource type="Texture2D" uid="uid://dgr5ipbccknja" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Sprites/pine tree.png" id="2_88xrm"]
+[ext_resource type="PackedScene" uid="uid://j7xr0tnkfbq3" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tall Tree/Tall Tree.tscn" id="3_a30po"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6lsk"]
+shader = ExtResource("1_6oeag")
+shader_parameter/WindStrength = 10.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_inlc4"]
+a = Vector2(-282, 170)
+b = Vector2(12.0006, 170)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kn46w"]
+a = Vector2(-101, -178)
+b = Vector2(268, -178)
+
+[node name="Tree Border Middle" type="StaticBody2D"]
+z_index = 5
+position = Vector2(-73, 33)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(18, 26)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_88xrm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+position = Vector2(97, -86)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_88xrm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-45, 69, -53, 32, -2, 17, 50, 41, 40, 72, 0, 94)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(68, 105)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_inlc4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(68, 105)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_inlc4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(438, 105)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_inlc4")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_a30po")]
+z_index = 2
+position = Vector2(-23, -226)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_a30po")]
+z_index = 2
+position = Vector2(184, -227)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_a30po")]
+z_index = 2
+position = Vector2(191, -30)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_kn46w")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbawtbmh067ct"
+path="res://.godot/imported/UI_hover.mp3-f5b9f858e3c63966c4e1feda207ecfe0.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Sound effects/UI_hover.mp3"
+dest_files=["res://.godot/imported/UI_hover.mp3-f5b9f858e3c63966c4e1feda207ecfe0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

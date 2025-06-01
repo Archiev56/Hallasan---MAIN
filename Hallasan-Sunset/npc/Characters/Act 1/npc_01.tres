@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://djut2vwsnghi3"]
+
+[ext_resource type="Script" uid="uid://b36i5c8j16vj4" path="res://Hallasan-Sunset/npc/scripts/npc_resource.gd" id="1_qydup"]
+[ext_resource type="Texture2D" uid="uid://d0sihq2653cg8" path="res://Hallasan-Sunset/npc/Characters/Act 1/Ungyeo/Sprites/Ungyeo_Portrait.png" id="1_wgffj"]
+[ext_resource type="Texture2D" uid="uid://cje0k2fmhmlvd" path="res://Hallasan-Sunset/npc/Characters/Sprites/Npc_reference.png" id="3_wgffj"]
+
+[resource]
+script = ExtResource("1_qydup")
+npc_name = "Micky"
+hero = false
+sprite = ExtResource("3_wgffj")
+portrait = ExtResource("1_wgffj")
+dialog_audio_pitch = 1.6

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EquipableItemData" load_steps=7 format=3 uid="uid://dcaqqlvfgaafu"]
+
+[ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_htes1"]
+[ext_resource type="Script" uid="uid://dntj3tef2mfd2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_item_modifier.gd" id="2_beb05"]
+[ext_resource type="Script" uid="uid://f4v2hev5plf6" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_items.gd" id="3_8f03g"]
+[ext_resource type="Texture2D" uid="uid://cteqajjg7vj0h" path="res://Hallasan-Sunset/Tilemaps/Sprites/Dusk_Icons_x24.png" id="4_id8vg"]
+
+[sub_resource type="Resource" id="Resource_q4wgp"]
+script = ExtResource("2_beb05")
+type = 1
+value = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s11hd"]
+atlas = ExtResource("4_id8vg")
+region = Rect2(48, 337, 24, 23)
+
+[resource]
+script = ExtResource("3_8f03g")
+type = 0
+modifiers = Array[ExtResource("2_beb05")]([SubResource("Resource_q4wgp")])
+name = "Smash Gloves"
+description = "Big bang gloves"
+texture = SubResource("AtlasTexture_s11hd")
+cost = 30
+effects = Array[ExtResource("1_htes1")]([])

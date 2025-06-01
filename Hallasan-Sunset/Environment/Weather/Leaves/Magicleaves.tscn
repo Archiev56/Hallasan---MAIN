@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://byh8a7p1yblry"]
+
+[ext_resource type="Texture2D" uid="uid://dxpqycfcixvec" path="res://Hallasan-Sunset/Environment/Weather/Leaves/Sprites/Magic leaves.png" id="1_rxxw2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8cyb8"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_0s0cm"]
+offsets = PackedFloat32Array(0, 0.00719424, 0.185612, 0.827338, 1)
+colors = PackedColorArray(0.831373, 0.831373, 0.831373, 0, 0.458824, 0.458824, 0.458824, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7r124"]
+gradient = SubResource("Gradient_0s0cm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gajq4"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1000, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+angular_velocity_min = 1.0
+angular_velocity_max = 350.04
+gravity = Vector3(2.08165e-12, 10, 2.08165e-12)
+scale_min = 0.75
+scale_max = 1.25
+color_ramp = SubResource("GradientTexture1D_7r124")
+anim_offset_max = 1.0
+
+[node name="MagicLeaves" type="GPUParticles2D"]
+process_mode = 3
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_8cyb8")
+position = Vector2(-2244, -364)
+scale = Vector2(3, 3)
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_gajq4")
+texture = ExtResource("1_rxxw2")
+speed_scale = 0.5
+randomness = 1.0
+visibility_rect = Rect2(0, 0, 10000, 1000)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bk452ky0gmeub"
+path="res://.godot/imported/menu_focus.wav-69991f8ab8ceba814a804dd7a6ea407a.sample"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/UI/Main Menu/menu_focus.wav"
+dest_files=["res://.godot/imported/menu_focus.wav-69991f8ab8ceba814a804dd7a6ea407a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

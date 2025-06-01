@@ -1,0 +1,387 @@
+[gd_scene load_steps=28 format=3 uid="uid://xc5nrc4shnh0"]
+
+[ext_resource type="Script" uid="uid://oo0jjj8ihske" path="res://Hallasan-Sunset/Environment/Weather/Weather Manager/weather_manager.gd" id="1_k4yct"]
+[ext_resource type="Texture2D" uid="uid://u3c4orh22n6s" path="res://Hallasan-Sunset/Environment/Weather/Rain/Sprites/weather effects, rain light anim 32x128.png" id="2_wmb5l"]
+[ext_resource type="Texture2D" uid="uid://contt8hn03khk" path="res://Hallasan-Sunset/Environment/Weather/Rain/Sprites/weather effects, rain impact anim 16x16.png" id="3_816wm"]
+[ext_resource type="AudioStream" uid="uid://c3ja3bnrb3c4a" path="res://Hallasan-Sunset/Environment/Weather/Rain/Audio/light-rain-109591.mp3" id="3_qqu0t"]
+[ext_resource type="Texture2D" uid="uid://cauy7uowftney" path="res://Hallasan-Sunset/Environment/Weather/Lightning/Sprites/weather effects, lightning full 32x128.png" id="4_qqu0t"]
+[ext_resource type="Texture2D" uid="uid://dxpqycfcixvec" path="res://Hallasan-Sunset/Environment/Weather/Leaves/Sprites/Magic leaves.png" id="5_sltnv"]
+[ext_resource type="AudioStream" uid="uid://pm1tygg2w8au" path="res://Hallasan-Sunset/Environment/Weather/Lightning/Audio/thunderstorm-ambiance-191991.mp3" id="5_wmb5l"]
+[ext_resource type="PackedScene" uid="uid://clfnhwrj6sd3w" path="res://Hallasan-Sunset/Environment/Weather/Rain/rainrepeater.tscn" id="9_sltnv"]
+
+[sub_resource type="Gradient" id="Gradient_rutss"]
+offsets = PackedFloat32Array(0, 0.50324, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qqc5p"]
+gradient = SubResource("Gradient_rutss")
+width = 1
+height = 32
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_m4j0o"]
+colors = PackedColorArray(1, 1, 1, 0.137255, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y8h0a"]
+gradient = SubResource("Gradient_m4j0o")
+
+[sub_resource type="Gradient" id="Gradient_bk5hg"]
+offsets = PackedFloat32Array(0, 0.486216, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.486275, 0.868985, 0.868985, 0.868985, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jprf8"]
+gradient = SubResource("Gradient_bk5hg")
+
+[sub_resource type="Curve" id="Curve_d52ty"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.118162, 52.6121), 0.0, 0.0, 0, 0, Vector2(0.245077, -14.8203), 0.0, 0.0, 0, 0, Vector2(0.376368, 59.3553), 0.0, 0.0, 0, 0, Vector2(0.525164, -15.7836), 0.0, 0.0, 0, 0, Vector2(0.625821, 57.4287), 0.0, 0.0, 0, 0, Vector2(0.757112, -14.8203), 0.0, 0.0, 0, 0, Vector2(0.877462, 56.4653), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 9
+
+[sub_resource type="CurveTexture" id="CurveTexture_xxfbn"]
+curve = SubResource("Curve_d52ty")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2bse2"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 200, 1)
+gravity = Vector3(100, 20, 2.08165e-12)
+tangential_accel_max = 6.0
+tangential_accel_curve = SubResource("CurveTexture_xxfbn")
+damping_max = 100.0
+scale_min = 1.5
+scale_max = 1.8
+color_ramp = SubResource("GradientTexture1D_jprf8")
+color_initial_ramp = SubResource("GradientTexture1D_y8h0a")
+
+[sub_resource type="Animation" id="Animation_lqcld"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rain:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeatherEffects,RainImpactAnim16x16:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0jvqa"]
+resource_name = "Rainfall"
+length = 0.5
+loop_mode = 1
+step = 0.0625
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rain:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeatherEffects,RainImpactAnim16x16:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeatherEffects,RainImpactAnim16x16:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_qqu0t")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sch3h"]
+_data = {
+&"RESET": SubResource("Animation_lqcld"),
+&"Rainfall": SubResource("Animation_0jvqa")
+}
+
+[sub_resource type="Animation" id="Animation_hhgug"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vvywe"]
+resource_name = "flash"
+length = 6.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.230703,
+"stream": ExtResource("5_wmb5l")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhfy8"]
+_data = {
+&"RESET": SubResource("Animation_hhgug"),
+&"flash": SubResource("Animation_vvywe")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8cyb8"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_0s0cm"]
+offsets = PackedFloat32Array(0, 0.00719424, 0.185612, 0.827338, 1)
+colors = PackedColorArray(0.831373, 0.831373, 0.831373, 0, 0.458824, 0.458824, 0.458824, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7r124"]
+gradient = SubResource("Gradient_0s0cm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gajq4"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1000, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+angular_velocity_min = 1.0
+angular_velocity_max = 350.04
+gravity = Vector3(2.08165e-12, 10, 2.08165e-12)
+scale_min = 0.75
+scale_max = 1.25
+color_ramp = SubResource("GradientTexture1D_7r124")
+anim_offset_max = 1.0
+
+[node name="WeatherManager" type="Node2D"]
+script = ExtResource("1_k4yct")
+
+[node name="Wind" type="GPUParticles2D" parent="."]
+z_index = 10
+scale = Vector2(20, 20)
+amount = 500
+texture = SubResource("GradientTexture2D_qqc5p")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_2bse2")
+
+[node name="Rain" type="Node2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+
+[node name="Rain" type="Sprite2D" parent="Rain"]
+z_index = 10
+texture = ExtResource("2_wmb5l")
+hframes = 8
+frame = 1
+region_rect = Rect2(360, 640, 360, 640)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rain"]
+libraries = {
+&"": SubResource("AnimationLibrary_sch3h")
+}
+autoplay = "Rainfall"
+
+[node name="WeatherEffects,RainImpactAnim16x16" type="Sprite2D" parent="Rain"]
+visible = false
+y_sort_enabled = true
+position = Vector2(0, 66)
+texture = ExtResource("3_816wm")
+hframes = 8
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Rain"]
+
+[node name="Lightning" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Lightning"]
+visible = false
+texture = ExtResource("4_qqu0t")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lightning"]
+libraries = {
+&"": SubResource("AnimationLibrary_xhfy8")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Lightning"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Lightning"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Lightning/CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(1, 1, 1, 0)
+
+[node name="LightningTimer" type="Timer" parent="Lightning"]
+
+[node name="MagicLeaves" type="GPUParticles2D" parent="."]
+process_mode = 3
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_8cyb8")
+position = Vector2(-2244, -364)
+scale = Vector2(3, 3)
+amount = 500
+texture = ExtResource("5_sltnv")
+speed_scale = 0.5
+randomness = 1.0
+visibility_rect = Rect2(0, 0, 10000, 1000)
+process_material = SubResource("ParticleProcessMaterial_gajq4")
+
+[node name="Rainrepeater" parent="." instance=ExtResource("9_sltnv")]
+visible = false
+columns = 100
+rows = 100
+spacing = Vector2(30, 40)

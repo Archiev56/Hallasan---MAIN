@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=7 format=3 uid="uid://sq3tvsxpoohb"]
+
+[ext_resource type="Script" uid="uid://bm0ws2ek6wpjf" path="res://Hallasan-Sunset/Quests/Scripts/quest_reward_item.gd" id="1_ydsgb"]
+[ext_resource type="Script" uid="uid://b4nvommw2oy6" path="res://Hallasan-Sunset/Quests/Scripts/quest_resource.gd" id="2_gcs3n"]
+[ext_resource type="Resource" uid="uid://b7mhtict54464" path="res://Hallasan-Sunset/Items/Currency/Coins/Gold Coin/Gold Coin.tres" id="2_msref"]
+[ext_resource type="Resource" uid="uid://cjn2xlrxf22gp" path="res://Hallasan-Sunset/Items/Consumables/Corndog/Corndog.tres" id="3_ot755"]
+
+[sub_resource type="Resource" id="Resource_qvchm"]
+script = ExtResource("1_ydsgb")
+item = ExtResource("2_msref")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_dcs4t"]
+script = ExtResource("1_ydsgb")
+item = ExtResource("3_ot755")
+quantity = 1
+
+[resource]
+script = ExtResource("2_gcs3n")
+title = "Find Sansin's Medicine"
+description = "Your Grandfather's sickness grows worse, this medicine is his only hope. "
+steps = Array[String](["Travel to Windmill town", "Recover the first ingredient"])
+reward_xp = 100
+reward_items = Array[ExtResource("1_ydsgb")]([SubResource("Resource_qvchm"), SubResource("Resource_dcs4t")])
