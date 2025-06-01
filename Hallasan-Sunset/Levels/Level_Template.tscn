@@ -112,6 +112,6 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Bomb_crate" parent="." instance=ExtResource("17_i4aqa")]
-position = Vector2(251, 269)
+position = Vector2(462, -26)
 
 [editable path="Environment/Borders/SideBorder2"]

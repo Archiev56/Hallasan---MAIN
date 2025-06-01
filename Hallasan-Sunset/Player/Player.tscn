@@ -1,4 +1,4 @@
-[gd_scene load_steps=413 format=3 uid="uid://cbctfc3oob7kd"]
+[gd_scene load_steps=427 format=3 uid="uid://cbctfc3oob7kd"]
 
 [ext_resource type="Script" uid="uid://to2435so3hh5" path="res://Hallasan-Sunset/Player/Player.gd" id="1_l265g"]
 [ext_resource type="Texture2D" uid="uid://nknfj7nkp53n" path="res://Hallasan-Sunset/Player/Animations/Death/Dead_Down-4.png" id="2_1huh3"]
@@ -116,24 +116,16 @@
 [ext_resource type="Texture2D" uid="uid://bm1ftop2npxij" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Dodge_SE/dodge SE8.png" id="146_8p6la"]
 [ext_resource type="Texture2D" uid="uid://ba0e35vptmo6t" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_diag_down_right/Idle_diag_down_right3.png" id="146_eq26l"]
 [ext_resource type="Texture2D" uid="uid://dlmhr8powgy6t" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_diag_down_right/Idle_diag_down_right4.png" id="147_3cfgo"]
-[ext_resource type="Texture2D" uid="uid://d2txn5t122pye" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombUp/Untitled_Artwork-1 14.png" id="147_ts5nh"]
-[ext_resource type="Texture2D" uid="uid://l55btgdyrea3" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombUp/Untitled_Artwork-1 15.png" id="148_jubh0"]
 [ext_resource type="Texture2D" uid="uid://coko2t3ir7xpo" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_diag_down_right/Idle_diag_down_right5.png" id="148_ssi4k"]
-[ext_resource type="Texture2D" uid="uid://c3qy6riyoh5wv" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombUp/Untitled_Artwork-1 16.png" id="149_n1wvg"]
 [ext_resource type="Texture2D" uid="uid://c8cm707u0e5ca" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_diag_down_right/Idle_diag_down_right6.png" id="149_wit7m"]
 [ext_resource type="Texture2D" uid="uid://be0gdtrjxb17s" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_down/idle_down1.png" id="150_o2vu6"]
 [ext_resource type="Texture2D" uid="uid://xagevk8b5ht8" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_diag_down_right/Idle_diag_down_right7.png" id="150_ry8dm"]
-[ext_resource type="Texture2D" uid="uid://8b3qgrucpulr" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombUp/Untitled_Artwork-1 17.png" id="150_ueuy1"]
-[ext_resource type="Texture2D" uid="uid://6qxm251e384q" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombUp/Untitled_Artwork-1 18.png" id="151_3al2p"]
 [ext_resource type="Texture2D" uid="uid://58s527qcqasa" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_down/idle_down2.png" id="151_i0wo8"]
 [ext_resource type="Texture2D" uid="uid://doou4hm1uhhxh" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_diag_down_right/Idle_diag_down_right8.png" id="151_ism3o"]
-[ext_resource type="Texture2D" uid="uid://bkrv18lcna5gv" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombUp/Untitled_Artwork-1 19.png" id="152_jdqik"]
 [ext_resource type="Texture2D" uid="uid://boce537ptspap" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_down/idle_down3.png" id="152_qw5vx"]
 [ext_resource type="AudioStream" uid="uid://cyky3cc31wbpy" path="res://Hallasan-Sunset/Audio/Sound effects/ES_Cinematic, Riser, Fast, Big Hit, Bomb - Epidemic Sound - 0570-4369.wav" id="152_vea7i"]
-[ext_resource type="Texture2D" uid="uid://cao7k234ofbhb" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombUp/Untitled_Artwork-1 20.png" id="153_apot5"]
 [ext_resource type="Texture2D" uid="uid://4mn31hn0gyp1" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_down/idle_down4.png" id="153_xwwxo"]
 [ext_resource type="Texture2D" uid="uid://bmthcj2ehgkev" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_down/idle_down5.png" id="154_ba0nq"]
-[ext_resource type="Texture2D" uid="uid://dqlx83kvdaklq" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombUp/Untitled_Artwork-1 21.png" id="154_we47n"]
 [ext_resource type="Texture2D" uid="uid://b4c4fq34ifrhn" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_down/idle_down6.png" id="155_h7h7f"]
 [ext_resource type="Texture2D" uid="uid://c2qry1ra25m6e" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_down/idle_down7.png" id="156_hder2"]
 [ext_resource type="Script" uid="uid://dgtdn01t02ttf" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_lift.gd" id="156_y2kpu"]
@@ -160,23 +152,15 @@
 [ext_resource type="Texture2D" uid="uid://cln0utfouwb57" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_side/idle_side6.png" id="162_3cfgo"]
 [ext_resource type="Texture2D" uid="uid://d33jajch7xtfe" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_diag_up_right/Idle_diag_up_right6.png" id="162_t5g4t"]
 [ext_resource type="Texture2D" uid="uid://oqecpa4sxehn" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Idle_se/Idle_se6.png" id="162_xli61"]
-[ext_resource type="Texture2D" uid="uid://dx6x45xsfq6j8" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombSide/Carrywalkside-1.png" id="163_3opgd"]
 [ext_resource type="Texture2D" uid="uid://c7dfutkg8iyue" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Idle_se/Idle_se7.png" id="163_7t4r6"]
 [ext_resource type="Texture2D" uid="uid://f07ts5seodcn" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_diag_up_right/Idle_diag_up_right7.png" id="163_ocfb3"]
 [ext_resource type="Texture2D" uid="uid://d3qi50ptvehf4" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_side/idle_side7.png" id="163_ssi4k"]
 [ext_resource type="Texture2D" uid="uid://bxt0d13py3d5d" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_diag_up_right/Idle_diag_up_right8.png" id="164_av4uk"]
 [ext_resource type="Texture2D" uid="uid://bfieo74ljo7ti" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Idle_se/Idle_se8.png" id="164_fu81q"]
-[ext_resource type="Texture2D" uid="uid://bjghs08d3imd6" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombSide/Carrywalkside-2.png" id="164_vn40x"]
 [ext_resource type="Texture2D" uid="uid://db0a7d1axbh41" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_side/idle_side8.png" id="164_wit7m"]
-[ext_resource type="Texture2D" uid="uid://ctheh125f7y3e" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombSide/Carrywalkside-3.png" id="165_r5q0f"]
 [ext_resource type="Texture2D" uid="uid://c08d33gsi7xq4" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Idle/red6.png" id="165_xli61"]
 [ext_resource type="Texture2D" uid="uid://cvdjy40rk6k51" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Idle/red1.png" id="166_7t4r6"]
-[ext_resource type="Texture2D" uid="uid://byjd1bis6cvip" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombSide/Carrywalkside-4.png" id="166_f600o"]
 [ext_resource type="Texture2D" uid="uid://b78l5xcdwrvcr" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Idle/red3.png" id="167_fu81q"]
-[ext_resource type="Texture2D" uid="uid://d244xbvumc0pe" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombSide/Carrywalkside-5.png" id="167_km3ac"]
-[ext_resource type="Texture2D" uid="uid://c71tccnvrcbe0" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombSide/Carrywalkside-6.png" id="168_s3vqv"]
-[ext_resource type="Texture2D" uid="uid://xkivm2fgkqih" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombSide/Carrywalkside-7.png" id="169_l4phe"]
-[ext_resource type="Texture2D" uid="uid://du82myb5es2x2" path="res://Hallasan-Sunset/Player/Animations/carry/CarryBombSide/Carrywalkside-8.png" id="170_6lb38"]
 [ext_resource type="Texture2D" uid="uid://uxl267w1f36e" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Attack3/combo03.png" id="170_fu81q"]
 [ext_resource type="Texture2D" uid="uid://c8dt8s4yoftgv" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Attack3/combo04.png" id="171_b4cq8"]
 [ext_resource type="PackedScene" uid="uid://b4eaotgg15phx" path="res://Hallasan-Sunset/Items/Technical/Magnet/item_magnet.tscn" id="171_iktbv"]
@@ -228,30 +212,61 @@
 [ext_resource type="Texture2D" uid="uid://6la8xyduvtii" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_down/walking_down5.png" id="196_x4vqx"]
 [ext_resource type="Texture2D" uid="uid://caeransyoh1lf" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_down/walking_down6.png" id="197_eo3tv"]
 [ext_resource type="Texture2D" uid="uid://bgyh5lqoojjbl" path="res://Hallasan-Sunset/Player/Technical/Moves/Dash/dusty.png" id="197_np30c"]
+[ext_resource type="Texture2D" uid="uid://b327j73fccrqv" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down1.png" id="197_wrq7l"]
+[ext_resource type="Texture2D" uid="uid://ckqc4svsxq6l6" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down2.png" id="198_pw4yg"]
 [ext_resource type="Texture2D" uid="uid://cnibxbq6t166u" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_down/walking_down7.png" id="198_wrq7l"]
+[ext_resource type="Texture2D" uid="uid://chhwkkwk3bhxj" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down3.png" id="199_0ekm6"]
 [ext_resource type="Texture2D" uid="uid://y7by5gt1hvel" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_down/walking_down8.png" id="199_pw4yg"]
 [ext_resource type="Texture2D" uid="uid://brgstk4ocfjqe" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_side/walking_side1.png" id="200_0ekm6"]
+[ext_resource type="Texture2D" uid="uid://ssu7nj5twk3o" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down4.png" id="200_xbl8u"]
+[ext_resource type="Texture2D" uid="uid://cdi6ohyiynkun" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down5.png" id="201_vy5d2"]
 [ext_resource type="Texture2D" uid="uid://b5xq4ktkvwabd" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_side/walking_side2.png" id="201_xbl8u"]
+[ext_resource type="Texture2D" uid="uid://c13fj7vmslp41" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down6.png" id="202_qhknx"]
 [ext_resource type="Texture2D" uid="uid://7bbdbw521lpf" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_side/walking_side3.png" id="202_vy5d2"]
+[ext_resource type="Texture2D" uid="uid://cv22mlilif8dv" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down7.png" id="203_2q6tp"]
 [ext_resource type="Texture2D" uid="uid://bsbojnpk4n1u6" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_side/walking_side4.png" id="203_qhknx"]
 [ext_resource type="Texture2D" uid="uid://yxun6vowy7li" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_side/walking_side5.png" id="204_2q6tp"]
+[ext_resource type="Texture2D" uid="uid://kslmmmort40v" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down8.png" id="204_qqmyt"]
 [ext_resource type="Texture2D" uid="uid://bqxqg3aybdykv" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_side/walking_side6.png" id="205_qqmyt"]
+[ext_resource type="Texture2D" uid="uid://c8kdyjlwdpogm" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_side/dodge_side1.png" id="205_tamlm"]
+[ext_resource type="Texture2D" uid="uid://bvku0cton30ro" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_side/dodge_side2.png" id="206_j6k4c"]
 [ext_resource type="Texture2D" uid="uid://c4lxp6x6i5onm" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_side/walking_side7.png" id="206_tamlm"]
+[ext_resource type="Texture2D" uid="uid://bukml8eatueps" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_side/dodge_side3.png" id="207_5h4ve"]
 [ext_resource type="Texture2D" uid="uid://cbj5yv86cxpff" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_side/walking_side8.png" id="207_j6k4c"]
 [ext_resource type="Texture2D" uid="uid://ccc7cykbhttb5" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_up/walking_up1.png" id="208_5h4ve"]
+[ext_resource type="Texture2D" uid="uid://cxj6cotet6vco" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_side/dodge_side4.png" id="208_xj56g"]
+[ext_resource type="Texture2D" uid="uid://dw2dmugw6dhwd" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_side/dodge_side5.png" id="209_rqyjk"]
 [ext_resource type="Texture2D" uid="uid://5sdn3wr220qt" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_up/walking_up2.png" id="209_xj56g"]
+[ext_resource type="Texture2D" uid="uid://c5k344uthe2nb" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_side/dodge_side6.png" id="210_qa4pf"]
 [ext_resource type="Texture2D" uid="uid://bvnxcqo5qcxen" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_up/walking_up3.png" id="210_rqyjk"]
+[ext_resource type="Texture2D" uid="uid://cc1n3ovbswin1" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_side/dodge_side7.png" id="211_byily"]
 [ext_resource type="Texture2D" uid="uid://bry4820b6ajl" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_up/walking_up4.png" id="211_qa4pf"]
 [ext_resource type="Texture2D" uid="uid://6sbkahnggck5" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_up/walking_up5.png" id="212_byily"]
+[ext_resource type="Texture2D" uid="uid://dbowshcaslnom" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_side/dodge_side8.png" id="212_nbh45"]
+[ext_resource type="Texture2D" uid="uid://c8nyvlfhvn88t" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_up/dodge_up1.png" id="213_2dt76"]
 [ext_resource type="Texture2D" uid="uid://c8v0ig5yjei2o" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_up/walking_up6.png" id="213_nbh45"]
 [ext_resource type="Texture2D" uid="uid://cmv1axj3ythag" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_up/walking_up7.png" id="214_2dt76"]
+[ext_resource type="Texture2D" uid="uid://j2cp3fot65bu" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_up/dodge_up2.png" id="214_ob0bo"]
+[ext_resource type="Texture2D" uid="uid://bwe06w5qi5ngt" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_up/dodge_up3.png" id="215_5we5h"]
 [ext_resource type="Texture2D" uid="uid://b3sv5328h0lfg" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_up/walking_up8.png" id="215_ob0bo"]
+[ext_resource type="Texture2D" uid="uid://32248u4hlxp0" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_up/dodge_up4.png" id="216_l335h"]
+[ext_resource type="Texture2D" uid="uid://bjw587hxii12n" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_up/dodge_up5.png" id="217_wtsqu"]
+[ext_resource type="Texture2D" uid="uid://c7mdwmh8f6efc" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_up/dodge_up6.png" id="218_u735k"]
+[ext_resource type="Texture2D" uid="uid://ddft1lah8wi8t" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_up/dodge_up7.png" id="219_sgggv"]
+[ext_resource type="Texture2D" uid="uid://bojc186n62fjt" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_up/dodge_up8.png" id="220_8efpt"]
+[ext_resource type="Texture2D" uid="uid://dbipknxm4p02d" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_diagonal_up_right/dodge_diagonal_up_right1.png" id="221_y8bge"]
+[ext_resource type="Texture2D" uid="uid://cqe845wr4fuvb" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_diagonal_up_right/dodge_diagonal_up_right2.png" id="222_w5nay"]
+[ext_resource type="Texture2D" uid="uid://c6wjjrxoe54l8" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_diagonal_up_right/dodge_diagonal_up_right3.png" id="223_gfptb"]
+[ext_resource type="Texture2D" uid="uid://dqcm6885mgfeo" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_diagonal_up_right/dodge_diagonal_up_right4.png" id="224_ngi4r"]
+[ext_resource type="Texture2D" uid="uid://b3s2s5fj7vjvj" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_diagonal_up_right/dodge_diagonal_up_right5.png" id="225_ogpl4"]
+[ext_resource type="Texture2D" uid="uid://01md7gpjbqjc" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_diagonal_up_right/dodge_diagonal_up_right6.png" id="226_pad6l"]
+[ext_resource type="Texture2D" uid="uid://bt0k2dkaucsau" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_diagonal_up_right/dodge_diagonal_up_right7.png" id="227_xx3we"]
+[ext_resource type="Texture2D" uid="uid://yvshlimpn1tq" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_diagonal_up_right/dodge_diagonal_up_right8.png" id="228_knv5h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u7cob"]
 shader = ExtResource("4_7fkcj")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ry8dm"]
-load_path = "res://.godot/imported/Untitled_Artwork-1.png-53d391c9611e11cb87f74e3b640389ea.ctex"
 
 [sub_resource type="Animation" id="Animation_3hmrm"]
 length = 0.001
@@ -946,40 +961,6 @@ tracks/1/keys = {
 "values": [ExtResource("170_fu81q"), ExtResource("171_b4cq8"), ExtResource("172_iy5w2"), ExtResource("173_fwnuv"), ExtResource("174_i658k"), ExtResource("175_o2vu6"), ExtResource("176_i0wo8"), ExtResource("177_qw5vx"), ExtResource("178_xwwxo"), ExtResource("179_ba0nq")]
 }
 
-[sub_resource type="Animation" id="Animation_so2cc"]
-resource_name = "BombCarrySide"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("163_3opgd"), ExtResource("164_vn40x"), ExtResource("165_r5q0f"), ExtResource("166_f600o"), ExtResource("167_km3ac"), ExtResource("168_s3vqv"), ExtResource("169_l4phe"), ExtResource("170_6lb38")]
-}
-
-[sub_resource type="Animation" id="Animation_7n7jl"]
-resource_name = "BombCarryUp"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("147_ts5nh"), ExtResource("148_jubh0"), ExtResource("149_n1wvg"), ExtResource("150_ueuy1"), ExtResource("151_3al2p"), ExtResource("152_jdqik"), ExtResource("153_apot5"), ExtResource("154_we47n")]
-}
-
 [sub_resource type="Animation" id="Animation_rnhs1"]
 resource_name = "Hands_Smash"
 length = 1.8
@@ -1421,6 +1402,202 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_j6k4c"]
 resource_name = "attack_diagonal_down_left_1"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Sprite2D/Hand 2 L:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Sprite2D/Hand 2 L:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("39_2xcfq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Interactions/HurtBox:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("49_dn6r5"), ExtResource("50_8p6la"), ExtResource("51_7hdje")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("Sprite2D/Hand 2 L:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2997, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.785398, 0.785398, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/path = NodePath("Sprite2D/Hand 2 L:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(25, 25)]
+}
+
+[sub_resource type="Animation" id="Animation_ocfb3"]
+resource_name = "attack_diagonal_down_right"
+length = 0.3
+step = 0.03
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Sprite2D/Hand 2 L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(25, 25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Sprite2D/Hand 2 L:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.230769),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Sprite2D/Hand 2 L:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("39_2xcfq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("Sprite2D/Hand 2 L:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2997, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.785398, 0.785398, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Interactions/HurtBox:monitoring")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Interactions/HurtBox:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.29, 0.3),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(25, 25), Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.0606061, 0.121212, 0.181818),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("45_cclt7"), ExtResource("46_w2s46"), ExtResource("47_t8v5s"), ExtResource("48_dn6r5")]
+}
+
+[sub_resource type="Animation" id="Animation_q7yd8"]
+resource_name = "attack_diagonal_down_right_1"
 length = 0.3
 step = 0.01
 tracks/0/type = "value"
@@ -3262,28 +3439,20 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hder2"]
-load_path = "res://.godot/imported/PLAYER (1)1.png-9d38546cfc6d63397d9c7daced7f25df.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u83yd"]
-load_path = "res://.godot/imported/PLAYER (1)2.png-3005a25ea7a3d69c0496f9902c858665.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jivut"]
-load_path = "res://.godot/imported/PLAYER (1)3.png-350fb9e66d258890137331d6d3d2e015.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mukv6"]
-load_path = "res://.godot/imported/PLAYER (1)4.png-eeb085068e58c222147757e3d60a9014.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rapxv"]
-load_path = "res://.godot/imported/PLAYER (1)5.png-e8cafaca6df92a5708558b2c0c318da8.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eq26l"]
-load_path = "res://.godot/imported/PLAYER (1)6.png-572f0592030927f0e5678888e4d0bacf.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3cfgo"]
-load_path = "res://.godot/imported/PLAYER (1)7.png-19e33267d2e44844ca6ba68a8bb29fe1.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ssi4k"]
-load_path = "res://.godot/imported/PLAYER (1)8.png-ac33d9a2a4b1c58580994688fe871abd.ctex"
 
 [sub_resource type="Animation" id="Animation_up0w7"]
 resource_name = "charge_walk_down"
@@ -3315,28 +3484,20 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wit7m"]
-load_path = "res://.godot/imported/walk_side-1 14.png-648943854a321c0ef0ee594afebc060c.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ism3o"]
-load_path = "res://.godot/imported/walk_side-2 8.png-62f3b8701ea492cb286db617b65475a4.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8en66"]
-load_path = "res://.godot/imported/walk_side-3 8.png-5ddab1e70da1f1b08da95a9bc47c0b03.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fy63t"]
-load_path = "res://.godot/imported/walk_side-4 7.png-8a85a3bebe5162b4bf2adeaca9c2722a.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2gsjk"]
-load_path = "res://.godot/imported/walk_side-5 3.png-b11e610aa81c4b33e15b709bc4418848.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3m4la"]
-load_path = "res://.godot/imported/walk_side-6 2.png-b1be780e172457c2787ec7db6da2d822.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_11v5g"]
-load_path = "res://.godot/imported/walk_side-7.png-ad774670eac0156cd9f9b05402e203a6.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x1rmo"]
-load_path = "res://.godot/imported/walk_side-8.png-e26a0dc8486370c42d17f5b345727db5.ctex"
 
 [sub_resource type="Animation" id="Animation_jelnr"]
 resource_name = "charge_walk_side"
@@ -3368,28 +3529,20 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lbu84"]
-load_path = "res://.godot/imported/PLAYER (1)1.png-f2cf54300d0d14d53e8f2452462010cc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_duwkq"]
-load_path = "res://.godot/imported/PLAYER (1)2.png-9d99332d3baf728b4a69dd35654a91d7.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ci3l"]
-load_path = "res://.godot/imported/PLAYER (1)3.png-9311525bdd1c33fcdd8b03dbe7cf2b15.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uawxo"]
-load_path = "res://.godot/imported/PLAYER (1)4.png-6027c9e584172d752af807b9b4c52e85.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6p5yc"]
-load_path = "res://.godot/imported/PLAYER (1)5.png-32377039f1ee5e412246c68a7a05e971.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t5g4t"]
-load_path = "res://.godot/imported/PLAYER (1)6.png-cc6efd3fe08f691331a8c9ca87cadcc9.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ocfb3"]
-load_path = "res://.godot/imported/PLAYER (1)7.png-851a4ba2e4e98edea7fedb408ed13d50.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_av4uk"]
-load_path = "res://.godot/imported/PLAYER (1)8.png-2646f9d474f94279abc61147e8896533.ctex"
 
 [sub_resource type="Animation" id="Animation_42uha"]
 resource_name = "charge_walk_up"
@@ -3453,9 +3606,10 @@ tracks/0/keys = {
 "values": [ExtResource("139_f3c7r"), ExtResource("140_5tlut"), ExtResource("141_cei2d"), ExtResource("142_cclt7"), ExtResource("143_w2s46"), ExtResource("144_t8v5s"), ExtResource("145_dn6r5"), ExtResource("146_8p6la")]
 }
 
-[sub_resource type="Animation" id="Animation_8p6la"]
-resource_name = "dodge_diagonal_up_left"
-length = 0.5
+[sub_resource type="Animation" id="Animation_av4uk"]
+resource_name = "dodge_diagonal_down_right"
+length = 0.3
+step = 0.02
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3463,108 +3617,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0714286, 0.142857, 0.214286, 0.285714, 0.357143, 0.428571, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("139_f3c7r"), ExtResource("140_5tlut"), ExtResource("141_cei2d"), ExtResource("142_cclt7"), ExtResource("143_w2s46"), ExtResource("144_t8v5s"), ExtResource("145_dn6r5"), ExtResource("146_8p6la")]
-}
-
-[sub_resource type="Animation" id="Animation_dn6r5"]
-resource_name = "dodge_diagonal_up_right"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0714286, 0.142857, 0.214286, 0.285714, 0.357143, 0.428571, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("139_f3c7r"), ExtResource("140_5tlut"), ExtResource("141_cei2d"), ExtResource("142_cclt7"), ExtResource("143_w2s46"), ExtResource("144_t8v5s"), ExtResource("145_dn6r5"), ExtResource("146_8p6la")]
-}
-
-[sub_resource type="Animation" id="Animation_kuby1"]
-resource_name = "dodge_down"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 10)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0714286, 0.142857, 0.214286, 0.285714, 0.357143, 0.428571, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("139_f3c7r"), ExtResource("140_5tlut"), ExtResource("141_cei2d"), ExtResource("142_cclt7"), ExtResource("143_w2s46"), ExtResource("144_t8v5s"), ExtResource("145_dn6r5"), ExtResource("146_8p6la")]
-}
-
-[sub_resource type="Animation" id="Animation_0sl3b"]
-resource_name = "dodge_side"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 10)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0714286, 0.142857, 0.214286, 0.285714, 0.357143, 0.428571, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("139_f3c7r"), ExtResource("140_5tlut"), ExtResource("141_cei2d"), ExtResource("142_cclt7"), ExtResource("143_w2s46"), ExtResource("144_t8v5s"), ExtResource("145_dn6r5"), ExtResource("146_8p6la")]
-}
-
-[sub_resource type="Animation" id="Animation_wnbtq"]
-resource_name = "dodge_up"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 10)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0714286, 0.142857, 0.214286, 0.285714, 0.357143, 0.428571, 0.5),
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.1, 0.18, 0.24, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("139_f3c7r"), ExtResource("140_5tlut"), ExtResource("141_cei2d"), ExtResource("142_cclt7"), ExtResource("143_w2s46"), ExtResource("144_t8v5s"), ExtResource("145_dn6r5"), ExtResource("146_8p6la")]
@@ -4440,8 +4493,8 @@ tracks/2/keys = {
 "values": [ExtResource("208_5h4ve"), ExtResource("209_xj56g"), ExtResource("210_rqyjk"), ExtResource("211_qa4pf"), ExtResource("212_byily"), ExtResource("213_nbh45"), ExtResource("214_2dt76"), ExtResource("215_ob0bo")]
 }
 
-[sub_resource type="Animation" id="Animation_av4uk"]
-resource_name = "dodge_diagonal_down_right"
+[sub_resource type="Animation" id="Animation_0x4ys"]
+resource_name = "dodge_down"
 length = 0.3
 step = 0.02
 tracks/0/type = "value"
@@ -4454,211 +4507,81 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.1, 0.18, 0.24, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("139_f3c7r"), ExtResource("140_5tlut"), ExtResource("141_cei2d"), ExtResource("142_cclt7"), ExtResource("143_w2s46"), ExtResource("144_t8v5s"), ExtResource("145_dn6r5"), ExtResource("146_8p6la")]
+"values": [ExtResource("197_wrq7l"), ExtResource("198_pw4yg"), ExtResource("199_0ekm6"), ExtResource("200_xbl8u"), ExtResource("201_vy5d2"), ExtResource("202_qhknx"), ExtResource("203_2q6tp"), ExtResource("204_qqmyt")]
 }
 
-[sub_resource type="Animation" id="Animation_ocfb3"]
-resource_name = "attack_diagonal_down_right"
+[sub_resource type="Animation" id="Animation_k66if"]
+resource_name = "dodge_side"
 length = 0.3
-step = 0.03
+step = 0.02
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("Sprite2D/Hand 2 L:position")
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(25, 25)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Sprite2D/Hand 2 L:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.230769),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.1, 0.18, 0.24, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("Sprite2D/Hand 2 L:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "audio"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Audio/AudioStreamPlayer2D")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("39_2xcfq")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/3/use_blend = true
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = false
-tracks/4/path = NodePath("Sprite2D/Hand 2 L:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2997, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.785398, 0.785398, 0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Interactions/HurtBox:monitoring")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Interactions/HurtBox:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.29, 0.3),
-"transitions": PackedFloat32Array(-2, -2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(25, 25), Vector2(0, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Sprite2D:texture")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.0606061, 0.121212, 0.181818),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("45_cclt7"), ExtResource("46_w2s46"), ExtResource("47_t8v5s"), ExtResource("48_dn6r5")]
+"values": [ExtResource("205_tamlm"), ExtResource("206_j6k4c"), ExtResource("207_5h4ve"), ExtResource("208_xj56g"), ExtResource("209_rqyjk"), ExtResource("210_qa4pf"), ExtResource("211_byily"), ExtResource("212_nbh45")]
 }
 
-[sub_resource type="Animation" id="Animation_q7yd8"]
-resource_name = "attack_diagonal_down_right_1"
+[sub_resource type="Animation" id="Animation_n1oei"]
+resource_name = "dodge_up"
 length = 0.3
-step = 0.01
+step = 0.02
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("Sprite2D/Hand 2 L:frame")
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.1, 0.18, 0.24, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 0]
+"values": [ExtResource("213_2dt76"), ExtResource("214_ob0bo"), ExtResource("215_5we5h"), ExtResource("216_l335h"), ExtResource("217_wtsqu"), ExtResource("218_u735k"), ExtResource("219_sgggv"), ExtResource("220_8efpt")]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Sprite2D/Hand 2 L:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+
+[sub_resource type="Animation" id="Animation_mcrj5"]
+resource_name = "dodge_diagonal_up_left"
+length = 0.3
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.1, 0.18, 0.24, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [ExtResource("221_y8bge"), ExtResource("222_w5nay"), ExtResource("223_gfptb"), ExtResource("224_ngi4r"), ExtResource("225_ogpl4"), ExtResource("226_pad6l"), ExtResource("227_xx3we"), ExtResource("228_knv5h")]
 }
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Audio/AudioStreamPlayer2D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("39_2xcfq")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Interactions/HurtBox:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+
+[sub_resource type="Animation" id="Animation_x8qjj"]
+resource_name = "dodge_diagonal_up_right"
+length = 0.3
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.1, 0.18, 0.24, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D:texture")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("49_dn6r5"), ExtResource("50_8p6la"), ExtResource("51_7hdje")]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = false
-tracks/5/path = NodePath("Sprite2D/Hand 2 L:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2997, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.785398, 0.785398, 0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = false
-tracks/6/path = NodePath("Sprite2D/Hand 2 L:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(25, 25)]
+"values": [ExtResource("221_y8bge"), ExtResource("222_w5nay"), ExtResource("223_gfptb"), ExtResource("224_ngi4r"), ExtResource("225_ogpl4"), ExtResource("226_pad6l"), ExtResource("227_xx3we"), ExtResource("228_knv5h")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qdnul"]
 _data = {
 &" carry_up": SubResource("Animation_6eirk"),
 &"Attack_smash_diagonal_down_left": SubResource("Animation_fu81q"),
-&"BombCarrySide": SubResource("Animation_so2cc"),
-&"BombCarryUp": SubResource("Animation_7n7jl"),
 &"Hands_Smash": SubResource("Animation_rnhs1"),
 &"RESET": SubResource("Animation_gxkdx"),
 &"attack_diagonal_down_left": SubResource("Animation_rx5yw"),
@@ -4705,11 +4628,11 @@ _data = {
 &"death": SubResource("Animation_gxa7q"),
 &"dodge_diagonal_down_left": SubResource("Animation_w2s46"),
 &"dodge_diagonal_down_right": SubResource("Animation_av4uk"),
-&"dodge_diagonal_up_left": SubResource("Animation_8p6la"),
-&"dodge_diagonal_up_right": SubResource("Animation_dn6r5"),
-&"dodge_down": SubResource("Animation_kuby1"),
-&"dodge_side": SubResource("Animation_0sl3b"),
-&"dodge_up": SubResource("Animation_wnbtq"),
+&"dodge_diagonal_up_left": SubResource("Animation_mcrj5"),
+&"dodge_diagonal_up_right": SubResource("Animation_x8qjj"),
+&"dodge_down": SubResource("Animation_0x4ys"),
+&"dodge_side": SubResource("Animation_k66if"),
+&"dodge_up": SubResource("Animation_n1oei"),
 &"idle_diagonal_down_left": SubResource("Animation_hqse5"),
 &"idle_diagonal_down_right": SubResource("Animation_fdc83"),
 &"idle_diagonal_up_left": SubResource("Animation_chwy6"),
@@ -5080,6 +5003,7 @@ texture = ExtResource("3_kt8jp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 10)
 texture = ExtResource("166_7t4r6")
 script = ExtResource("5_4twpi")
 
