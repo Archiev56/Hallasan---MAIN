@@ -14,6 +14,7 @@ var state
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var fist_grab: Area2D = $Fist_Grab
+@export var sprite_texture : Texture
 
 func _ready() -> void:
 	visible = false
@@ -41,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	animation_player.speed_scale = 1 + (speed_ratio * 0.25)
 
 func throw(throw_direction: Vector2) -> void:
-	player.UpdateAnimation("fist")
+	player.UpdateAnimation("attack")
 	direction = throw_direction
 	speed = max_speed
 	state = State.THROW

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://bdqsrs7ycwg0r"]
 
 [ext_resource type="Script" uid="uid://bg2ft0btyypis" path="res://Hallasan-Sunset/Player/Scripts/boomerang.gd" id="1_mesgm"]
-[ext_resource type="Texture2D" uid="uid://bsuuia3fqy6wg" path="res://Hallasan-Sunset/Player/Sprites/Hands.png" id="2_6rfbq"]
+[ext_resource type="Texture2D" uid="uid://cty0lev2uobxm" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork.png" id="2_c52b5"]
 [ext_resource type="AudioStream" uid="uid://dpv0lmar317h0" path="res://Hallasan-Sunset/Player/Audio/ES_Punch, Block, Swoosh - Epidemic Sound - 1509-1983.wav" id="3_4fld0"]
 [ext_resource type="PackedScene" uid="uid://b4eaotgg15phx" path="res://Hallasan-Sunset/Items/Technical/Magnet/item_magnet.tscn" id="4_4iig7"]
 [ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="5_m18kl"]
@@ -100,6 +100,7 @@ size = Vector2(20, 9)
 script = ExtResource("1_mesgm")
 acceleration = 1300.0
 max_speed = 600.0
+sprite_texture = ExtResource("2_c52b5")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitorable = false
@@ -109,7 +110,7 @@ shape = SubResource("CircleShape2D_pbrmp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_6rfbq")
+texture = ExtResource("2_c52b5")
 hframes = 16
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
