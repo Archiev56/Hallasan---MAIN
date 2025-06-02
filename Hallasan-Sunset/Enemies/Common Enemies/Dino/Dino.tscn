@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0eb0hdhnljcb"]
+[gd_scene load_steps=13 format=3 uid="uid://c0eb0hdhnljcb"]
 
 [ext_resource type="Script" uid="uid://b8b8370k74kv0" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dino/dino.gd" id="1_xppt2"]
 [ext_resource type="Texture2D" uid="uid://kvp4pbuwfnuf" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dino/Sprites/DinoSprites - mort.png" id="2_dgfdw"]
@@ -141,14 +141,8 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_7qbbq"]
 radius = 8.05888
 
-[sub_resource type="Resource" id="Resource_raojh"]
-metadata/__load_path__ = "res://Technical/GeneralNodes/Hurtbox/hurt_box.gd"
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_mrtny"]
 radius = 8.0
-
-[sub_resource type="Resource" id="Resource_1qgm4"]
-metadata/__load_path__ = "res://Technical/GeneralNodes/Hitbox/hit_box.gd"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vqud"]
 radius = 8.0
@@ -165,7 +159,7 @@ hframes = 24
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_3tt6f")
+&"": SubResource("AnimationLibrary_3tt6f")
 }
 autoplay = "Idle"
 
@@ -177,7 +171,6 @@ shape = SubResource("CircleShape2D_7qbbq")
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2(1, 0)
 monitorable = false
-script = SubResource("Resource_raojh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_mrtny")
@@ -185,7 +178,6 @@ shape = SubResource("CircleShape2D_mrtny")
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 256
 monitoring = false
-script = SubResource("Resource_1qgm4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(12, 0)

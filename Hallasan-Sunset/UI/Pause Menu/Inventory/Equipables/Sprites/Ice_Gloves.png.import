@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://exdx5gh7ehjr"
-path="res://.godot/imported/Untitled_Artwork 130.png-edea5691855d18a0d38cc86527f3afac.ctex"
+uid="uid://bpwonm74cyb53"
+path="res://.godot/imported/Ice_Gloves.png-cbab598363572fac0e54f22731bbc534.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 130.png"
-dest_files=["res://.godot/imported/Untitled_Artwork 130.png-edea5691855d18a0d38cc86527f3afac.ctex"]
+source_file="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Ice_Gloves.png"
+dest_files=["res://.godot/imported/Ice_Gloves.png-cbab598363572fac0e54f22731bbc534.ctex"]
 
 [params]
 

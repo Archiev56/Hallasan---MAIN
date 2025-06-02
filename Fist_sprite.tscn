@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://djn8xjreb11el"]
+
+[ext_resource type="Texture2D" uid="uid://bsuuia3fqy6wg" path="res://Hallasan-Sunset/Player/Sprites/Hands.png" id="1_d2kn3"]
+[ext_resource type="Script" uid="uid://lf71un6awg0t" path="res://Hallasan-Sunset/Player/sprite_2d.gd" id="2_c3e4p"]
+
+[node name="Hand 2 L" type="Sprite2D"]
+show_behind_parent = true
+texture_filter = 1
+texture = ExtResource("1_d2kn3")
+flip_h = true
+hframes = 16
+frame = 4
+script = ExtResource("2_c3e4p")

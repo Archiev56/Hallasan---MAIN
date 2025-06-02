@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdqsrs7ycwg0r"]
+[gd_scene load_steps=19 format=3 uid="uid://bdqsrs7ycwg0r"]
 
 [ext_resource type="Script" uid="uid://bg2ft0btyypis" path="res://Hallasan-Sunset/Player/Scripts/boomerang.gd" id="1_mesgm"]
-[ext_resource type="Texture2D" uid="uid://cty0lev2uobxm" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork.png" id="2_c52b5"]
 [ext_resource type="AudioStream" uid="uid://dpv0lmar317h0" path="res://Hallasan-Sunset/Player/Audio/ES_Punch, Block, Swoosh - Epidemic Sound - 1509-1983.wav" id="3_4fld0"]
+[ext_resource type="Script" uid="uid://lf71un6awg0t" path="res://Hallasan-Sunset/Player/sprite_2d.gd" id="3_35in0"]
+[ext_resource type="Texture2D" uid="uid://ca3xi6xmo4pcs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/fist_spritesheet.png" id="3_ebxkr"]
 [ext_resource type="PackedScene" uid="uid://b4eaotgg15phx" path="res://Hallasan-Sunset/Items/Technical/Magnet/item_magnet.tscn" id="4_4iig7"]
 [ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="5_m18kl"]
 [ext_resource type="Script" uid="uid://dbgjqovpmwvkp" path="res://Hallasan-Sunset/Player/Technical/Moves/first_grab.gd" id="6_oef0d"]
@@ -96,11 +97,11 @@ radius = 13.0384
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35in0"]
 size = Vector2(20, 9)
 
-[node name="Fist" type="Area2D"]
+[node name="Fist" type="Sprite2D"]
+texture = ExtResource("3_ebxkr")
 script = ExtResource("1_mesgm")
 acceleration = 1300.0
 max_speed = 600.0
-sprite_texture = ExtResource("2_c52b5")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitorable = false
@@ -109,9 +110,11 @@ monitorable = false
 shape = SubResource("CircleShape2D_pbrmp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
-texture = ExtResource("2_c52b5")
+texture = ExtResource("3_ebxkr")
 hframes = 16
+script = ExtResource("3_35in0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1065,7 +1065,6 @@ script = ExtResource("15_dk4vg")
 chase_speed = 70.0
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../Sprite/AttackHurtBox")
-state_aggro_duration = 5.0
 next_state = NodePath("../Wander")
 
 [node name="HitBox" parent="." instance=ExtResource("14_n4loe")]

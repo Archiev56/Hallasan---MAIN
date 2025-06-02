@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://bkgbqgy67q6fd"]
+[gd_scene load_steps=24 format=4 uid="uid://bkgbqgy67q6fd"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_dnxpv"]
 [ext_resource type="PackedScene" uid="uid://cr8c8wtlgk4rc" path="res://Hallasan-Sunset/Tilemaps/Tileset.tscn" id="2_xxwbh"]
 [ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="2_yav3h"]
+[ext_resource type="PackedScene" uid="uid://cerpqrtpj4udh" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Spike.tscn" id="3_jmnkm"]
 [ext_resource type="TileSet" uid="uid://dhj385rk2lfl4" path="res://Hallasan-Sunset/Tilemaps/32x32_test/32x32_tileset.tres" id="4_arp6l"]
 [ext_resource type="Script" uid="uid://bkfrr01tlskb5" path="res://Hallasan-Sunset/Tilemaps/Scripts/LevelTileMapLayer.gd" id="5_pgudo"]
 [ext_resource type="PackedScene" uid="uid://byh8a7p1yblry" path="res://Hallasan-Sunset/Environment/Weather/Leaves/Magicleaves.tscn" id="6_d4bc7"]
@@ -11,13 +12,33 @@
 [ext_resource type="PackedScene" uid="uid://s87tt1bkx3ku" path="res://Hallasan-Sunset/Environment/Weather/Floating Lights/Floating lights.tscn" id="8_0pytg"]
 [ext_resource type="PackedScene" uid="uid://ddioxudb4roti" path="res://Hallasan-Sunset/Items/Technical/item_pickup/item_pickup.tscn" id="13_r23p7"]
 [ext_resource type="Resource" uid="uid://cgmwv8prargbr" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Weapons/Earth Gloves.tres" id="14_jmnkm"]
+[ext_resource type="PackedScene" uid="uid://dc6lo3whucr6e" path="res://Hallasan-Sunset/npc/npc.tscn" id="14_uv07k"]
+[ext_resource type="Resource" uid="uid://dpfvog01xawxl" path="res://Hallasan-Sunset/npc/Characters/Act 1/Beaver/Beaver.tres" id="15_t06rp"]
 [ext_resource type="PackedScene" uid="uid://cio1xcassgnni" path="res://Hallasan-Sunset/Environment/Village/Buildings/Shop/shop.tscn" id="15_tihv0"]
+[ext_resource type="PackedScene" uid="uid://cou4euvvaw0ml" path="res://Hallasan-Sunset/UI/Dialogue_system/dialogue_interaction.tscn" id="16_nvf4i"]
 [ext_resource type="PackedScene" uid="uid://be8rseo27u4uc" path="res://Hallasan-Sunset/Environment/Village/Barrel/Explosive_Barrel.tscn" id="17_i4aqa"]
+[ext_resource type="Script" uid="uid://cwdm0l0hkothu" path="res://Hallasan-Sunset/npc/Dialog/Scripts/dialog_text.gd" id="17_qb7rw"]
+[ext_resource type="Resource" uid="uid://bjdhjtq6plto6" path="res://Hallasan-Sunset/npc/Characters/Sanwoo/Sanwoo.tres" id="18_3w6ii"]
 [ext_resource type="PackedScene" uid="uid://dejnllo725ito" path="res://Hallasan-Sunset/Environment/Forest/Statue/statue.tscn" id="20_3w6ii"]
+[ext_resource type="Resource" uid="uid://cocn037uxl7df" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Weapons/Ice_Gloves.tres" id="21_qb7rw"]
+[ext_resource type="PackedScene" uid="uid://oy5p0ikicfmf" path="res://Hallasan-Sunset/npc/Characters/Act 1/Shopkeeper/shopkeeper.tscn" id="23_qptul"]
+[ext_resource type="Script" uid="uid://by265x207jy1a" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_data.gd" id="24_d4bc7"]
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_dnxpv")
+
+[node name="Spike" parent="." instance=ExtResource("3_jmnkm")]
+position = Vector2(452, 338)
+
+[node name="Spike2" parent="." instance=ExtResource("3_jmnkm")]
+position = Vector2(452, 316)
+
+[node name="Spike3" parent="." instance=ExtResource("3_jmnkm")]
+position = Vector2(452, 295)
+
+[node name="Spike4" parent="." instance=ExtResource("3_jmnkm")]
+position = Vector2(452, 274)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_yav3h")]
 position = Vector2(249, 98)
@@ -116,9 +137,56 @@ y_sort_enabled = true
 [node name="Bomb_crate" parent="." instance=ExtResource("17_i4aqa")]
 position = Vector2(462, -26)
 
+[node name="Bomb_crate2" parent="." instance=ExtResource("17_i4aqa")]
+position = Vector2(401, 55)
+
+[node name="Bomb_crate3" parent="." instance=ExtResource("17_i4aqa")]
+position = Vector2(592, -33)
+
+[node name="Bomb_crate4" parent="." instance=ExtResource("17_i4aqa")]
+position = Vector2(525, -91)
+
+[node name="NPC" parent="." instance=ExtResource("14_uv07k")]
+position = Vector2(270, 3)
+npc_resource = ExtResource("15_t06rp")
+
+[node name="DialogueInteraction" parent="NPC" instance=ExtResource("16_nvf4i")]
+position = Vector2(0, 22)
+
+[node name="DialogText" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("17_qb7rw")
+text = "Placeholder text. Placeholder text"
+npc_info = ExtResource("15_t06rp")
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"
+
+[node name="DialogText2" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("17_qb7rw")
+text = "Placeholder text. Placeholder text. Placeholder text"
+npc_info = ExtResource("15_t06rp")
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"
+
+[node name="DialogText3" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("17_qb7rw")
+text = "Placeholder text. Placeholder text. Placeholder text"
+npc_info = ExtResource("18_3w6ii")
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"
+
+[node name="DialogText4" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("17_qb7rw")
+text = "Placeholder text Placeholder text. Placeholder text Placeholder text."
+npc_info = ExtResource("18_3w6ii")
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"
+
 [node name="ItemPickup" parent="." instance=ExtResource("13_r23p7")]
-y_sort_enabled = true
-position = Vector2(309, 22)
+position = Vector2(336, 73)
 item_data = ExtResource("14_jmnkm")
+
+[node name="ItemPickup2" parent="." instance=ExtResource("13_r23p7")]
+position = Vector2(387, 11)
+item_data = ExtResource("21_qb7rw")
+
+[node name="Shopkeeper" parent="." instance=ExtResource("23_qptul")]
+position = Vector2(355, 103)
+shop_inventory = Array[ExtResource("24_d4bc7")]([ExtResource("14_jmnkm")])
 
 [editable path="Environment/Borders/SideBorder2"]

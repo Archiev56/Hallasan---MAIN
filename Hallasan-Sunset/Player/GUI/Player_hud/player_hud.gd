@@ -20,8 +20,8 @@ var hearts: Array[HeartGUI] = []
 @onready var energy_timer = $Timer
 
 @export var tool_textures : Dictionary = {
-	"Fists": preload("res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 127.png"),
-	"Earth Gloves": preload("res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 130.png"),
+	"Fists": preload("res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Fists.png"),
+	"Earth Gloves": preload("res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Earth_gloves.png"),
 	"Smash Gloves": preload("res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 125.png")
 }
 func _ready():

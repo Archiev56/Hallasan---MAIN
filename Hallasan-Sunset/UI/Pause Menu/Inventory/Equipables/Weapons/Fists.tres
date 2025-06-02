@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_t7gf7"]
 [ext_resource type="Script" uid="uid://dntj3tef2mfd2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_item_modifier.gd" id="2_00o3l"]
 [ext_resource type="Script" uid="uid://f4v2hev5plf6" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_items.gd" id="3_nsw62"]
-[ext_resource type="Texture2D" uid="uid://ca3xi6xmo4pcs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 129.png" id="4_00o3l"]
-[ext_resource type="Texture2D" uid="uid://coqt2m4j05rkx" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 127.png" id="4_t7gf7"]
+[ext_resource type="Texture2D" uid="uid://ca3xi6xmo4pcs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/fist_spritesheet.png" id="4_00o3l"]
+[ext_resource type="Texture2D" uid="uid://coqt2m4j05rkx" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Fists.png" id="4_t7gf7"]
 
 [sub_resource type="Resource" id="Resource_q4wgp"]
 script = ExtResource("2_00o3l")

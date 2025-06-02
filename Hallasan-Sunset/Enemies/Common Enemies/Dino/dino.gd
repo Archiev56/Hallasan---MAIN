@@ -150,5 +150,3 @@ func die():
 	print("Dino died!")
 	animation_player.play("Die")
 	queue_free()  # Remove the Dino from the scene
-
-

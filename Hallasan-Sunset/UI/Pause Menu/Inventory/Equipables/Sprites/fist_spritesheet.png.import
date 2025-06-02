@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cty0lev2uobxm"
-path="res://.godot/imported/Untitled_Artwork.png-6c0617c77a94961a38ba411ea7254ec7.ctex"
+uid="uid://ca3xi6xmo4pcs"
+path="res://.godot/imported/fist_spritesheet.png-155cfbe4b9dc150746c675a73c79d00b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork.png"
-dest_files=["res://.godot/imported/Untitled_Artwork.png-6c0617c77a94961a38ba411ea7254ec7.ctex"]
+source_file="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/fist_spritesheet.png"
+dest_files=["res://.godot/imported/fist_spritesheet.png-155cfbe4b9dc150746c675a73c79d00b.ctex"]
 
 [params]
 

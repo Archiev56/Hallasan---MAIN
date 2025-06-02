@@ -11,6 +11,7 @@ signal energy_changed
 var interact_handled : bool = true
 var player : Player
 var player_spawned : bool = false
+var boomerang_throw_count: int = 0
 
 var level_requirements = [ 0, 50, 100, 200, 400, 800, 1500, 3000, 6000, 12000, 25000 ]
 

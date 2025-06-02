@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca3xi6xmo4pcs"
-path="res://.godot/imported/Untitled_Artwork 129.png-ad5f68f4c35de5cd2445ac334d3c3a3e.ctex"
+uid="uid://cty0lev2uobxm"
+path="res://.godot/imported/Earth_gloves_sheet.png-e4408e8d082c73fb370c2d3f43fb3a07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 129.png"
-dest_files=["res://.godot/imported/Untitled_Artwork 129.png-ad5f68f4c35de5cd2445ac334d3c3a3e.ctex"]
+source_file="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Earth_gloves_sheet.png"
+dest_files=["res://.godot/imported/Earth_gloves_sheet.png-e4408e8d082c73fb370c2d3f43fb3a07.ctex"]
 
 [params]
 

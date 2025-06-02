@@ -159,7 +159,6 @@ radius = 15.7143
 
 [node name="Bomb_crate" type="Node2D"]
 texture_filter = 1
-position = Vector2(0, -8)
 script = ExtResource("1_c6cgk")
 
 [node name="Sprite2D_Shadow" type="Sprite2D" parent="."]
