@@ -12,3 +12,7 @@ func _free_level() -> void:
 	PlayerManager.unparent_player( self )
 	queue_free()
 	
+
+
+func _on_level_tile_map_layer_changed():
+	pass # Replace with function body.

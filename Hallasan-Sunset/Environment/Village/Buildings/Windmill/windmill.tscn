@@ -1,6 +1,127 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjejjlxeeqfd3"]
+[gd_scene load_steps=20 format=3 uid="uid://bjejjlxeeqfd3"]
 
 [ext_resource type="Texture2D" uid="uid://cdl66s3ur38ac" path="res://Hallasan-Sunset/Environment/Village/Buildings/Windmill/Sprites/windmill-export.png" id="1_ef2n4"]
+[ext_resource type="Texture2D" uid="uid://df217ignu6vqu" path="res://Hallasan-Sunset/Environment/Village/Buildings/Windmill/Sprites/Windmill_baked_anim.png" id="2_10ktf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3bj8"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(0, 0, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi3xv"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(256, 0, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iocyt"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(512, 0, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spo1f"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(768, 0, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oju7x"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(0, 352, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgvvp"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(256, 352, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pys5n"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(512, 352, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i2rb"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(768, 352, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7eln"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(0, 704, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j3tc"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(256, 704, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o3db"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(512, 704, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjjpj"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(768, 704, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5xmi"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(0, 1056, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ythfa"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(256, 1056, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya44g"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(512, 1056, 256, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6hrm"]
+atlas = ExtResource("2_10ktf")
+region = Rect2(768, 1056, 256, 352)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwejm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3bj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi3xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iocyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spo1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oju7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgvvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pys5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i2rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7eln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j3tc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o3db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjjpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5xmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ythfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya44g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6hrm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="Windmill" type="StaticBody2D"]
 y_sort_enabled = true
@@ -8,6 +129,7 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="Windmill" type="Sprite2D" parent="."]
+visible = false
 y_sort_enabled = true
 texture_filter = 1
 texture = ExtResource("1_ef2n4")
@@ -15,3 +137,9 @@ texture = ExtResource("1_ef2n4")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 y_sort_enabled = true
 polygon = PackedVector2Array(-145, 174, -103, 219, -35, 239, -22, 238, -16, 182, -4, 174, 16, 179, 29, 235, 92, 227, 143, 184, 146, 143, 127, 84, 112, 49, 105, -13, 105, -35, -103, -35, -105, -4, -111, 41, -132, 91)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_hwejm")
+autoplay = "default"
+frame_progress = 0.372644

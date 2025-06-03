@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm6tkkh4s2df0"]
+
+[ext_resource type="Script" uid="uid://cciu15ck5p470" path="res://Hallasan-Sunset/Technical/Room Trigger/room_trigger.gd" id="1_hpioo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey3cj"]
+size = Vector2(290, 37)
+
+[node name="Room Trigger" type="Area2D"]
+script = ExtResource("1_hpioo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ey3cj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

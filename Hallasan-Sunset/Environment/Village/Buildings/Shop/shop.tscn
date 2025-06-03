@@ -1,29 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cio1xcassgnni"]
+[gd_scene load_steps=3 format=3 uid="uid://cio1xcassgnni"]
 
-[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="1_4wrjb"]
 [ext_resource type="Texture2D" uid="uid://d4fupiqgxa25b" path="res://Hallasan-Sunset/Environment/Village/Buildings/Shop/Sprites/shop_tent-export.png" id="2_4wrjb"]
-[ext_resource type="Shader" uid="uid://g2tjxoxdc1bd" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Tree.gdshader" id="3_4wrjb"]
 [ext_resource type="Texture2D" uid="uid://b001u0wrf3fgo" path="res://Hallasan-Sunset/Environment/Village/Buildings/Shop/Sprites/shop_flag.png" id="4_7a81b"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aeui4"]
-shader = ExtResource("1_4wrjb")
-shader_parameter/WindStrength = 2.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h8kyh"]
-shader = ExtResource("3_4wrjb")
-shader_parameter/amplitude = 2.0
-shader_parameter/speed = 7.243
-shader_parameter/frequency = 1.0
-shader_parameter/instance_offset = 0.0
 
 [node name="Shop_tent" type="Node2D"]
 
 [node name="Tent" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_aeui4")
 texture = ExtResource("2_4wrjb")
 
 [node name="Flag" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_h8kyh")
 position = Vector2(0, 3)
 texture = ExtResource("4_7a81b")

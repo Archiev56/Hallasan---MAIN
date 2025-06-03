@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_q4wgp"]
 script = ExtResource("2_ckkwg")
 type = 1
-value = 5
+value = 1
 
 [resource]
 script = ExtResource("3_u48mm")
@@ -20,5 +20,5 @@ name = "Earth Gloves"
 description = "Big Bang gloves
 "
 texture = ExtResource("5_a51j7")
-cost = 0
+cost = 10
 effects = Array[ExtResource("1_ow778")]([])

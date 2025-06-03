@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3epwtunwpuys"]
+
+[ext_resource type="Texture2D" uid="uid://b2nup0bmwrixc" path="res://Hallasan-Sunset/Environment/Village/Buildings/Cabin/cabin.png" id="1_wu6b6"]
+
+[node name="Cabin" type="Sprite2D"]
+y_sort_enabled = true
+texture = ExtResource("1_wu6b6")

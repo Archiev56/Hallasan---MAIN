@@ -87,3 +87,16 @@ func _process(delta):
 
 
 	queue_redraw()
+	
+func update_options_from_inventory(inventory_data: InventoryData) -> void:
+	options.clear()
+	for slot in inventory_data.equipment_slots():
+		if slot and slot.item_data and slot.item_data is EquipableItemData:
+			var item = slot.item_data as EquipableItemData
+			var wheel_option = WheelOption.new()
+			wheel_option.name = item.name
+			wheel_option.type = item.type
+			wheel_option.sprite_texture = item.sprite_texture
+			options.append(wheel_option)
+	selection = 0  # Reset selection
+	queue_redraw()  # Redraw the wheel with new options

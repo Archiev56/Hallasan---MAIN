@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://pdlkjyhcxqh4"]
+
+[ext_resource type="Script" uid="uid://cqtl526xsowhq" path="res://Hallasan-Sunset/npc/Characters/Act 1/Animals/Butterfly/butterfly_spawner.gd" id="1_sam2w"]
+
+[node name="ButterflySpawner" type="Node2D"]
+z_index = 99
+y_sort_enabled = true
+script = ExtResource("1_sam2w")

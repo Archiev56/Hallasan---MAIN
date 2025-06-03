@@ -1,22 +1,147 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr4mn2ndohjxo"]
+[gd_scene load_steps=25 format=3 uid="uid://cr4mn2ndohjxo"]
 
-[ext_resource type="Texture2D" uid="uid://r1mnrbw2hf7" path="res://Hallasan-Sunset/Environment/Forest/Lamppost/lamppost.png" id="1_tro8k"]
+[ext_resource type="Texture2D" uid="uid://ctx7n11wdlnxy" path="res://Hallasan-Sunset/Environment/Forest/Lamppost/Sprites/animated lamp posts-1.png" id="1_4o53q"]
 [ext_resource type="Script" uid="uid://0mnmwsenhjp1" path="res://Hallasan-Sunset/Environment/Forest/Lamppost/TorchFlicker.gd" id="2_hcnu5"]
-[ext_resource type="Texture2D" uid="uid://cvn86kqmt24nn" path="res://Hallasan-Sunset/Tilemaps/Sprites/TX Props.png" id="3_su6xa"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pw2in"]
-atlas = ExtResource("3_su6xa")
-region = Rect2(264, 85, 24, 85)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iq1i"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uda02"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ca4r"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul1j3"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u83dh"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7i2s"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(320, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l31wq"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(384, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxxva"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(448, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wkxi"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(512, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yotgu"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(576, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h2rp"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(640, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is75p"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(704, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp30a"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(768, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehhou"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(832, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxduq"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(896, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wanjc"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(960, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noe5o"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(1024, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up885"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(1088, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06dh3"]
+atlas = ExtResource("1_4o53q")
+region = Rect2(1152, 0, 64, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5r2m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pw2in")
+"texture": SubResource("AtlasTexture_0iq1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uda02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ca4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul1j3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u83dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7i2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l31wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxxva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wkxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yotgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h2rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is75p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp30a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehhou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxduq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wanjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noe5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up885")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06dh3")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="Gradient" id="Gradient_eol0w"]
@@ -32,34 +157,24 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
 [node name="Lamp post" type="StaticBody2D"]
+y_sort_enabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PackedVector2Array(-12, 41, -13, -5, -39, -7, -41, -37, -40, -51, 33, -51, 40, -47, 40, -32, 33, -13, 32, -3, 12, -3, 11, 45)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_tro8k")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 z_index = 5
 texture_filter = 1
 position = Vector2(2, -6)
-scale = Vector2(1.08333, 1)
 sprite_frames = SubResource("SpriteFrames_p5r2m")
+autoplay = "default"
+frame_progress = 0.708777
+flip_h = true
 
 [node name="PointLight2D4" type="PointLight2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-22, -20)
-scale = Vector2(5, 5)
-energy = 0.0
-texture = SubResource("GradientTexture2D_v48q5")
-script = ExtResource("2_hcnu5")
-
-[node name="PointLight2D5" type="PointLight2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(21, -19)
-scale = Vector2(5, 5)
+position = Vector2(-10, 6)
 energy = 0.0
 texture = SubResource("GradientTexture2D_v48q5")
 script = ExtResource("2_hcnu5")

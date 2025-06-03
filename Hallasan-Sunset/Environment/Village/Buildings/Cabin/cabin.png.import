@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r1mnrbw2hf7"
-path="res://.godot/imported/lamppost.png-60d61793f9a6843799a4fec52c66047c.ctex"
+uid="uid://b2nup0bmwrixc"
+path="res://.godot/imported/cabin.png-f095a71a0e2a253112dbbdf6072e823e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hallasan-Sunset/Environment/Forest/Lamppost/lamppost.png"
-dest_files=["res://.godot/imported/lamppost.png-60d61793f9a6843799a4fec52c66047c.ctex"]
+source_file="res://Hallasan-Sunset/Environment/Village/Buildings/Cabin/cabin.png"
+dest_files=["res://.godot/imported/cabin.png-f095a71a0e2a253112dbbdf6072e823e.ctex"]
 
 [params]
 

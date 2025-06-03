@@ -3,22 +3,22 @@
 [ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_oi6uh"]
 [ext_resource type="Script" uid="uid://dntj3tef2mfd2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_item_modifier.gd" id="2_sclwm"]
 [ext_resource type="Script" uid="uid://f4v2hev5plf6" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_items.gd" id="3_os4db"]
-[ext_resource type="Texture2D" uid="uid://bpwonm74cyb53" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Ice_Gloves.png" id="4_oi6uh"]
-[ext_resource type="Texture2D" uid="uid://d4mvy6p1p7uoa" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Ice_Gloves_sheet.png" id="4_sclwm"]
+[ext_resource type="Texture2D" uid="uid://cty0lev2uobxm" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Earth_gloves_sheet.png" id="4_oi6uh"]
+[ext_resource type="Texture2D" uid="uid://exdx5gh7ehjr" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Earth_gloves.png" id="5_sclwm"]
 
 [sub_resource type="Resource" id="Resource_q4wgp"]
 script = ExtResource("2_sclwm")
 type = 1
-value = 10
+value = 1
 
 [resource]
 script = ExtResource("3_os4db")
 type = 0
 modifiers = Array[ExtResource("2_sclwm")]([SubResource("Resource_q4wgp")])
-sprite_texture = ExtResource("4_sclwm")
-name = "Ice Gloves"
+sprite_texture = ExtResource("4_oi6uh")
+name = "Earth Gloves"
 description = "Big Bang gloves
 "
-texture = ExtResource("4_oi6uh")
+texture = ExtResource("5_sclwm")
 cost = 10
 effects = Array[ExtResource("1_oi6uh")]([])

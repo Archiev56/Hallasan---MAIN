@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cerpqrtpj4udh"]
+[gd_scene load_steps=20 format=3 uid="uid://cerpqrtpj4udh"]
 
 [ext_resource type="Script" uid="uid://bl4oocfcqkokq" path="res://Hallasan-Sunset/Environment/Hazards/Spike/WoodenSpike.gd" id="1_7foum"]
 [ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="2_ofwq7"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c1cwnd1kl5mqo" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Sprites/Spike6.png" id="9_8qhfu"]
 [ext_resource type="AudioStream" uid="uid://yojigcvbfbbi" path="res://Hallasan-Sunset/Audio/Sound effects/Grass_spike.wav" id="10_lxyoo"]
 [ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="11_1chmo"]
+[ext_resource type="Texture2D" uid="uid://j0q50r6coxes" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Sprites/Dragon - grass - tail - 3.png" id="12_ofwq7"]
 
 [sub_resource type="Animation" id="Animation_nadug"]
 resource_name = "Nospike"
@@ -137,13 +138,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ed5tt"]
-size = Vector2(34, 19)
+size = Vector2(21, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pn8do"]
 size = Vector2(9, 17)
 
 [node name="Spike" type="Area2D"]
-z_index = 10
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, -53)
 collision_mask = 5
@@ -156,6 +157,7 @@ position = Vector2(0, 50)
 texture = ExtResource("2_ofwq7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 scale = Vector2(2, 2)
 texture = ExtResource("3_8ilnl")
 
@@ -166,7 +168,7 @@ libraries = {
 autoplay = "Nospike"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 44)
+position = Vector2(1.5, 44)
 shape = SubResource("RectangleShape2D_ed5tt")
 
 [node name="hurt_box" parent="." instance=ExtResource("11_1chmo")]
@@ -180,6 +182,11 @@ shape = SubResource("RectangleShape2D_pn8do")
 debug_color = Color(0.92549, 0.239216, 0.345098, 0.419608)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Dragon-Grass-Tail-3" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2, 49)
+texture = ExtResource("12_ofwq7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

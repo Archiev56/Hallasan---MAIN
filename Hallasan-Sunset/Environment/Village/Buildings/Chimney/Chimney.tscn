@@ -1,0 +1,140 @@
+[gd_scene load_steps=20 format=3 uid="uid://ctb2wokwm4ljm"]
+
+[ext_resource type="Texture2D" uid="uid://bgi62j7qmwhkx" path="res://Hallasan-Sunset/Environment/Village/Buildings/Chimney/Sprites/chimney smoke-chiminey 1 - white smoke.png" id="1_qc4kx"]
+[ext_resource type="Texture2D" uid="uid://csv52bvo1woeb" path="res://Hallasan-Sunset/Environment/Village/Buildings/Chimney/Sprites/Cabin-chimney.png" id="2_l4cbi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0lk0"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(1248, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anidq"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmtox"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvvhc"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02w1s"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsukr"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imiu8"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8aac"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv1g7"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxc5m"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(768, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqjjm"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(864, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qem37"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(960, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjrmx"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(1056, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi6wy"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(1152, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_842wh"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(1344, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orobi"]
+atlas = ExtResource("1_qc4kx")
+region = Rect2(1440, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kob3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0lk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anidq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmtox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvvhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02w1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsukr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imiu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8aac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv1g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxc5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqjjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qem37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjrmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi6wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_842wh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orobi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Chimney" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, -29)
+sprite_frames = SubResource("SpriteFrames_kob3w")
+autoplay = "default"
+frame_progress = 0.289629
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("2_l4cbi")
