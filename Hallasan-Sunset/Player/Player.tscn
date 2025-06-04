@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://to2435so3hh5" path="res://Hallasan-Sunset/Player/Player.gd" id="1_l265g"]
 [ext_resource type="Texture2D" uid="uid://nknfj7nkp53n" path="res://Hallasan-Sunset/Player/Animations/Death/Dead_Down-4.png" id="2_1huh3"]
-[ext_resource type="Texture2D" uid="uid://bc5lx7kop54i4" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_side/Untitled_Artwork-3 8.png" id="2_kei3r"]
 [ext_resource type="Texture2D" uid="uid://b88rdduqa0gb0" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_diag_down_right/walking_diag_down_right7.png" id="3_h7h7f"]
 [ext_resource type="Texture2D" uid="uid://fogxevxjmiwg" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_side/idle_side3.png" id="3_i658k"]
 [ext_resource type="Texture2D" uid="uid://cuvgsyd825y83" path="res://Hallasan-Sunset/Player/Sprites/Shadow (1).png" id="3_kt8jp"]
@@ -35,31 +34,18 @@
 [ext_resource type="Script" uid="uid://b1e8gtou100tb" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_idle.gd" id="65_t8td5"]
 [ext_resource type="Script" uid="uid://dk2ke3yxbsa7x" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_walk.gd" id="66_hex77"]
 [ext_resource type="Script" uid="uid://tydt2qbeljtj" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_attack.gd" id="67_i7pm4"]
-[ext_resource type="Texture2D" uid="uid://bvsvltbvsukpm" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_Down/Untitled_Artwork-4 7.png" id="67_mxfn7"]
-[ext_resource type="Texture2D" uid="uid://dhvt7kn588iri" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_up/Untitled_Artwork-2 8.png" id="68_gol32"]
 [ext_resource type="Script" uid="uid://ccd6sinsp2po7" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_stun.gd" id="69_58qxy"]
-[ext_resource type="Texture2D" uid="uid://dyaem6qfqjwcb" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_up/Untitled_Artwork-3 8.png" id="69_akfv1"]
-[ext_resource type="Texture2D" uid="uid://b1b3mkce0fjwr" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_up/Untitled_Artwork-4 7.png" id="70_tynqy"]
 [ext_resource type="Script" uid="uid://b578is1umt6oj" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_boomerang.gd" id="70_ul2vr"]
-[ext_resource type="Texture2D" uid="uid://d12x7wdmlt3cs" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_side/Untitled_Artwork-2 8.png" id="71_dtphi"]
 [ext_resource type="Script" uid="uid://cvp48qmoo68x" path="res://Hallasan-Sunset/Player/Scripts/abilities.gd" id="74_8h3ji"]
 [ext_resource type="Texture2D" uid="uid://ppsaevjvbvms" path="res://Hallasan-Sunset/Player/Animations/Death/Dead_Down-2.png" id="75_20pjw"]
 [ext_resource type="PackedScene" uid="uid://xwk3g6ka7muy" path="res://Hallasan-Sunset/Player/Technical/Moves/Dash/dash.tscn" id="75_ee50j"]
 [ext_resource type="PackedScene" uid="uid://x3kqulp18mfq" path="res://Hallasan-Sunset/Player/Technical/Camera/camera_2d.tscn" id="76_apee7"]
 [ext_resource type="Texture2D" uid="uid://doxge4lhhd5xd" path="res://Hallasan-Sunset/Player/Animations/Death/Dead_Down-3.png" id="76_hmbot"]
 [ext_resource type="PackedScene" uid="uid://bu0yfb7p2b8pi" path="res://Hallasan-Sunset/Player/Boxes/HitBox/hit_box.tscn" id="78_hsdvo"]
-[ext_resource type="Texture2D" uid="uid://cyrgbbyy8jael" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_Charge_attack/Untitled_Artwork-1 36.png" id="79_m8pf5"]
 [ext_resource type="PackedScene" uid="uid://cvoni5gbutug8" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Bomb/arc_projectile.tscn" id="79_mcnx3"]
-[ext_resource type="Texture2D" uid="uid://316wrb5b4cjl" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_Charge_attack/Untitled_Artwork-2 25.png" id="80_i2wkm"]
-[ext_resource type="Texture2D" uid="uid://b4ve2ihhhgx7b" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_Charge_attack/Untitled_Artwork-3 23.png" id="81_jkdu6"]
 [ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="81_wnbgp"]
-[ext_resource type="Texture2D" uid="uid://bapqh73dpvsr6" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_Charge_attack/Untitled_Artwork-4 19.png" id="82_3aw8l"]
-[ext_resource type="Texture2D" uid="uid://bvw8mbawt588w" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_Charge_attack/Untitled_Artwork-5 14.png" id="83_1swds"]
-[ext_resource type="Texture2D" uid="uid://bhcgu5wkca4su" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_Charge_attack/Untitled_Artwork-6 12.png" id="84_5vffj"]
 [ext_resource type="Script" uid="uid://7rgvo620syyc" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_death.gd" id="84_tr3qq"]
 [ext_resource type="Script" uid="uid://b6i7kc5m2jbcb" path="res://Hallasan-Sunset/Player/Technical/Push/push.gd" id="85_7mujm"]
-[ext_resource type="Texture2D" uid="uid://d3q367mpunka2" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_Charge_attack/Untitled_Artwork-7 8.png" id="85_kjr3w"]
-[ext_resource type="Texture2D" uid="uid://cccvpkiyuq1li" path="res://Hallasan-Sunset/Player/Animations/Fist Throw/Boomerang_Charge_attack/Untitled_Artwork-8 7.png" id="86_uvryy"]
 [ext_resource type="Script" uid="uid://biopsgq3o454m" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_charge_attack.gd" id="86_ykiv8"]
 [ext_resource type="Texture2D" uid="uid://brkj0d4ooqixh" path="res://Hallasan-Sunset/Player/Animations/carry/PickUpDown/Pick_Up_Down-1.png" id="112_v2a8x"]
 [ext_resource type="Texture2D" uid="uid://c1ft7m8cpbhpv" path="res://Hallasan-Sunset/Player/Animations/carry/PickUpDown/Pick_Up_Down-2.png" id="113_a0jti"]
@@ -2010,6 +1996,12 @@ tracks/0/keys = {
 "values": [ExtResource("42_3m4la"), ExtResource("43_11v5g"), ExtResource("44_x1rmo"), ExtResource("45_lbu84"), ExtResource("46_duwkq"), ExtResource("47_4ci3l"), ExtResource("48_uawxo")]
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a7ngc"]
+load_path = "res://.godot/imported/Untitled_Artwork-2 8.png-99f8f2434b734e9fc55172f4e1c4fad1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4jwpn"]
+load_path = "res://.godot/imported/Untitled_Artwork-3 8.png-fed0d2c9df54cc48d7eab4a4e218c527.ctex"
+
 [sub_resource type="Animation" id="Animation_lpl5n"]
 resource_name = "boomerang_side"
 length = 0.2
@@ -2023,7 +2015,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("71_dtphi"), ExtResource("2_kei3r")]
+"values": [SubResource("CompressedTexture2D_a7ngc"), SubResource("CompressedTexture2D_4jwpn")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2038,6 +2030,15 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, -8), Vector2(0, 10)]
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fu81q"]
+load_path = "res://.godot/imported/Untitled_Artwork-2 8.png-05c867ec9812d73b9cadccd16e673d9e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b4cq8"]
+load_path = "res://.godot/imported/Untitled_Artwork-3 8.png-94bf8f9fc401bd0ebb101618a89b9afc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iy5w2"]
+load_path = "res://.godot/imported/Untitled_Artwork-4 7.png-87b108d6c3f7a5834da66f20e7004081.ctex"
+
 [sub_resource type="Animation" id="Animation_gynsa"]
 resource_name = "boomerang_up"
 length = 0.3
@@ -2051,7 +2052,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("68_gol32"), ExtResource("69_akfv1"), ExtResource("70_tynqy")]
+"values": [SubResource("CompressedTexture2D_fu81q"), SubResource("CompressedTexture2D_b4cq8"), SubResource("CompressedTexture2D_iy5w2")]
 }
 
 [sub_resource type="Animation" id="Animation_c7hm8"]
@@ -2711,6 +2712,30 @@ tracks/0/keys = {
 "values": [ExtResource("181_q7yd8")]
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fwnuv"]
+load_path = "res://.godot/imported/Untitled_Artwork-1 36.png-7b896e87a52164b6a7882aac5c33c384.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i658k"]
+load_path = "res://.godot/imported/Untitled_Artwork-2 25.png-943de536ae14df9c8429259c6a1050f1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o2vu6"]
+load_path = "res://.godot/imported/Untitled_Artwork-3 23.png-729b010e5fc8a9285f4a5032b699fc44.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i0wo8"]
+load_path = "res://.godot/imported/Untitled_Artwork-4 19.png-32c157aa8e3ab56d9a4223fc7c4e0345.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qw5vx"]
+load_path = "res://.godot/imported/Untitled_Artwork-5 14.png-a83b6c7aecb8352ae5773212a6d4efe1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xwwxo"]
+load_path = "res://.godot/imported/Untitled_Artwork-6 12.png-d1e44fc75b14d7eca0a4740d6b8d79db.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ba0nq"]
+load_path = "res://.godot/imported/Untitled_Artwork-7 8.png-d1a1dc66d1afe35c86f284c5e86c7322.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h7h7f"]
+load_path = "res://.godot/imported/Untitled_Artwork-8 7.png-df33665a4e85ba8ee6ea958a8364bcd5.ctex"
+
 [sub_resource type="Animation" id="Animation_cnxxj"]
 resource_name = "charge_attack"
 length = 0.35
@@ -2726,8 +2751,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("79_m8pf5"), ExtResource("80_i2wkm"), ExtResource("81_jkdu6"), ExtResource("82_3aw8l"), ExtResource("83_1swds"), ExtResource("84_5vffj"), ExtResource("85_kjr3w"), ExtResource("86_uvryy")]
+"values": [SubResource("CompressedTexture2D_fwnuv"), SubResource("CompressedTexture2D_i658k"), SubResource("CompressedTexture2D_o2vu6"), SubResource("CompressedTexture2D_i0wo8"), SubResource("CompressedTexture2D_qw5vx"), SubResource("CompressedTexture2D_xwwxo"), SubResource("CompressedTexture2D_ba0nq"), SubResource("CompressedTexture2D_h7h7f")]
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q7yd8"]
+load_path = "res://.godot/imported/Untitled_Artwork-4 7.png-163cee739d611f22a36d13208ae2e88b.ctex"
 
 [sub_resource type="Animation" id="Animation_ll8qe"]
 resource_name = "charge_down"
@@ -2742,7 +2770,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("67_mxfn7")]
+"values": [SubResource("CompressedTexture2D_q7yd8")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2794,7 +2822,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("71_dtphi")]
+"values": [SubResource("CompressedTexture2D_a7ngc")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2822,7 +2850,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("69_akfv1")]
+"values": [SubResource("CompressedTexture2D_b4cq8")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -4429,7 +4457,7 @@ script = ExtResource("65_t8td5")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("66_hex77")
-move_speed = 65.0
+move_speed = 90.0
 dash_speed = 135.0
 dash_duration = 0.5
 
@@ -4598,6 +4626,7 @@ position = Vector2(-1, -13)
 
 [node name="Camera2D" parent="." instance=ExtResource("76_apee7")]
 process_callback = 0
+limit_smoothed = true
 position_smoothing_speed = 6.0
 shake_power = 1.0
 

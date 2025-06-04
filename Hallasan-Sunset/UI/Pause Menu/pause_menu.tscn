@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bv18n10sdmxlc"]
+[gd_scene load_steps=43 format=3 uid="uid://bv18n10sdmxlc"]
 
 [ext_resource type="Script" uid="uid://b8v33jg6hgubp" path="res://Hallasan-Sunset/UI/Pause Menu/Pause/Pause.gd" id="1_84gkr"]
 [ext_resource type="AudioStream" uid="uid://q4tcvwp83ov5" path="res://Hallasan-Sunset/Audio/Sound effects/UI_Select.wav" id="2_bre2m"]
@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://dyt1rmnfhkx4m" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/ui white border.png" id="23_78js8"]
 [ext_resource type="PackedScene" uid="uid://v0k1yqv8sn7u" path="res://Hallasan-Sunset/UI/Pause Menu/Quests/quest_item.tscn" id="24_bbvk8"]
 [ext_resource type="PackedScene" uid="uid://1uaklgsuboha" path="res://Hallasan-Sunset/UI/Pause Menu/Quests/quest_step_item.tscn" id="25_51hpj"]
-[ext_resource type="Texture2D" uid="uid://ncjyo38fsdja" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Sprites/Banner.png" id="26_gon2f"]
 
 [sub_resource type="Animation" id="Animation_pjomn"]
 length = 0.001
@@ -80,7 +79,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
-"values": [Vector2(322, 180), Vector2(322, 112), Vector2(322, 131)]
+"values": [Vector2(0, 0), Vector2(0, -80), Vector2(0, -30)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -226,9 +225,17 @@ stream = ExtResource("7_if6qi")
 
 [node name="Bag" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Bag"]
 position = Vector2(322, 160)
@@ -280,10 +287,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_pjomn")
 
 [node name="GridContainer" type="GridContainer" parent="TabContainer/Inventory"]
 layout_mode = 2
-offset_left = -86.0
-offset_top = 77.0
-offset_right = 170.0
-offset_bottom = 281.0
+offset_left = -31.0
+offset_top = 140.0
+offset_right = 305.0
+offset_bottom = 408.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 5
@@ -372,10 +379,10 @@ layout_mode = 2
 
 [node name="GridContainer2" type="GridContainer" parent="TabContainer/Inventory"]
 layout_mode = 2
-offset_left = 192.0
-offset_top = 77.0
-offset_right = 428.0
-offset_bottom = 177.0
+offset_left = 421.0
+offset_top = 141.0
+offset_right = 705.0
+offset_bottom = 273.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 6
@@ -444,10 +451,10 @@ layout_mode = 2
 z_index = 99
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 0
-offset_left = 189.0
-offset_top = 162.0
-offset_right = 352.0
-offset_bottom = 326.0
+offset_left = 447.0
+offset_top = 262.0
+offset_right = 610.0
+offset_bottom = 426.0
 
 [node name="Panel" type="Panel" parent="TabContainer/Inventory/VBoxContainer"]
 layout_mode = 2
@@ -456,10 +463,10 @@ theme_override_styles/panel = ExtResource("18_bubkb")
 [node name="Panel2" type="Panel" parent="TabContainer/Inventory"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 174.0
-offset_top = 182.0
-offset_right = 466.0
-offset_bottom = 246.0
+offset_left = 432.0
+offset_top = 282.0
+offset_right = 724.0
+offset_bottom = 346.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_1ge22")
 
 [node name="Description" type="Label" parent="TabContainer/Inventory/Panel2"]
@@ -497,10 +504,10 @@ autowrap_mode = 2
 
 [node name="Stats" parent="TabContainer/Inventory" instance=ExtResource("20_0dac1")]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 246.0
-offset_right = 466.0
-offset_bottom = 281.0
+offset_left = 432.0
+offset_top = 346.0
+offset_right = 724.0
+offset_bottom = 381.0
 
 [node name="Label" type="Label" parent="TabContainer/Inventory"]
 z_index = 4096
@@ -511,25 +518,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -135.0
-offset_top = -106.0
-offset_right = 145.0
-offset_bottom = -34.0
+offset_left = -152.0
+offset_top = -212.0
+offset_right = 152.0
+offset_bottom = -140.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0.929412, 0.694118, 0.180392, 1)
 theme_override_fonts/font = ExtResource("21_g32vo")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 64
 text = "INVENTORY"
 horizontal_alignment = 1
-
-[node name="Banner" type="Sprite2D" parent="TabContainer/Inventory"]
-texture_filter = 1
-position = Vector2(189, 54)
-scale = Vector2(3.5625, 1.90909)
-texture = ExtResource("26_gon2f")
-region_enabled = true
-region_rect = Rect2(138, 7.22652, 64, 22.7735)
 
 [node name="Quests" type="TabBar" parent="TabContainer"]
 visible = false

@@ -1,6 +1,5 @@
 class_name State_Walk extends State
 
-@export var tileMap : TileMap
 @export var move_speed: float = 40.0
 @export var dash_speed: float = 100.0
 @export var dash_duration: float = 0.7  # Duration of the dash in seconds

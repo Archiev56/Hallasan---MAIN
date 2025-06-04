@@ -6,7 +6,7 @@ var combo_requested : bool = false
 var combo_step : int = 0  # Tracks combo step (0 = first attack, then 1 and 2)
 
 @export var attack_sound : AudioStream
-@export_range(0,1,0.5) var decelerate_speed : float = 3
+@export_range(0,1,5) var decelerate_speed : float = 3
 
 @onready var idle : State = $"../Idle"
 @onready var walk : State = $"../Walk"

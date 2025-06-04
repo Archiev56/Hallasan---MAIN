@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cldwqrs150ggw"]
+[gd_scene load_steps=6 format=4 uid="uid://dqqq8k6jf8gl8"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_ppyta"]
 [ext_resource type="TileSet" uid="uid://dhj385rk2lfl4" path="res://Hallasan-Sunset/Tilemaps/32x32_test/32x32_tileset.tres" id="2_ykrsh"]
