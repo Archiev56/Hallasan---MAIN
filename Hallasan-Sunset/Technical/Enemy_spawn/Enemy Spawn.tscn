@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://t2toqhl22hyj"]
+[gd_scene load_steps=12 format=3 uid="uid://t2toqhl22hyj"]
 
 [ext_resource type="Script" uid="uid://db1pxdma8y6ac" path="res://Hallasan-Sunset/Technical/Enemy_spawn/enemy_spawn.gd" id="1_w0wip"]
 [ext_resource type="Texture2D" uid="uid://cauy7uowftney" path="res://Hallasan-Sunset/Environment/Weather/Lightning/Sprites/weather effects, lightning full 32x128.png" id="2_8wys0"]
 [ext_resource type="AudioStream" uid="uid://pm1tygg2w8au" path="res://Hallasan-Sunset/Environment/Weather/Lightning/Audio/thunderstorm-ambiance-191991.mp3" id="3_8wys0"]
+[ext_resource type="Texture2D" uid="uid://cq7jdy4ajln77" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Smash/Smoke Effect.png" id="4_7bfoo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0jrac"]
 radius = 70.0643
@@ -77,11 +78,47 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/3/use_blend = true
+tracks/4/type = "animation"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Smash Effect/AnimationPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": PackedStringArray("Smash_effect"),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8lp61"]
 _data = {
 &"RESET": SubResource("Animation_w0wip"),
 &"strike": SubResource("Animation_7bfoo")
+}
+
+[sub_resource type="Animation" id="Animation_xft73"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_vm1s0"]
+resource_name = "Smash_effect"
+length = 1.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e4s7w"]
+_data = {
+&"RESET": SubResource("Animation_xft73"),
+&"Smash_effect": SubResource("Animation_vm1s0")
 }
 
 [node name="EnemySpawner" type="Area2D"]
@@ -92,6 +129,7 @@ shape = SubResource("CircleShape2D_0jrac")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -105,5 +143,21 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Smash Effect" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(0, 17)
+scale = Vector2(2, 2)
+texture = ExtResource("4_7bfoo")
+hframes = 11
+frame = 9
+region_enabled = true
+region_rect = Rect2(0, 714, 704, 46)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Smash Effect"]
+libraries = {
+&"": SubResource("AnimationLibrary_e4s7w")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bkgbqgy67q6fd"]
+[gd_scene load_steps=31 format=4 uid="uid://bkgbqgy67q6fd"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_6c3hc"]
 [ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="2_05rfe"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://cerpqrtpj4udh" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Spike.tscn" id="25_wo25v"]
 [ext_resource type="PackedScene" uid="uid://mquiukhsvnvp" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tree Borders/TreeBorderSide.tscn" id="26_mqso4"]
 [ext_resource type="PackedScene" uid="uid://4cp3bb2wjdid" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Interactive_grass.tscn" id="27_am8vj"]
+[ext_resource type="PackedScene" uid="uid://0vm164x0nnt3" path="res://Hallasan-Sunset/Enemies/Common Enemies/Hoodlum/hoodlum.tscn" id="28_05rfe"]
+[ext_resource type="PackedScene" uid="uid://t2toqhl22hyj" path="res://Hallasan-Sunset/Technical/Enemy_spawn/Enemy Spawn.tscn" id="28_ctf2f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fr3u6"]
 shader = ExtResource("18_81bx8")
@@ -47,7 +49,7 @@ y_sort_enabled = true
 script = ExtResource("1_6c3hc")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_05rfe")]
-position = Vector2(705, 49)
+position = Vector2(657, -34)
 
 [node name="Tileset" parent="." instance=ExtResource("3_ctf2f")]
 z_index = -1
@@ -296,6 +298,11 @@ y_sort_enabled = true
 
 [node name="Items" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="EnemySpawner" parent="." instance=ExtResource("28_ctf2f")]
+position = Vector2(687, 81)
+enemy_scene = ExtResource("28_05rfe")
+enemy_count = 15
 
 [editable path="Environment/Objects/Lamp post"]
 [editable path="Environment/Objects/Lamp post2"]

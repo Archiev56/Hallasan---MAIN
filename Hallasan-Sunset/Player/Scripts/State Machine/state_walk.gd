@@ -19,7 +19,6 @@ var dash_ghost = preload("res://Hallasan-Sunset/Player/Technical/Moves/Dash/Dash
 @onready var attack: State = $"../Attack"
 @onready var walk_left_audio: AudioStreamPlayer2D = $"../../Audio/Walk"
 @onready var dust_particles: GPUParticles2D = $"../../Effects & Particles/DustParticles"
-@onready var dash_particles: GPUParticles2D = $"../../DashParticles"  # Optional: for dash effect
 @onready var dash_audio = $"../../Audio/Dash"
 @onready var hit_box = $"../../Interactions/HitBox"
 @onready var animation_player = $"../../AnimationPlayer"
@@ -44,8 +43,7 @@ func enter() -> void:
 
 func exit() -> void:
 	dust_particles.emitting = false
-	if dash_particles:
-		dash_particles.emitting = false
+
 
 func Process(_delta: float) -> State:
 	if player.direction == Vector2.ZERO and not is_dashing:
@@ -63,8 +61,7 @@ func Physics(_delta: float) -> State:
 			hit_box.is_invulnerable = false
 			player.velocity = player.direction * move_speed  # Revert to walking speed after dash
 			player.UpdateAnimation("walk")
-			if dash_particles:
-				dash_particles.emitting = false
+	
 		else:
 			player.velocity = player.direction * dash_speed
 	else:
@@ -121,8 +118,7 @@ func start_dashing() -> bool:
 	dash_timer = dash_duration
 	add_ghost()
 
-	if dash_particles:
-		dash_particles.emitting = true
+
 
 	return true
 
