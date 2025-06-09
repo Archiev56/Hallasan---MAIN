@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b44kyfk0deywt" path="res://Hallasan-Sunset/Environment/Dungeon/Torch/wall_torch.tscn" id="7_j3dpv"]
 [ext_resource type="PackedScene" uid="uid://cb2ddj5khwruw" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.tscn" id="7_y2l5s"]
 [ext_resource type="PackedScene" uid="uid://4cp3bb2wjdid" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Interactive_grass.tscn" id="8_7jsjt"]
-[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="8_ds450"]
+[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Dokkaebi.tscn" id="8_ds450"]
 [ext_resource type="PackedScene" uid="uid://ck2dpa4dd808r" path="res://Hallasan-Sunset/Environment/Forest/Pot/Pot.tscn" id="8_dskuc"]
 
 [node name="Dungeon1" type="Node2D"]

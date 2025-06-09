@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://byh8a7p1yblry" path="res://Hallasan-Sunset/Environment/Weather/Leaves/Magicleaves.tscn" id="11_f5n5s"]
 [ext_resource type="PackedScene" uid="uid://bqige2lm30fv" path="res://Hallasan-Sunset/Player/Technical/Hot Air Balloon/Hot air balloon.tscn" id="17_rbs3o"]
 [ext_resource type="PackedScene" uid="uid://ddioxudb4roti" path="res://Hallasan-Sunset/Items/Technical/item_pickup/item_pickup.tscn" id="18_0p8wk"]
-[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="19_yroyr"]
+[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Dokkaebi.tscn" id="19_yroyr"]
 [ext_resource type="PackedScene" uid="uid://s87tt1bkx3ku" path="res://Hallasan-Sunset/Environment/Weather/Floating Lights/Floating lights.tscn" id="21_u2yhk"]
 [ext_resource type="PackedScene" uid="uid://cal6ga32aayko" path="res://Hallasan-Sunset/Technical/Save Bell/Save Bell.tscn" id="23_fy5uk"]
 

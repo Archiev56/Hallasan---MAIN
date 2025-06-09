@@ -15,7 +15,7 @@ texture_margin_bottom = 10.0
 [node name="InventorySlot" type="Button"]
 process_mode = 3
 texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(48, 48)
 offset_right = 48.0
 offset_bottom = 48.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_h4nog")

@@ -1,5 +1,4 @@
 class_name Pathfinder extends Node2D
-
 var vectors : Array[Vector2] = [
 		Vector2(0,-1), #UP 
 		Vector2(1,-1), #UP/RIGHT
@@ -10,17 +9,13 @@ var vectors : Array[Vector2] = [
 		Vector2(-1,0), #LEFT
 		Vector2(-1,-1) #UP/LEFT
 ]
-
 var interests : Array[ float ]
 var obstacles : Array[ float ] = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
 var outcomes : Array[ float ] = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
 var rays : Array[ RayCast2D ]
-
 var move_dir : Vector2 = Vector2.ZERO
 var best_path : Vector2 = Vector2.ZERO
-
 @onready var timer: Timer = $Timer
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,7 +36,6 @@ func _ready() -> void:
 	timer.timeout.connect( set_path )
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Gradually update move_dir towards best_path.
@@ -50,7 +44,6 @@ func _process(delta: float) -> void:
 	# or directionally confused looking behaviors from enemies.
 	move_dir = lerp( move_dir, best_path, 10 * delta )
 	pass
-
 
 # Set the "best_path" vector by checking for desired direction and considering obstacles
 func set_path() -> void:
@@ -65,6 +58,10 @@ func set_path() -> void:
 	# Check each Raycast2D for collisions & update values in obstacles array
 	for i in 8:
 		if rays[ i ].is_colliding():
+			var collider = rays[ i ].get_collider()
+			# Skip if the raycast is hitting this enemy's own collision body
+			if collider == get_parent() or collider == self:
+				continue
 			obstacles[ i ] += 4
 			obstacles[ get_next_i( i ) ] += 1
 			obstacles[ get_prev_i( i ) ] += 1
@@ -91,7 +88,6 @@ func set_path() -> void:
 	best_path = vectors[ outcomes.find( outcomes.max() ) ]
 	pass
 
-
 # Returns the next index value, wrapping at 8
 func get_next_i( i : int ) -> int:
 	var n_i : int = i + 1
@@ -99,7 +95,6 @@ func get_next_i( i : int ) -> int:
 		return 0
 	else:
 		return n_i
-
 
 # Returns the previous index value, wrapping at -1
 func get_prev_i( i : int ) -> int:

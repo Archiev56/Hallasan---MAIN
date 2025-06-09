@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cb2ddj5khwruw" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.tscn" id="6_3byer"]
 [ext_resource type="PackedScene" uid="uid://s87tt1bkx3ku" path="res://Hallasan-Sunset/Environment/Weather/Floating Lights/Floating lights.tscn" id="8_1sh1v"]
 [ext_resource type="PackedScene" uid="uid://4cp3bb2wjdid" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Interactive_grass.tscn" id="8_j0d4e"]
-[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="11_gpnci"]
+[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Dokkaebi.tscn" id="11_gpnci"]
 [ext_resource type="PackedScene" uid="uid://16xbcxav5kb5" path="res://Hallasan-Sunset/Enemies/Bosses/Doekkabi General/Dokkaebi General.tscn" id="12_rnvcv"]
 
 [node name="Map" type="Node2D"]

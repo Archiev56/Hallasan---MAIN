@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://byh8a7p1yblry" path="res://Hallasan-Sunset/Environment/Weather/Leaves/Magicleaves.tscn" id="10_5y8sx"]
 [ext_resource type="PackedScene" uid="uid://8l5uc6or308u" path="res://Hallasan-Sunset/npc/Characters/Act 1/Totem Poles/Totems/Totem5.tscn" id="11_6hd6n"]
 [ext_resource type="PackedScene" uid="uid://s87tt1bkx3ku" path="res://Hallasan-Sunset/Environment/Weather/Floating Lights/Floating lights.tscn" id="12_doqpe"]
-[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="15_gqhti"]
+[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Dokkaebi.tscn" id="15_gqhti"]
 [ext_resource type="PackedScene" uid="uid://cp7e7rucofrk0" path="res://Hallasan-Sunset/Enemies/Common Enemies/Shroomboom/Shroomboom.tscn" id="15_lk48a"]
 
 [node name="Map" type="Node2D"]

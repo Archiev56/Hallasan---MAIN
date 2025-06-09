@@ -1,6 +1,6 @@
 class_name EnemyStateAttack extends EnemyState
 
-@export var anim_name : String = "attack"
+@export var anim_name : String = "Attack"
 @export var attack_cooldown : float = 1.5
 @export var attack_range : float = 40.0
 @export var attack_damage : int = 10

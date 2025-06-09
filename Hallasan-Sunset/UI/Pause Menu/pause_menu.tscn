@@ -287,10 +287,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_pjomn")
 
 [node name="GridContainer" type="GridContainer" parent="TabContainer/Inventory"]
 layout_mode = 2
-offset_left = -31.0
-offset_top = 140.0
-offset_right = 305.0
-offset_bottom = 408.0
+offset_left = -84.0
+offset_top = 76.0
+offset_right = 252.0
+offset_bottom = 344.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 5
@@ -379,10 +379,10 @@ layout_mode = 2
 
 [node name="GridContainer2" type="GridContainer" parent="TabContainer/Inventory"]
 layout_mode = 2
-offset_left = 421.0
-offset_top = 141.0
-offset_right = 705.0
-offset_bottom = 273.0
+offset_left = 194.0
+offset_top = 80.0
+offset_right = 478.0
+offset_bottom = 212.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 6
@@ -463,10 +463,10 @@ theme_override_styles/panel = ExtResource("18_bubkb")
 [node name="Panel2" type="Panel" parent="TabContainer/Inventory"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 432.0
-offset_top = 282.0
-offset_right = 724.0
-offset_bottom = 346.0
+offset_left = 174.0
+offset_top = 182.0
+offset_right = 466.0
+offset_bottom = 246.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_1ge22")
 
 [node name="Description" type="Label" parent="TabContainer/Inventory/Panel2"]
@@ -504,10 +504,10 @@ autowrap_mode = 2
 
 [node name="Stats" parent="TabContainer/Inventory" instance=ExtResource("20_0dac1")]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 346.0
-offset_right = 724.0
-offset_bottom = 381.0
+offset_left = 174.0
+offset_top = 246.0
+offset_right = 466.0
+offset_bottom = 281.0
 
 [node name="Label" type="Label" parent="TabContainer/Inventory"]
 z_index = 4096
@@ -519,9 +519,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -152.0
-offset_top = -212.0
+offset_top = -154.0
 offset_right = 152.0
-offset_bottom = -140.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0.929412, 0.694118, 0.180392, 1)

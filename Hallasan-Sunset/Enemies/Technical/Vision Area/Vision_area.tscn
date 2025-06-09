@@ -161,7 +161,7 @@ script = ExtResource("1_7q7gy")
 process_mode = 3
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_nhrpl")
+&"": SubResource("AnimationLibrary_nhrpl")
 }
 autoplay = "no show"
 

@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://k75pf2uxsq7d" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tscn" id="8_6rue2"]
 [ext_resource type="PackedScene" uid="uid://byh8a7p1yblry" path="res://Hallasan-Sunset/Environment/Weather/Leaves/Magicleaves.tscn" id="8_cytf2"]
 [ext_resource type="PackedScene" uid="uid://dnoohvgbs737l" path="res://Hallasan-Sunset/npc/Characters/Act 1/Totem Poles/Totems/Totem2.tscn" id="9_auqxe"]
-[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="9_c8iq5"]
+[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Dokkaebi.tscn" id="9_c8iq5"]
 [ext_resource type="PackedScene" uid="uid://drdgvr53hgl2n" path="res://Hallasan-Sunset/Tilemaps/Sprites/Poison Forest/Bubbles.tscn" id="9_qpbs4"]
 [ext_resource type="PackedScene" uid="uid://cal6ga32aayko" path="res://Hallasan-Sunset/Technical/Save Bell/Save Bell.tscn" id="10_1qvaw"]
 [ext_resource type="PackedScene" uid="uid://j7xr0tnkfbq3" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tall Tree/Tall Tree.tscn" id="10_auqxe"]

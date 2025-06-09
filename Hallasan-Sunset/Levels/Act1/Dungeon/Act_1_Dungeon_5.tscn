@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b44kyfk0deywt" path="res://Hallasan-Sunset/Environment/Dungeon/Torch/wall_torch.tscn" id="8_uv07i"]
 [ext_resource type="PackedScene" uid="uid://bqhetgyfhjtdv" path="res://Hallasan-Sunset/Environment/Dungeon/Torch/torch.tscn" id="9_totcx"]
 [ext_resource type="PackedScene" uid="uid://cerpqrtpj4udh" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Spike.tscn" id="10_k7gvx"]
-[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="12_buntc"]
+[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Dokkaebi.tscn" id="12_buntc"]
 
 [node name="Dungeon1" type="Node2D"]
 script = ExtResource("1_jkil3")

@@ -52,7 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://cal6ga32aayko" path="res://Hallasan-Sunset/Technical/Save Bell/Save Bell.tscn" id="51_revc8"]
 [ext_resource type="PackedScene" uid="uid://b44kyfk0deywt" path="res://Hallasan-Sunset/Environment/Dungeon/Torch/wall_torch.tscn" id="53_f1r5t"]
 [ext_resource type="PackedScene" uid="uid://t2toqhl22hyj" path="res://Hallasan-Sunset/Technical/Enemy_spawn/Enemy Spawn.tscn" id="53_r3eef"]
-[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="54_f1r5t"]
+[ext_resource type="PackedScene" uid="uid://dyufjm1518vwi" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Dokkaebi.tscn" id="54_f1r5t"]
 [ext_resource type="Texture2D" uid="uid://cgx0ioq6bxi4" path="res://Hallasan-Sunset/Environment/Village/Buildings/Fish shop/fish_shop.png" id="55_3t5ji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0cba"]
