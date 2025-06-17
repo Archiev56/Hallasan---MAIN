@@ -32,17 +32,18 @@ var hp: int = 6
 var max_hp: int = 6
 var level: int = 1
 var xp: int = 0
-
 var max_energy: int = 3
-var current_energy: int = max_energy  # Initialize energy to full
+var current_energy: int = max_energy 
 var energy_deduction_per_dodge: int = 1
-
 var attack: int = 1:
 	set(v):
 		attack = v
 		update_damage_values()
 var defense: int = 1
 var defense_bonus: int = 0
+var arrow_count : int = 2
+var bomb_count : int = 10
+
 
 func _ready():
 	PlayerManager.player = self

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqqkqub5gyw28"]
+[gd_scene load_steps=3 format=3 uid="uid://dqqkqub5gyw28"]
 
 [ext_resource type="Script" uid="uid://bvn4w2k48fhia" path="res://Hallasan-Sunset/Technical/Effects/damage_text.gd" id="1_kkyyy"]
+[ext_resource type="FontFile" uid="uid://dc4xnxlmy3tbi" path="res://Hallasan-Sunset/UI/Fonts/yoster.ttf" id="2_jnkox"]
 
 [node name="DamageText" type="Node2D"]
 z_index = 100
@@ -12,9 +13,11 @@ offset_left = -19.0
 offset_top = -17.0
 offset_right = 21.0
 offset_bottom = 3.0
+theme_override_colors/font_color = Color(0.93, 0.1767, 0.1767, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_jnkox")
+theme_override_font_sizes/font_size = 24
 text = "99"
 horizontal_alignment = 1

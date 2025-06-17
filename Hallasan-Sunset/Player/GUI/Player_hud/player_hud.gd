@@ -7,7 +7,10 @@ var hearts: Array[HeartGUI] = []
 @onready var title_button: Button = $Control/GameOver/VBoxContainer/TitleButton
 @onready var animation_player: AnimationPlayer = $Control/GameOver/AnimationPlayer
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
-
+@onready var abilities : Control = $Control/Abilities
+@onready var ability_items : HBoxContainer = $Control/Abilities/HBoxContainer
+@onready var arrow_count_label = $Control/Abilities/HBoxContainer/TextureRect3/ArrowCountLabel
+@onready var bomb_count_label = $Control/Abilities/HBoxContainer/TextureRect4/BombCountLabel
 @onready var boss_ui: Control = $Control/BossUI
 @onready var boss_hp_bar: TextureProgressBar = $Control/BossUI/TextureProgressBar
 @onready var boss_label: Label = $Control/BossUI/Label
@@ -41,6 +44,10 @@ func _ready():
 	hide_boss_slain()
 	
 	energy_timer.start()
+	update_ability_ui(0)
+	PauseMenu.shown.connect(_on_show_pause)
+	PauseMenu.hidden.connect(_on_hide_pause)
+
 
 
 func update_hp(_hp: int, _max_hp: int) -> void:
@@ -147,3 +154,34 @@ func _process(delta):
 		if tool_textures.has(tool):
 			$Control/Sprite2D.texture = tool_textures[tool]
 		
+		
+		
+func update_ability_ui(ability_index: int) -> void:
+	var _items: Array[Node] = ability_items.get_children()
+	for a in _items:
+		a.self_modulate = Color(1, 1, 1, 0)
+		a.modulate = Color(0.6, 0.6, 0.6, 0.8)
+
+	_items[ability_index].self_modulate = Color(1, 1, 1, 1)
+	_items[ability_index].modulate = Color(1, 1, 1, 1)
+	
+	pass
+
+
+
+
+func update_arrow_count(count: int) -> void:
+	arrow_count_label.text = str(count)
+	pass
+
+func update_bomb_count(count: int) -> void:
+	bomb_count_label.text = str(count)
+	pass
+
+func _on_show_pause() -> void:
+	abilities.visible = false
+	pass
+
+func _on_hide_pause() -> void:
+	abilities.visible = true
+	pass

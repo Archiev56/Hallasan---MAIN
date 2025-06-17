@@ -91,7 +91,7 @@ text = "0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_4ha1q")
+&"": SubResource("AnimationLibrary_4ha1q")
 }
 autoplay = "showDamage"
 

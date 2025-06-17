@@ -1,4 +1,4 @@
-[gd_scene load_steps=438 format=3 uid="uid://cbctfc3oob7kd"]
+[gd_scene load_steps=439 format=3 uid="uid://cbctfc3oob7kd"]
 
 [ext_resource type="Script" uid="uid://to2435so3hh5" path="res://Hallasan-Sunset/Player/Player.gd" id="1_l265g"]
 [ext_resource type="Texture2D" uid="uid://nknfj7nkp53n" path="res://Hallasan-Sunset/Player/Animations/Death/Dead_Down-4.png" id="2_1huh3"]
@@ -3745,6 +3745,22 @@ tracks/2/keys = {
 "values": [ExtResource("208_5h4ve"), ExtResource("209_xj56g"), ExtResource("210_rqyjk"), ExtResource("211_qa4pf"), ExtResource("212_byily"), ExtResource("213_nbh45"), ExtResource("214_2dt76"), ExtResource("215_ob0bo")]
 }
 
+[sub_resource type="Animation" id="Animation_ob0bo"]
+resource_name = "climb"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("170_fu81q")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qdnul"]
 _data = {
 &"Hands_Smash": SubResource("Animation_rnhs1"),
@@ -3791,6 +3807,7 @@ _data = {
 &"charge_walk_down": SubResource("Animation_up0w7"),
 &"charge_walk_side": SubResource("Animation_jelnr"),
 &"charge_walk_up": SubResource("Animation_42uha"),
+&"climb": SubResource("Animation_ob0bo"),
 &"death": SubResource("Animation_gxa7q"),
 &"dodge_diagonal_down_left": SubResource("Animation_w2s46"),
 &"dodge_diagonal_down_right": SubResource("Animation_av4uk"),
@@ -4266,6 +4283,8 @@ script = ExtResource("157_4s7g4")
 move_speed = 120.0
 throw_audio = ExtResource("158_3ari3")
 
+[node name="Climb" type="Node" parent="StateMachine"]
+
 [node name="Audio" type="Node2D" parent="."]
 position = Vector2(3, -28)
 
@@ -4352,8 +4371,6 @@ libraries = {
 }
 
 [node name="Abilities" type="Node" parent="."]
-
-[node name="Abilities Script" type="Node2D" parent="Abilities"]
 script = ExtResource("74_8h3ji")
 
 [node name="Fist2" parent="Abilities" instance=ExtResource("184_bov41")]

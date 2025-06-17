@@ -11,7 +11,7 @@ signal preview_stats_changed( item : ItemData )
 @onready var tab_container = $TabContainer
 @onready var button_save: Button = $TabContainer/System/Panel2/VBoxContainer/Button_save
 @onready var button_load: Button = $TabContainer/System/Panel2/VBoxContainer/Button_load
-@onready var item_description: Label = $TabContainer/Inventory/Panel2/ItemDescription
+@onready var item_description: Label = $TabContainer/Inventory/DescriptionContainer/ItemDescription
 
 @onready var audio_stream_player: AudioStreamPlayer2D = $Control/AudioStreamPlayer2D
 @onready var audio_stream_player2: AudioStreamPlayer2D = $Control/AudioStreamPlayer2D2
@@ -65,6 +65,9 @@ func show_pause_menu() -> void:
 	is_paused = true
 	tab_container.current_tab = 0
 	shown.emit()
+	%ArrowCountLabel.text = str(PlayerManager.player.arrow_count)
+	%BombCountLabel.text = str(PlayerManager.player.bomb_count)
+
 
 func hide_pause_menu() -> void:
 	get_tree().paused = false

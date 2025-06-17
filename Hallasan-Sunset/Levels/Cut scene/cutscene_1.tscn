@@ -307,27 +307,26 @@ text = "Ready...? "
 [node name="PlayerHUD" parent="." instance=ExtResource("12_y5pev")]
 visible = false
 
-[node name="Sprite2D" parent="PlayerHUD/Control" index="0"]
+[node name="HFlowContainer" parent="PlayerHUD/Control" index="0"]
 visible = false
 
-[node name="HFlowContainer" parent="PlayerHUD/Control" index="1"]
+[node name="Energy Bar" parent="PlayerHUD/Control" index="6"]
 visible = false
-
-[node name="PanelContainer" parent="PlayerHUD/Control/Notification" index="0"]
-offset_bottom = 69.0
-
-[node name="Energy Bar" parent="PlayerHUD/Control" index="7"]
-visible = false
-
-[node name="PanelContainer" parent="PlayerHUD/Control/Coin Counter" index="1"]
-offset_left = 23.0
-offset_right = 63.0
 
 [node name="TopBar" parent="PlayerHUD/Control/Black Bars" index="1"]
 offset_bottom = 60.0
 
 [node name="BottomBar" parent="PlayerHUD/Control/Black Bars" index="2"]
 offset_bottom = 399.0
+
+[node name="TextureRect" parent="PlayerHUD/Control/Abilities/HBoxContainer/TextureRect2" index="0"]
+layout_mode = 0
+
+[node name="TextureRect" parent="PlayerHUD/Control/Abilities/HBoxContainer/TextureRect3" index="0"]
+layout_mode = 0
+
+[node name="TextureRect" parent="PlayerHUD/Control/Abilities/HBoxContainer/TextureRect4" index="0"]
+layout_mode = 0
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("14_dbqa1")]
 visible = false

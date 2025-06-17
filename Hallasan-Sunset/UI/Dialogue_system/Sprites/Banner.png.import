@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ncjyo38fsdja"
-path="res://.godot/imported/Banner.png-1df1df269c3f03a5ae54047ce80c03fb.ctex"
+path="res://.godot/imported/Banner.png-7b2473f73c6c8af37c10da8e0483a2fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Sprites/Banner.png"
-dest_files=["res://.godot/imported/Banner.png-1df1df269c3f03a5ae54047ce80c03fb.ctex"]
+source_file="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/Banner.png"
+dest_files=["res://.godot/imported/Banner.png-7b2473f73c6c8af37c10da8e0483a2fb.ctex"]
 
 [params]
 
