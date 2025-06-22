@@ -1,7 +1,7 @@
 class_name PlayerAbilities
 extends Node
 
-const BOOMERANG = preload("res://Hallasan-Sunset/Player/Technical/Moves/Fist.tscn")
+const BOOMERANG = preload("res://Hallasan-Sunset/Player/Technical/Abilities/Fist.tscn")
 @onready var animation_player = $"../AnimationPlayer"
 
 var abilities: Array[String] = [

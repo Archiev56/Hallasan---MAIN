@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bkgbqgy67q6fd"]
+[gd_scene load_steps=31 format=4 uid="uid://bkgbqgy67q6fd"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_6c3hc"]
 [ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="2_05rfe"]
@@ -27,12 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://cerpqrtpj4udh" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Spike.tscn" id="25_wo25v"]
 [ext_resource type="PackedScene" uid="uid://mquiukhsvnvp" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tree Borders/TreeBorderSide.tscn" id="26_mqso4"]
 [ext_resource type="PackedScene" uid="uid://4cp3bb2wjdid" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Interactive_grass.tscn" id="27_am8vj"]
+[ext_resource type="PackedScene" uid="uid://bmwx31xw6tiaq" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/Bomb.tscn" id="28_05rfe"]
 [ext_resource type="PackedScene" uid="uid://3lfwldh0r6os" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="29_ctf2f"]
-[ext_resource type="PackedScene" uid="uid://bebsokw2igllq" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Orc.tscn" id="29_dgxmi"]
-[ext_resource type="PackedScene" uid="uid://ddioxudb4roti" path="res://Hallasan-Sunset/Items/Technical/item_pickup/item_pickup.tscn" id="30_waf45"]
-[ext_resource type="Resource" uid="uid://cw3bf5p68wy7b" path="res://Hallasan-Sunset/Items/Consumables/Kimbap/Kimbap.tres" id="31_o77tf"]
-[ext_resource type="Resource" uid="uid://dixsynm0elypt" path="res://Hallasan-Sunset/Items/Consumables/IceCream/IceCream.tres" id="32_b7yxm"]
-[ext_resource type="Texture2D" uid="uid://t8qmv3pxv36e" path="res://Hallasan-Sunset/Enemies/Common Enemies/Slime/animations/slimes_yellow.png" id="33_o77tf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fr3u6"]
 shader = ExtResource("18_81bx8")
@@ -53,7 +49,7 @@ y_sort_enabled = true
 script = ExtResource("1_6c3hc")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_05rfe")]
-position = Vector2(312, 88)
+position = Vector2(279, 53)
 
 [node name="Tileset" parent="." instance=ExtResource("3_ctf2f")]
 z_index = -1
@@ -318,25 +314,11 @@ y_sort_enabled = true
 [node name="Items" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Orc" parent="." instance=ExtResource("29_dgxmi")]
-position = Vector2(1579, -164)
+[node name="Bomb" parent="." instance=ExtResource("28_05rfe")]
+position = Vector2(261, 33)
 
 [node name="Goblin" parent="." instance=ExtResource("29_ctf2f")]
-position = Vector2(330, 314)
-
-[node name="ItemPickup" parent="." instance=ExtResource("30_waf45")]
-position = Vector2(257, 54)
-item_data = ExtResource("31_o77tf")
-
-[node name="ItemPickup2" parent="." instance=ExtResource("30_waf45")]
-position = Vector2(377, 101)
-item_data = ExtResource("32_b7yxm")
-
-[node name="SlimesYellow" type="Sprite2D" parent="."]
-position = Vector2(272, 110)
-texture = ExtResource("33_o77tf")
-hframes = 6
-vframes = 6
+position = Vector2(237, -13)
 
 [editable path="Environment/Objects/Lamp post"]
 [editable path="Environment/Objects/Lamp post2"]

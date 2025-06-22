@@ -40,7 +40,7 @@
 [ext_resource type="Resource" uid="uid://c3cx0nodai8jq" path="res://Hallasan-Sunset/Items/Currency/Gem/Gem.tres" id="38_6wd0p"]
 [ext_resource type="PackedScene" uid="uid://bu0yfb7p2b8pi" path="res://Hallasan-Sunset/Player/Boxes/HitBox/hit_box.tscn" id="39_5pn85"]
 [ext_resource type="PackedScene" uid="uid://c1irimlt3ed4m" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/damage_numbers_origin.tscn" id="40_itfd1"]
-[ext_resource type="Texture2D" uid="uid://b0deec4ud0pn1" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Smash/Free Smoke Fx  Pixel 06.png" id="41_skxco"]
+[ext_resource type="Texture2D" uid="uid://b0deec4ud0pn1" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Smash/Free Smoke Fx  Pixel 06.png" id="41_skxco"]
 [ext_resource type="PackedScene" uid="uid://c55aho78pvpy8" path="res://Hallasan-Sunset/Enemies/Technical/Vision Area/Vision_area.tscn" id="42_wb2sr"]
 [ext_resource type="Texture2D" uid="uid://dk75qs4d6k6p0" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/Star.png" id="43_5pxo7"]
 [ext_resource type="Texture2D" uid="uid://c17eubopfjeqt" path="res://Hallasan-Sunset/Enemies/Common Enemies/Tree Stump/Lost_Heart.png" id="44_mx5nw"]

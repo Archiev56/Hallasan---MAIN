@@ -30,7 +30,7 @@
 [ext_resource type="Resource" uid="uid://kp6gn8ous75v" path="res://Hallasan-Sunset/Items/Currency/Coins/Silver Coin/Silver Coin.tres" id="22_qp84q"]
 [ext_resource type="Resource" uid="uid://b7mhtict54464" path="res://Hallasan-Sunset/Items/Currency/Coins/Gold Coin/Gold Coin.tres" id="23_o5eux"]
 [ext_resource type="Resource" uid="uid://bpoatvtr71w35" path="res://Hallasan-Sunset/Items/Currency/Coins/Coin Stack/Coin Stack.tres" id="24_ri7as"]
-[ext_resource type="Texture2D" uid="uid://b0deec4ud0pn1" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Smash/Free Smoke Fx  Pixel 06.png" id="32_d72do"]
+[ext_resource type="Texture2D" uid="uid://b0deec4ud0pn1" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Smash/Free Smoke Fx  Pixel 06.png" id="32_d72do"]
 [ext_resource type="Texture2D" uid="uid://c17eubopfjeqt" path="res://Hallasan-Sunset/Enemies/Common Enemies/Tree Stump/Lost_Heart.png" id="32_id3qt"]
 
 [sub_resource type="Gradient" id="Gradient_tgach"]

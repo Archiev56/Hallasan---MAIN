@@ -43,7 +43,7 @@
 [ext_resource type="AudioStream" uid="uid://ur4xtvsfcry4" path="res://Hallasan-Sunset/Audio/Sound effects/Enemy_hit.mp3" id="31_l7txm"]
 [ext_resource type="Texture2D" uid="uid://cr2xglvr66xkw" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Animations/walk_side/Untitled_Artwork 55.png" id="32_gc7jw"]
 [ext_resource type="Resource" uid="uid://c3cx0nodai8jq" path="res://Hallasan-Sunset/Items/Currency/Gem/Gem.tres" id="37_td2g7"]
-[ext_resource type="Texture2D" uid="uid://b0deec4ud0pn1" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Smash/Free Smoke Fx  Pixel 06.png" id="43_0v04r"]
+[ext_resource type="Texture2D" uid="uid://b0deec4ud0pn1" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Smash/Free Smoke Fx  Pixel 06.png" id="43_0v04r"]
 [ext_resource type="Texture2D" uid="uid://dk75qs4d6k6p0" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/Star.png" id="43_2pr8r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_axnmt"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://db1pxdma8y6ac" path="res://Hallasan-Sunset/Technical/Enemy_spawn/enemy_spawn.gd" id="1_w0wip"]
 [ext_resource type="Texture2D" uid="uid://cauy7uowftney" path="res://Hallasan-Sunset/Environment/Weather/Lightning/Sprites/weather effects, lightning full 32x128.png" id="2_8wys0"]
 [ext_resource type="AudioStream" uid="uid://pm1tygg2w8au" path="res://Hallasan-Sunset/Environment/Weather/Lightning/Audio/thunderstorm-ambiance-191991.mp3" id="3_8wys0"]
-[ext_resource type="Texture2D" uid="uid://cq7jdy4ajln77" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Smash/Smoke Effect.png" id="4_7bfoo"]
+[ext_resource type="Texture2D" uid="uid://cq7jdy4ajln77" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Smash/Smoke Effect.png" id="4_7bfoo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0jrac"]
 radius = 70.0643

@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bsuuia3fqy6wg" path="res://Hallasan-Sunset/Player/Sprites/Hands.png" id="9_u82ln"]
 [ext_resource type="PackedScene" uid="uid://djn8xjreb11el" path="res://Fist_sprite.tscn" id="10_mukv6"]
 [ext_resource type="Texture2D" uid="uid://cawttefliap5i" path="res://Hallasan-Sunset/Player/Animations/Athu Test/attack_effect/South/2/Effect_S1.png" id="10_rapxv"]
-[ext_resource type="Texture2D" uid="uid://cq7jdy4ajln77" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Smash/Smoke Effect.png" id="10_vscvm"]
+[ext_resource type="Texture2D" uid="uid://cq7jdy4ajln77" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Smash/Smoke Effect.png" id="10_vscvm"]
 [ext_resource type="Texture2D" uid="uid://dudeafkc7lcj2" path="res://Hallasan-Sunset/Player/Animations/Athu Test/attack_effect/South/2/Effect_S2.png" id="11_eq26l"]
 [ext_resource type="Texture2D" uid="uid://sdir608cmafn" path="res://Hallasan-Sunset/Player/Animations/Athu Test/attack_effect/South/2/Effect_S3.png" id="12_3cfgo"]
 [ext_resource type="Texture2D" uid="uid://ba7hg7lbihqj7" path="res://Hallasan-Sunset/Player/Animations/Athu Test/attack_effect/South/2/Effect_S4.png" id="13_ssi4k"]
@@ -103,11 +103,11 @@
 [ext_resource type="Texture2D" uid="uid://dlx6npynjyhy1" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Test_attack/attack_up/2/Attack_up2.png" id="74_a7ngc"]
 [ext_resource type="Texture2D" uid="uid://dtkib4v6l0aax" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Test_attack/attack_up/2/Attack_up3.png" id="75_4jwpn"]
 [ext_resource type="Texture2D" uid="uid://ppsaevjvbvms" path="res://Hallasan-Sunset/Player/Animations/Death/Dead_Down-2.png" id="75_20pjw"]
-[ext_resource type="PackedScene" uid="uid://xwk3g6ka7muy" path="res://Hallasan-Sunset/Player/Technical/Moves/Dash/dash.tscn" id="75_ee50j"]
+[ext_resource type="PackedScene" uid="uid://xwk3g6ka7muy" path="res://Hallasan-Sunset/Player/Technical/Abilities/Dash/dash.tscn" id="75_ee50j"]
 [ext_resource type="PackedScene" uid="uid://x3kqulp18mfq" path="res://Hallasan-Sunset/Player/Technical/Camera/camera_2d.tscn" id="76_apee7"]
 [ext_resource type="Texture2D" uid="uid://doxge4lhhd5xd" path="res://Hallasan-Sunset/Player/Animations/Death/Dead_Down-3.png" id="76_hmbot"]
 [ext_resource type="PackedScene" uid="uid://bu0yfb7p2b8pi" path="res://Hallasan-Sunset/Player/Boxes/HitBox/hit_box.tscn" id="78_hsdvo"]
-[ext_resource type="PackedScene" uid="uid://cvoni5gbutug8" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Bomb/arc_projectile.tscn" id="79_mcnx3"]
+[ext_resource type="PackedScene" uid="uid://cvoni5gbutug8" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/arc_projectile.tscn" id="79_mcnx3"]
 [ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="81_wnbgp"]
 [ext_resource type="Script" uid="uid://7rgvo620syyc" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_death.gd" id="84_tr3qq"]
 [ext_resource type="Script" uid="uid://b6i7kc5m2jbcb" path="res://Hallasan-Sunset/Player/Technical/Push/push.gd" id="85_7mujm"]
@@ -199,7 +199,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ups806f13bg" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_up/Idle_up3.png" id="183_4jwpn"]
 [ext_resource type="Texture2D" uid="uid://jjld02enb7kk" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_up/Idle_up4.png" id="184_a5jh3"]
 [ext_resource type="Texture2D" uid="uid://c3enywfib1i18" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_diag_up_right/walking_diag_up_right1.png" id="184_av4uk"]
-[ext_resource type="PackedScene" uid="uid://bdqsrs7ycwg0r" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist.tscn" id="184_bov41"]
+[ext_resource type="PackedScene" uid="uid://bdqsrs7ycwg0r" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist.tscn" id="184_bov41"]
 [ext_resource type="Texture2D" uid="uid://diy0c8bw6jkfk" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_diag_up_right/walking_diag_up_right2.png" id="185_q7yd8"]
 [ext_resource type="Texture2D" uid="uid://c71jvguo76kgp" path="res://Hallasan-Sunset/Player/Animations/Idle/Idle_up/Idle_up5.png" id="185_tns0a"]
 [ext_resource type="PackedScene" uid="uid://bpuje4cn5x0ht" path="res://Hallasan-Sunset/Audio/Sound effects/Foot steps/footstep_audio.tscn" id="186_0moo6"]
@@ -223,7 +223,7 @@
 [ext_resource type="AudioStream" uid="uid://blbto7u2lrkn2" path="res://Hallasan-Sunset/Audio/Sound effects/Level up.mp3" id="196_dkjh1"]
 [ext_resource type="Texture2D" uid="uid://6la8xyduvtii" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_down/walking_down5.png" id="196_x4vqx"]
 [ext_resource type="Texture2D" uid="uid://caeransyoh1lf" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_down/walking_down6.png" id="197_eo3tv"]
-[ext_resource type="Texture2D" uid="uid://bgyh5lqoojjbl" path="res://Hallasan-Sunset/Player/Technical/Moves/Dash/dusty.png" id="197_np30c"]
+[ext_resource type="Texture2D" uid="uid://bgyh5lqoojjbl" path="res://Hallasan-Sunset/Player/Technical/Abilities/Dash/dusty.png" id="197_np30c"]
 [ext_resource type="Texture2D" uid="uid://b327j73fccrqv" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down1.png" id="197_wrq7l"]
 [ext_resource type="Texture2D" uid="uid://ckqc4svsxq6l6" path="res://Hallasan-Sunset/Player/Animations/Dodge/Dodge_down/dodge_down2.png" id="198_pw4yg"]
 [ext_resource type="Texture2D" uid="uid://cnibxbq6t166u" path="res://Hallasan-Sunset/Player/Animations/Walk/Walk_down/walking_down7.png" id="198_wrq7l"]
@@ -2812,6 +2812,22 @@ tracks/0/keys = {
 "values": [SubResource("CompressedTexture2D_lbu84"), SubResource("CompressedTexture2D_duwkq"), SubResource("CompressedTexture2D_4ci3l"), SubResource("CompressedTexture2D_uawxo"), SubResource("CompressedTexture2D_6p5yc"), SubResource("CompressedTexture2D_t5g4t"), SubResource("CompressedTexture2D_ocfb3"), SubResource("CompressedTexture2D_av4uk")]
 }
 
+[sub_resource type="Animation" id="Animation_ob0bo"]
+resource_name = "climb"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("170_fu81q")]
+}
+
 [sub_resource type="Animation" id="Animation_gxa7q"]
 resource_name = "death"
 length = 0.4
@@ -3745,22 +3761,6 @@ tracks/2/keys = {
 "values": [ExtResource("208_5h4ve"), ExtResource("209_xj56g"), ExtResource("210_rqyjk"), ExtResource("211_qa4pf"), ExtResource("212_byily"), ExtResource("213_nbh45"), ExtResource("214_2dt76"), ExtResource("215_ob0bo")]
 }
 
-[sub_resource type="Animation" id="Animation_ob0bo"]
-resource_name = "climb"
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("170_fu81q")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qdnul"]
 _data = {
 &"Hands_Smash": SubResource("Animation_rnhs1"),
@@ -4253,9 +4253,6 @@ script = ExtResource("65_t8td5")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("66_hex77")
-move_speed = 90.0
-dash_speed = 135.0
-dash_duration = 0.5
 
 [node name="ghost_timer" type="Timer" parent="StateMachine/Walk"]
 wait_time = 1.3
@@ -4338,7 +4335,7 @@ shape = SubResource("CircleShape2D_wficq")
 debug_color = Color(0.996078, 0, 0.219608, 0)
 
 [node name="HitBox" parent="Interactions" instance=ExtResource("78_hsdvo")]
-collision_layer = 1
+collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HitBox"]
 position = Vector2(0, 11)

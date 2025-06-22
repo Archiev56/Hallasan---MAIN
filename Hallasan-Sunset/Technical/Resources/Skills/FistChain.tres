@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SingleShot" load_steps=3 format=3 uid="uid://c68gij7c58rdu"]
 
-[ext_resource type="PackedScene" uid="uid://f7o83hmapxib" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Chain/Fist Chain.tscn" id="1_fkx7y"]
-[ext_resource type="Script" uid="uid://dfs13x2y1saqc" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Chain/SingleShot.gd" id="2_p8iv6"]
+[ext_resource type="PackedScene" uid="uid://f7o83hmapxib" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Chain/Fist Chain.tscn" id="1_fkx7y"]
+[ext_resource type="Script" uid="uid://dfs13x2y1saqc" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Chain/SingleShot.gd" id="2_p8iv6"]
 
 [resource]
 script = ExtResource("2_p8iv6")

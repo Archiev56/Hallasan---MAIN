@@ -13,10 +13,10 @@ class_name State_Walk extends State
 @onready var ghost_timer = $ghost_timer
 
 @export var player_hud_path: String = "res://Hallasan-Sunset/Player/GUI/Player_hud/player_hud.tscn"
-@export var ghost_node : PackedScene = preload("res://Hallasan-Sunset/Player/Technical/Moves/Dash/DashGhost.tscn")
+@export var ghost_node : PackedScene = preload("res://Hallasan-Sunset/Player/Technical/Abilities/Dash/DashGhost.tscn")
 
-var dash_scene = preload("res://Hallasan-Sunset/Player/Technical/Moves/Dash/dash.tscn")
-var dash_ghost = preload("res://Hallasan-Sunset/Player/Technical/Moves/Dash/DashGhost.tscn")
+var dash_scene = preload("res://Hallasan-Sunset/Player/Technical/Abilities/Dash/dash.tscn")
+var dash_ghost = preload("res://Hallasan-Sunset/Player/Technical/Abilities/Dash/DashGhost.tscn")
 
 @onready var idle: State = $"../Idle"
 @onready var attack: State = $"../Attack"

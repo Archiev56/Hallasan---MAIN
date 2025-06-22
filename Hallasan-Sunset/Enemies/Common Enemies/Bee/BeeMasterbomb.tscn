@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://c3cx0nodai8jq" path="res://Hallasan-Sunset/Items/Currency/Gem/Gem.tres" id="12_4jgoj"]
 [ext_resource type="Script" uid="uid://jwnndw8cqhed" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_chase.gd" id="13_88idi"]
 [ext_resource type="Script" uid="uid://17sn8ceekmbw" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_bomb_throw.gd" id="14_al6bf"]
-[ext_resource type="PackedScene" uid="uid://cvoni5gbutug8" path="res://Hallasan-Sunset/Player/Technical/Moves/Fist Bomb/arc_projectile.tscn" id="15_ce8e1"]
+[ext_resource type="PackedScene" uid="uid://cvoni5gbutug8" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/arc_projectile.tscn" id="15_ce8e1"]
 [ext_resource type="PackedScene" uid="uid://bu0yfb7p2b8pi" path="res://Hallasan-Sunset/Player/Boxes/HitBox/hit_box.tscn" id="16_r46w7"]
 [ext_resource type="Texture2D" uid="uid://dbl07ag0yb620" path="res://Hallasan-Sunset/Enemies/Common Enemies/Slime/DestroySmoke.png" id="17_r14tu"]
 [ext_resource type="PackedScene" uid="uid://c55aho78pvpy8" path="res://Hallasan-Sunset/Enemies/Technical/Vision Area/Vision_area.tscn" id="18_usdsm"]
