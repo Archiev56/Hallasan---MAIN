@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmwx31xw6tiaq"]
+[gd_scene load_steps=14 format=3 uid="uid://bmwx31xw6tiaq"]
 
 [ext_resource type="Texture2D" uid="uid://dyjoxogrrmcpg" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/Animations/bomb.png" id="1_hcigq"]
 [ext_resource type="Texture2D" uid="uid://ba0fv0orkokpx" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/Animations/projectile_shadow.png" id="2_twb2o"]
 [ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="3_a48p7"]
 [ext_resource type="AudioStream" uid="uid://etn7q57jmw3q" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/Audio/bomb_explosion.wav" id="3_twb2o"]
+[ext_resource type="PackedScene" uid="uid://brwadfbnpe7jc" path="res://Hallasan-Sunset/Technical/Throwable/Throwable.tscn" id="5_a48p7"]
+[ext_resource type="Script" uid="uid://c7o4ip4he1pko" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/bomb.gd" id="6_q41c0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q41c0"]
 atlas = ExtResource("1_hcigq")
@@ -27,7 +29,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BombSprite:visible")
+tracks/1/path = NodePath("Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -39,7 +41,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BombSprite:frame")
+tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -51,7 +53,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BombSprite:modulate")
+tracks/3/path = NodePath("Sprite2D:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -102,7 +104,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BombSprite:frame")
+tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -114,7 +116,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BombSprite:modulate")
+tracks/2/path = NodePath("Sprite2D:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -145,7 +147,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_xl40j"]
@@ -166,7 +168,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BombSprite:visible")
+tracks/1/path = NodePath("Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -237,6 +239,8 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_twb2o"]
 radius = 50.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q41c0"]
+
 [node name="Bomb" type="Node2D"]
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]
@@ -245,7 +249,7 @@ position = Vector2(-1, 9)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_twb2o")
 
-[node name="BombSprite" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_q41c0")
 hframes = 4
 vframes = 4
@@ -268,7 +272,21 @@ autoplay = "default"
 
 [node name="HurtBox" parent="." instance=ExtResource("3_a48p7")]
 collision_mask = 258
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_twb2o")
-debug_color = Color(0.99368, 0, 0.23394, 0.42)
+debug_color = Color(0.994, 0, 0.234, 0)
+
+[node name="Throwable" parent="." instance=ExtResource("5_a48p7")]
+script = ExtResource("6_q41c0")
+fuse_duration = 4.0
+bounciness = 0.25
+max_bounces = 5
+throw_height_strength = 200.0
+throw_starting_height = 28.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Throwable"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_q41c0")
+debug_color = Color(0.499753, 0.581365, 0, 0.42)

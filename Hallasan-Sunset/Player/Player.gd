@@ -132,8 +132,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if _event.is_action_pressed("interact"):
 			PlayerManager.interact_pressed.emit()
 			return
-	if _event.is_action_pressed("Fist Smash"):
-		animation_player.play("Hands_Smash")
 		return
 
 func change_sprite() -> void:

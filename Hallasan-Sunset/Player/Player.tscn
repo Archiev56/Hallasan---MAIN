@@ -1,4 +1,4 @@
-[gd_scene load_steps=439 format=3 uid="uid://cbctfc3oob7kd"]
+[gd_scene load_steps=438 format=3 uid="uid://cbctfc3oob7kd"]
 
 [ext_resource type="Script" uid="uid://to2435so3hh5" path="res://Hallasan-Sunset/Player/Player.gd" id="1_l265g"]
 [ext_resource type="Texture2D" uid="uid://nknfj7nkp53n" path="res://Hallasan-Sunset/Player/Animations/Death/Dead_Down-4.png" id="2_1huh3"]
@@ -107,7 +107,6 @@
 [ext_resource type="PackedScene" uid="uid://x3kqulp18mfq" path="res://Hallasan-Sunset/Player/Technical/Camera/camera_2d.tscn" id="76_apee7"]
 [ext_resource type="Texture2D" uid="uid://doxge4lhhd5xd" path="res://Hallasan-Sunset/Player/Animations/Death/Dead_Down-3.png" id="76_hmbot"]
 [ext_resource type="PackedScene" uid="uid://bu0yfb7p2b8pi" path="res://Hallasan-Sunset/Player/Boxes/HitBox/hit_box.tscn" id="78_hsdvo"]
-[ext_resource type="PackedScene" uid="uid://cvoni5gbutug8" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/arc_projectile.tscn" id="79_mcnx3"]
 [ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="81_wnbgp"]
 [ext_resource type="Script" uid="uid://7rgvo620syyc" path="res://Hallasan-Sunset/Player/Scripts/State Machine/state_death.gd" id="84_tr3qq"]
 [ext_resource type="Script" uid="uid://b6i7kc5m2jbcb" path="res://Hallasan-Sunset/Player/Technical/Push/push.gd" id="85_7mujm"]
@@ -4179,7 +4178,7 @@ texture = SubResource("CompressedTexture2D_ry8dm")
 [node name="AttackEffectSprite" type="Sprite2D" parent="Sprite2D"]
 visible = false
 show_behind_parent = true
-texture = ExtResource("44_nbh45")
+texture = ExtResource("13_ssi4k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/AttackEffectSprite"]
 root_node = NodePath("../..")
@@ -4253,12 +4252,17 @@ script = ExtResource("65_t8td5")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("66_hex77")
+dash_speed = 120.0
+dash_duration = 0.5
 
 [node name="ghost_timer" type="Timer" parent="StateMachine/Walk"]
 wait_time = 1.3
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("67_i7pm4")
+decelerate_speed = 0.9
+drawback_duration = 0.01
+thrust_duration = 0.2
 
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("69_58qxy")
@@ -4401,10 +4405,6 @@ texture = null
 
 [node name="AttackTimer" type="Timer" parent="Timers"]
 wait_time = 0.1
-
-[node name="arc_projectile" parent="." instance=ExtResource("79_mcnx3")]
-visible = false
-position = Vector2(-1, -13)
 
 [node name="Camera2D" parent="." instance=ExtResource("76_apee7")]
 process_callback = 0
