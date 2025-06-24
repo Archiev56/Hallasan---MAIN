@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://da6jdrjbppj4h"]
+
+[ext_resource type="Script" uid="uid://qu8dvysfokcc" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist_projectile/fist_projectile.gd" id="1_j875o"]
+[ext_resource type="Texture2D" uid="uid://b7h4whx4cc77" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist_projectile/fist_projectile_sheet.png" id="2_j875o"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="3_0ddh7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mv2uk"]
+radius = 8.06226
+
+[node name="FistProjectile" type="Node2D"]
+script = ExtResource("1_j875o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_j875o")
+hframes = 16
+frame = 4
+
+[node name="HurtBox" parent="." instance=ExtResource("3_0ddh7")]
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_mv2uk")
+debug_color = Color(0.996144, 0, 0.192362, 0.42)

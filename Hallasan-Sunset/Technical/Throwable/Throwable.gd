@@ -18,7 +18,9 @@ var animation_player : AnimationPlayer
 
 
 
+
 func _ready() -> void:
+
 	area_entered.connect( _on_area_enter )
 	area_exited.connect( _on_area_exit )
 	prop = get_parent()
@@ -110,9 +112,10 @@ func _on_area_enter( _a : Area2D ) -> void:
 	pass
 
 
-func _on_area_exit( _a : Area2D ) -> void:
-	PlayerManager.interact_pressed.disconnect( player_interact )
-	pass
+func _on_area_exit(_a: Area2D) -> void:
+	if PlayerManager.interact_pressed.is_connected(player_interact):
+		PlayerManager.interact_pressed.disconnect(player_interact)
+
 
 func _on_body_entered(_n: Node2D) -> void:
 	if _n is TileMapLayer:

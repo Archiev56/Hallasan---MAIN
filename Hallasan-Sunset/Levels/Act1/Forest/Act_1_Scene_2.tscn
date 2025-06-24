@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://c712lfsg073ux"]
+[gd_scene load_steps=30 format=4 uid="uid://c712lfsg073ux"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_phgp6"]
 [ext_resource type="AudioStream" uid="uid://ck5s35f0psf2s" path="res://Hallasan-Sunset/Audio/Songs/Act 1/Forest/Forest Song.mp3" id="2_dusvs"]
@@ -15,15 +15,17 @@
 [ext_resource type="PackedScene" uid="uid://0mf0ikb45n58" path="res://Hallasan-Sunset/Environment/Forest/Gate/gate_2.tscn" id="11_8mbbb"]
 [ext_resource type="PackedScene" uid="uid://bbejca547y4ce" path="res://Hallasan-Sunset/Environment/Forest/Trees/Magic Tree/MagicTree.tscn" id="12_io2b3"]
 [ext_resource type="PackedScene" uid="uid://wwugboi7jgu" path="res://Hallasan-Sunset/Environment/Forest/Log Pile/Log Pile.tscn" id="13_g4y2s"]
-[ext_resource type="PackedScene" uid="uid://dj8oxm4qy85cv" path="res://Hallasan-Sunset/Environment/Village/Buildings/Home/home.tscn" id="14_qhhtk"]
 [ext_resource type="PackedScene" uid="uid://cal6ga32aayko" path="res://Hallasan-Sunset/Technical/Save Bell/Save Bell.tscn" id="15_qmltq"]
 [ext_resource type="PackedScene" uid="uid://obenohw15alg" path="res://Hallasan-Sunset/Environment/Village/Crate/Crate.tscn" id="16_6vspm"]
 [ext_resource type="PackedScene" uid="uid://ck2dpa4dd808r" path="res://Hallasan-Sunset/Environment/Forest/Pot/Pot.tscn" id="17_hd631"]
 [ext_resource type="PackedScene" uid="uid://4cp3bb2wjdid" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Interactive_grass.tscn" id="18_c0bkd"]
 [ext_resource type="PackedScene" uid="uid://ulerv0qebh18" path="res://Hallasan-Sunset/npc/Characters/Act 1/Totem Poles/Totems/Totem1.tscn" id="18_rqqud"]
+[ext_resource type="PackedScene" uid="uid://d3epwtunwpuys" path="res://Hallasan-Sunset/Environment/Village/Buildings/Cabin/cabin.tscn" id="19_iin41"]
 [ext_resource type="PackedScene" uid="uid://cb2ddj5khwruw" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.tscn" id="19_p3ys4"]
 [ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="20_pgqld"]
+[ext_resource type="PackedScene" uid="uid://ddl4fc5c6gjjv" path="res://Hallasan-Sunset/Environment/Dungeon/Dungeon_elements/Door/Door.tscn" id="20_tuwum"]
 [ext_resource type="Resource" uid="uid://c3cx0nodai8jq" path="res://Hallasan-Sunset/Items/Currency/Gem/Gem.tres" id="21_21khr"]
+[ext_resource type="PackedScene" uid="uid://ctb2wokwm4ljm" path="res://Hallasan-Sunset/Environment/Village/Buildings/Chimney/Chimney.tscn" id="21_tens7"]
 [ext_resource type="PackedScene" uid="uid://ddioxudb4roti" path="res://Hallasan-Sunset/Items/Technical/item_pickup/item_pickup.tscn" id="22_0etsc"]
 [ext_resource type="Resource" uid="uid://cw3bf5p68wy7b" path="res://Hallasan-Sunset/Items/Consumables/Kimbap/Kimbap.tres" id="23_0i4j0"]
 
@@ -127,10 +129,6 @@ position = Vector2(568, 248)
 
 [node name="LogPile" parent="Environment/Objects" instance=ExtResource("13_g4y2s")]
 position = Vector2(584, 56)
-
-[node name="Home" parent="Environment/Objects" instance=ExtResource("14_qhhtk")]
-y_sort_enabled = true
-position = Vector2(384, -88)
 
 [node name="Wooden Crate" parent="Environment/Objects" instance=ExtResource("16_6vspm")]
 position = Vector2(280, 80)
@@ -264,6 +262,15 @@ position = Vector2(419, 229)
 [node name="InteractiveGrass43" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
 position = Vector2(419, 200)
 
+[node name="Cabin" parent="Environment/Objects" instance=ExtResource("19_iin41")]
+position = Vector2(394, -91)
+
+[node name="Door" parent="Environment/Objects/Cabin" instance=ExtResource("20_tuwum")]
+position = Vector2(0, 89)
+
+[node name="Chimney" parent="Environment/Objects/Cabin" instance=ExtResource("21_tens7")]
+position = Vector2(-108, -27)
+
 [node name="Interactables" type="Node2D" parent="Environment"]
 y_sort_enabled = true
 
@@ -305,7 +312,7 @@ position = Vector2(264, 608)
 
 [node name="LevelTransition2" parent="Transitions" instance=ExtResource("19_p3ys4")]
 z_index = 100
-position = Vector2(384, 11)
+position = Vector2(395, 28)
 level = "res://Hallasan-Sunset/Levels/Act1/Forest/Act_1_Scene_1.tscn"
 side = 2
 

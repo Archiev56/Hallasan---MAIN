@@ -5,17 +5,17 @@ var can_combo : bool = false
 var combo_requested : bool = false
 var combo_step : int = 0  # Tracks combo step (0 = first attack, then 1 and 2)
 var stored_attack_direction : Vector2  # Store the direction when attack starts
-
+@onready var attack_animation_player = $"../../Sprite2D/AttackEffectSprite/AnimationPlayer"
 @export var attack_sound : AudioStream
 @export_range(0,1,0.05) var decelerate_speed : float = 0.1
 @export var drawback_force : float = 150.0  # Force applied backward during windup
 @export var thrust_force : float = 300.0    # Force applied forward during attack
 @export var drawback_duration : float = 0.08  # Split second drawback
 @export var thrust_duration : float = 0.12    # Forward thrust duration
+@onready var attack_effect_sprite = $"../../Sprite2D/AttackEffectSprite"
 
 @onready var idle : State = $"../Idle"
 @onready var walk : State = $"../Walk"
-@onready var charge_attack = $"../ChargeAttack"
 @onready var attack_timer = $"../../Timers/AttackTimer"
 @onready var animation_player : AnimationPlayer = $"../../AnimationPlayer"
 @onready var attack_anim : AnimationPlayer = $"../../Sprite2D/AttackEffectSprite/AnimationPlayer"
@@ -28,6 +28,8 @@ func enter() -> void:
 	can_combo = false
 	combo_requested = false
 	player.UpdateAnimation("attack")
+	attack_effect_sprite.UpdateAnimation("attack")
+	
 	
 	# **Store the attack direction when entering the state**
 	stored_attack_direction = _determine_attack_direction()

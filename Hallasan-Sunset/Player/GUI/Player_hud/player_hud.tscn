@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dsdsymcscej23"]
+[gd_scene load_steps=59 format=3 uid="uid://dsdsymcscej23"]
 
 [ext_resource type="Script" uid="uid://dbsys8xpe6boq" path="res://Hallasan-Sunset/Player/GUI/Player_hud/player_hud.gd" id="1_enff3"]
 [ext_resource type="PackedScene" uid="uid://3ou4mscqfens" path="res://Hallasan-Sunset/Player/GUI/Player_hud/heart_gui.tscn" id="2_xlvne"]
@@ -16,11 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://dw8memd7vgnof" path="res://Hallasan-Sunset/Player/GUI/Player_hud/Sprites/Energy.png" id="13_3v4dm"]
 [ext_resource type="Shader" uid="uid://ckqgs303h8fu1" path="res://Hallasan-Sunset/Player/GUI/Player_hud/player_hurt.gdshader" id="14_sqlg0"]
 [ext_resource type="Script" uid="uid://dnbcj1tn57m15" path="res://Hallasan-Sunset/Player/GUI/Player_hud/selection_wheel.gd" id="16_3v4dm"]
-[ext_resource type="Script" uid="uid://bs0tnkgni11s5" path="res://Hallasan-Sunset/Player/GUI/Player_hud/Wheel_option.gd" id="17_wpfir"]
-[ext_resource type="Texture2D" uid="uid://ckmxf36raq6f2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Sprites/gear.png" id="18_kigq8"]
+[ext_resource type="Texture2D" uid="uid://fmh7frmypt3j" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Hands_smash/hands_smash_diagonal_down_right/hands_smash_diag_down_right5.png" id="18_2de4b"]
+[ext_resource type="Texture2D" uid="uid://ca3xi6xmo4pcs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/fist_spritesheet.png" id="19_0yu4s"]
 [ext_resource type="Texture2D" uid="uid://coqt2m4j05rkx" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Fists.png" id="19_knttt"]
-[ext_resource type="Texture2D" uid="uid://exdx5gh7ehjr" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Earth_gloves.png" id="20_oo4ph"]
-[ext_resource type="Texture2D" uid="uid://bpwonm74cyb53" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Ice_Gloves.png" id="21_2de4b"]
+[ext_resource type="Texture2D" uid="uid://cfaxiqm3i6qk8" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Spike/Sprites/atk1 fx-Spike fx-single.png" id="19_oo4ph"]
+[ext_resource type="Texture2D" uid="uid://c8qa8emwd4h8m" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Air Strike/Sprites/atk1 fx2-energy ish fx-single.png" id="20_2de4b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqb76"]
 content_margin_left = 12.0
@@ -685,33 +685,6 @@ _data = {
 &"player_hurt": SubResource("Animation_opkeq")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kigq8"]
-atlas = ExtResource("18_kigq8")
-script = ExtResource("17_wpfir")
-name = "wheel"
-metadata/_custom_type_script = "uid://bs0tnkgni11s5"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_knttt"]
-atlas = ExtResource("19_knttt")
-region = Rect2(0, 0, 32, 32)
-script = ExtResource("17_wpfir")
-name = "Fists"
-metadata/_custom_type_script = "uid://bs0tnkgni11s5"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2de4b"]
-atlas = ExtResource("20_oo4ph")
-region = Rect2(0, 0, 32, 32)
-script = ExtResource("17_wpfir")
-name = "Earth Gloves"
-metadata/_custom_type_script = "uid://bs0tnkgni11s5"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oo4ph"]
-atlas = ExtResource("19_knttt")
-region = Rect2(0, 0, 32, 32)
-script = ExtResource("17_wpfir")
-name = "Smash Gloves"
-metadata/_custom_type_script = "uid://bs0tnkgni11s5"
-
 [sub_resource type="Animation" id="Animation_2de4b"]
 length = 0.001
 tracks/0/type = "value"
@@ -761,6 +734,18 @@ height = 32
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l06d"]
+atlas = ExtResource("19_0yu4s")
+region = Rect2(0, 0, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yu4s"]
+atlas = ExtResource("19_oo4ph")
+region = Rect2(38, 1, 22, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3p2f"]
+atlas = ExtResource("20_2de4b")
+region = Rect2(382, 0, 142, 160)
 
 [node name="PlayerHUD" type="CanvasLayer" groups=["player_hud"]]
 offset = Vector2(2.08165e-12, 2.08165e-12)
@@ -1243,7 +1228,6 @@ highlight_color = Color(0, 0, 0, 0.466667)
 outer_radius = 140
 inner_radius = 40
 line_width = 1
-options = Array[ExtResource("17_wpfir")]([SubResource("AtlasTexture_kigq8"), SubResource("AtlasTexture_knttt"), SubResource("AtlasTexture_2de4b"), SubResource("AtlasTexture_oo4ph")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/SelectionWheel"]
 libraries = {
@@ -1269,9 +1253,11 @@ texture = SubResource("GradientTexture2D_2de4b")
 
 [node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect"]
 layout_mode = 0
-offset_left = -4.0
-offset_right = 36.0
-offset_bottom = 40.0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 44.0
+offset_bottom = 48.0
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("19_knttt")
 
 [node name="TextureRect2" type="TextureRect" parent="Control/Abilities/HBoxContainer"]
@@ -1280,10 +1266,13 @@ layout_mode = 2
 texture = SubResource("GradientTexture2D_2de4b")
 
 [node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect2"]
-offset_left = -4.0
-offset_right = 36.0
-offset_bottom = 40.0
-texture = ExtResource("21_2de4b")
+layout_mode = 0
+offset_left = -25.0
+offset_top = -17.0
+offset_right = 103.0
+offset_bottom = 111.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("18_2de4b")
 
 [node name="TextureRect3" type="TextureRect" parent="Control/Abilities/HBoxContainer"]
 texture_filter = 1
@@ -1291,18 +1280,11 @@ layout_mode = 2
 texture = SubResource("GradientTexture2D_2de4b")
 
 [node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect3"]
+layout_mode = 0
 offset_left = -4.0
 offset_right = 36.0
 offset_bottom = 40.0
-texture = ExtResource("19_knttt")
-
-[node name="ArrowCountLabel" type="Label" parent="Control/Abilities/HBoxContainer/TextureRect3"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 40.0
-offset_right = 50.0
-offset_bottom = 53.0
-text = "99"
+texture = SubResource("AtlasTexture_1l06d")
 
 [node name="TextureRect4" type="TextureRect" parent="Control/Abilities/HBoxContainer"]
 texture_filter = 1
@@ -1310,18 +1292,26 @@ layout_mode = 2
 texture = SubResource("GradientTexture2D_2de4b")
 
 [node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect4"]
-offset_left = -4.0
-offset_right = 36.0
-offset_bottom = 40.0
-texture = ExtResource("20_oo4ph")
-
-[node name="BombCountLabel" type="Label" parent="Control/Abilities/HBoxContainer/TextureRect4"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 40.0
-offset_right = 50.0
-offset_bottom = 53.0
-text = "99"
+offset_left = -4.0
+offset_top = 1.0
+offset_right = 36.0
+offset_bottom = 41.0
+texture = SubResource("AtlasTexture_0yu4s")
+
+[node name="TextureRect5" type="TextureRect" parent="Control/Abilities/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("GradientTexture2D_2de4b")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect5"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -13.0
+offset_right = 125.0
+offset_bottom = 147.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_k3p2f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

@@ -73,12 +73,6 @@ func throw(throw_direction: Vector2) -> void:
 		scale.x = 1 if direction.x > 0 else -1
 
 	# Play directional animation
-	if abs(direction.x) > abs(direction.y):
-		animation_player.play("attack_side")
-	elif direction.y > 0:
-		animation_player.play("attack_down")
-	else:
-		animation_player.play("attack_up")
 
 	PlayerManager.play_audio(catch_audio)
 	player.UpdateAnimation("catch")

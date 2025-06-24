@@ -26,7 +26,9 @@ func enter() -> void:
 
 ## What happens when the player exits this State?
 func exit() -> void:
+
 	if throwable:
+		
 		if player.direction == Vector2.ZERO:
 			throwable.throw_direction = player.cardinal_direction
 		else:
@@ -40,6 +42,7 @@ func exit() -> void:
 			player.audio.stream = throw_audio
 			player.audio.play()
 			throwable.throw()
+			
 			pass
 		
 		pass

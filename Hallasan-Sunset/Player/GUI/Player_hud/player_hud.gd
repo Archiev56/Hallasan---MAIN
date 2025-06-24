@@ -171,11 +171,11 @@ func update_ability_ui(ability_index: int) -> void:
 
 
 func update_arrow_count(count: int) -> void:
-	arrow_count_label.text = str(count)
+
 	pass
 
 func update_bomb_count(count: int) -> void:
-	bomb_count_label.text = str(count)
+	
 	pass
 
 func _on_show_pause() -> void:

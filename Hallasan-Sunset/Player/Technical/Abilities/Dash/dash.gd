@@ -11,11 +11,9 @@ var ghost_scene = preload("res://Hallasan-Sunset/Player/Technical/Abilities/Dash
 var can_dash = true
 var direction = Vector2.ZERO
 # Adjusted path: Assuming PlayerSprite is the name of your player sprite node
-@onready var sprite : Sprite2D = $"../Sprite2D"  # Change this to the correct sprite node path
 
 func _ready():
-	# Connect the timeout signal to the method
-	self.sprite = sprite
+	pass
 	
 
 func instance_ghost():
@@ -27,11 +25,7 @@ func instance_ghost():
 	
 
 	# Ensure sprite_node is valid before accessing texture
-	if sprite:
-		var current_texture = sprite.texture
-		ghost.texture = current_texture  # Assign the current texture to the ghost sprite
-	else:
-		print("Error: sprite_node is null")  # Debugging info
+
 
 func start_dash(duration):
 	duration_timer.wait_time = duration
