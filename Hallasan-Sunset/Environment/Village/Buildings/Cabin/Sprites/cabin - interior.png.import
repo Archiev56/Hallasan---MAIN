@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm7cqqox60uqo"
-path="res://.godot/imported/Untitled_Artwork 179.png-4f77fe1e1c49ece0e92b07ed2dedf375.ctex"
+uid="uid://dlhmtp6va8opg"
+path="res://.godot/imported/cabin - interior.png-374f64cd839e51c4315f3065fed31867.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hallasan-Sunset/npc/Characters/Act 1/Sansin/Sprites/Untitled_Artwork 179.png"
-dest_files=["res://.godot/imported/Untitled_Artwork 179.png-4f77fe1e1c49ece0e92b07ed2dedf375.ctex"]
+source_file="res://Hallasan-Sunset/Environment/Village/Buildings/Cabin/Sprites/cabin - interior.png"
+dest_files=["res://.godot/imported/cabin - interior.png-374f64cd839e51c4315f3065fed31867.ctex"]
 
 [params]
 

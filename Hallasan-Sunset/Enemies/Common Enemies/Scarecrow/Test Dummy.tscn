@@ -316,14 +316,16 @@ hp = 100
 [node name="ShadowCopy" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.231373)
 texture_filter = 1
-position = Vector2(-1, 1)
+position = Vector2(0, 12)
+scale = Vector2(0.5, 1)
 texture = ExtResource("2_xj0sc")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -23)
 scale = Vector2(0.64, 1)
 texture = ExtResource("5_7xka0")
+hframes = 8
+vframes = 3
 
 [node name="AttackHurtBox" parent="Sprite" instance=ExtResource("4_rcl2x")]
 unique_name_in_owner = true
@@ -336,7 +338,7 @@ shape = SubResource("CircleShape2D_qwr4k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_n6mj4")
+&"": SubResource("AnimationLibrary_n6mj4")
 }
 autoplay = "idle_down"
 
@@ -376,7 +378,6 @@ script = ExtResource("40_3suge")
 chase_speed = 70.0
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../Sprite/AttackHurtBox")
-state_aggro_duration = 5.0
 next_state = NodePath("../Wander")
 
 [node name="HitBox" parent="." instance=ExtResource("41_xx1us")]
@@ -401,7 +402,7 @@ frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DestroyEffectSprite"]
 libraries = {
-"": SubResource("AnimationLibrary_s7gr4")
+&"": SubResource("AnimationLibrary_s7gr4")
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -426,18 +427,18 @@ shape = SubResource("CircleShape2D_qwr4k")
 position = Vector2(0, -24)
 emitting = false
 amount = 4
-process_material = SubResource("ParticleProcessMaterial_h5dtl")
 texture = ExtResource("45_xsdbs")
 lifetime = 0.6
 one_shot = true
 explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_h5dtl")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -26)
 emitting = false
 amount = 1
-process_material = SubResource("ParticleProcessMaterial_bkvyt")
 texture = ExtResource("46_h2wc7")
 one_shot = true
 explosiveness = 0.8
+process_material = SubResource("ParticleProcessMaterial_bkvyt")

@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://dm3ivd3s5t430"]
+
+[ext_resource type="Texture2D" uid="uid://c35l5nsabmcwj" path="res://Hallasan-Sunset/npc/Characters/Act 1/Inugi/Sprites/test2.png" id="1_n6aeb"]
+[ext_resource type="Material" uid="uid://8g8oxepcywc7" path="res://Hallasan-Sunset/Shaders/light_material.tres" id="2_h72h6"]
+[ext_resource type="Texture2D" uid="uid://bmmwp0tkhjavp" path="res://Hallasan-Sunset/npc/Characters/Act 1/Inugi/Sprites/Left_eye.png" id="3_sikyn"]
+[ext_resource type="Texture2D" uid="uid://bi2vvdkepulyy" path="res://Hallasan-Sunset/npc/Characters/Act 1/Inugi/Sprites/Right_eye.png" id="4_46qej"]
+[ext_resource type="Texture2D" uid="uid://bh3nexbs80o8i" path="res://Hallasan-Sunset/npc/Characters/Act 1/Inugi/Sprites/Imugi_test.png" id="5_sikyn"]
+
+[sub_resource type="Animation" id="Animation_h72h6"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 2), Vector2(0, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_sikyn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46qej"]
+_data = {
+&"Idle": SubResource("Animation_h72h6"),
+&"RESET": SubResource("Animation_sikyn")
+}
+
+[sub_resource type="Gradient" id="Gradient_xcspu"]
+colors = PackedColorArray(0.63, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7ue2u"]
+gradient = SubResource("Gradient_xcspu")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Inugi" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_46qej")
+}
+autoplay = "Idle"
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 5)
+
+[node name="Mouth" type="Sprite2D" parent="Node2D"]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_n6aeb")
+
+[node name="Left Eye" type="Sprite2D" parent="Node2D"]
+visible = false
+texture_filter = 1
+material = ExtResource("2_h72h6")
+texture = ExtResource("3_sikyn")
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D/Left Eye"]
+position = Vector2(-34, -8.48101)
+color = Color(1, 0, 0, 1)
+energy = 10.0
+texture = SubResource("GradientTexture2D_7ue2u")
+
+[node name="Right Eye" type="Sprite2D" parent="Node2D"]
+visible = false
+texture_filter = 1
+material = ExtResource("2_h72h6")
+texture = ExtResource("4_46qej")
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D/Right Eye"]
+position = Vector2(30, -8.34157)
+color = Color(1, 0, 0, 1)
+energy = 10.0
+texture = SubResource("GradientTexture2D_7ue2u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("5_sikyn")

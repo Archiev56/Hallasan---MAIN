@@ -1,4 +1,4 @@
-extends Sprite2D
+class_name attackeffectsprite extends Sprite2D
 @onready var animation_player = $AnimationPlayer
 
 var DIR_8 = []
@@ -6,8 +6,10 @@ var DIR_8 = []
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 
-func UpdateAnimation(state: String) -> void:
-	animation_player.play(state + "_" + AnimDirection())
+func UpdateAnimation(state: String, combo_step: int = 0) -> void:
+	var anim_suffix = "_" + str(combo_step) if combo_step > 0 else ""
+	animation_player.play(state + "_" + AnimDirection() + anim_suffix)
+
 
 func AnimDirection() -> String:
 	if cardinal_direction == Vector2.DOWN:

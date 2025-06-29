@@ -22,25 +22,26 @@ var stored_attack_direction : Vector2  # Store the direction when attack starts
 @onready var audio : AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 @onready var hurt_box : HurtBox = $"../../Interactions/HurtBox"
 
-## **🚀 What happens when the player enters this State?**
 func enter() -> void:
 	attacking = true
 	can_combo = false
 	combo_requested = false
 	player.UpdateAnimation("attack")
-	attack_effect_sprite.UpdateAnimation("attack")
 	
+	# Update attack effect sprite with direction and combo step
+	attack_effect_sprite.cardinal_direction = player.cardinal_direction
+	attack_effect_sprite.UpdateAnimation("attack", combo_step)
 	
-	# **Store the attack direction when entering the state**
+	# Store the attack direction when entering the state
 	stored_attack_direction = _determine_attack_direction()
 	
-	# **Play first attack if combo has not started**
+	# Start or continue combo
 	if combo_step == 0 or attack_timer.is_stopped():  
-		combo_step = 0  # Ensure we start at the first attack
+		combo_step = 0
 	else:
-		combo_step += 1  # Move to the next attack in the sequence
+		combo_step += 1
 	
-	# Play attack animation based on combo step
+	# Play main attack animation
 	animation_player.play("attack_" + player.AnimDirection() + ("_" + str(combo_step) if combo_step > 0 else ""))
 	attack_timer.start()
 	animation_player.animation_finished.connect(_end_attack)
@@ -54,32 +55,27 @@ func enter() -> void:
 	await get_tree().create_timer(0.1).timeout
 	can_combo = true
 
-## **🚀 Determines attack direction based on current state**
 func _determine_attack_direction() -> Vector2:
-	# First priority: use player's current input direction
 	if player.direction != Vector2.ZERO:
 		return player.direction.normalized()
 	
-	# Second priority: parse the animation name to get direction
 	var anim_name = "attack_" + player.AnimDirection()
 	
-	# Check what animation is about to play
 	if "up" in anim_name:
 		if "right" in anim_name:
-			return Vector2(1, -1).normalized()  # Up-right diagonal
+			return Vector2(1, -1).normalized()
 		elif "left" in anim_name:
-			return Vector2(-1, -1).normalized()  # Up-left diagonal
+			return Vector2(-1, -1).normalized()
 		else:
 			return Vector2.UP
 	elif "down" in anim_name:
 		if "right" in anim_name:
-			return Vector2(1, 1).normalized()  # Down-right diagonal
+			return Vector2(1, 1).normalized()
 		elif "left" in anim_name:
-			return Vector2(-1, 1).normalized()  # Down-left diagonal
+			return Vector2(-1, 1).normalized()
 		else:
 			return Vector2.DOWN
 	elif "side" in anim_name:
-		# Check sprite flip to determine left/right
 		if player.sprite.flip_h:
 			return Vector2.RIGHT
 		else:
@@ -89,33 +85,25 @@ func _determine_attack_direction() -> Vector2:
 	elif "right" in anim_name:
 		return Vector2.RIGHT
 	
-	# Final fallback
 	return Vector2.DOWN
 
-## **🚀 Applies drawback then thrust movement**
 func _apply_attack_movement() -> void:
-	# Use stored direction for consistent movement
 	var attack_direction = stored_attack_direction
 	
-	# Phase 1: Quick drawback
 	var drawback_tween = create_tween()
 	drawback_tween.tween_method(_apply_movement_force, -attack_direction * drawback_force, Vector2.ZERO, drawback_duration)
 	
-	# Phase 2: Forward thrust (starts after drawback)
 	await get_tree().create_timer(drawback_duration)
 	var thrust_tween = create_tween()
 	thrust_tween.tween_method(_apply_movement_force, attack_direction * thrust_force, Vector2.ZERO, thrust_duration)
 
-## **🚀 Applies movement force during attack**
 func _apply_movement_force(force: Vector2) -> void:
 	if attacking:
 		player.velocity += force * get_physics_process_delta_time()
 
-## **🚀 Gets the direction of the attack based on player orientation**
 func _get_attack_direction() -> Vector2:
 	return stored_attack_direction
 
-## **🚀 What happens when the player exits this State?**
 func exit() -> void:
 	animation_player.animation_finished.disconnect(_end_attack)
 	attacking = false
@@ -123,7 +111,6 @@ func exit() -> void:
 	can_combo = false
 	combo_requested = false
 
-## **🚀 What happens during the _process update in this State?**
 func Process(_delta : float) -> State:
 	player.velocity -= player.velocity * decelerate_speed * _delta
 	if not attacking:
@@ -133,55 +120,52 @@ func Process(_delta : float) -> State:
 			return walk
 	return null
 
-## **🚀 What happens during the physics process update in this State?**
 func Physics(_delta : float) -> State:
 	return null
 
-## **🚀 Handles attack input**
 func handle_input(_event: InputEvent) -> State:
 	if _event.is_action_pressed("attack"):
 		combo_requested = true
 	return null
 
-## **🚀 Fix: Ensure attack resets after a full combo**
 func _end_attack(_newAnimName : String) -> void:
 	if can_combo and combo_requested:
 		if combo_step == 0:  
-			combo_step = 1  # Move to attack_x_1
+			combo_step = 1
 			animation_player.play("attack_" + player.AnimDirection() + "_1")
 			
-			# Apply enhanced movement for combo attacks
+			# Update effect sprite for combo step
+			attack_effect_sprite.cardinal_direction = player.cardinal_direction
+			attack_effect_sprite.UpdateAnimation("attack", combo_step)
+			
 			var combo_multiplier = 1.0 + combo_step * 0.3
 			_apply_combo_movement(combo_multiplier)
 			
 			await get_tree().create_timer(0.075).timeout
-			hurt_box.monitoring = true  # **Re-enable hit detection**
+			hurt_box.monitoring = true
 		elif combo_step == 1:
-			combo_step = 0  # Reset combo after second attack
+			combo_step = 0
 			state_machine.change_state(idle)
 			return
 		
-		return  # **Ensure function doesn't reset early**
+		return
 	else:
-		combo_step = 0  # Reset combo if no new attack is pressed
+		combo_step = 0
 		await get_tree().create_timer(0.1).timeout
 		state_machine.change_state(idle)
 	
 	attacking = false
-	combo_requested = false  # Reset request for next attack
-	hurt_box.monitoring = false  # **Ensure monitoring is disabled when exiting**
+	combo_requested = false
+	hurt_box.monitoring = false
 
-## **🚀 Applies enhanced movement for combo attacks**
 func _apply_combo_movement(multiplier: float) -> void:
 	var attack_direction = _get_attack_direction()
 	var enhanced_drawback = drawback_force * multiplier
 	var enhanced_thrust = thrust_force * multiplier
 	
-	# Enhanced drawback
 	var drawback_tween = create_tween()
 	drawback_tween.tween_method(_apply_movement_force, -attack_direction * enhanced_drawback, Vector2.ZERO, drawback_duration * 0.8)
 	
-	# Enhanced thrust
 	await get_tree().create_timer(drawback_duration * 0.8)
 	var thrust_tween = create_tween()
 	thrust_tween.tween_method(_apply_movement_force, attack_direction * enhanced_thrust, Vector2.ZERO, thrust_duration * 0.9)

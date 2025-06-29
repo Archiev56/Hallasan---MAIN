@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bkgbqgy67q6fd"]
+[gd_scene load_steps=32 format=4 uid="uid://bkgbqgy67q6fd"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_6c3hc"]
 [ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="2_05rfe"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://mquiukhsvnvp" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tree Borders/TreeBorderSide.tscn" id="26_mqso4"]
 [ext_resource type="PackedScene" uid="uid://4cp3bb2wjdid" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Interactive_grass.tscn" id="27_am8vj"]
 [ext_resource type="PackedScene" uid="uid://bmwx31xw6tiaq" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/Bomb.tscn" id="28_05rfe"]
+[ext_resource type="PackedScene" uid="uid://cb2ddj5khwruw" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.tscn" id="29_dgxmi"]
 [ext_resource type="PackedScene" uid="uid://3lfwldh0r6os" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="30_waf45"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fr3u6"]
@@ -49,7 +50,7 @@ y_sort_enabled = true
 script = ExtResource("1_6c3hc")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_05rfe")]
-position = Vector2(606, -15)
+position = Vector2(538, 331)
 
 [node name="Tileset" parent="." instance=ExtResource("3_ctf2f")]
 z_index = -1
@@ -320,6 +321,12 @@ position = Vector2(280, 302)
 [node name="Transitions" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="LevelTransition" parent="Transitions" instance=ExtResource("29_dgxmi")]
+position = Vector2(544, 294)
+level = "uid://c4nahr2kh4e4f"
+size = 1
+side = 2
+
 [node name="Items" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -328,4 +335,5 @@ position = Vector2(655, 5)
 
 [editable path="Environment/Objects/Lamp post"]
 [editable path="Environment/Objects/Lamp post2"]
+[editable path="Environment/Objects/Cabin/Chimney"]
 [editable path="Environment/Borders/SideBorder2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://c712lfsg073ux"]
+[gd_scene load_steps=34 format=4 uid="uid://c712lfsg073ux"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_phgp6"]
 [ext_resource type="AudioStream" uid="uid://ck5s35f0psf2s" path="res://Hallasan-Sunset/Audio/Songs/Act 1/Forest/Forest Song.mp3" id="2_dusvs"]
@@ -28,8 +28,14 @@
 [ext_resource type="PackedScene" uid="uid://ctb2wokwm4ljm" path="res://Hallasan-Sunset/Environment/Village/Buildings/Chimney/Chimney.tscn" id="21_tens7"]
 [ext_resource type="PackedScene" uid="uid://ddioxudb4roti" path="res://Hallasan-Sunset/Items/Technical/item_pickup/item_pickup.tscn" id="22_0etsc"]
 [ext_resource type="Resource" uid="uid://cw3bf5p68wy7b" path="res://Hallasan-Sunset/Items/Consumables/Kimbap/Kimbap.tres" id="23_0i4j0"]
+[ext_resource type="PackedScene" uid="uid://bea1ayvp54yr4" path="res://Hallasan-Sunset/Enemies/Common Enemies/Scarecrow/Test Dummy.tscn" id="29_tuwum"]
+[ext_resource type="Texture2D" uid="uid://cevuykiw0gvxa" path="res://Hallasan-Sunset/Enemies/Common Enemies/Scarecrow/Training Dummy Sprite Sheet.png" id="30_v7d80"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="31_v4e08"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_daugx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xiet6"]
+radius = 13.3333
 
 [node name="Level2" type="Node2D"]
 y_sort_enabled = true
@@ -38,7 +44,7 @@ music = ExtResource("2_dusvs")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("20_pgqld")]
 z_index = 0
-position = Vector2(384, 80)
+position = Vector2(379, 195)
 
 [node name="Tileset" parent="." instance=ExtResource("3_t5med")]
 z_index = -1
@@ -48,7 +54,7 @@ tile_map_data = PackedByteArray("AAD9//z/AQAAAAAAAAD9//3/AQAAAAAAAAD9//7/AQAAAAA
 
 [node name="LevelTileMapLayer2" type="TileMapLayer" parent="Tileset"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAJABAADAACAA8AAAAJABEADAACABAAAAAIABAADAACAA8AAAAIABEADAACABAAAAAHABAADAACAA8AAAAHABEADAACABAAAAAGABAADAACAA8AAAAGABEADAACABAAAAAFABAADAACAA8AAAAFABEADAACABAAAAAEABAADAACAA8AAAAEABEADAACABAAAAADABAADAACAA8AAAADABEADAACABAAAAACABAADAACAA8AAAACABEADAACABAAAAABABAADAACAA8AAAABABEADAACABAAAAAAABAADAACAA8AAAAAABEADAACABAAAAD//xAADAACAA8AAAD//xEADAACABAAAAD+/xAADAACAA8AAAD+/xEADAACABAAAAAOABAADAACAA8AAAAOABEADAACABAAAAAPABAADAACAA8AAAAPABEADAACABAAAAAQABAADAACAA8AAAAQABEADAACABAAAAARABAADAACAA8AAAARABEADAACABAAAAASABAADAACAA8AAAASABEADAACABAAAAATABAADAACAA8AAAATABEADAACABAAAAAUABAADAACAA8AAAAUABEADAACABAAAAAVABAADAACAA8AAAAVABEADAACABAAAAAWABAADAACAA8AAAAWABEADAACABAAAAAXABAADAACAA8AAAAXABEADAACABAAAAAKABAADAAIABIAAAAKABEADAAIABMAAAANABAADAAIABIAABANABEADAAIABMAABA=")
+tile_map_data = PackedByteArray("AAAJABAADAACAA8AAAAJABEADAACABAAAAAIABAADAACAA8AAAAIABEADAACABAAAAAHABAADAACAA8AAAAHABEADAACABAAAAAGABAADAACAA8AAAAGABEADAACABAAAAAFABAADAACAA8AAAAFABEADAACABAAAAAEABAADAACAA8AAAAEABEADAACABAAAAADABAADAACAA8AAAADABEADAACABAAAAACABAADAACAA8AAAACABEADAACABAAAAABABAADAACAA8AAAABABEADAACABAAAAAAABAADAACAA8AAAAAABEADAACABAAAAD//xAADAACAA8AAAD//xEADAACABAAAAD+/xAADAACAA8AAAD+/xEADAACABAAAAAOABAADAACAA8AAAAOABEADAACABAAAAAPABAADAACAA8AAAAPABEADAACABAAAAAQABAADAACAA8AAAAQABEADAACABAAAAARABAADAACAA8AAAARABEADAACABAAAAASABAADAACAA8AAAASABEADAACABAAAAATABAADAACAA8AAAATABEADAACABAAAAAUABAADAACAA8AAAAUABEADAACABAAAAAVABAADAACAA8AAAAVABEADAACABAAAAAWABAADAACAA8AAAAWABEADAACABAAAAAXABAADAACAA8AAAAXABEADAACABAAAAAKABAADAAIABIAAAAKABEADAAIABMAAAANABAADAAIABIAABANABEADAAIABMAABAMAAYADAAnABsAAAALAAYADAAlAB0AAAALAAcADAAlAB0AAAAMAAcADAAnABwAAAAMAAgADAAnAB4AAAALAAgADAAlAB0AAAANAAYADAAoABsAAAANAAcADAApAB0AAAANAAgADAApAB0AAAANAAkADAApAB0AAAAMAAkADAAmAB0AAAALAAkADAAlAB0AAAALAAoADAAmAB8AAAALAAsADAApAB4AAAAMAAoADAAnAB8AAAANAAoADAAoAB8AAAA=")
 tile_set = ExtResource("5_c74it")
 script = ExtResource("6_34sd8")
 
@@ -59,23 +65,23 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="StaticBody2D" parent="Environment/Borders" instance=ExtResource("4_chl80")]
-position = Vector2(45, -189)
+position = Vector2(187, -330)
 
 [node name="StaticBody2D2" parent="Environment/Borders" instance=ExtResource("4_chl80")]
-position = Vector2(294, -189)
+position = Vector2(196, -189)
 
 [node name="StaticBody2D3" parent="Environment/Borders" instance=ExtResource("4_chl80")]
 y_sort_enabled = true
 position = Vector2(576, -189)
 
 [node name="SideBorder" parent="Environment/Borders" instance=ExtResource("5_bxmgt")]
-position = Vector2(-241, -33)
+position = Vector2(-9, -117)
 
 [node name="SideBorder2" parent="Environment/Borders" instance=ExtResource("5_bxmgt")]
-position = Vector2(-243, 209)
+position = Vector2(-88, 209)
 
 [node name="SideBorder3" parent="Environment/Borders" instance=ExtResource("5_bxmgt")]
-position = Vector2(-242, 461)
+position = Vector2(-87, 461)
 
 [node name="SideBorder4" parent="Environment/Borders" instance=ExtResource("5_bxmgt")]
 position = Vector2(-242, 720)
@@ -90,16 +96,16 @@ position = Vector2(48, 904)
 position = Vector2(512, 904)
 
 [node name="SideBorder5" parent="Environment/Borders" instance=ExtResource("5_bxmgt")]
-position = Vector2(837, -4)
+position = Vector2(720, -4)
 
 [node name="SideBorder6" parent="Environment/Borders" instance=ExtResource("5_bxmgt")]
-position = Vector2(837, 270)
+position = Vector2(720, 270)
 
 [node name="SideBorder7" parent="Environment/Borders" instance=ExtResource("5_bxmgt")]
-position = Vector2(837, 541)
+position = Vector2(720, 541)
 
 [node name="SideBorder8" parent="Environment/Borders" instance=ExtResource("5_bxmgt")]
-position = Vector2(837, 789)
+position = Vector2(720, 789)
 
 [node name="Weather" type="Node2D" parent="Environment"]
 
@@ -118,7 +124,7 @@ y_sort_enabled = true
 [node name="Outhouse" parent="Environment/Objects" instance=ExtResource("10_gm7vt")]
 z_index = 0
 y_sort_enabled = true
-position = Vector2(88, 56)
+position = Vector2(150, 77)
 
 [node name="Gate" parent="Environment/Objects" instance=ExtResource("11_8mbbb")]
 position = Vector2(384, 405)
@@ -128,10 +134,13 @@ z_as_relative = true
 position = Vector2(568, 248)
 
 [node name="LogPile" parent="Environment/Objects" instance=ExtResource("13_g4y2s")]
-position = Vector2(584, 56)
+position = Vector2(253, 119)
+
+[node name="LogPile2" parent="Environment/Objects" instance=ExtResource("13_g4y2s")]
+position = Vector2(288, 119)
 
 [node name="Wooden Crate" parent="Environment/Objects" instance=ExtResource("16_6vspm")]
-position = Vector2(280, 80)
+position = Vector2(480, 111)
 
 [node name="InteractiveGrass" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
 position = Vector2(110, 264)
@@ -149,13 +158,13 @@ position = Vector2(238, 197)
 position = Vector2(327, 307)
 
 [node name="InteractiveGrass6" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
-position = Vector2(215, 92)
+position = Vector2(125, 182)
 
 [node name="InteractiveGrass7" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
-position = Vector2(539, 91)
+position = Vector2(445, 164)
 
 [node name="InteractiveGrass8" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
-position = Vector2(566, 91)
+position = Vector2(461, 184)
 
 [node name="InteractiveGrass9" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
 position = Vector2(695, 122)
@@ -173,16 +182,16 @@ position = Vector2(635, 151)
 position = Vector2(599, 9)
 
 [node name="InteractiveGrass14" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
-position = Vector2(176, 51)
+position = Vector2(617, 99)
 
 [node name="InteractiveGrass15" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
 position = Vector2(157, 342)
 
 [node name="InteractiveGrass16" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
-position = Vector2(169, 528)
+position = Vector2(318, 576)
 
 [node name="InteractiveGrass17" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
-position = Vector2(139, 529)
+position = Vector2(139, 466)
 
 [node name="InteractiveGrass18" parent="Environment/Objects" instance=ExtResource("18_c0bkd")]
 position = Vector2(227, 356)
@@ -263,7 +272,7 @@ position = Vector2(419, 229)
 position = Vector2(419, 200)
 
 [node name="Cabin" parent="Environment/Objects" instance=ExtResource("19_iin41")]
-position = Vector2(394, -91)
+position = Vector2(400, -8)
 
 [node name="Door" parent="Environment/Objects/Cabin" instance=ExtResource("20_tuwum")]
 position = Vector2(0, 89)
@@ -278,21 +287,21 @@ y_sort_enabled = true
 position = Vector2(480, 608)
 
 [node name="Pot2" parent="Environment/Interactables" instance=ExtResource("17_hd631")]
-position = Vector2(496, 104)
+position = Vector2(328, 163)
 
 [node name="Pot3" parent="Environment/Interactables" instance=ExtResource("17_hd631")]
-position = Vector2(32, 96)
+position = Vector2(272, -45)
 
 [node name="ItemPickup" parent="Environment/Interactables" instance=ExtResource("22_0etsc")]
-position = Vector2(152, 268)
+position = Vector2(19.7451, 273.979)
 item_data = ExtResource("21_21khr")
 
 [node name="ItemPickup3" parent="Environment/Interactables" instance=ExtResource("22_0etsc")]
-position = Vector2(248, 368)
+position = Vector2(254.096, 368.196)
 item_data = ExtResource("21_21khr")
 
 [node name="ItemPickup4" parent="Environment/Interactables" instance=ExtResource("22_0etsc")]
-position = Vector2(280, 235.95)
+position = Vector2(280, 233.941)
 item_data = ExtResource("21_21khr")
 
 [node name="ItemPickup2" parent="Environment/Interactables" instance=ExtResource("22_0etsc")]
@@ -300,20 +309,20 @@ position = Vector2(416, 300.008)
 item_data = ExtResource("23_0i4j0")
 
 [node name="Save Bell" parent="Environment/Interactables" instance=ExtResource("15_qmltq")]
-position = Vector2(56, 376)
+position = Vector2(220, 531)
 physics_material_override = SubResource("PhysicsMaterial_daugx")
 
 [node name="NPC\'s" type="Node" parent="."]
 
 [node name="Totem1" parent="NPC\'s" instance=ExtResource("18_rqqud")]
-position = Vector2(264, 608)
+position = Vector2(451, 575)
 
 [node name="Transitions" type="Node" parent="."]
 
 [node name="LevelTransition2" parent="Transitions" instance=ExtResource("19_p3ys4")]
 z_index = 100
-position = Vector2(395, 28)
-level = "res://Hallasan-Sunset/Levels/Act1/Forest/Act_1_Scene_1.tscn"
+position = Vector2(395, 114)
+level = "uid://y42cguplsxgm"
 side = 2
 
 [node name="LevelTransition" parent="Transitions" instance=ExtResource("19_p3ys4")]
@@ -322,3 +331,23 @@ level = "res://Hallasan-Sunset/Levels/Act1/Forest/Act_1_Scene_3.tscn"
 side = 3
 
 [node name="Enemies" type="Node" parent="."]
+
+[node name="ScareCrow" parent="." instance=ExtResource("29_tuwum")]
+position = Vector2(208, 280)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(208, 264)
+scale = Vector2(2, 2)
+texture = ExtResource("30_v7d80")
+hframes = 8
+vframes = 3
+
+[node name="AttackHurtBox" parent="Sprite" instance=ExtResource("31_v4e08")]
+unique_name_in_owner = true
+position = Vector2(0, 17)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AttackHurtBox"]
+position = Vector2(0, -2.66667)
+shape = SubResource("CircleShape2D_xiet6")

@@ -143,7 +143,7 @@ height = 18.0023
 y_sort_enabled = true
 position = Vector2(0, -22)
 collision_layer = 16
-collision_mask = 16
+collision_mask = 0
 script = ExtResource("1_jmq23")
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]
