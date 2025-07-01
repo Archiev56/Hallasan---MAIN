@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://4cp3bb2wjdid"]
 
-[ext_resource type="Texture2D" uid="uid://br37wx7tiixwt" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dino/shadow_2.png" id="2_nf77j"]
+[ext_resource type="Script" uid="uid://cs40std2pg5av" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/interactive_grass.gd" id="1_qq5tc"]
 [ext_resource type="Shader" uid="uid://cl87s27y0k86t" path="res://Hallasan-Sunset/Shaders/wind.gdshader" id="2_qq5tc"]
 [ext_resource type="Texture2D" uid="uid://f0nrt5tp2b41" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/grass.png" id="4_uedvf"]
 [ext_resource type="Texture2D" uid="uid://dik85i1bobx0b" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Untitled_Artwork 109.png" id="5_bpc2g"]
@@ -57,18 +57,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Shadow2:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.376471)]
-}
 
 [sub_resource type="Animation" id="Animation_lrfap"]
 resource_name = "destroy"
@@ -109,25 +97,13 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/3/type = "value"
+tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Shadow2:modulate")
+tracks/3/path = NodePath("AudioStreamPlayer2D")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.376471), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "audio"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer2D")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -135,7 +111,7 @@ tracks/4/keys = {
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/4/use_blend = true
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_55ory"]
 _data = {
@@ -168,20 +144,11 @@ color_ramp = SubResource("GradientTexture1D_pei3q")
 turbulence_enabled = true
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7bsot"]
-radius = 7.0
-height = 14.0
+height = 20.0
 
 [node name="InteractiveGrass" type="Area2D"]
 y_sort_enabled = true
-
-[node name="Shadow2" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.376471)
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(0, -4)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_nf77j")
+script = ExtResource("1_qq5tc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -211,9 +178,12 @@ explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_78nw7")
 
 [node name="HitBox" parent="." instance=ExtResource("6_r0qk8")]
+collision_mask = 1
+monitoring = true
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -3)
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_7bsot")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

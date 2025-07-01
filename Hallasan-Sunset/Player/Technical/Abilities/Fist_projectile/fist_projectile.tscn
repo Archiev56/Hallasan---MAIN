@@ -1,11 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://da6jdrjbppj4h"]
+[gd_scene load_steps=9 format=3 uid="uid://da6jdrjbppj4h"]
 
 [ext_resource type="Script" uid="uid://qu8dvysfokcc" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist_projectile/fist_projectile.gd" id="1_j875o"]
 [ext_resource type="Texture2D" uid="uid://dihvnoocuuxas" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist_projectile/Sprites/DarkSpell4-Sheet.png" id="2_j875o"]
 [ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="3_0ddh7"]
+[ext_resource type="Texture2D" uid="uid://ca3xi6xmo4pcs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/fist_spritesheet.png" id="3_afvu3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mv2uk"]
 radius = 8.06226
+
+[sub_resource type="Animation" id="Animation_0ddh7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_afvu3"]
 resource_name = "default"
@@ -25,21 +41,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 }
 
-[sub_resource type="Animation" id="Animation_0ddh7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_al52s"]
 _data = {
 &"RESET": SubResource("Animation_0ddh7"),
@@ -47,6 +48,7 @@ _data = {
 }
 
 [node name="FistProjectile" type="Node2D"]
+z_index = 100
 script = ExtResource("1_j875o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -54,6 +56,13 @@ texture = ExtResource("2_j875o")
 hframes = 10
 vframes = 2
 frame = 1
+
+[node name="FistProjectileSheet" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(-42, 0)
+texture = ExtResource("3_afvu3")
+hframes = 16
+frame = 8
 
 [node name="HurtBox" parent="." instance=ExtResource("3_0ddh7")]
 collision_mask = 256

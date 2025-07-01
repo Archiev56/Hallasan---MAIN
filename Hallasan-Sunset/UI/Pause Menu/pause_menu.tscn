@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bv18n10sdmxlc"]
+[gd_scene load_steps=50 format=3 uid="uid://bv18n10sdmxlc"]
 
 [ext_resource type="Script" uid="uid://b8v33jg6hgubp" path="res://Hallasan-Sunset/UI/Pause Menu/Pause/Pause.gd" id="1_84gkr"]
 [ext_resource type="AudioStream" uid="uid://q4tcvwp83ov5" path="res://Hallasan-Sunset/Audio/Sound effects/UI_Select.wav" id="2_bre2m"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://60rp0cpivw0u" path="res://Hallasan-Sunset/UI/Pause Menu/Bag/Sprites/bag.png" id="8_nyrqf"]
 [ext_resource type="Texture2D" uid="uid://phs0w1v7r5no" path="res://Hallasan-Sunset/UI/Pause Menu/Bag/Sprites/bag open.png" id="9_orhm4"]
 [ext_resource type="FontFile" uid="uid://bfu1go1hde7bc" path="res://Hallasan-Sunset/UI/Fonts/CursedScript.ttf" id="10_8j6ej"]
-[ext_resource type="Texture2D" uid="uid://c3cvxren7ib1b" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/Paper kit/SwitchContainer.png" id="11_ggrrc"]
 [ext_resource type="Script" uid="uid://c86760xtrdfq5" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/inventory_ui.gd" id="12_73jqh"]
 [ext_resource type="Resource" uid="uid://dcqu1flenu416" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/player_inventory.tres" id="13_ei6mr"]
 [ext_resource type="PackedScene" uid="uid://nbdb7nut6dh2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/inventory_slot.tscn" id="14_iq855"]
@@ -25,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://c8gsebf6rbb7u" path="res://Hallasan-Sunset/UI/Pause Menu/Stats/stats.tscn" id="20_0dac1"]
 [ext_resource type="Texture2D" uid="uid://bpwonm74cyb53" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Ice_Gloves.png" id="20_nyrqf"]
 [ext_resource type="FontFile" uid="uid://cfbroi8iib1y5" path="res://Hallasan-Sunset/UI/Fonts/KiwiSoda.ttf" id="21_g32vo"]
-[ext_resource type="Texture2D" uid="uid://ncjyo38fsdja" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/Banner.png" id="22_84gkr"]
 [ext_resource type="Script" uid="uid://cfoiv0kq1u53r" path="res://Hallasan-Sunset/UI/Pause Menu/Quests/quests_ui.gd" id="22_m0h83"]
 [ext_resource type="Texture2D" uid="uid://dyt1rmnfhkx4m" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/ui white border.png" id="23_78js8"]
 [ext_resource type="PackedScene" uid="uid://v0k1yqv8sn7u" path="res://Hallasan-Sunset/UI/Pause Menu/Quests/quest_item.tscn" id="24_bbvk8"]
@@ -120,7 +118,7 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3nkjk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pjomn"]
-texture = ExtResource("11_ggrrc")
+texture = ExtResource("19_32hqn")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
@@ -134,7 +132,11 @@ texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_84gkr"]
-texture = ExtResource("23_78js8")
+texture = ExtResource("19_32hqn")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h4nog"]
 texture = ExtResource("19_32hqn")
@@ -288,11 +290,12 @@ theme_override_fonts/font = ExtResource("10_8j6ej")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3nkjk")
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 tabs_position = 1
 clip_tabs = false
 
 [node name="Inventory" type="Control" parent="TabContainer"]
+visible = false
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("4_urj3f")
@@ -371,23 +374,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -152.0
-offset_top = -155.0
+offset_top = -113.0
 offset_right = 152.0
-offset_bottom = -83.0
+offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0.929412, 0.694118, 0.180392, 1)
 theme_override_fonts/font = ExtResource("21_g32vo")
 theme_override_font_sizes/font_size = 32
 text = "INVENTORY"
 horizontal_alignment = 1
-
-[node name="Banner" type="Sprite2D" parent="TabContainer/Inventory"]
-position = Vector2(184, 29)
-scale = Vector2(4, 4)
-texture = ExtResource("22_84gkr")
-region_enabled = true
-region_rect = Rect2(70, 39.75, 64.5, 29.5)
 
 [node name="AbilityContainer" type="PanelContainer" parent="TabContainer/Inventory"]
 layout_mode = 0
@@ -812,7 +807,6 @@ text = "QUESTS"
 horizontal_alignment = 1
 
 [node name="System" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

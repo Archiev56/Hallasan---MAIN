@@ -13,7 +13,7 @@ const AIR_STRIKE = preload("res://Hallasan-Sunset/Player/Technical/Abilities/Fis
 # ============================================================
 @onready var animation_player        = $"../AnimationPlayer"
 @onready var smash_animation_player  = $"../Sprite2D/Smash Effect/Smash Effect/AnimationPlayer"
-@onready var hurt_box: HurtBox       = $Interactions/HurtBox
+@onready var hurt_box: HurtBox       = $"../Interactions/HurtBox"
 @onready var player_sprite: Sprite2D = $"../Sprite2D"      # kept for reference – never rotated
 
 # ============================================================

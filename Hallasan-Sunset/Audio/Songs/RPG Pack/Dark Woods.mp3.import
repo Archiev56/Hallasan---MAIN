@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cud3ni1yhmcv0"
+path="res://.godot/imported/Dark Woods.mp3-226c977d0505cbf46b04621f3cf699be.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Songs/RPG Pack/Dark Woods.mp3"
+dest_files=["res://.godot/imported/Dark Woods.mp3-226c977d0505cbf46b04621f3cf699be.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -61,6 +61,18 @@ libraries = {
 }
 autoplay = "Idle"
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(19, -4)
+color = Color(1, 0, 0, 1)
+energy = 10.0
+texture = SubResource("GradientTexture2D_7ue2u")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-18, -3)
+color = Color(1, 0, 0, 1)
+energy = 10.0
+texture = SubResource("GradientTexture2D_7ue2u")
+
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(0, 5)
 
@@ -75,23 +87,11 @@ texture_filter = 1
 material = ExtResource("2_h72h6")
 texture = ExtResource("3_sikyn")
 
-[node name="PointLight2D" type="PointLight2D" parent="Node2D/Left Eye"]
-position = Vector2(-34, -8.48101)
-color = Color(1, 0, 0, 1)
-energy = 10.0
-texture = SubResource("GradientTexture2D_7ue2u")
-
 [node name="Right Eye" type="Sprite2D" parent="Node2D"]
 visible = false
 texture_filter = 1
 material = ExtResource("2_h72h6")
 texture = ExtResource("4_46qej")
-
-[node name="PointLight2D" type="PointLight2D" parent="Node2D/Right Eye"]
-position = Vector2(30, -8.34157)
-color = Color(1, 0, 0, 1)
-energy = 10.0
-texture = SubResource("GradientTexture2D_7ue2u")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("5_sikyn")

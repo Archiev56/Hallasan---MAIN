@@ -1,6 +1,7 @@
-[gd_scene load_steps=40 format=4 uid="uid://y42cguplsxgm"]
+[gd_scene load_steps=41 format=4 uid="uid://y42cguplsxgm"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_144pq"]
+[ext_resource type="AudioStream" uid="uid://dyttrf871qmde" path="res://Hallasan-Sunset/Audio/Songs/RPG Pack/Hall of the King.mp3" id="2_74o33"]
 [ext_resource type="PackedScene" uid="uid://cr8c8wtlgk4rc" path="res://Hallasan-Sunset/Tilemaps/Tileset.tscn" id="3_7wxwb"]
 [ext_resource type="TileSet" uid="uid://dhj385rk2lfl4" path="res://Hallasan-Sunset/Tilemaps/32x32_test/32x32_tileset.tres" id="4_fsthl"]
 [ext_resource type="Script" uid="uid://bkfrr01tlskb5" path="res://Hallasan-Sunset/Tilemaps/Scripts/LevelTileMapLayer.gd" id="5_c3v1m"]
@@ -160,6 +161,7 @@ animations = [{
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_144pq")
+music = ExtResource("2_74o33")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("6_nqd7u")]
 z_index = 0

@@ -1,20 +1,21 @@
-[gd_scene load_steps=59 format=3 uid="uid://dsdsymcscej23"]
+[gd_scene load_steps=65 format=3 uid="uid://dsdsymcscej23"]
 
 [ext_resource type="Script" uid="uid://dbsys8xpe6boq" path="res://Hallasan-Sunset/Player/GUI/Player_hud/player_hud.gd" id="1_enff3"]
 [ext_resource type="PackedScene" uid="uid://3ou4mscqfens" path="res://Hallasan-Sunset/Player/GUI/Player_hud/heart_gui.tscn" id="2_xlvne"]
 [ext_resource type="FontFile" uid="uid://dqpmaxkisn3ln" path="res://Hallasan-Sunset/UI/Fonts/pjuksimple_pixel_font_by_pjuk_d48ilnb.ttf" id="4_suqvs"]
 [ext_resource type="FontFile" uid="uid://cfbroi8iib1y5" path="res://Hallasan-Sunset/UI/Fonts/KiwiSoda.ttf" id="5_srpej"]
 [ext_resource type="Texture2D" uid="uid://bpphdxqd10vsv" path="res://Hallasan-Sunset/Enemies/Bosses/wizard/Sprites/boss-hp.png" id="6_bavgn"]
+[ext_resource type="Texture2D" uid="uid://c4rkfbfwt3pv2" path="res://Hallasan-Sunset/UI/Pause Menu/Pause/UI box.png" id="8_2de4b"]
 [ext_resource type="Texture2D" uid="uid://nn1omdjbl3r1" path="res://Hallasan-Sunset/UI/Pause Menu/Quests/Sprites/panel_notification.png" id="8_6ya57"]
 [ext_resource type="Script" uid="uid://cpaonric8ctgy" path="res://Hallasan-Sunset/UI/Notifications/notifications.gd" id="8_mchtw"]
 [ext_resource type="FontFile" uid="uid://bfu1go1hde7bc" path="res://Hallasan-Sunset/UI/Fonts/CursedScript.ttf" id="9_8tx6c"]
-[ext_resource type="Texture2D" uid="uid://dyt1rmnfhkx4m" path="res://Hallasan-Sunset/UI/Dialogue_system/Sprites/ui white border.png" id="9_dcfdm"]
 [ext_resource type="AudioStream" uid="uid://b4p67spcqc2u8" path="res://Hallasan-Sunset/Audio/Sound effects/Menu_notification.mp3" id="10_l5yyi"]
 [ext_resource type="Script" uid="uid://dtt47mhies2qm" path="res://Hallasan-Sunset/Technical/Energy Bar/energy_bar.gd" id="11_wyh6r"]
-[ext_resource type="PackedScene" uid="uid://dbs7ly28qwxoa" path="res://Hallasan-Sunset/Technical/Coin Counter/coin_counter.tscn" id="12_6k10q"]
 [ext_resource type="Texture2D" uid="uid://lry2tm122okl" path="res://Hallasan-Sunset/Player/GUI/Player_hud/Sprites/Empty Energy.png" id="12_opkeq"]
 [ext_resource type="Texture2D" uid="uid://dw8memd7vgnof" path="res://Hallasan-Sunset/Player/GUI/Player_hud/Sprites/Energy.png" id="13_3v4dm"]
+[ext_resource type="Script" uid="uid://xucud0ibju8" path="res://Hallasan-Sunset/Technical/Coin Counter/coin_counter.gd" id="14_0yu4s"]
 [ext_resource type="Shader" uid="uid://ckqgs303h8fu1" path="res://Hallasan-Sunset/Player/GUI/Player_hud/player_hurt.gdshader" id="14_sqlg0"]
+[ext_resource type="Texture2D" uid="uid://cteqajjg7vj0h" path="res://Hallasan-Sunset/Tilemaps/Sprites/Dusk_Icons_x24.png" id="15_k3p2f"]
 [ext_resource type="Script" uid="uid://dnbcj1tn57m15" path="res://Hallasan-Sunset/Player/GUI/Player_hud/selection_wheel.gd" id="16_3v4dm"]
 [ext_resource type="Texture2D" uid="uid://fmh7frmypt3j" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Hands_smash/hands_smash_diagonal_down_right/hands_smash_diag_down_right5.png" id="18_2de4b"]
 [ext_resource type="Texture2D" uid="uid://ca3xi6xmo4pcs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/fist_spritesheet.png" id="19_0yu4s"]
@@ -294,7 +295,7 @@ content_margin_left = 12.0
 content_margin_top = 6.0
 content_margin_right = 12.0
 content_margin_bottom = 12.0
-texture = ExtResource("9_dcfdm")
+texture = ExtResource("8_2de4b")
 texture_margin_left = 18.0
 texture_margin_top = 18.0
 texture_margin_right = 10.0
@@ -502,6 +503,56 @@ _data = {
 &"Fade_in": SubResource("Animation_oqplt"),
 &"RESET": SubResource("Animation_a11ic")
 }
+
+[sub_resource type="Animation" id="Animation_5y72d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(23, 85)]
+}
+
+[sub_resource type="Animation" id="Animation_ih4fs"]
+resource_name = "show_coin"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 2.5),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(-41, 85), Vector2(75, 175), Vector2(75, 85), Vector2(-41, 85)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ji8xj"]
+_data = {
+&"RESET": SubResource("Animation_5y72d"),
+&"show_coin": SubResource("Animation_ih4fs")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwdkk"]
+texture = ExtResource("8_2de4b")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1itkp"]
+atlas = ExtResource("15_k3p2f")
+region = Rect2(246, 338, 11, 19)
 
 [sub_resource type="Animation" id="Animation_ep8nv"]
 resource_name = "Cutscene"
@@ -723,12 +774,11 @@ _data = {
 &"show": SubResource("Animation_oo4ph")
 }
 
-[sub_resource type="Gradient" id="Gradient_oo4ph"]
-offsets = PackedFloat32Array(0, 0.54, 1)
-colors = PackedColorArray(0.904837, 0.713418, 0, 1, 0.72, 0.513, 0.2232, 0.764706, 1, 0, 0, 0)
+[sub_resource type="Gradient" id="Gradient_2de4b"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2de4b"]
-gradient = SubResource("Gradient_oo4ph")
+gradient = SubResource("Gradient_2de4b")
 width = 32
 height = 32
 fill = 1
@@ -1086,10 +1136,10 @@ script = ExtResource("11_wyh6r")
 [node name="Energy Bar" type="TextureProgressBar" parent="Control/Energy Bar"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -26.0
-offset_top = -39.0
-offset_right = 72.0
-offset_bottom = -22.0
+offset_left = -34.0
+offset_top = -36.0
+offset_right = 64.0
+offset_bottom = -19.0
 scale = Vector2(2, 2)
 max_value = 3.0
 value = 3.0
@@ -1097,17 +1147,39 @@ rounded = true
 texture_under = ExtResource("12_opkeq")
 texture_progress = ExtResource("13_3v4dm")
 
-[node name="Coin Counter" parent="Control" groups=["coin_counter"] instance=ExtResource("12_6k10q")]
+[node name="Coin Counter" type="Control" parent="Control" groups=["coin_counter"]]
+layout_mode = 3
+anchors_preset = 0
 offset_left = -69.0
 offset_right = -29.0
+offset_bottom = 40.0
+script = ExtResource("14_0yu4s")
 
-[node name="PanelContainer" parent="Control/Coin Counter" index="1"]
-offset_left = 23.0
-offset_right = 63.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Coin Counter"]
+libraries = {
+&"": SubResource("AnimationLibrary_ji8xj")
+}
 
-[node name="Label" parent="Control/Coin Counter/PanelContainer" index="1"]
+[node name="PanelContainer" type="PanelContainer" parent="Control/Coin Counter"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -41.0
+offset_top = 85.0
+offset_right = -1.0
+offset_bottom = 126.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cwdkk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Coin Counter/PanelContainer"]
+texture_filter = 1
+position = Vector2(12, 20)
+texture = SubResource("AtlasTexture_1itkp")
+
+[node name="Label" type="Label" parent="Control/Coin Counter/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("9_8tx6c")
-text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Black Bars" type="Control" parent="Control"]
 layout_mode = 3
@@ -1236,15 +1308,21 @@ libraries = {
 
 [node name="Abilities" type="Control" parent="Control"]
 anchors_preset = 0
-offset_left = 83.0
+offset_left = 57.0
 offset_top = 7.0
-offset_right = 123.0
+offset_right = 97.0
 offset_bottom = 47.0
+
+[node name="UiBox" type="Sprite2D" parent="Control/Abilities"]
+position = Vector2(-40, 66)
+texture = ExtResource("8_2de4b")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/Abilities"]
 layout_mode = 0
-offset_right = 24.0
-offset_bottom = 40.0
+offset_left = -56.0
+offset_top = 48.0
+offset_right = 120.0
+offset_bottom = 80.0
 
 [node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer"]
 texture_filter = 1
@@ -1254,9 +1332,9 @@ texture = SubResource("GradientTexture2D_2de4b")
 [node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect"]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 8.0
+offset_top = 6.0
 offset_right = 44.0
-offset_bottom = 48.0
+offset_bottom = 46.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("19_knttt")
 
@@ -1281,9 +1359,10 @@ texture = SubResource("GradientTexture2D_2de4b")
 
 [node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect3"]
 layout_mode = 0
-offset_left = -4.0
-offset_right = 36.0
-offset_bottom = 40.0
+offset_left = -5.0
+offset_top = -2.0
+offset_right = 35.0
+offset_bottom = 38.0
 texture = SubResource("AtlasTexture_1l06d")
 
 [node name="TextureRect4" type="TextureRect" parent="Control/Abilities/HBoxContainer"]
@@ -1293,10 +1372,11 @@ texture = SubResource("GradientTexture2D_2de4b")
 
 [node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect4"]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 1.0
-offset_right = 36.0
-offset_bottom = 41.0
+offset_left = 6.0
+offset_top = 9.0
+offset_right = 46.0
+offset_bottom = 49.0
+scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_0yu4s")
 
 [node name="TextureRect5" type="TextureRect" parent="Control/Abilities/HBoxContainer"]
@@ -1306,11 +1386,11 @@ texture = SubResource("GradientTexture2D_2de4b")
 
 [node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect5"]
 layout_mode = 0
-offset_left = -17.0
-offset_top = -13.0
-offset_right = 125.0
-offset_bottom = 147.0
-scale = Vector2(0.5, 0.5)
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 145.0
+offset_bottom = 166.0
+scale = Vector2(0.2, 0.2)
 texture = SubResource("AtlasTexture_k3p2f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -1319,5 +1399,3 @@ texture = SubResource("AtlasTexture_k3p2f")
 wait_time = 2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-
-[editable path="Control/Coin Counter"]

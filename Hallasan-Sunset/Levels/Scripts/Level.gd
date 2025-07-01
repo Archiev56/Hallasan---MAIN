@@ -16,4 +16,3 @@ func _free_level() -> void:
 
 func _on_level_tile_map_layer_changed():
 	pass # Replace with function body.
-		

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dods1wjg14kk5"
+path="res://.godot/imported/Storm.mp3-934815718140427c76f7e58530891545.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Songs/RPG Pack/Storm.mp3"
+dest_files=["res://.godot/imported/Storm.mp3-934815718140427c76f7e58530891545.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

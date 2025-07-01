@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6y3ss5xl62nm"
+path="res://.godot/imported/Ghost Castle.mp3-b4da98fd617f5246a18d194c489c9ad7.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Songs/RPG Pack/Ghost Castle.mp3"
+dest_files=["res://.godot/imported/Ghost Castle.mp3-b4da98fd617f5246a18d194c489c9ad7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

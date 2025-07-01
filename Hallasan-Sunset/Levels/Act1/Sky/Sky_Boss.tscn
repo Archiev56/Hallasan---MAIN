@@ -1,7 +1,7 @@
 [gd_scene load_steps=49 format=4 uid="uid://dgw5eh26can0n"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_l57lq"]
-[ext_resource type="AudioStream" uid="uid://bganfa48k5f0w" path="res://Hallasan-Sunset/Audio/Songs/Pipa with drums.ogg" id="2_jt4tu"]
+[ext_resource type="AudioStream" uid="uid://bganfa48k5f0w" path="res://Hallasan-Sunset/Audio/Songs/Act 1/Inugi Cave/Inugi_cave.ogg" id="2_jt4tu"]
 [ext_resource type="PackedScene" uid="uid://cr8c8wtlgk4rc" path="res://Hallasan-Sunset/Tilemaps/Tileset.tscn" id="3_ijfj8"]
 [ext_resource type="TileSet" uid="uid://ch55l646cr805" path="res://Hallasan-Sunset/Tilemaps/Tileset.tres" id="4_rnit3"]
 [ext_resource type="Script" uid="uid://bkfrr01tlskb5" path="res://Hallasan-Sunset/Tilemaps/Scripts/LevelTileMapLayer.gd" id="5_tyjlk"]

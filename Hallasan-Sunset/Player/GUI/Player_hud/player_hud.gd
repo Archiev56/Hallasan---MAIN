@@ -158,12 +158,14 @@ func _process(delta):
 		
 func update_ability_ui(ability_index: int) -> void:
 	var _items: Array[Node] = ability_items.get_children()
-	for a in _items:
-		a.self_modulate = Color(1, 1, 1, 0)
-		a.modulate = Color(0.6, 0.6, 0.6, 0.8)
-
-	_items[ability_index].self_modulate = Color(1, 1, 1, 1)
-	_items[ability_index].modulate = Color(1, 1, 1, 1)
+	
+	# Hide all ability items
+	for i in range(_items.size()):
+		_items[i].visible = false
+	
+	# Show only the selected ability (if valid index)
+	if ability_index >= 0 and ability_index < _items.size():
+		_items[ability_index].visible = true
 	
 	pass
 

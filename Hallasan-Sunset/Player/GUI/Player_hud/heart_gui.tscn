@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://v0ds6qy2aape" path="res://Hallasan-Sunset/Player/GUI/Player_hud/Sprites/Heart_gui.png" id="2_8t0qq"]
 
 [node name="Heart" type="Control"]
-custom_minimum_size = Vector2(9, 9)
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_b3fqt")
@@ -13,5 +13,4 @@ script = ExtResource("1_b3fqt")
 texture_filter = 1
 texture = ExtResource("2_8t0qq")
 centered = false
-hframes = 7
-vframes = 2
+hframes = 3

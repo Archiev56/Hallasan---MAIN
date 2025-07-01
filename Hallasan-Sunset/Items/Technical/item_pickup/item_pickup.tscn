@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddioxudb4roti"]
+[gd_scene load_steps=8 format=3 uid="uid://ddioxudb4roti"]
 
 [ext_resource type="Script" uid="uid://37eh1ypeht4t" path="res://Hallasan-Sunset/Items/Technical/item_pickup/item_pickup.gd" id="1_rsms1"]
-[ext_resource type="Texture2D" uid="uid://br37wx7tiixwt" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dino/shadow_2.png" id="2_korec"]
 [ext_resource type="Texture2D" uid="uid://dsilespmxkmts" path="res://Hallasan-Sunset/Items/Consumables/Kimbap/Sprites/Kimbap.png" id="3_3bnbb"]
 [ext_resource type="AudioStream" uid="uid://d126506e2pkf2" path="res://Hallasan-Sunset/Audio/Sound effects/Bubble pop.wav" id="4_xscof"]
 
@@ -58,11 +57,6 @@ shape = SubResource("CircleShape2D_76m2d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_76m2d")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 0.509804)
-texture_filter = 1
-texture = ExtResource("2_korec")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

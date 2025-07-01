@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=37 format=3 uid="uid://dhj385rk2lfl4"]
+[gd_resource type="TileSet" load_steps=43 format=3 uid="uid://dhj385rk2lfl4"]
 
 [ext_resource type="Texture2D" uid="uid://b8c0ax3k3ksqj" path="res://Hallasan-Sunset/Tilemaps/32x32_test/32x32_test/Grass 2 layer.png" id="1_gbok3"]
 [ext_resource type="Texture2D" uid="uid://bclk3rsaq0oic" path="res://Hallasan-Sunset/Tilemaps/32x32_test/32x32_test/Grass.png" id="2_ko7ke"]
@@ -14,10 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://beytg3o1qjpwr" path="res://Hallasan-Sunset/Environment/Dungeon/Dungeon_elements/Sprites/walls_floor.png" id="7_wsjly"]
 [ext_resource type="Texture2D" uid="uid://c480urdhebpdx" path="res://Hallasan-Sunset/Tilemaps/Sprites/Water/Water Animated.png" id="8_ko7ke"]
 [ext_resource type="Texture2D" uid="uid://dlhmtp6va8opg" path="res://Hallasan-Sunset/Environment/Village/Buildings/Cabin/Sprites/cabin - interior.png" id="8_ku573"]
+[ext_resource type="Texture2D" uid="uid://b4seypstdjix1" path="res://Hallasan-Sunset/Tilemaps/Sprites/Grass/cave entrance - with wall.png" id="9_cbkkd"]
 [ext_resource type="Texture2D" uid="uid://b5xr7801onqvw" path="res://Hallasan-Sunset/Tilemaps/Sprites/Water/WaterTiles.png" id="9_di8ap"]
 [ext_resource type="Texture2D" uid="uid://cm7cqqox60uqo" path="res://Hallasan-Sunset/npc/Characters/Act 1/Sansin/Sprites/Sansin_bed.png" id="9_ytbyf"]
 [ext_resource type="Texture2D" uid="uid://svsfwdiixyea" path="res://Hallasan-Sunset/npc/Characters/Act 1/Sansin/Sprites/cabin interior - bed.png" id="10_wdkux"]
 [ext_resource type="Texture2D" uid="uid://cb84atlyq8lg7" path="res://Hallasan-Sunset/Tilemaps/Sprites/Interiors/cabin interior - bear carpet.png" id="11_gxv66"]
+[ext_resource type="Texture2D" uid="uid://dn1l5kjysqc80" path="res://Hallasan-Sunset/Tilemaps/Sprites/Space/Spacebackground.png" id="14_gx1fj"]
+[ext_resource type="Texture2D" uid="uid://coawua38oy5w7" path="res://Hallasan-Sunset/Tilemaps/Sprites/Grass/cave entrance - standalone.png" id="20_gx1fj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wsjly"]
 texture = ExtResource("1_gbok3")
@@ -7080,6 +7083,24 @@ texture_region_size = Vector2i(32, 32)
 7:12/0 = 0
 8:12/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sapf7"]
+texture = ExtResource("9_cbkkd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rioij"]
 texture = ExtResource("9_ytbyf")
 texture_region_size = Vector2i(32, 32)
@@ -7766,6 +7787,18 @@ texture_region_size = Vector2i(32, 32)
 26:30/0 = 0
 27:30/0 = 0
 2:31/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twuk1"]
+texture = ExtResource("14_gx1fj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/animation_speed = 1.5
+2:0/animation_mode = 1
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wdkux"]
 texture = ExtResource("4_t8tgb")
@@ -10061,6 +10094,24 @@ texture_region_size = Vector2i(32, 32)
 18:22/0 = 0
 18:22/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -1.13911, 16, -0.438118, -16, -16, -16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4j10i"]
+texture = ExtResource("20_gx1fj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 16
@@ -10092,3 +10143,6 @@ sources/15 = SubResource("TileSetAtlasSource_aynxg")
 sources/17 = SubResource("TileSetAtlasSource_rioij")
 sources/18 = SubResource("TileSetAtlasSource_ceudk")
 sources/19 = SubResource("TileSetAtlasSource_rfxhb")
+sources/9 = SubResource("TileSetAtlasSource_4j10i")
+sources/16 = SubResource("TileSetAtlasSource_sapf7")
+sources/20 = SubResource("TileSetAtlasSource_twuk1")
