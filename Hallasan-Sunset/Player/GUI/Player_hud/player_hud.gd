@@ -33,6 +33,9 @@ var hearts: Array[HeartGUI] = []
 var notification_queue: Array[ItemData] = []
 var is_showing_item_notification: bool = false
 
+# --- HEART/HP CONFIG ---
+@export var hp_per_heart: int = 2  # Set to 1 if you want 3 hearts = 3 HP; 2 means 3 hearts = 6 HP
+
 func _ready():
 	add_to_group("player_hud")
 	add_to_group("ui")
@@ -91,7 +94,7 @@ func _setup_item_notification_content(item_data: ItemData) -> void:
 		gained_item_label.text = "You gained the " + item_data.get_display_name()
 		gained_item_label.modulate = item_data.get_rarity_color()
 
-func _animate_item_notification(item_data: ItemData) -> void:
+func _animate_item_notification(_item_data: ItemData) -> void:
 	item_notification.visible = true
 	
 	if gained_item_animation_player and gained_item_animation_player.has_animation("show"):
@@ -108,25 +111,30 @@ func hide_item_notification() -> void:
 	item_notification.visible = false
 
 # ============================================================
-#  EXISTING FUNCTIONS (unchanged)
+#  HEARTS / HP (fixed for any count of hearts, avoids out-of-bounds)
 # ============================================================
 
 func update_hp(_hp: int, _max_hp: int) -> void:
 	update_max_hp(_max_hp)
-	for i in _max_hp:
+	for i in hearts.size():              # iterate over actual hearts you have
 		update_heart(i, _hp)
 
 func update_heart(_index: int, _hp: int) -> void:
-	var _value: int = clampi(_hp - _index * 2, 0, 2)
-	hearts[_index].value = _value
+	if _index < 0 or _index >= hearts.size():
+		return
+	var value: int = clampi(_hp - _index * hp_per_heart, 0, hp_per_heart)
+	hearts[_index].value = value
 
 func update_max_hp(_max_hp: int) -> void:
-	var _heart_count: int = roundi(_max_hp * 0.5)
+	var needed_hearts: int = int(ceil(float(_max_hp) / float(hp_per_heart)))
 	for i in hearts.size():
-		if i < _heart_count:
-			hearts[i].visible = true
-		else:
-			hearts[i].visible = false
+		hearts[i].visible = (i < needed_hearts)
+	if needed_hearts > hearts.size():
+		push_warning("Not enough HeartGUI nodes. Needed %d, have %d." % [needed_hearts, hearts.size()])
+
+# ============================================================
+#  OTHER UI
+# ============================================================
 
 func show_game_over_screen() -> void:
 	game_over.visible = true
@@ -204,7 +212,7 @@ func _on_timer_timeout() -> void:
 	_regenerate_energy()
 
 # --- ABILITY SELECTION (show only the selected icon) ---
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("tool_select"):
 		$Control/SelectionWheel.show()
 	elif Input.is_action_just_released("tool_select"):
@@ -215,14 +223,14 @@ func _process(delta):
 func _ability_index_from_tool(tool) -> int:
 	# If tool is an index already
 	if typeof(tool) == TYPE_INT:
-		var items := ability_items.get_children()
-		return clampi(tool, 0, max(0, items.size() - 1))
+		var items_int: Array = ability_items.get_children()
+		return clampi(int(tool), 0, max(0, items_int.size() - 1))
 	# If tool is a name, find a child with matching name (case-insensitive)
 	if typeof(tool) == TYPE_STRING:
 		var items: Array = ability_items.get_children()
 		var lower: String = String(tool).to_lower()
 		for i in items.size():
-			if str(items[i].name).to_lower() == lower:
+			if String(items[i].name).to_lower() == lower:
 				return i
 	# Fallback to 0
 	return 0

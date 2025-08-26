@@ -61,8 +61,7 @@ func _ready() -> void:
 	set_process(true)
 	set_physics_process(true)
 
-	if DEBUG:
-		print("[Companion] READY. use_nav=%s" % [str(USE_NAV)])
+
 
 func _process(delta: float) -> void:
 	# Retry finding player spawned later
@@ -164,11 +163,7 @@ func _resolve_player() -> void:
 		_last_seen_player_dir = player.cardinal_direction
 		if not player.direction_changed.is_connected(_on_player_direction_changed):
 			player.direction_changed.connect(_on_player_direction_changed)
-		if DEBUG:
-			print("[Companion] Player resolved: %s" % [player.name])
-	else:
-		if DEBUG and _resolve_cooldown <= 0.0:
-			print("[Companion] Player NOT found yet (path/PlayerManager/'Player' group). Retrying...")
+		
 
 # -------------- GOAL / FACING / ANIM --------------
 func _set_destination_near_player() -> void:
@@ -250,4 +245,3 @@ func _debug_log(delta: float, extra: String = "") -> void:
 	]
 	if extra != "":
 		parts.append("note=%s" % extra)
-	print("[Companion] " + "; ".join(parts))

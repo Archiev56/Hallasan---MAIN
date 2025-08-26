@@ -20,7 +20,7 @@ func display_number(value: int, position: Vector2, is_critical: bool = false):
 
 	# Apply font settings to the label
 	number.label_settings.font_color = color
-	number.label_settings.font_size = 16
+	number.label_settings.font_size = 8
 	number.label_settings.outline_color = "#000"
 	number.label_settings.outline_size = 8
 

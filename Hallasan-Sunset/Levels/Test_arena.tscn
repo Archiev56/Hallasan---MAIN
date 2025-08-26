@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bkgbqgy67q6fd"]
+[gd_scene load_steps=38 format=4 uid="uid://bkgbqgy67q6fd"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_6c3hc"]
 [ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="2_05rfe"]
@@ -31,6 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://cb2ddj5khwruw" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.tscn" id="29_dgxmi"]
 [ext_resource type="PackedScene" uid="uid://bsbsklcuokb72" path="res://Hallasan-Sunset/Environment/Weather/Day&Night System/dayand_night_cycle.tscn" id="31_djb1e"]
 [ext_resource type="PackedScene" uid="uid://dgodies6dmqeu" path="res://Hallasan-Sunset/Enemies/Common Enemies/Companion/Companion.tscn" id="31_waf45"]
+[ext_resource type="PackedScene" uid="uid://hwrashqk80iw" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dokkaebi/Red/DokkaebiRed.tscn" id="32_waf45"]
+[ext_resource type="PackedScene" uid="uid://r0pscl2ixcaq" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dokkaebi/Blue/DokkaebiBlue.tscn" id="33_o77tf"]
+[ext_resource type="PackedScene" uid="uid://cyydw3n6twla6" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dokkaebi/Green/DokkaebiGreen.tscn" id="34_b7yxm"]
 
 [sub_resource type="Gradient" id="Gradient_a7ehv"]
 colors = PackedColorArray(0.347135, 0.338914, 4.81308e-08, 1, 1, 1, 1, 0)
@@ -63,7 +66,10 @@ script = ExtResource("1_6c3hc")
 position = Vector2(891, 39)
 
 [node name="Gwishin2" parent="." instance=ExtResource("3_djb1e")]
-position = Vector2(808, 79)
+position = Vector2(1118, -24)
+
+[node name="Gwishin3" parent="." instance=ExtResource("3_djb1e")]
+position = Vector2(772, 77)
 
 [node name="Tileset" parent="." instance=ExtResource("3_ctf2f")]
 z_index = -1
@@ -346,6 +352,15 @@ position = Vector2(966, 30)
 player_path = NodePath("../PlayerSpawn")
 max_speed = 180.0
 follow_distance = 35.0
+
+[node name="Dokkaebi" parent="." instance=ExtResource("32_waf45")]
+position = Vector2(851, 5)
+
+[node name="Dokkaebi2" parent="." instance=ExtResource("33_o77tf")]
+position = Vector2(940, 57)
+
+[node name="Dokkaebi3" parent="." instance=ExtResource("34_b7yxm")]
+position = Vector2(933, -26)
 
 [editable path="Environment/Objects/Lamp post"]
 [editable path="Environment/Objects/Lamp post2"]

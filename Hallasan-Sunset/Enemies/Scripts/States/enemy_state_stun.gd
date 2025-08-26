@@ -1,59 +1,203 @@
-class_name EnemyStateStun extends EnemyState
+class_name EnemyStateStun
+extends EnemyState
 
-@export var anim_name : String = "hurt"
-@export var knockback_speed : float = 200.0
-@export var decelerate_speed : float = 5.0
+@export var anim_name: String = "hurt"
+
+@export_category("Motion")
+@export var knockback_speed: float = 200.0
+@export var decelerate_speed: float = 600.0      # move_toward toward 0 per second
+
+@export_category("Stun Timing")
+@export var min_stun_time: float = 0.12         # required minimum
+@export var max_stun_time: float = 0.60         # failsafe if anim loops
+@export var refresh_on_hit: bool = true         # allow re-stun on subsequent hits
+
+@export_category("Grace I-Frames")
+@export var grace_invuln_duration: float = 0.08 # i-frames at start of stun
+@export var refresh_grace_on_hit: bool = true   # reapply grace when re-stunned
+
+@export_category("Juice")
+@export var do_hit_pause: bool = true
+@export var hit_pause_scale: float = 0.01       # 0.0..1.0 (lower = harder pause)
+@export var hit_pause_duration: float = 0.01
+@export var do_screen_shake: bool = true
+@export var shake_amplitude: float = 6.0
+@export var shake_duration: float = 0.10
+@export var do_flash: bool = true
+@export var flash_color: Color = Color(1.6, 1.6, 1.6, 1.0)  # bright modulate
+@export var flash_duration: float = 0.08
+@export var do_squash: bool = true
+@export var squash_scale: Vector2 = Vector2(1.12, 0.88)
+@export var squash_duration: float = 0.08
+@export var tilt_degrees: float = 7.0
+@export var tilt_duration: float = 0.06
+
+@export_category("Nodes (optional but recommended)")
+@export var sprite_path: NodePath                    # Sprite2D/AnimatedSprite2D
+@export var particles_path: NodePath                 # GPUParticles2D (optional)
+@export var sfx_player_path: NodePath                # AudioStreamPlayer (optional)
 
 @export_category("AI")
-@export var next_state : EnemyState
+@export var next_state: EnemyState
 
-var _damage_position : Vector2
-var _direction : Vector2
-var _animation_finished : bool = false
+var _damage_position: Vector2
+var _direction: Vector2 = Vector2.ZERO
+var _animation_finished: bool = false
+var _stun_time: float = 0.0
+var _invuln_timer: float = 0.0
+var _tween: Tween
+var _orig_modulate: Color = Color.WHITE
+var _orig_scale: Vector2 = Vector2.ONE
+var _orig_rotation: float = 0.0
 
-## What happens when we initialize this state?
 func init() -> void:
-	enemy.enemy_damaged.connect(_on_enemy_damaged)
+	if not enemy.enemy_damaged.is_connected(_on_enemy_damaged):
+		enemy.enemy_damaged.connect(_on_enemy_damaged)
 
-## What happens when the enemy enters this State?
 func enter() -> void:
-	enemy.invulnerable = true
 	_animation_finished = false
+	_stun_time = 0.0
+	_invuln_timer = 0.0
+	enemy.invulnerable = true
 
-	_direction = enemy.global_position.direction_to(_damage_position)
+	# Compute knockback away from damage source (fallback safely)
+	var from_pos := _damage_position if _damage_position != Vector2.ZERO else (enemy.global_position + Vector2.LEFT)
+	_direction = enemy.global_position.direction_to(from_pos)
+	if _direction == Vector2.ZERO:
+		_direction = Vector2.LEFT
 	enemy.set_direction(_direction)
-	enemy.velocity = _direction * -knockback_speed
+	enemy.velocity = -_direction * knockback_speed
 
+	# Animation (one-shot finished)
+	if anim_name != "":
+		enemy.update_animation(anim_name)
+		if not enemy.animation_player.animation_finished.is_connected(_on_animation_finished):
+			enemy.animation_player.animation_finished.connect(_on_animation_finished, CONNECT_ONE_SHOT)
 
-	enemy.update_animation(anim_name)
-	enemy.animation_player.animation_finished.connect(_on_animation_finished)
+	# Cache visuals and apply juice
+	_cache_visual_defaults()
+	_apply_hit_juice()
 
-## What happens when the enemy exits this State?
 func exit() -> void:
+	# End invulnerability if grace lasted the whole time
 	enemy.invulnerable = false
-	enemy.animation_player.animation_finished.disconnect(_on_animation_finished)
+	# Ensure the anim signal is not left connected if the one-shot never fired
+	if enemy.animation_player.animation_finished.is_connected(_on_animation_finished):
+		enemy.animation_player.animation_finished.disconnect(_on_animation_finished)
+	# Clean tweens / restore visuals
+	if _tween and _tween.is_running():
+		_tween.kill()
+	_restore_visual_defaults()
 
-## What happens during the _process update in this State?
-func process(_delta : float) -> EnemyState:
-	if _animation_finished:
+func process(delta: float) -> EnemyState:
+	_stun_time += delta
+	_invuln_timer += delta
+
+	# Grace window ends
+	if enemy.invulnerable and _invuln_timer >= grace_invuln_duration:
+		enemy.invulnerable = false
+
+	# Smoothly damp knockback toward 0
+	enemy.velocity = enemy.velocity.move_toward(Vector2.ZERO, decelerate_speed * delta)
+
+	var min_done := _stun_time >= min_stun_time
+	var fail_safe := _stun_time >= max_stun_time
+	if (_animation_finished and min_done) or fail_safe:
 		return next_state
-	enemy.velocity -= enemy.velocity * decelerate_speed * _delta
+
 	return null
 
-## What happens during the _physics_process update in this State?
-func physics(_delta : float) -> EnemyState:
+func physics(_delta: float) -> EnemyState:
 	return null
 
-func _on_enemy_damaged(hurt_box : HurtBox) -> void:
+func _on_enemy_damaged(hurt_box: HurtBox) -> void:
 	_damage_position = hurt_box.global_position
-	state_machine.change_state(self)
-	PlayerManager.shake_camera()
 
-func _on_animation_finished(_a : String) -> void:
+	# Optional camera shake on impact
+	if do_screen_shake:
+		# If your PlayerManager supports parameters, great; otherwise fallback still works.
+		if "shake_camera" in PlayerManager:
+			# Try an overload with amplitude/duration if available:
+			# PlayerManager.shake_camera(shake_amplitude, shake_duration)
+			PlayerManager.shake_camera()
+
+	# Hit-pause first (so recoil feels weighty)
+	if do_hit_pause:
+		_hit_pause(hit_pause_scale, hit_pause_duration)
+
+	# Re-stun / refresh if allowed
+	if refresh_on_hit:
+		state_machine.change_state(self)
+	else:
+		# Nudge direction/velocity even if not fully re-stunning
+		var dir := enemy.global_position.direction_to(_damage_position)
+		if dir == Vector2.ZERO:
+			dir = Vector2.LEFT
+		enemy.velocity = -dir * knockback_speed * 0.6
+
+	# Flash / squash again if we didn’t re-enter
+	if not refresh_on_hit:
+		_reapply_impact_juice_only()
+
+func _on_animation_finished(_a: StringName) -> void:
 	_animation_finished = true
 
-# Hit pause function
-func frame_freeze(time_scale: float, duration: float) -> void:
-	Engine.time_scale = time_scale
-	await get_tree().create_timer(duration * time_scale).timeout
-	Engine.time_scale = 1.0
+# ------------ Juice helpers ------------
+
+func _cache_visual_defaults() -> void:
+	var sprite := get_node_or_null(sprite_path) as CanvasItem
+	if sprite:
+		_orig_modulate = sprite.modulate
+		_orig_scale = sprite.get_scale()
+		_orig_rotation = sprite.rotation
+
+func _restore_visual_defaults() -> void:
+	var sprite := get_node_or_null(sprite_path) as CanvasItem
+	if sprite:
+		sprite.modulate = _orig_modulate
+		sprite.set_scale(_orig_scale)
+		sprite.rotation = _orig_rotation
+
+func _apply_hit_juice() -> void:
+	# Flash + squash + tilt + particles + sfx
+	var sprite := get_node_or_null(sprite_path) as CanvasItem
+	var particles := get_node_or_null(particles_path) as GPUParticles2D
+	var sfx := get_node_or_null(sfx_player_path) as AudioStreamPlayer
+
+	if particles:
+		particles.restart()
+	if sfx:
+		sfx.play()
+
+	if sprite:
+		# Kill any prior tween to avoid stacking
+		if _tween and _tween.is_running():
+			_tween.kill()
+		_tween = create_tween().set_parallel(true)
+
+		if do_flash:
+			sprite.modulate = _orig_modulate
+			_tween.tween_property(sprite, "modulate", flash_color, 0.0) # snap to flash
+			_tween.tween_property(sprite, "modulate", _orig_modulate, flash_duration).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+
+		if do_squash:
+			sprite.set_scale(_orig_scale)
+			var squash := Vector2(_orig_scale.x * squash_scale.x, _orig_scale.y * squash_scale.y)
+			_tween.tween_property(sprite, "scale", squash, 0.0) # snap
+			_tween.tween_property(sprite, "scale", _orig_scale, squash_duration).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+
+		if tilt_degrees != 0.0:
+			sprite.rotation = deg_to_rad(sign(enemy.velocity.x) * -tilt_degrees)
+			_tween.tween_property(sprite, "rotation", _orig_rotation, tilt_duration).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+
+func _reapply_impact_juice_only() -> void:
+	# For the case where we don't fully re-enter the state
+	_apply_hit_juice()
+
+func _hit_pause(time_scale: float, duration: float) -> void:
+	var prev := Engine.time_scale
+	Engine.time_scale = clamp(time_scale, 0.0, 1.0)
+	# Use an ignore_time_scale timer so we always resume even during the pause
+	var t := get_tree().create_timer(duration, false, true)  # (time, process_always=false, ignore_time_scale=true)
+	await t.timeout
+	Engine.time_scale = prev

@@ -1,23 +1,29 @@
-[gd_scene load_steps=54 format=3 uid="uid://hwrashqk80iw"]
+[gd_scene load_steps=56 format=3 uid="uid://cyydw3n6twla6"]
 
-[ext_resource type="Script" uid="uid://3eugq3lyyivt" path="res://Hallasan-Sunset/Enemies/Scripts/States/Enemy.gd" id="1_0c1e3"]
-[ext_resource type="Texture2D" uid="uid://bi47jj5telw2g" path="res://Hallasan-Sunset/Enemies/Common Enemies/Slime/Shadow copy.png" id="2_8kktc"]
-[ext_resource type="Texture2D" uid="uid://bc3fr2ik3emfj" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dokkaebi/Sprites/Dokkaebi Sprite Sheet.png" id="3_imhq7"]
-[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="4_kr7q7"]
-[ext_resource type="AudioStream" uid="uid://c72fo331ibgld" path="res://Hallasan-Sunset/Audio/Sound effects/Enemy_kill.mp3" id="5_htp2t"]
-[ext_resource type="Script" uid="uid://cw4vkck68lt22" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_machine.gd" id="6_bbigo"]
-[ext_resource type="Script" uid="uid://brlcx1u3weeem" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_idle.gd" id="7_2hfvm"]
-[ext_resource type="Script" uid="uid://dkqddec3hu23w" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_wander.gd" id="8_jbxad"]
-[ext_resource type="Script" uid="uid://du2e0pgg12551" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_stun.gd" id="9_6rcu7"]
-[ext_resource type="Script" uid="uid://nj1ai8bhfcju" path="res://Hallasan-Sunset/Enemies/Common Enemies/Slime/Destroy.gd" id="10_1kxqw"]
-[ext_resource type="Script" uid="uid://ocaacixauwww" path="res://Hallasan-Sunset/Enemies/Technical/Drop Data/drop_data.gd" id="11_qa1kq"]
-[ext_resource type="Resource" uid="uid://c3cx0nodai8jq" path="res://Hallasan-Sunset/Items/Currency/Gem/Gem.tres" id="12_e0trh"]
-[ext_resource type="Script" uid="uid://jwnndw8cqhed" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_chase.gd" id="13_dbsr2"]
-[ext_resource type="Script" uid="uid://77dq0cf7fmiq" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_attack.gd" id="14_6ox22"]
-[ext_resource type="PackedScene" uid="uid://bu0yfb7p2b8pi" path="res://Hallasan-Sunset/Player/Boxes/HitBox/hit_box.tscn" id="15_t58qi"]
-[ext_resource type="PackedScene" uid="uid://c1irimlt3ed4m" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/damage_numbers_origin.tscn" id="16_507bd"]
-[ext_resource type="PackedScene" uid="uid://c55aho78pvpy8" path="res://Hallasan-Sunset/Enemies/Technical/Vision Area/Vision_area.tscn" id="17_boejq"]
-[ext_resource type="Texture2D" uid="uid://dk75qs4d6k6p0" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/Star.png" id="18_2je4h"]
+[ext_resource type="Script" uid="uid://3eugq3lyyivt" path="res://Hallasan-Sunset/Enemies/Scripts/States/Enemy.gd" id="1_rpng2"]
+[ext_resource type="Texture2D" uid="uid://bi47jj5telw2g" path="res://Hallasan-Sunset/Enemies/Common Enemies/Slime/Shadow copy.png" id="2_vm721"]
+[ext_resource type="Shader" uid="uid://w08kxgply0g" path="res://Hallasan-Sunset/Enemies/Common Enemies/Slime/Blink.gdshader" id="3_5dflj"]
+[ext_resource type="Texture2D" uid="uid://cu4tedr56hf8g" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dokkaebi/Green/Sprites/Dokkaebi Sprite Sheet.png" id="3_ps87h"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="4_bickl"]
+[ext_resource type="AudioStream" uid="uid://c72fo331ibgld" path="res://Hallasan-Sunset/Audio/Sound effects/Enemy_kill.mp3" id="5_1hemu"]
+[ext_resource type="Script" uid="uid://cw4vkck68lt22" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_machine.gd" id="6_oq624"]
+[ext_resource type="Script" uid="uid://brlcx1u3weeem" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_idle.gd" id="7_u71so"]
+[ext_resource type="Script" uid="uid://dkqddec3hu23w" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_wander.gd" id="8_a2pou"]
+[ext_resource type="Script" uid="uid://du2e0pgg12551" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_stun.gd" id="9_dktpu"]
+[ext_resource type="Script" uid="uid://nj1ai8bhfcju" path="res://Hallasan-Sunset/Enemies/Common Enemies/Slime/Destroy.gd" id="10_xtk7f"]
+[ext_resource type="Script" uid="uid://ocaacixauwww" path="res://Hallasan-Sunset/Enemies/Technical/Drop Data/drop_data.gd" id="11_06sd4"]
+[ext_resource type="Resource" uid="uid://c3cx0nodai8jq" path="res://Hallasan-Sunset/Items/Currency/Gem/Gem.tres" id="12_2o20e"]
+[ext_resource type="Script" uid="uid://jwnndw8cqhed" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_chase.gd" id="13_yhryb"]
+[ext_resource type="Script" uid="uid://77dq0cf7fmiq" path="res://Hallasan-Sunset/Enemies/Scripts/States/enemy_state_attack.gd" id="14_h2ef1"]
+[ext_resource type="PackedScene" uid="uid://bu0yfb7p2b8pi" path="res://Hallasan-Sunset/Player/Boxes/HitBox/hit_box.tscn" id="15_mwasu"]
+[ext_resource type="PackedScene" uid="uid://c1irimlt3ed4m" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/damage_numbers_origin.tscn" id="16_8egx6"]
+[ext_resource type="PackedScene" uid="uid://c55aho78pvpy8" path="res://Hallasan-Sunset/Enemies/Technical/Vision Area/Vision_area.tscn" id="17_ty8xg"]
+[ext_resource type="Texture2D" uid="uid://dk75qs4d6k6p0" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/Star.png" id="18_jtbv2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdi4w"]
+shader = ExtResource("3_5dflj")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwr4k"]
 radius = 8.06226
@@ -252,38 +258,39 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_sakl5"]
 resource_name = "destroy_down"
+length = 1.5
 step = 0.1
-tracks/0/type = "value"
+tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GPUParticles2D2:emitting")
+tracks/0/path = NodePath("AudioStreamPlayer2D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer2D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_htp2t")
+"stream": ExtResource("5_1hemu")
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/1/use_blend = true
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShadowCopy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ShadowCopy:visible")
+tracks/2/path = NodePath("hurt_box:monitoring")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -295,74 +302,63 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite:modulate")
+tracks/3/path = NodePath("Sprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.4, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9, 10]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("hurt_box:monitoring")
+tracks/4/path = NodePath("Sprite:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [9, 10, 11, 12, 13]
+"times": PackedFloat32Array(0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_0ot0j"]
 resource_name = "destroy_side"
+length = 1.5
 step = 0.1
-tracks/0/type = "value"
+tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GPUParticles2D2:emitting")
+tracks/0/path = NodePath("AudioStreamPlayer2D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer2D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_htp2t")
+"stream": ExtResource("5_1hemu")
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/1/use_blend = true
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShadowCopy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ShadowCopy:visible")
+tracks/2/path = NodePath("hurt_box:monitoring")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -374,81 +370,70 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite:modulate")
+tracks/3/path = NodePath("Sprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.4, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [99, 100, 101, 102, 103, 104]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("hurt_box:monitoring")
+tracks/4/path = NodePath("Sprite:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [56, 57, 58, 59, 60, 61]
+"times": PackedFloat32Array(0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_kgbcw"]
 resource_name = "destroy_up"
+length = 1.5
 step = 0.1
-tracks/0/type = "value"
+tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GPUParticles2D2:emitting")
+tracks/0/path = NodePath("AudioStreamPlayer2D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer2D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_htp2t")
+"stream": ExtResource("5_1hemu")
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ShadowCopy:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hurt_box:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [52, 53, 54, 55, 56, 57]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -457,39 +442,15 @@ tracks/3/path = NodePath("Sprite:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.4, 1),
+"times": PackedFloat32Array(0.8, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("hurt_box:monitoring")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [33, 34, 35, 36, 37]
-}
 
 [sub_resource type="Animation" id="Animation_ij6g7"]
 resource_name = "Hurt"
-length = 0.3
+length = 0.4
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -515,10 +476,34 @@ tracks/1/keys = {
 "update": 1,
 "values": [12, 13, 14, 15]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:material:shader_parameter/blink_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:material:shader_parameter/blink_intensity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_2vtbh"]
 resource_name = "hurt_side"
-length = 0.3
+length = 0.4
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -544,10 +529,34 @@ tracks/1/keys = {
 "update": 1,
 "values": [106, 107, 108, 109]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:material:shader_parameter/blink_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:material:shader_parameter/blink_intensity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_i11js"]
 resource_name = "hurt_up"
-length = 0.3
+length = 0.4
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -572,6 +581,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [59, 60, 61, 62]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:material:shader_parameter/blink_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:material:shader_parameter/blink_intensity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_kxr6h"]
@@ -710,8 +743,8 @@ radius = 4.0
 height = 20.0
 
 [sub_resource type="Resource" id="Resource_a412f"]
-script = ExtResource("11_qa1kq")
-item = ExtResource("12_e0trh")
+script = ExtResource("11_06sd4")
+item = ExtResource("12_2o20e")
 probability = 70.0
 min_amount = 1
 max_amount = 3
@@ -784,11 +817,11 @@ scale_max = 1.5
 scale_over_velocity_curve = SubResource("CurveTexture_ihgs2")
 color_ramp = SubResource("GradientTexture1D_0tj5q")
 
-[node name="Dokkaebi" type="CharacterBody2D"]
+[node name="DokkaebiGreen" type="CharacterBody2D" groups=["Enemy"]]
 y_sort_enabled = true
 collision_layer = 256
 collision_mask = 16
-script = ExtResource("1_0c1e3")
+script = ExtResource("1_rpng2")
 hp = 10
 
 [node name="ShadowCopy" type="Sprite2D" parent="."]
@@ -797,17 +830,18 @@ modulate = Color(0, 0, 0, 0.231373)
 show_behind_parent = true
 texture_filter = 1
 position = Vector2(0, 24)
-texture = ExtResource("2_8kktc")
+texture = ExtResource("2_vm721")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_pdi4w")
 scale = Vector2(1.1, 1)
-texture = ExtResource("3_imhq7")
+texture = ExtResource("3_ps87h")
 hframes = 47
 vframes = 4
 frame = 1
 
-[node name="AttackHurtBox" parent="Sprite" instance=ExtResource("4_kr7q7")]
+[node name="AttackHurtBox" parent="Sprite" instance=ExtResource("4_bickl")]
 unique_name_in_owner = true
 position = Vector2(2.08165e-12, -10)
 monitoring = false
@@ -830,34 +864,32 @@ shape = SubResource("CapsuleShape2D_bjysn")
 debug_color = Color(0.578404, 0.552679, 0, 0.42)
 
 [node name="EnemyStateMachine" type="Node" parent="."]
-script = ExtResource("6_bbigo")
+script = ExtResource("6_oq624")
 
 [node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("after_idle_state")]
-script = ExtResource("7_2hfvm")
+script = ExtResource("7_u71so")
 state_duration_min = 0.2
 state_duration_max = 0.5
 after_idle_state = NodePath("../Wander")
 
 [node name="Wander" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("8_jbxad")
+script = ExtResource("8_a2pou")
 wander_speed = 40.0
 state_animation_duration = 0.7
 next_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("9_6rcu7")
+script = ExtResource("9_dktpu")
 next_state = NodePath("../Chase")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
-script = ExtResource("10_1kxqw")
+script = ExtResource("10_xtk7f")
 knockback_speed = 100.0
-rotation_speed = 0.0
 flight_duration = 0.5
-death_scale_duration = 1.0
-drops = Array[ExtResource("11_qa1kq")]([SubResource("Resource_a412f")])
+drops = Array[ExtResource("11_06sd4")]([SubResource("Resource_a412f")])
 
 [node name="Chase" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "next_state", "attack_state")]
-script = ExtResource("13_dbsr2")
+script = ExtResource("13_yhryb")
 chase_speed = 85.0
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../Sprite/AttackHurtBox")
@@ -865,13 +897,13 @@ next_state = NodePath("../Attack")
 attack_state = NodePath("../Attack")
 
 [node name="Attack" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state", "attack_area")]
-script = ExtResource("14_6ox22")
+script = ExtResource("14_h2ef1")
 attack_cooldown = 0.5
 attack_damage = 50
 next_state = NodePath("../Chase")
 attack_area = NodePath("../../Sprite/AttackHurtBox")
 
-[node name="HitBox" parent="." instance=ExtResource("15_t58qi")]
+[node name="HitBox" parent="." instance=ExtResource("15_mwasu")]
 position = Vector2(0, -9)
 collision_layer = 260
 collision_mask = 5
@@ -880,12 +912,12 @@ collision_mask = 5
 shape = SubResource("CircleShape2D_herpx")
 debug_color = Color(0.92549, 0.215686, 0.423529, 0.419608)
 
-[node name="DamageNumbersOrigin" parent="." instance=ExtResource("16_507bd")]
+[node name="DamageNumbersOrigin" parent="." instance=ExtResource("16_8egx6")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4
 
-[node name="VisionArea" parent="." instance=ExtResource("17_boejq")]
+[node name="VisionArea" parent="." instance=ExtResource("17_ty8xg")]
 visible = false
 position = Vector2(12.2275, -17)
 collision_mask = 17
@@ -894,7 +926,7 @@ collision_mask = 17
 position = Vector2(-12, 6.66667)
 polygon = PackedVector2Array(-16, 2.08165e-12, 16, 2.08165e-12, 113.772, 112.333, -128.227, 113.333)
 
-[node name="hurt_box" parent="." instance=ExtResource("4_kr7q7")]
+[node name="hurt_box" parent="." instance=ExtResource("4_bickl")]
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box"]
@@ -905,8 +937,8 @@ shape = SubResource("CapsuleShape2D_2vtbh")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, -24)
 emitting = false
-amount = 10
-texture = ExtResource("18_2je4h")
+amount = 1
+texture = ExtResource("18_jtbv2")
 lifetime = 0.2
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_h5dtl")
@@ -915,7 +947,8 @@ process_material = SubResource("ParticleProcessMaterial_h5dtl")
 z_index = 1
 texture_filter = 1
 emitting = false
-texture = ExtResource("18_2je4h")
+amount = 1
+texture = ExtResource("18_jtbv2")
 one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0

@@ -47,7 +47,7 @@ func _travel_forward(delta: float) -> void:
 	if distance_traveled >= max_range:
 		_start_return()
 
-func _return_to_player(delta: float) -> void:
+func _return_to_player(_delta: float) -> void:
 	if not player_ref:
 		queue_free()
 		return

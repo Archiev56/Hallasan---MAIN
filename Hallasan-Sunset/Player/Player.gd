@@ -180,7 +180,7 @@ func _on_player_leveled_up() -> void:
 	effect_animation_player.play("level_up")
 	update_hp(max_hp)
 
-func _input(event):
+func _input(_event):
 
 		var input_direction = Vector2(
 			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
