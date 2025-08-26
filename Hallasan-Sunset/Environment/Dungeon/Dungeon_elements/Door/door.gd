@@ -6,7 +6,6 @@ extends Node2D
 var player_in_area: bool = false
 
 func _ready() -> void:
-	area_2d.body_entered.connect(_on_area_2d_body_entered)
 	area_2d.body_exited.connect(_on_area_2d_body_exited)
 
 func _process(_delta: float) -> void:

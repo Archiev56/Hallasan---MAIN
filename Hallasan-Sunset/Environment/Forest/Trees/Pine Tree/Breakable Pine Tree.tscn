@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn308riiq20fu"]
+
+[ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="1_g1jq3"]
+[ext_resource type="Shader" uid="uid://26jkq5mac4hr" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Slice.gdshader" id="1_ye2xa"]
+[ext_resource type="Shader" uid="uid://g2tjxoxdc1bd" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Tree.gdshader" id="2_0bgye"]
+[ext_resource type="Texture2D" uid="uid://c6ppo5l18x0fu" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Sprites/Pine_tree.png" id="3_ye2xa"]
+[ext_resource type="Script" uid="uid://v6s65tftc0kp" path="res://Hallasan-Sunset/Technical/Item Dropper/item_dropper.gd" id="5_q041v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4oyx2"]
+shader = ExtResource("1_ye2xa")
+shader_parameter/slice_center = Vector2(0.5, 0.5)
+shader_parameter/slice_angle = 45.0
+shader_parameter/slice_distance = 0.0
+shader_parameter/pixel_size = 100.0
+shader_parameter/expansion_factor = 0.5
+shader_parameter/border_color = Vector4(0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6lsk"]
+shader = ExtResource("2_0bgye")
+shader_parameter/amplitude = 5.0
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 1.0
+shader_parameter/instance_offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lt755"]
+shader = ExtResource("1_ye2xa")
+shader_parameter/slice_center = Vector2(0.5, 0.5)
+shader_parameter/slice_angle = 90.0
+shader_parameter/slice_distance = 0.0
+shader_parameter/pixel_size = 100.0
+shader_parameter/expansion_factor = 0.5
+shader_parameter/border_color = Vector4(0, 0, 0, 0)
+
+[node name="Pine Tree" type="StaticBody2D"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_4oyx2")
+collision_layer = 16
+collision_mask = 16
+
+[node name="Shadow" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0.313726)
+z_index = -1
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-1, 59)
+scale = Vector2(3, 3)
+texture = ExtResource("1_g1jq3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_c6lsk")
+texture = ExtResource("3_ye2xa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_lt755")
+texture = ExtResource("3_ye2xa")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+y_sort_enabled = true
+polygon = PackedVector2Array(-45, 69, -53, 32, -2, 17, 50, 41, 40, 72, 0, 94)
+
+[node name="ItemDropper" type="Node2D" parent="."]
+script = ExtResource("5_q041v")
+metadata/_custom_type_script = "uid://v6s65tftc0kp"

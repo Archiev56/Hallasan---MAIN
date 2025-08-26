@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dul56wllwp1sp"]
+
+[ext_resource type="Texture2D" uid="uid://dq0t5jaopmu3p" path="res://Hallasan-Sunset/Environment/Forest/Rock/Sprites/rock.png" id="1_d6bbe"]
+
+[node name="Rocket" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d6bbe")

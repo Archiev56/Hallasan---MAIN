@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4161jtnkq437"
+path="res://.godot/imported/goodresult-82807.mp3-d727f62c3b98d9aea6485d45c156c44c.mp3str"
+
+[deps]
+
+source_file="res://Hallasan-Sunset/Audio/Sound effects/goodresult-82807.mp3"
+dest_files=["res://.godot/imported/goodresult-82807.mp3-d727f62c3b98d9aea6485d45c156c44c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

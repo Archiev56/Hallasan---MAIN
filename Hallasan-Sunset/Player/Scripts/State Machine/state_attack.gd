@@ -93,7 +93,7 @@ func _apply_attack_movement() -> void:
 	var drawback_tween = create_tween()
 	drawback_tween.tween_method(_apply_movement_force, -attack_direction * drawback_force, Vector2.ZERO, drawback_duration)
 	
-	await get_tree().create_timer(drawback_duration)
+	get_tree().create_timer(drawback_duration)
 	var thrust_tween = create_tween()
 	thrust_tween.tween_method(_apply_movement_force, attack_direction * thrust_force, Vector2.ZERO, thrust_duration)
 
@@ -166,6 +166,6 @@ func _apply_combo_movement(multiplier: float) -> void:
 	var drawback_tween = create_tween()
 	drawback_tween.tween_method(_apply_movement_force, -attack_direction * enhanced_drawback, Vector2.ZERO, drawback_duration * 0.8)
 	
-	await get_tree().create_timer(drawback_duration * 0.8)
+	get_tree().create_timer(drawback_duration * 0.8)
 	var thrust_tween = create_tween()
 	thrust_tween.tween_method(_apply_movement_force, attack_direction * enhanced_thrust, Vector2.ZERO, thrust_duration * 0.9)

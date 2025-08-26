@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biivq81mu5hyq"
-path="res://.godot/imported/Test.png-8a0fb3fe1d219808bbd310e4914d6a21.ctex"
+uid="uid://q5fp1s8ywspw"
+path="res://.godot/imported/spritesheet.png-82b952d11d58f017d47cab80dce2dd33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hallasan-Sunset/npc/Characters/Act 1/Inugi/Sprites/Test.png"
-dest_files=["res://.godot/imported/Test.png-8a0fb3fe1d219808bbd310e4914d6a21.ctex"]
+source_file="res://Hallasan-Sunset/Enemies/Common Enemies/Gwishin/spritesheet.png"
+dest_files=["res://.godot/imported/spritesheet.png-82b952d11d58f017d47cab80dce2dd33.ctex"]
 
 [params]
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://cr4mn2ndohjxo"]
+[gd_scene load_steps=22 format=3 uid="uid://cr4mn2ndohjxo"]
 
 [ext_resource type="Texture2D" uid="uid://ctx7n11wdlnxy" path="res://Hallasan-Sunset/Environment/Forest/Lamppost/Sprites/animated lamp posts-1.png" id="1_4o53q"]
-[ext_resource type="Script" uid="uid://0mnmwsenhjp1" path="res://Hallasan-Sunset/Environment/Forest/Lamppost/TorchFlicker.gd" id="2_hcnu5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0iq1i"]
 atlas = ExtResource("1_4o53q")
@@ -144,18 +143,6 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_eol0w"]
-offsets = PackedFloat32Array(0, 0.179266, 0.568035, 0.924406, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 0.983333, 0, 1, 1, 0.505882, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_v48q5"]
-gradient = SubResource("Gradient_eol0w")
-width = 72
-height = 72
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
-
 [node name="Lamp post" type="StaticBody2D"]
 y_sort_enabled = true
 
@@ -171,10 +158,3 @@ sprite_frames = SubResource("SpriteFrames_p5r2m")
 autoplay = "default"
 frame_progress = 0.708777
 flip_h = true
-
-[node name="PointLight2D4" type="PointLight2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(-10, 6)
-energy = 0.0
-texture = SubResource("GradientTexture2D_v48q5")
-script = ExtResource("2_hcnu5")

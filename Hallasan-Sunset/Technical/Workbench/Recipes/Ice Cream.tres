@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=5 format=3 uid="uid://bqf14hu6wpmpb"]
+
+[ext_resource type="Resource" uid="uid://dixsynm0elypt" path="res://Hallasan-Sunset/Items/Consumables/IceCream/IceCream.tres" id="1_4t7ii"]
+[ext_resource type="Script" uid="uid://bjljx65ju43xa" path="res://Hallasan-Sunset/Technical/Workbench/Recipe_requirement.gd" id="1_gccxt"]
+[ext_resource type="Script" uid="uid://c33hdokg8rlgm" path="res://Hallasan-Sunset/Technical/Workbench/Recipe.gd" id="2_4t7ii"]
+[ext_resource type="Resource" uid="uid://dkocb3p0ldgx" path="res://Hallasan-Sunset/Technical/Workbench/Recipes/Kimbap.tres" id="3_0njuc"]
+
+[resource]
+script = ExtResource("2_4t7ii")
+craftable_item = ExtResource("1_4t7ii")
+requirements = Array[ExtResource("1_gccxt")]([ExtResource("3_0njuc")])
+custom_description = "//"
+crafting_time = 0.0
+requires_fuel = false
+workbench_types = Array[String]([])
+metadata/_custom_type_script = "uid://c33hdokg8rlgm"

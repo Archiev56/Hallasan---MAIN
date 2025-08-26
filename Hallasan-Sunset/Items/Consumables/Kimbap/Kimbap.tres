@@ -17,3 +17,6 @@ description = "Yum!"
 texture = ExtResource("3_aa0v2")
 cost = 1
 effects = Array[ExtResource("1_3ru12")]([SubResource("Resource_bacri")])
+show_collection_notification = false
+is_important = false
+custom_notification_message = ""

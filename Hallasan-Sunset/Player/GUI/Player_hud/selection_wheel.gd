@@ -65,7 +65,7 @@ func _draw():
 			var draw_pos = radius_mid * Vector2.from_angle(mid_rads) + offset
 			draw_texture_rect_region(options[i].sprite_texture, Rect2(draw_pos, SPRITE_SIZE), options[i].region)
 
-func _process(delta):
+func _process(_delta):
 	var mouse_pos = get_local_mouse_position()
 	var mouse_radius = mouse_pos.length()
 	if mouse_radius < inner_radius:

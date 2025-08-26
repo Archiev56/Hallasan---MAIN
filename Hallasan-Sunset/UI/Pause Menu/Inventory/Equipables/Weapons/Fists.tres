@@ -21,3 +21,6 @@ description = "Furious fists of fury!"
 texture = ExtResource("4_t7gf7")
 cost = 1
 effects = Array[ExtResource("1_t7gf7")]([])
+show_collection_notification = true
+is_important = false
+custom_notification_message = ""

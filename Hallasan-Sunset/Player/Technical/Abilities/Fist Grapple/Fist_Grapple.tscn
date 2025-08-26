@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://lxatnte4qgfd"]
+
+[ext_resource type="Texture2D" uid="uid://ca3xi6xmo4pcs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/fist_spritesheet.png" id="1_hnppe"]
+[ext_resource type="Script" uid="uid://cxexdxd1g1tfm" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Grapple/fist_grapple.gd" id="1_uvudi"]
+[ext_resource type="PackedScene" uid="uid://b5rmod0fwgoy" path="res://Hallasan-Sunset/Player/Boxes/HurtBox/hurt_box.tscn" id="3_lei83"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvudi"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3xqm"]
+radius = 24.0
+
+[node name="FistGrapple" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 256
+script = ExtResource("1_uvudi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hnppe")
+hframes = 16
+frame = 8
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_uvudi")
+
+[node name="HurtBox" parent="." instance=ExtResource("3_lei83")]
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_j3xqm")
+debug_color = Color(0.999774, 0, 0.101632, 0.42)

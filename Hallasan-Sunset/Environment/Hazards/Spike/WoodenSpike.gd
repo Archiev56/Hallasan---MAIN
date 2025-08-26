@@ -4,13 +4,13 @@ extends Area2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 # Function triggered when a body enters the spike's area
-func _on_body_entered(body):# Ensure the body is the player
+func _on_body_entered(_body):# Ensure the body is the player
 		animation_player.play("Spike")
 		# Check if the player is invulnerable (e.g., while dashing)
 
 
 # Function triggered when a body exits the spike's area
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	animation_player.play("SpikeDown")
 	await animation_player.animation_finished
 	

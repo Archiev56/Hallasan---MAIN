@@ -15,9 +15,9 @@ texture_margin_bottom = 10.0
 [node name="InventorySlot" type="Button"]
 process_mode = 3
 texture_filter = 1
-custom_minimum_size = Vector2(48, 48)
-offset_right = 48.0
-offset_bottom = 48.0
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_h4nog")
 script = ExtResource("1_3781g")
 
@@ -41,12 +41,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = -16.5
-offset_right = 18.0
-offset_bottom = 16.5
+offset_left = -8.0
+offset_top = -6.0
+offset_right = 28.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_sjfhg")
 stretch_mode = 3
 

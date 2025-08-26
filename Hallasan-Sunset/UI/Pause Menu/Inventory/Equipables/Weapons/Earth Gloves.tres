@@ -22,3 +22,6 @@ description = "Big Bang gloves
 texture = ExtResource("5_a51j7")
 cost = 10
 effects = Array[ExtResource("1_ow778")]([])
+show_collection_notification = true
+is_important = false
+custom_notification_message = ""

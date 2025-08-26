@@ -42,6 +42,15 @@ var last_player_position: Vector2 = Vector2.ZERO  # Track player movement
 # Visual connection line
 var connection_line: Line2D = null
 
+# Ghost/Dash Shadow Effect
+var ghost_sprites: Array = []
+var is_ghosting := false
+var ghost_duration := 0.3  # How long the ghosting effect lasts
+var ghost_interval := 0.04  # How often to create new ghost sprites (faster for fist)
+var ghost_fade_time := 0.1  # How long each ghost takes to fade
+var ghost_timer := 0.0
+var ghosting_start_time := 0.0
+
 # ============================================================
 #  ONREADY NODES
 # ============================================================
@@ -112,9 +121,94 @@ func _setup_push_area() -> void:
 	push_area.body_exited.connect(_on_pushable_exited)
 
 # ============================================================
+#  GHOSTING SYSTEM
+# ============================================================
+func _start_ghosting() -> void:
+	if is_ghosting:
+		return  # Already ghosting
+	
+	is_ghosting = true
+	ghost_timer = 0.0
+	ghosting_start_time = Time.get_time_dict_from_system()["second"]
+	
+	print("👻 Fist ghosting started")
+
+func _create_ghost_sprite() -> void:
+	# Create a ghost copy of the fist sprite
+	var ghost = Sprite2D.new()
+	ghost.texture = texture
+	ghost.region_enabled = region_enabled
+	ghost.region_rect = region_rect
+	ghost.global_position = global_position
+	ghost.scale = scale
+	ghost.flip_h = flip_h
+	ghost.flip_v = flip_v
+	ghost.rotation = rotation
+	
+	# Set initial ghost appearance
+	var ghost_alpha = 0.4 + (speed / max_speed) * 0.3  # More visible when moving fast
+	ghost.modulate = Color(1.0, 1.0, 1.0, ghost_alpha)
+	ghost.z_index = z_index - 1  # Behind fist
+	
+	# Add to scene
+	get_parent().add_child(ghost)
+	
+	# Store ghost data
+	var ghost_data = {
+		"sprite": ghost,
+		"start_time": Time.get_time_dict_from_system()["second"]
+	}
+	ghost_sprites.append(ghost_data)
+	
+	# Start fade out tween
+	var tween = create_tween()
+	tween.tween_property(ghost, "modulate:a", 0.0, ghost_fade_time)
+	tween.tween_callback(func(): _cleanup_ghost(ghost_data))
+
+func _update_ghosting(delta: float) -> void:
+	if not is_ghosting:
+		return
+	
+	var current_time = Time.get_time_dict_from_system()["second"]
+	var elapsed = current_time - ghosting_start_time
+	
+	# Check if ghosting duration is over
+	if elapsed >= ghost_duration:
+		_stop_ghosting()
+		return
+	
+	# Create new ghost sprites at intervals, but only if moving fast enough
+	if speed > max_speed * 0.3:  # Only ghost when moving reasonably fast
+		ghost_timer += delta
+		if ghost_timer >= ghost_interval:
+			_create_ghost_sprite()
+			ghost_timer = 0.0
+
+func _stop_ghosting() -> void:
+	is_ghosting = false
+	ghost_timer = 0.0
+	print("👻 Fist ghosting stopped")
+
+func _cleanup_ghost(ghost_data: Dictionary) -> void:
+	if ghost_data.has("sprite") and is_instance_valid(ghost_data["sprite"]):
+		ghost_data["sprite"].queue_free()
+	ghost_sprites.erase(ghost_data)
+
+func _cleanup_all_ghosts() -> void:
+	for ghost_data in ghost_sprites:
+		if ghost_data.has("sprite") and is_instance_valid(ghost_data["sprite"]):
+			ghost_data["sprite"].queue_free()
+	ghost_sprites.clear()
+	is_ghosting = false
+
+# ============================================================
 #  PHYSICS PROCESS
 # ============================================================
 func _physics_process(delta: float) -> void:
+	# Handle ghosting effect
+	if is_ghosting:
+		_update_ghosting(delta)
+	
 	# Handle push/pull input
 	_handle_push_pull_input()
 	
@@ -160,6 +254,9 @@ func throw(throw_direction: Vector2) -> void:
 	speed = max_speed
 	state = State.THROW
 	push_pull_mode = false  # Start in push mode
+	
+	# Start ghosting effect when throwing
+	_start_ghosting()
 	
 	# Increment global throw count
 	PlayerManager.boomerang_throw_count += 1
@@ -229,6 +326,9 @@ func _attach_to_object(obj: PushableStatue) -> void:
 	attachment_offset = global_position - obj.global_position
 	speed = 0  # Stop fist movement
 	last_player_position = player.global_position  # Initialize player position tracking
+	
+	# Stop ghosting when attached
+	_stop_ghosting()
 	
 	# Tell the statue to start following the player
 	obj.start_following_player(player)
@@ -316,7 +416,6 @@ func _detach_from_object() -> void:
 		return
 		
 	is_attached_to_object = false
-	print("🔓 Fist detached from: ", attached_object.name if attached_object else "unknown")
 	
 	# Hide the connection line
 	_hide_connection_line()
@@ -334,6 +433,8 @@ func _detach_from_object() -> void:
 	if state != State.RETURN:
 		state = State.RETURN
 		push_pull_mode = true
+		# Start ghosting again when returning
+		_start_ghosting()
 	
 	# Set return speed
 	speed = max_speed * 0.8
@@ -597,6 +698,9 @@ func _exit_tree() -> void:
 	# Clean up connection line
 	if connection_line and is_instance_valid(connection_line):
 		connection_line.queue_free()
+	
+	# Clean up all ghost sprites
+	_cleanup_all_ghosts()
 	
 	# Stop all pushing when fist is destroyed
 	for pushable in currently_pushing:

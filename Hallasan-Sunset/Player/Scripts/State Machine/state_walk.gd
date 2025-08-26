@@ -49,9 +49,7 @@ var sound_cooldown: float = 0.0
 var is_dashing: bool = false
 var dash_timer: float = 0.0
 var input: Vector2 = Vector2.ZERO
-var direction = Vector2.ZERO
 var last_direction = Vector2.ZERO
-var Player: CharacterBody2D
 var current_effective_speed: float
 var current_effective_accel: float
 var current_effective_friction: float
@@ -153,7 +151,7 @@ func handle_dashing(_delta: float):
 	else:
 		player.velocity = player.direction * dash_speed
 
-func handle_walking(delta: float):
+func handle_walking(_delta: float):
 	input = get_input()
 	
 	var is_sprinting = Input.is_action_pressed("Sprint")
@@ -163,13 +161,13 @@ func handle_walking(delta: float):
 	if input != Vector2.ZERO and last_direction != Vector2.ZERO:
 		direction_change_intensity = input.angle_to(last_direction)
 	
-	var effective_friction = current_effective_friction
-	var effective_accel = current_effective_accel
-	var effective_speed = current_effective_speed
+	var _effective_friction = current_effective_friction
+	var _effective_accel = current_effective_accel
+	var _effective_speed = current_effective_speed
 	
 	if is_sprinting:
-		effective_speed *= sprint_multiplier
-		effective_accel *= sprint_multiplier
+		_effective_speed *= sprint_multiplier
+		_effective_accel *= sprint_multiplier
 
 	# NO SLIDING - Instant stop when no input
 	if input == Vector2.ZERO:
@@ -177,7 +175,7 @@ func handle_walking(delta: float):
 		create_stop_effect()
 	else:
 		# Smooth acceleration with momentum preservation
-		var target_velocity = input * effective_speed
+		var target_velocity = input * _effective_speed
 		
 		# Add momentum preservation for smoother direction changes
 		if last_speed > 0 and player.velocity.length() > 0:

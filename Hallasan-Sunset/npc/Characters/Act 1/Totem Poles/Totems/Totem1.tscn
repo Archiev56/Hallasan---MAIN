@@ -1,12 +1,25 @@
 [gd_scene load_steps=5 format=3 uid="uid://ulerv0qebh18"]
 
 [ext_resource type="Texture2D" uid="uid://d3gijrvsgxekm" path="res://Hallasan-Sunset/npc/Characters/Act 1/Totem Poles/Sprites/1.png" id="2_7m6ec"]
-[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="2_nnnk5"]
+[ext_resource type="Shader" uid="uid://bt1dux45tveg3" path="res://Hallasan-Sunset/npc/Characters/Act 1/Totem Poles/Totems/Totem1.gdshader" id="2_d35y0"]
 [ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="5_viqbp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_noodt"]
-shader = ExtResource("2_nnnk5")
-shader_parameter/WindStrength = 0.0
+shader = ExtResource("2_d35y0")
+shader_parameter/sway_strength = 0.008
+shader_parameter/sway_speed = 0.7
+shader_parameter/breathing_strength = 0.015
+shader_parameter/breathing_speed = 1.2
+shader_parameter/glow_intensity = 0.3
+shader_parameter/glow_speed = 1.5
+shader_parameter/glow_color = Vector4(0, 0, 0, 0)
+shader_parameter/pulse_strength = 0.1
+shader_parameter/pulse_speed = 2.0
+shader_parameter/ancient_noise_strength = 0.0
+shader_parameter/ancient_noise_speed = 0.0
+shader_parameter/enable_mystical_particles = true
+shader_parameter/particle_density = 8.0
+shader_parameter/particle_color = Vector4(1, 0.9, 0.6, 0.7)
 
 [node name="Totem1" type="Area2D"]
 z_index = 5

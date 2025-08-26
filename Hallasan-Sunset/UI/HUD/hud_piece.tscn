@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0aw050bwod1c"]
+
+[ext_resource type="Texture2D" uid="uid://cthp1pyb57rum" path="res://Hallasan-Sunset/Player/GUI/Player_hud/Sprites/Hud piece/test_hud-Sheet.png" id="2_buo5w"]
+[ext_resource type="Texture2D" uid="uid://pjuk6pw1ci5r" path="res://Hallasan-Sunset/Player/GUI/Player_hud/Sprites/Hud piece/Wheel.png" id="3_e15kd"]
+[ext_resource type="Texture2D" uid="uid://1codihn5c7wq" path="res://Hallasan-Sunset/Player/GUI/Player_hud/Sprites/Hud piece/Ring.png" id="3_uuier"]
+
+[sub_resource type="Animation" id="Animation_2pdjb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ring:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_px5uo"]
+resource_name = "Wheel_spin"
+length = 3600.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3600),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ring:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3600),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8qke"]
+_data = {
+&"RESET": SubResource("Animation_2pdjb"),
+&"Wheel_spin": SubResource("Animation_px5uo")
+}
+
+[node name="Hud Piece" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Piece" type="Sprite2D" parent="."]
+texture = ExtResource("2_buo5w")
+centered = false
+vframes = 4
+
+[node name="Wheel" type="Sprite2D" parent="."]
+position = Vector2(34, 23)
+texture = ExtResource("3_e15kd")
+
+[node name="Ring" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(33, 23)
+texture = ExtResource("3_uuier")
+
+[node name="Dial" type="Sprite2D" parent="."]
+texture = ExtResource("2_buo5w")
+centered = false
+vframes = 4
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g8qke")
+}
+autoplay = "Wheel_spin"

@@ -17,3 +17,6 @@ description = "Yummy ice cream! "
 texture = ExtResource("4_gq0os")
 cost = 10
 effects = Array[ExtResource("1_u6bgh")]([SubResource("Resource_bacri")])
+show_collection_notification = true
+is_important = false
+custom_notification_message = ""

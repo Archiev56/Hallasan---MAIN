@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="EquipableItemData" load_steps=6 format=3 uid="uid://blon6cwe2ixbs"]
+[gd_resource type="Resource" script_class="EquipableItemData" load_steps=7 format=3 uid="uid://blon6cwe2ixbs"]
 
 [ext_resource type="Script" uid="uid://b43ngylegqxcw" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/item_effect.gd" id="1_xttyg"]
 [ext_resource type="Script" uid="uid://dntj3tef2mfd2" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_item_modifier.gd" id="2_afqlb"]
 [ext_resource type="Script" uid="uid://f4v2hev5plf6" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Scripts/equipable_items.gd" id="3_0tb13"]
+[ext_resource type="AudioStream" uid="uid://b4161jtnkq437" path="res://Hallasan-Sunset/Audio/Sound effects/goodresult-82807.mp3" id="3_pjs4f"]
 [ext_resource type="Texture2D" uid="uid://cisnutuuk4smi" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Untitled_Artwork 125.png" id="4_xttyg"]
 
 [sub_resource type="Resource" id="Resource_q4wgp"]
@@ -20,3 +21,7 @@ description = "Scuffed and cracked, but still offers some protection. A staple f
 texture = ExtResource("4_xttyg")
 cost = 1
 effects = Array[ExtResource("1_xttyg")]([])
+show_collection_notification = true
+notification_sound = ExtResource("3_pjs4f")
+is_important = true
+custom_notification_message = ""

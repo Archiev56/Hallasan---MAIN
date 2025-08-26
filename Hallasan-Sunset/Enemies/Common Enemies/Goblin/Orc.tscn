@@ -822,6 +822,7 @@ color_ramp = SubResource("GradientTexture1D_0tj5q")
 
 [node name="Orc" type="CharacterBody2D"]
 y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_sbt1n")

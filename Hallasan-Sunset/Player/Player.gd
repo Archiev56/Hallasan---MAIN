@@ -15,7 +15,6 @@ const dash_duration = 0.3
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var behind_sprite = $Sprite2D/BehindObjectSprite
 @onready var hit_box: HitBox = $Interactions/HitBox
-@onready var hurt_box: HurtBox = $Interactions/HurtBox
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var lift: State_Lift = $StateMachine/Lift

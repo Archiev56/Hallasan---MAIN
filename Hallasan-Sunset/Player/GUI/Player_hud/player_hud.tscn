@@ -1,6 +1,7 @@
-[gd_scene load_steps=65 format=3 uid="uid://dsdsymcscej23"]
+[gd_scene load_steps=76 format=3 uid="uid://dsdsymcscej23"]
 
 [ext_resource type="Script" uid="uid://dbsys8xpe6boq" path="res://Hallasan-Sunset/Player/GUI/Player_hud/player_hud.gd" id="1_enff3"]
+[ext_resource type="PackedScene" uid="uid://b0aw050bwod1c" path="res://Hallasan-Sunset/UI/HUD/hud_piece.tscn" id="2_a5u1l"]
 [ext_resource type="PackedScene" uid="uid://3ou4mscqfens" path="res://Hallasan-Sunset/Player/GUI/Player_hud/heart_gui.tscn" id="2_xlvne"]
 [ext_resource type="FontFile" uid="uid://dqpmaxkisn3ln" path="res://Hallasan-Sunset/UI/Fonts/pjuksimple_pixel_font_by_pjuk_d48ilnb.ttf" id="4_suqvs"]
 [ext_resource type="FontFile" uid="uid://cfbroi8iib1y5" path="res://Hallasan-Sunset/UI/Fonts/KiwiSoda.ttf" id="5_srpej"]
@@ -17,11 +18,15 @@
 [ext_resource type="Shader" uid="uid://ckqgs303h8fu1" path="res://Hallasan-Sunset/Player/GUI/Player_hud/player_hurt.gdshader" id="14_sqlg0"]
 [ext_resource type="Texture2D" uid="uid://cteqajjg7vj0h" path="res://Hallasan-Sunset/Tilemaps/Sprites/Dusk_Icons_x24.png" id="15_k3p2f"]
 [ext_resource type="Script" uid="uid://dnbcj1tn57m15" path="res://Hallasan-Sunset/Player/GUI/Player_hud/selection_wheel.gd" id="16_3v4dm"]
+[ext_resource type="Texture2D" uid="uid://dsilespmxkmts" path="res://Hallasan-Sunset/Items/Consumables/Kimbap/Sprites/Kimbap.png" id="16_k3p2f"]
 [ext_resource type="Texture2D" uid="uid://fmh7frmypt3j" path="res://Hallasan-Sunset/Player/Animations/Athu Test/Hands_smash/hands_smash_diagonal_down_right/hands_smash_diag_down_right5.png" id="18_2de4b"]
 [ext_resource type="Texture2D" uid="uid://ca3xi6xmo4pcs" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/fist_spritesheet.png" id="19_0yu4s"]
 [ext_resource type="Texture2D" uid="uid://coqt2m4j05rkx" path="res://Hallasan-Sunset/UI/Pause Menu/Inventory/Equipables/Sprites/Fists.png" id="19_knttt"]
 [ext_resource type="Texture2D" uid="uid://cfaxiqm3i6qk8" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Spike/Sprites/atk1 fx-Spike fx-single.png" id="19_oo4ph"]
 [ext_resource type="Texture2D" uid="uid://c8qa8emwd4h8m" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Air Strike/Sprites/atk1 fx2-energy ish fx-single.png" id="20_2de4b"]
+[ext_resource type="PackedScene" uid="uid://dygo57mkljyff" path="res://Hallasan-Sunset/Technical/Workbench/Recipe_item.tscn" id="24_1l06d"]
+[ext_resource type="Texture2D" uid="uid://dq0t5jaopmu3p" path="res://Hallasan-Sunset/Environment/Forest/Rock/Sprites/rock.png" id="24_ps72t"]
+[ext_resource type="Texture2D" uid="uid://dloe04rpfjgws" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Animations/hurt_down/Untitled_Artwork 74.png" id="25_t2dix"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqb76"]
 content_margin_left = 12.0
@@ -615,88 +620,126 @@ _data = {
 &"RESET": SubResource("Animation_j5ix6")
 }
 
-[sub_resource type="Animation" id="Animation_c4vx6"]
-resource_name = "Hide_bars"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -24)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector2(0, 336), Vector2(0, 360)]
-}
-
-[sub_resource type="Animation" id="Animation_k6ms0"]
+[sub_resource type="Animation" id="Animation_ps72t"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:position")
+tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -24)]
+"update": 1,
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect2:position")
+tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 360)]
+"values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fist1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(422, 222)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fist2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(234, 222)]
+}
+
+[sub_resource type="Animation" id="Animation_1l06d"]
+resource_name = "show"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fist1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(422, 222), Vector2(422, 190), Vector2(422, 222), Vector2(422, 190), Vector2(422, 222), Vector2(422, 190), Vector2(422, 222), Vector2(422, 190), Vector2(422, 222), Vector2(422, 190)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fist2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(234, 222), Vector2(234, 190), Vector2(234, 222), Vector2(234, 190), Vector2(234, 222), Vector2(234, 190), Vector2(234, 222), Vector2(234, 190), Vector2(234, 222), Vector2(234, 190)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t2dix"]
+_data = {
+&"RESET": SubResource("Animation_ps72t"),
+&"show": SubResource("Animation_1l06d")
+}
+
+[sub_resource type="Animation" id="Animation_c4vx6"]
+resource_name = "Hide_bars"
+length = 0.4
+
+[sub_resource type="Animation" id="Animation_k6ms0"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_c4ibv"]
 resource_name = "Show_bars"
 length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector2(0, -24), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector2(0, 360), Vector2(0, 336)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c4vx6"]
 _data = {
@@ -704,6 +747,15 @@ _data = {
 &"RESET": SubResource("Animation_k6ms0"),
 &"Show_bars": SubResource("Animation_c4ibv")
 }
+
+[sub_resource type="Gradient" id="Gradient_lllqf"]
+colors = PackedColorArray(0, 0, 0, 0.128, 1, 1, 1, 0.219)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a5u1l"]
+gradient = SubResource("Gradient_lllqf")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sqlg0"]
 shader = ExtResource("14_sqlg0")
@@ -797,10 +849,23 @@ region = Rect2(38, 1, 22, 29)
 atlas = ExtResource("20_2de4b")
 region = Rect2(382, 0, 142, 160)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3p2f"]
+texture = ExtResource("8_2de4b")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
 [node name="PlayerHUD" type="CanvasLayer" groups=["player_hud"]]
 offset = Vector2(2.08165e-12, 2.08165e-12)
 transform = Transform2D(1, 2.08165e-12, 2.08165e-12, 1, 2.08165e-12, 2.08165e-12)
 script = ExtResource("1_enff3")
+
+[node name="Hud Piece" parent="." instance=ExtResource("2_a5u1l")]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -818,12 +883,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -647.0
-offset_top = 7.0
-offset_right = -600.0
-offset_bottom = 27.0
+offset_left = -659.0
+offset_top = 59.0
+offset_right = -612.0
+offset_bottom = 81.0
 grow_horizontal = 0
-scale = Vector2(2, 2)
+scale = Vector2(1.3, 1.3)
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 2
 alignment = 1
@@ -1127,20 +1192,20 @@ color = Color(0, 0, 0, 0.227)
 [node name="Energy Bar" type="Control" parent="Control"]
 texture_filter = 1
 anchors_preset = 0
-offset_left = 39.0
-offset_top = 67.0
-offset_right = 79.0
-offset_bottom = 107.0
+offset_left = 34.0
+offset_top = 117.0
+offset_right = 74.0
+offset_bottom = 157.0
 script = ExtResource("11_wyh6r")
 
 [node name="Energy Bar" type="TextureProgressBar" parent="Control/Energy Bar"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -34.0
-offset_top = -36.0
-offset_right = 64.0
-offset_bottom = -19.0
-scale = Vector2(2, 2)
+offset_left = -25.0
+offset_top = -35.0
+offset_right = 73.0
+offset_bottom = -18.0
+scale = Vector2(1.5, 1.5)
 max_value = 3.0
 value = 3.0
 rounded = true
@@ -1163,9 +1228,9 @@ libraries = {
 [node name="PanelContainer" type="PanelContainer" parent="Control/Coin Counter"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -41.0
+offset_left = 23.0
 offset_top = 85.0
-offset_right = -1.0
+offset_right = 63.0
 offset_bottom = 126.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_cwdkk")
 
@@ -1197,7 +1262,7 @@ libraries = {
 visible = false
 layout_mode = 0
 offset_right = 640.0
-offset_bottom = 14.0
+offset_bottom = 60.0
 color = Color(0, 0, 0, 1)
 
 [node name="BottomBar" type="ColorRect" parent="Control/Black Bars"]
@@ -1206,11 +1271,11 @@ layout_mode = 0
 offset_left = -1.0
 offset_top = 339.0
 offset_right = 639.0
-offset_bottom = 359.0
+offset_bottom = 399.0
 color = Color(0, 0, 0, 1)
 
 [node name="Item Notification" type="Control" parent="Control"]
-visible = false
+y_sort_enabled = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1218,46 +1283,65 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control/Item Notification"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -24.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Item Notification"]
+[node name="GainedItemAnimationPlayer" type="AnimationPlayer" parent="Control/Item Notification"]
+libraries = {
+&"": SubResource("AnimationLibrary_t2dix")
+}
 
 [node name="BarsAnimationPlayer" type="AnimationPlayer" parent="Control/Item Notification"]
 libraries = {
 &"": SubResource("AnimationLibrary_c4vx6")
 }
 
-[node name="ColorRect2" type="ColorRect" parent="Control/Item Notification"]
-layout_mode = 0
-offset_top = 360.0
-offset_right = 640.0
-offset_bottom = 435.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Control/Item Notification"]
-layout_mode = 0
-offset_top = 288.0
-offset_right = 640.0
-offset_bottom = 363.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="Control/Item Notification"]
+[node name="ItemLabel" type="Label" parent="Control/Item Notification"]
 layout_mode = 0
 offset_left = 120.0
-offset_top = 304.0
+offset_top = 247.0
 offset_right = 561.0
-offset_bottom = 342.0
+offset_bottom = 285.0
 theme_override_font_sizes/font_size = 48
 text = "YOU GOT THE BACKPACK!"
 horizontal_alignment = 1
+
+[node name="ItemGained" type="TextureRect" parent="Control/Item Notification"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -63.0
+offset_right = -8.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("16_k3p2f")
+
+[node name="Fist1" type="Sprite2D" parent="Control/Item Notification"]
+position = Vector2(422, 222)
+scale = Vector2(3, 3)
+texture = ExtResource("19_0yu4s")
+hframes = 16
+frame = 2
+
+[node name="Fist2" type="Sprite2D" parent="Control/Item Notification"]
+position = Vector2(234, 222)
+scale = Vector2(3, 3)
+texture = ExtResource("19_0yu4s")
+flip_h = true
+hframes = 16
+frame = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Item Notification"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_a5u1l")
 
 [node name="PlayerHurt" type="Control" parent="Control"]
 layout_mode = 1
@@ -1308,10 +1392,10 @@ libraries = {
 
 [node name="Abilities" type="Control" parent="Control"]
 anchors_preset = 0
-offset_left = 57.0
-offset_top = 7.0
-offset_right = 97.0
-offset_bottom = 47.0
+offset_left = 78.0
+offset_top = 58.0
+offset_right = 118.0
+offset_bottom = 98.0
 
 [node name="UiBox" type="Sprite2D" parent="Control/Abilities"]
 position = Vector2(-40, 66)
@@ -1392,6 +1476,106 @@ offset_right = 145.0
 offset_bottom = 166.0
 scale = Vector2(0.2, 0.2)
 texture = SubResource("AtlasTexture_k3p2f")
+
+[node name="TextureRect6" type="TextureRect" parent="Control/Abilities/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("GradientTexture2D_2de4b")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect6"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 145.0
+offset_bottom = 166.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("24_ps72t")
+
+[node name="TextureRect7" type="TextureRect" parent="Control/Abilities/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("GradientTexture2D_2de4b")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Abilities/HBoxContainer/TextureRect7"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 145.0
+offset_bottom = 166.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("25_t2dix")
+
+[node name="Workbench" type="Control" parent="Control"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel2" type="Panel" parent="Control/Workbench"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 33.0
+offset_right = 599.0
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k3p2f")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Workbench"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 87.0
+offset_right = 435.0
+offset_bottom = 266.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Workbench/ScrollContainer"]
+layout_mode = 2
+
+[node name="RecipeList" type="VBoxContainer" parent="Control/Workbench/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RecipeItem" parent="Control/Workbench/ScrollContainer/MarginContainer/RecipeList" instance=ExtResource("24_1l06d")]
+z_index = 0
+y_sort_enabled = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Workbench"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 108.0
+offset_right = 59.0
+offset_bottom = 148.0
+
+[node name="CloseButton" type="Button" parent="Control/Workbench"]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 316.0
+offset_right = 631.0
+offset_bottom = 337.0
+text = "Close"
+
+[node name="WorkbenchTitle" type="Label" parent="Control/Workbench"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 207.0
+offset_top = 51.0
+offset_right = 403.0
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Crafting Table"
+
+[node name="RequirementsLabel" type="Label" parent="Control/Workbench"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 13.0
+text = ";lkjnpjn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

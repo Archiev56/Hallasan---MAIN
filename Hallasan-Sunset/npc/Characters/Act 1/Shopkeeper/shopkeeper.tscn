@@ -126,6 +126,16 @@ script = ExtResource("4_qg8gq")
 npc_info = ExtResource("2_g1jcm")
 metadata/_custom_type_script = "uid://cwdm0l0hkothu"
 
+[node name="DialogText3" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_qg8gq")
+npc_info = ExtResource("6_0s0sg")
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"
+
+[node name="DialogText4" type="Node" parent="NPC/DialogueInteraction"]
+script = ExtResource("4_qg8gq")
+npc_info = ExtResource("6_0s0sg")
+metadata/_custom_type_script = "uid://cwdm0l0hkothu"
+
 [node name="DialogChoice" type="Node" parent="NPC/DialogueInteraction"]
 script = ExtResource("5_0k4mw")
 npc_info = ExtResource("6_0s0sg")

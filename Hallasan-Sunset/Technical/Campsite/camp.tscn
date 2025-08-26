@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://boeydg63ha26i"]
+
+[ext_resource type="Texture2D" uid="uid://ban04bcja7tgx" path="res://Hallasan-Sunset/Tilemaps/Sprites/Atlas-Props-sheet2.png" id="1_5ei36"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwyrx"]
+atlas = ExtResource("1_5ei36")
+region = Rect2(703, 304, 305, 229)
+
+[node name="Camp" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_wwyrx")

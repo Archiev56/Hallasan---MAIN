@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=4 uid="uid://bkgbqgy67q6fd"]
+[gd_scene load_steps=35 format=4 uid="uid://bkgbqgy67q6fd"]
 
 [ext_resource type="Script" uid="uid://7d2vundqlf1" path="res://Hallasan-Sunset/Levels/Scripts/Level.gd" id="1_6c3hc"]
 [ext_resource type="PackedScene" uid="uid://udy8tcrufx43" path="res://Hallasan-Sunset/Player/Technical/Player Spawn/player_spawn.tscn" id="2_05rfe"]
 [ext_resource type="PackedScene" uid="uid://cr8c8wtlgk4rc" path="res://Hallasan-Sunset/Tilemaps/Tileset.tscn" id="3_ctf2f"]
+[ext_resource type="PackedScene" uid="uid://bltb6s5vrpqb2" path="res://Hallasan-Sunset/Enemies/Common Enemies/Gwishin/Gwishin.tscn" id="3_djb1e"]
 [ext_resource type="TileSet" uid="uid://dhj385rk2lfl4" path="res://Hallasan-Sunset/Tilemaps/32x32_test/32x32_tileset.tres" id="4_dgxmi"]
 [ext_resource type="Script" uid="uid://bkfrr01tlskb5" path="res://Hallasan-Sunset/Tilemaps/Scripts/LevelTileMapLayer.gd" id="5_djb1e"]
 [ext_resource type="PackedScene" uid="uid://oy5p0ikicfmf" path="res://Hallasan-Sunset/npc/Characters/Act 1/Shopkeeper/shopkeeper.tscn" id="6_waf45"]
@@ -27,9 +28,18 @@
 [ext_resource type="PackedScene" uid="uid://cerpqrtpj4udh" path="res://Hallasan-Sunset/Environment/Hazards/Spike/Spike.tscn" id="25_wo25v"]
 [ext_resource type="PackedScene" uid="uid://mquiukhsvnvp" path="res://Hallasan-Sunset/Environment/Forest/Trees/Tree Borders/TreeBorderSide.tscn" id="26_mqso4"]
 [ext_resource type="PackedScene" uid="uid://4cp3bb2wjdid" path="res://Hallasan-Sunset/Environment/Forest/Interactive_grass/Interactive_grass.tscn" id="27_am8vj"]
-[ext_resource type="PackedScene" uid="uid://bmwx31xw6tiaq" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Bomb/Bomb.tscn" id="28_05rfe"]
 [ext_resource type="PackedScene" uid="uid://cb2ddj5khwruw" path="res://Hallasan-Sunset/Technical/Transition/Level_transition.tscn" id="29_dgxmi"]
-[ext_resource type="PackedScene" uid="uid://3lfwldh0r6os" path="res://Hallasan-Sunset/Enemies/Common Enemies/Goblin/Goblin.tscn" id="30_waf45"]
+[ext_resource type="PackedScene" uid="uid://bsbsklcuokb72" path="res://Hallasan-Sunset/Environment/Weather/Day&Night System/dayand_night_cycle.tscn" id="31_djb1e"]
+[ext_resource type="PackedScene" uid="uid://dgodies6dmqeu" path="res://Hallasan-Sunset/Enemies/Common Enemies/Companion/Companion.tscn" id="31_waf45"]
+
+[sub_resource type="Gradient" id="Gradient_a7ehv"]
+colors = PackedColorArray(0.347135, 0.338914, 4.81308e-08, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dgxmi"]
+gradient = SubResource("Gradient_a7ehv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fr3u6"]
 shader = ExtResource("18_81bx8")
@@ -50,7 +60,10 @@ y_sort_enabled = true
 script = ExtResource("1_6c3hc")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_05rfe")]
-position = Vector2(538, 331)
+position = Vector2(891, 39)
+
+[node name="Gwishin2" parent="." instance=ExtResource("3_djb1e")]
+position = Vector2(808, 79)
 
 [node name="Tileset" parent="." instance=ExtResource("3_ctf2f")]
 z_index = -1
@@ -106,18 +119,12 @@ position = Vector2(543, 60)
 [node name="Lamp post" parent="Environment/Objects" instance=ExtResource("11_pud6t")]
 position = Vector2(228, -233)
 
-[node name="PointLight2D4" parent="Environment/Objects/Lamp post" index="2"]
-position = Vector2(14, 7)
-
 [node name="Lamp post2" parent="Environment/Objects" instance=ExtResource("11_pud6t")]
 position = Vector2(228, -233)
 
 [node name="AnimatedSprite2D2" parent="Environment/Objects/Lamp post2" index="1"]
 position = Vector2(106, -6)
 flip_h = false
-
-[node name="PointLight2D4" parent="Environment/Objects/Lamp post2" index="2"]
-position = Vector2(95, 7)
 
 [node name="Cabin" parent="Environment/Objects" instance=ExtResource("12_1due7")]
 position = Vector2(677, -210)
@@ -137,14 +144,10 @@ texture = ExtResource("16_im1il")
 region_enabled = true
 region_rect = Rect2(110.448, 1922.85, 248.702, 172.346)
 
-[node name="Goblin" parent="Environment/Objects" groups=["Enemy"] instance=ExtResource("30_waf45")]
-position = Vector2(660, 82)
-
-[node name="Goblin2" parent="Environment/Objects" groups=["Enemy"] instance=ExtResource("30_waf45")]
-position = Vector2(858, -6)
-
-[node name="Goblin3" parent="Environment/Objects" groups=["Enemy"] instance=ExtResource("30_waf45")]
-position = Vector2(230, 18)
+[node name="Light2D" type="PointLight2D" parent="Environment/Objects/Shop Kart" groups=["scene_lights"]]
+position = Vector2(-109, -46)
+energy = 0.0
+texture = SubResource("GradientTexture2D_dgxmi")
 
 [node name="Interactables" type="Node2D" parent="Environment"]
 y_sort_enabled = true
@@ -178,9 +181,9 @@ y_sort_enabled = true
 [node name="FloatingLights" parent="Environment/Weather" instance=ExtResource("22_v5n5j")]
 
 [node name="ButterflySpawner" parent="Environment/Weather" instance=ExtResource("23_w86d2")]
-position = Vector2(114, -154)
+position = Vector2(-3, -5)
 butterfly_scene = ExtResource("24_6qed2")
-butterfly_count = 15
+butterfly_count = 10
 spawn_area = Rect2(0, 0, 640, 360)
 
 [node name="Hazards" type="Node2D" parent="Environment"]
@@ -330,8 +333,19 @@ side = 2
 [node name="Items" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Bomb" parent="." instance=ExtResource("28_05rfe")]
-position = Vector2(655, 5)
+[node name="DayandNightCycle" parent="." instance=ExtResource("31_djb1e")]
+position = Vector2(323, -225)
+
+[node name="Light2D" type="PointLight2D" parent="." groups=["scene_lights"]]
+position = Vector2(242, -226)
+energy = 0.0
+texture = SubResource("GradientTexture2D_dgxmi")
+
+[node name="Gwishin" parent="." instance=ExtResource("31_waf45")]
+position = Vector2(966, 30)
+player_path = NodePath("../PlayerSpawn")
+max_speed = 180.0
+follow_distance = 35.0
 
 [editable path="Environment/Objects/Lamp post"]
 [editable path="Environment/Objects/Lamp post2"]

@@ -829,6 +829,8 @@ position = Vector2(731, 742)
 [node name="ItemPickup" parent="Environment/Objects" instance=ExtResource("32_vdl37")]
 position = Vector2(2019, 425)
 item_data = ExtResource("33_r3eef")
+bob_height = 5.0
+bob_speed = 3.0
 
 [node name="Interactables" type="Node2D" parent="Environment"]
 y_sort_enabled = true

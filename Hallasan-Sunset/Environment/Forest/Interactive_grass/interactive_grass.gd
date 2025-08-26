@@ -11,6 +11,6 @@ extends Area2D
 
 
 
-func _on_hit_box_damaged(hurt_box):
+func _on_hit_box_damaged(_hurt_box):
 	animation_player.play("destroy")
 	pass # Replace with function body.

@@ -15,3 +15,6 @@ description = "Shiny"
 texture = SubResource("AtlasTexture_6gwg7")
 cost = 10
 effects = Array[ExtResource("1_dors1")]([])
+show_collection_notification = false
+is_important = false
+custom_notification_message = "You gained the "
