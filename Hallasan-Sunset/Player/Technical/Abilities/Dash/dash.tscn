@@ -54,12 +54,13 @@ sub_emitter_keep_velocity = true
 
 [node name="Dash" type="Node2D"]
 script = ExtResource("1_v0ktd")
+ghosts_per_second = 120.0
+ghosts_per_tick = 5
 
 [node name="DurationTimer" type="Timer" parent="."]
-one_shot = true
+wait_time = 0.001
 
 [node name="GhostTimer" type="Timer" parent="."]
-wait_time = 0.001
 
 [node name="DustTrail" type="GPUParticles2D" parent="."]
 texture_filter = 1

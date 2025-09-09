@@ -15,11 +15,14 @@ const FIST_SMASH = preload("res://Hallasan-Sunset/Player/Technical/Abilities/Fis
 # ============================================================
 @onready var animation_player        = $"../AnimationPlayer"
 @onready var effect_animation_player = $"../EffectAnimationPlayer"
-
+@onready var state_machine: PlayerStateMachine = $"../StateMachine"
 @onready var smash_animation_player  = $"../Sprite2D/Smash Effect/Smash Effect/AnimationPlayer"
 @onready var hurt_box: HurtBox       = $"../Interactions/HurtBox"
 @onready var player_sprite: Sprite2D = $"../Sprite2D"      # kept for reference – never rotated
-
+@onready var lift: State_Lift = $"../StateMachine/Lift"
+@onready var idle: State_Idle = $"../StateMachine/Idle"
+@onready var walk: State_Walk = $"../StateMachine/Walk"
+@onready var grapple: State_Grapple = $"../StateMachine/Grapple"
 # ============================================================
 #  STATE
 # ============================================================
@@ -148,7 +151,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				_fire_fist()
 				player.UpdateAnimation("attack")
 			1: # GRAPPLE
-				_fire_grapple_hook()
+				grapple_ability()
 			2: # BOW
 				if can_fire_arrow:
 					_start_aiming()
@@ -165,162 +168,13 @@ func _unhandled_input(event: InputEvent) -> void:
 				_start_rocket_ride()
 			6: # FIST_SMASH
 				_fist_smash()
+				
 
-# ============================================================
-#  GRAPPLE SYSTEM
-# ============================================================
-func _fire_grapple_hook() -> void:
-	if is_grappling or action_state != ActionState.IDLE:
-		return
-	
-	action_state = ActionState.FIRING
-	
-	# Create grapple hook
-	active_grapple_hook = GRAPPLE_HOOK.instantiate()
-	player.get_parent().add_child(active_grapple_hook)
-	active_grapple_hook.global_position = player.global_position
-	active_grapple_hook.set_direction(last_throw_direction)
-	active_grapple_hook.set_player_reference(player)
-	
-	# Connect signals
-	active_grapple_hook.enemy_grappled.connect(_on_enemy_grappled)
-	active_grapple_hook.grapple_missed.connect(_on_grapple_missed)
-	
-	# Setup grapple line if not already done
-	if not grapple_line:
-		_setup_grapple_line()
-	
-	# Play animation
-	player.UpdateAnimation("attack")
-	
-	print("🪝 Grapple hook fired!")
-
-func _on_enemy_grappled(enemy: Enemy) -> void:
-	print("🎯 Enemy grappled: ", enemy.name)
-	
-	is_grappling = true
-	grappled_enemy = enemy
-	grapple_start_time = _get_now_seconds()
-	action_state = ActionState.GRAPPLING
-	
-	# Set up the grappled enemy
-	enemy.get_grappled_by(player)
-	
-	# Show grapple line
-	if grapple_line:
-		grapple_line.visible = true
-	
-	# Start pulling the ENEMY towards the player
-	_start_enemy_pull()
-
-func _on_grapple_missed() -> void:
-	print("❌ Grapple missed")
-	action_state = ActionState.IDLE
-	active_grapple_hook = null
-
-func _start_enemy_pull() -> void:
-	# Enemy gets pulled towards the player at controlled speed
-	print("🪝 Starting controlled enemy pull towards player (safe radius: ", grapple_safe_radius, ")")
-	
-	# Add some visual flair when grapple starts
-	if PlayerManager.has_method("add_screen_shake"):
-		PlayerManager.add_screen_shake(3.0, 0.2)  # Moderate shake
-	
-	# Make grapple line thicker for more dramatic effect
-	if grapple_line:
-		grapple_line.width = 4.0
-		grapple_line.default_color = Color.ORANGE  # Orange for controlled pull
-	
-	_update_enemy_pull()
-
-func _update_enemy_pull() -> void:
-	if not is_grappling or not grappled_enemy or not is_instance_valid(grappled_enemy):
-		_end_grapple()
-		return
-	
-	# Calculate pull force for ENEMY - straight line to player
-	var distance_to_player = grappled_enemy.global_position.distance_to(player.global_position)
-	var direction_to_player = (player.global_position - grappled_enemy.global_position).normalized()
-	
-	# Apply pull force with safe zone
-	if distance_to_player > grapple_safe_radius:
-		# Calculate pull strength based on distance - slower as enemy approaches safe zone
-		var distance_factor = clamp((distance_to_player - grapple_safe_radius) / 500.0, 0.3, 1.0)
-		var pull_velocity = direction_to_player * grapple_pull_force * distance_factor
-		
-		# Use direct velocity setting for immediate response
-		if grappled_enemy.has_method("set_grapple_velocity"):
-			grappled_enemy.set_grapple_velocity(pull_velocity)
-		else:
-			grappled_enemy.apply_grapple_force(pull_velocity)
-		
-		print("🪝 Pulling enemy towards player, distance: ", distance_to_player, " safe zone: ", grapple_safe_radius)
-	else:
-		print("✅ Enemy reached safe zone, ending grapple")
-		
-		# Add a small bounce away from player when reaching safe zone
-		var bounce_direction = (grappled_enemy.global_position - player.global_position).normalized()
-		if grappled_enemy.has_method("set_grapple_velocity"):
-			grappled_enemy.set_grapple_velocity(bounce_direction * 100.0)  # Small bounce
-		
-		_end_grapple()
-		return
-	
-	# Update grapple line
-	_update_grapple_line()
-	
-	# Check for duration timeout
-	var elapsed = _get_now_seconds() - grapple_start_time
-	if elapsed >= grapple_duration:
-		print("⏰ Grapple duration expired")
-		_end_grapple()
-
-func _update_grapple_line() -> void:
-	if not grapple_line or not grappled_enemy or not is_instance_valid(grappled_enemy):
-		return
-	
-	grapple_line.clear_points()
-	grapple_line.add_point(player.global_position)
-	grapple_line.add_point(grappled_enemy.global_position)
-	
-	# Change line color based on distance to safe zone
-	var distance_to_player = grappled_enemy.global_position.distance_to(player.global_position)
-	if distance_to_player <= grapple_safe_radius + 100.0:  # Close to safe zone
-		grapple_line.default_color = Color.YELLOW  # Yellow when approaching safe zone
-	else:
-		grapple_line.default_color = Color.ORANGE  # Orange when pulling
-
-func _end_grapple() -> void:
-	print("🔗 Grapple ended")
-	
-	is_grappling = false
-	
-	# Release the enemy with a small bounce away from player
-	if grappled_enemy and is_instance_valid(grappled_enemy):
-		var distance = grappled_enemy.global_position.distance_to(player.global_position)
-		if distance <= grapple_safe_radius + 10.0:  # If within safe zone
-			# Small bounce away from player
-			var bounce_direction = (grappled_enemy.global_position - player.global_position).normalized()
-			if grappled_enemy.has_method("set_grapple_velocity"):
-				grappled_enemy.set_grapple_velocity(bounce_direction * 80.0)  # Small bounce
-		
-		grappled_enemy.release_grapple()
-	
-	grappled_enemy = null
-	
-	# Hide grapple line and reset appearance
-	if grapple_line:
-		grapple_line.visible = false
-		grapple_line.clear_points()
-		grapple_line.width = 3.0  # Reset to normal width
-		grapple_line.default_color = Color.BROWN  # Reset to normal color
-	
-	# Clean up hook
-	if active_grapple_hook and is_instance_valid(active_grapple_hook):
-		active_grapple_hook.queue_free()
-	active_grapple_hook = null
-	
-	action_state = ActionState.IDLE
+func grapple_ability() -> void:
+	if state_machine.current_state == idle or state_machine.current_state == walk:
+		player.state_machine.change_state( grapple )
+		pass
+	pass
 
 # ============================================================
 #  ROCKET ABILITY (scaling removed)
@@ -836,10 +690,7 @@ func _process(delta: float) -> void:
 		_update_rocket_ride(delta)
 		return
 	
-	# Handle grappling updates
-	if is_grappling:
-		_update_enemy_pull()
-		return
+
 	
 	# Handle aiming updates
 	if is_aiming:
@@ -862,9 +713,7 @@ func _toggle_ability(direction: int = 1) -> void:
 	if selected_ability == 2 and is_aiming:
 		_cancel_aiming()
 	
-	# Cancel grappling if switching away from grapple
-	if selected_ability == 1 and is_grappling:
-		_end_grapple()
+
 	
 	# Cycle ability in the specified direction
 	selected_ability = wrapi(selected_ability + direction, 0, abilities.size())
@@ -949,21 +798,7 @@ func _get_now_seconds() -> float:
 #  CLEANUP
 # ============================================================
 func _exit_tree() -> void:
-	# Clean up aim line
-	if aim_line and is_instance_valid(aim_line):
-		aim_line.queue_free()
-	
-	# Clean up grapple line
-	if grapple_line and is_instance_valid(grapple_line):
-		grapple_line.queue_free()
-	
-	# Cancel any active aiming
-	if is_aiming:
-		_cancel_aiming()
-	
-	# Cleanup grapple if still active
-	if is_grappling:
-		_end_grapple()
+
 	
 	# Cleanup rocket trail if still active
 	if rocket_trail_particles and is_instance_valid(rocket_trail_particles):

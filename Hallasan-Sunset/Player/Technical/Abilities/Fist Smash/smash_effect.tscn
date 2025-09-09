@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b72xn62mif516"]
+[gd_scene load_steps=5 format=3 uid="uid://b72xn62mif516"]
 
 [ext_resource type="Texture2D" uid="uid://cq7jdy4ajln77" path="res://Hallasan-Sunset/Player/Technical/Abilities/Fist Smash/Smoke Effect.png" id="1_2w16w"]
-[ext_resource type="AudioStream" uid="uid://cyky3cc31wbpy" path="res://Hallasan-Sunset/Audio/Sound effects/ES_Cinematic, Riser, Fast, Big Hit, Bomb - Epidemic Sound - 0570-4369.wav" id="2_g4q3j"]
 
 [sub_resource type="Animation" id="Animation_xft73"]
 length = 0.001
@@ -58,21 +57,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
-tracks/3/type = "audio"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../Audio/AudioStreamPlayer2D")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"clips": [{
-"end_offset": 1.99011,
-"start_offset": 0.0,
-"stream": ExtResource("2_g4q3j")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e4s7w"]
 _data = {
@@ -87,7 +71,6 @@ y_sort_enabled = true
 [node name="Smash Effect" type="Sprite2D" parent="."]
 visible = false
 show_behind_parent = true
-y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("1_2w16w")

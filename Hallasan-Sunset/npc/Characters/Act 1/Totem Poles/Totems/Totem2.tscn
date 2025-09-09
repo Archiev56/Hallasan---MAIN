@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnoohvgbs737l"]
 
 [ext_resource type="Texture2D" uid="uid://c77uqet4ig666" path="res://Hallasan-Sunset/npc/Characters/Act 1/Totem Poles/Sprites/2.png" id="2_0ctrd"]
-[ext_resource type="Shader" uid="uid://2ucyy8fxogos" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="2_pthu5"]
+[ext_resource type="Shader" uid="uid://mhj58dq3glr0" path="res://Hallasan-Sunset/Environment/Forest/Trees/Pine Tree/Pine Tree.tres" id="2_pthu5"]
 [ext_resource type="Texture2D" uid="uid://67reuta3hfbo" path="res://Hallasan-Sunset/Shadow.png" id="3_a4bo5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_noodt"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bltb6s5vrpqb2"]
+[gd_scene load_steps=55 format=3 uid="uid://bltb6s5vrpqb2"]
 
 [ext_resource type="Script" uid="uid://3eugq3lyyivt" path="res://Hallasan-Sunset/Enemies/Scripts/States/Enemy.gd" id="1_6rfjf"]
 [ext_resource type="Texture2D" uid="uid://bi47jj5telw2g" path="res://Hallasan-Sunset/Enemies/Common Enemies/Slime/Shadow copy.png" id="2_ot7k4"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c1irimlt3ed4m" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/damage_numbers_origin.tscn" id="16_andph"]
 [ext_resource type="PackedScene" uid="uid://c55aho78pvpy8" path="res://Hallasan-Sunset/Enemies/Technical/Vision Area/Vision_area.tscn" id="17_up6us"]
 [ext_resource type="Texture2D" uid="uid://dk75qs4d6k6p0" path="res://Hallasan-Sunset/Technical/Damage Indicators copy/Star.png" id="18_h04ww"]
+[ext_resource type="AudioStream" uid="uid://bsfqslen0aw5e" path="res://Hallasan-Sunset/Audio/Sound effects/Hit.mp3" id="19_n5gdl"]
 
 [sub_resource type="Animation" id="Animation_rf8ve"]
 resource_name = "Attack_down"
@@ -725,12 +726,18 @@ scale_max = 1.5
 scale_over_velocity_curve = SubResource("CurveTexture_ihgs2")
 color_ramp = SubResource("GradientTexture1D_0tj5q")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tko7r"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("19_n5gdl")
+stream_0/weight = 0.1
+
 [node name="Gwishin" type="CharacterBody2D" groups=["Enemy"]]
 y_sort_enabled = true
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_6rfjf")
-hp = 10
+hp = 100
 
 [node name="ShadowCopy" type="Sprite2D" parent="."]
 visible = false
@@ -777,6 +784,7 @@ next_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("9_7kngf")
+sfx_player_path = NodePath("../../AudioStreamPlayer2D2")
 next_state = NodePath("../Chase")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
@@ -847,3 +855,7 @@ speed_scale = 2.0
 explosiveness = 1.0
 trail_lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_4sfwe")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_tko7r")
+volume_db = -1.0

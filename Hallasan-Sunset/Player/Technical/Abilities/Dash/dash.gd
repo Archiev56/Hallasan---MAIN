@@ -1,59 +1,64 @@
 class_name Dash extends Node2D
 
-const dash_delay = 0.4
+const dash_delay := 0.4
 
-@onready var duration_timer = $DurationTimer
-@onready var ghost_timer = $GhostTimer
-@onready var dust_trail = $DustTrail
-@onready var dust_burst = $DustBurst
+@onready var duration_timer: Timer = $DurationTimer
+@onready var ghost_timer: Timer = $GhostTimer
+@onready var dust_trail: GPUParticles2D = $DustTrail
+@onready var dust_burst: GPUParticles2D = $DustBurst
 
-var ghost_scene = preload("res://Hallasan-Sunset/Player/Technical/Abilities/Dash/DashGhost.tscn")
-var can_dash = true
-var direction = Vector2.ZERO
-# Adjusted path: Assuming PlayerSprite is the name of your player sprite node
+@export var ghosts_per_second: float = 60.0   # raise for denser trail
+@export var ghosts_per_tick: int = 1          # spawn multiple per timer tick
+@export var burst_on_start: int = 1           # extra ghosts right when dash starts
 
-func _ready():
-	pass
-	
+var ghost_scene: PackedScene = preload("res://Hallasan-Sunset/Player/Technical/Abilities/Dash/DashGhost.tscn")
+var can_dash := true
+var direction := Vector2.ZERO
 
-func instance_ghost():
+func _ready() -> void:
+	ghost_timer.one_shot = false
+	# ✅ Correct: choose physics or idle callback
+	ghost_timer.process_callback = Timer.TIMER_PROCESS_PHYSICS
+	_update_ghost_timer()
+
+func _update_ghost_timer() -> void:
+	var gps: float = max(1.0, ghosts_per_second)
+	var interval: float = 1.0 / gps
+	ghost_timer.wait_time = max(0.005, interval)
+
+func instance_ghost() -> void:
 	var ghost: Sprite2D = ghost_scene.instantiate()
 	get_parent().get_parent().add_child(ghost)
-
 	ghost.global_position = global_position
-	ghost.global_position = global_position
-	
 
-	# Ensure sprite_node is valid before accessing texture
-
-
-func start_dash(duration):
+func start_dash(duration: float) -> void:
 	duration_timer.wait_time = duration
 	duration_timer.start()
 
-	# Start ghost creation timer with an interval (e.g., 0.1 seconds between ghosts)
-	ghost_timer.wait_time = 0.09  # Adjust this value to control ghost frequency
+	_update_ghost_timer()
 	ghost_timer.start()
 
-	instance_ghost()  # Create an initial ghost
+	# Initial burst
+	for i in range(burst_on_start):
+		instance_ghost()
+
 	print("Dash started")
 	dust_trail.restart()
 	dust_trail.emitting = true
-	
-	dust_burst.rotation = (direction * -1).angle()
-	dust_burst.restart() 
+
+	dust_burst.rotation = (direction * -1.0).angle()
+	dust_burst.restart()
 	dust_burst.emitting = true
-	ghost_timer.start()
-	instance_ghost()
 
-func is_dashing():
+func is_dashing() -> bool:
 	return !duration_timer.is_stopped()
-	
 
-
-
-func _on_duration_timer_timeout():
+func _on_duration_timer_timeout() -> void:
 	print("Dash ended")
+	ghost_timer.stop()
+	dust_trail.emitting = false
+	dust_burst.emitting = false
 
-func _on_ghost_timer_timeout():
-	instance_ghost()  # Create more ghosts at intervals while dashing
+func _on_ghost_timer_timeout() -> void:
+	for i in range(ghosts_per_tick):
+		instance_ghost()

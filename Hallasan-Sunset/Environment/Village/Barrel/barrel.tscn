@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://8s5gjiaiodd5"]
+[gd_scene load_steps=4 format=3 uid="uid://8s5gjiaiodd5"]
 
-[ext_resource type="Texture2D" uid="uid://br37wx7tiixwt" path="res://Hallasan-Sunset/Enemies/Common Enemies/Dino/shadow_2.png" id="1_jbsph"]
 [ext_resource type="Texture2D" uid="uid://cvn86kqmt24nn" path="res://Hallasan-Sunset/Tilemaps/Sprites/TX Props.png" id="1_t8uqk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_adcfb"]
@@ -19,12 +18,6 @@ animations = [{
 }]
 
 [node name="Barrel" type="StaticBody2D"]
-
-[node name="Shadow" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1, -4)
-scale = Vector2(2, 2)
-texture = ExtResource("1_jbsph")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

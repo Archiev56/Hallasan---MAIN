@@ -22,7 +22,6 @@ shader_parameter/particle_density = 8.0
 shader_parameter/particle_color = Vector4(1, 0.9, 0.6, 0.7)
 
 [node name="Totem1" type="Area2D"]
-z_index = 5
 collision_layer = 16
 collision_mask = 0
 

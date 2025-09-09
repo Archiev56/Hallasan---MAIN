@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b27cfuewfco23"]
+
+[ext_resource type="Texture2D" uid="uid://dk8m7y0tpqmq8" path="res://Hallasan-Sunset/Player/Technical/Abilities/Grapple/Sprites/grapple_post.png" id="1_v7qs1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7qs1"]
+size = Vector2(12, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iki77"]
+size = Vector2(20, 24)
+
+[node name="GrapplePost" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+texture = ExtResource("1_v7qs1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_v7qs1")
+
+[node name="GrapplePointStaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePointStaticBody2D"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_iki77")

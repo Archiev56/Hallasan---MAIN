@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dhj385rk2lfl4" path="res://Hallasan-Sunset/Tilemaps/32x32_test/32x32_tileset.tres" id="3_hlipi"]
 [ext_resource type="Script" uid="uid://bkfrr01tlskb5" path="res://Hallasan-Sunset/Tilemaps/Scripts/LevelTileMapLayer.gd" id="11_2ksic"]
 
-[node name="LevelTileMapLayer2" type="TileMapLayer"]
+[node name="Tilemap" type="TileMapLayer"]
 tile_set = ExtResource("3_hlipi")
 rendering_quadrant_size = 32
 script = ExtResource("11_2ksic")

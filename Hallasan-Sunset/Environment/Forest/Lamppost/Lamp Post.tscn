@@ -158,3 +158,6 @@ sprite_frames = SubResource("SpriteFrames_p5r2m")
 autoplay = "default"
 frame_progress = 0.708777
 flip_h = true
+
+[node name="Light2D" type="PointLight2D" parent="."]
+position = Vector2(14, 6)

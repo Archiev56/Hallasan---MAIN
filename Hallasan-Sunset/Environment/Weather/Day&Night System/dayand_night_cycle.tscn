@@ -5,7 +5,8 @@
 [sub_resource type="Animation" id="Animation_n7knm"]
 resource_name = "Day_night"
 length = 3600.0
-loop_mode = 2
+loop_mode = 1
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -13,10 +14,10 @@ tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3600),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1200, 1800, 3600),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.0733936, 0.311859, 0.39817, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.638629, 0.486383, 0.123066, 1), Color(0.0733936, 0.311859, 0.39817, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_4vjin"]

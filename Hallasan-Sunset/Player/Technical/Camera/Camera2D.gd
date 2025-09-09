@@ -1,12 +1,10 @@
 class_name PlayerCamera extends Camera2D
 
 
-@export_range( 0, 1, 0.05, "or_greater" ) var shake_power : float = 0.2 #Overall Strength of shake
+@export_range( 0, 1, 0.05, "or_greater" ) var shake_power : float = 0.5 #Overall Strength of shake
 @export var shake_max_offset : float = 5.0 #Maximum shake in pixels
 @export var shake_decay : float = 1.0 #How quickly the shake stops
 var shake_trauma : float = 0.0
-
-
 
 
 
@@ -22,8 +20,6 @@ func _physics_process(delta: float) -> void:
 	if shake_trauma > 0:
 		shake_trauma = max( shake_trauma - shake_decay * delta, 0 )
 		shake()
-
-
 
 
 

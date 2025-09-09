@@ -34,6 +34,8 @@ QuestManager="*res://Hallasan-Sunset/Quests/Scripts/global_quest_manager.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 EffectManager="*res://Hallasan-Sunset/Technical/Effects/global_effect_manager.gd"
 ShopMenu="*res://Hallasan-Sunset/UI/Shop_menu/shop_menu.tscn"
+HitPause="*res://Hallasan-Sunset/Technical/Hit effects/Hit_pause.gd"
+CameraZoomPunch="*res://Hallasan-Sunset/Technical/Hit effects/hit_zoom.gd"
 
 [display]
 
@@ -213,7 +215,9 @@ locale/translations_pot_files=PackedStringArray("res://Hallasan-Sunset/npc/Chara
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Player Hurt"
 2d_physics/layer_3="Player Interact"
+2d_physics/layer_4="GrappleObsticles"
 2d_physics/layer_5="Walls"
+2d_physics/layer_6="GrapplePoints"
 2d_physics/layer_7="Fist Grabbable"
 2d_physics/layer_9="Enemy"
 
