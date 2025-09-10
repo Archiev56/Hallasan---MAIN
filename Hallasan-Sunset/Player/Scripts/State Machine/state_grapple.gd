@@ -1,4 +1,5 @@
-class_name State_Grapple extends State
+class_name State_Grapple
+extends State
 
 @onready var idle: State_Idle = $"../Idle"
 @onready var grapple_hook: Node2D = %GrappleHook
@@ -25,31 +26,32 @@ var next_state : State = null
 var positions : Array[ Vector3 ] = [
 	Vector3( 0.0, -20.0, 180.0 ),  # UP
 	Vector3( 0.0, -10.0, 0.0 ),    # DOWN
-	Vector3( -10.0, -15.0, 90.0 ), # LEFT
-	Vector3( 10.0, -15.0, -90.0 ), # RIGHT
+	Vector3( 10.0, -15.0, -90.0 ), # LEFT
+	Vector3( -10.0, -15.0, 90.0 ), # RIGHT
 ]
+
+# FIX: use a normal mapping (no L/R swap)
 var pos_map : Dictionary = {
 	Vector2.UP: 0,
 	Vector2.DOWN: 1,
-	# you said you already swapped L/R for raycast; keeping that here
 	Vector2.LEFT: 3,
 	Vector2.RIGHT: 2
 }
 
-## What happens when we initialize this state?
+## Initialize this state
 func init() -> void:
 	grapple_hook.visible = false
 	grapple_ray_cast_2d.enabled = false
 	grapple_hurt_box.monitoring = false
 
-	# Controls: anchor to parent origin; we’ll align top-center in code
+	# Control setup: anchor to top-left; rotate the control itself later
 	nine_patch_rect.set_anchors_preset(Control.PRESET_TOP_LEFT)
 	nine_patch_rect.rotation_degrees = 0.0
 	nine_patch_rect.scale = Vector2.ONE
 	_align_chain_to_hook()
 	pass
 
-## What happens when the player enters this State?
+## Enter state
 func enter() -> void:
 	player.UpdateAnimation("idle")
 	grapple_hook.visible = true
@@ -63,7 +65,7 @@ func enter() -> void:
 	play_audio(grapple_fire_audio)
 	pass
 
-## What happens when the player exits this State?
+## Exit state
 func exit() -> void:
 	next_state = null
 	grapple_hook.visible = false
@@ -72,49 +74,54 @@ func exit() -> void:
 	if tween:
 		tween.kill()
 	nine_patch_rect.size.y = nine_patch_size
+	# reset for cleanliness
+	nine_patch_rect.rotation_degrees = 0.0
+	nine_patch_rect.scale = Vector2.ONE
 	pass
 
-## What happens during the _process update in this State?
+## _process
 func process(_delta: float) -> State:
 	player.velocity = Vector2.ZERO
 	return next_state
 
-## What happens during the _physics_process update in this State?
+## _physics_process
 func physics(_delta: float) -> State:
 	return null
 
-## What happens with input events in this State?
+## input
 func handle_input(_event: InputEvent) -> State:
 	return null
 
 func set_grapple_position() -> void:
 	var new_pos: Vector3 = positions[pos_map[player.cardinal_direction]]
+
+	# Hook sprite uses Node2D rotation (fine to keep)
 	grapple_hook.position = Vector2(new_pos.x, new_pos.y)
 	grapple_hook.rotation_degrees = new_pos.z
 
-	# Keep chain’s top-center fixed at the hook (removes visible offset)
-	_align_chain_to_hook()
-
-	# Rotate chain to match aim
+	# Rotate the NinePatchRect itself; Controls don't inherit Node2D rotation
 	nine_patch_rect.rotation_degrees = new_pos.z
 
-	# Flip chain left/right (mirror the graphic) without drifting
-	if player.cardinal_direction == Vector2.LEFT:
-		nine_patch_rect.scale = Vector2(-1.0, 1.0)
-	elif player.cardinal_direction == Vector2.RIGHT:
-		nine_patch_rect.scale = Vector2(1.0, 1.0)
-	else:
-		nine_patch_rect.scale = Vector2(1.0, 1.0)
+	# Flip the chain texture horizontally only when aiming LEFT
+	# RIGHT/UP/DOWN keep normal scale
+	match player.cardinal_direction:
+		Vector2.LEFT:
+			nine_patch_rect.scale = Vector2(-1.0, 1.0)
+		_:
+			nine_patch_rect.scale = Vector2(1.0, 1.0)
 
-	# Put the hook behind player when aiming up (if desired)
+	# Keep chain's top-center fixed at the hook origin
+	_align_chain_to_hook()
+
+	# Optional layering tweak
 	grapple_hook.show_behind_parent = (player.cardinal_direction == Vector2.UP)
 
-	# Keep ray aligned with aim (you said you already do this)
+	# Ray aligned with aim
 	grapple_ray_cast_2d.target_position = player.cardinal_direction * grapple_distance
 	pass
 
 func _align_chain_to_hook() -> void:
-	# Pivot around top-center so growth/rotation come from the hook
+	# Pivot around top-center so growth comes from the hook
 	nine_patch_rect.pivot_offset = Vector2(nine_patch_rect.size.x * 0.5, 0.0)
 	# Place top-left so that top-center sits at the hook origin (0,0)
 	nine_patch_rect.position = Vector2(-nine_patch_rect.pivot_offset.x, 0.0)

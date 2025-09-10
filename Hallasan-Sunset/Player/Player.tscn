@@ -5219,7 +5219,6 @@ throw_audio = ExtResource("158_3ari3")
 
 [node name="Grapple" type="Node" parent="StateMachine"]
 script = ExtResource("322_8wvvr")
-grapple_distance = 300.0
 
 [node name="Audio" type="Node2D" parent="."]
 position = Vector2(3, -28)
